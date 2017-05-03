@@ -55,7 +55,7 @@ namespace IO.Swagger.Model
         /// <param name="OrderTotalPrice">The total price of this order (corresponding to the amount paid by the customer).</param>
         /// <param name="OrderCurrencyCode">OrderCurrencyCode.</param>
         /// <param name="Processing">Processing (required).</param>
-        /// <param name="ETag">ETag value to identify the order. For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (required).</param>
+        /// <param name="Etag">Etag (required).</param>
         /// <param name="Links">Links (required).</param>
         /// <param name="OrderMarketPlaceChannel">Useful to identify the origin of the order. For example in Amazon..</param>
         /// <param name="OrderTotalTax">The total tax of this order.</param>
@@ -100,7 +100,7 @@ namespace IO.Swagger.Model
         /// <param name="OrderOrderItemsSourceUri">Technical information: The url to the source of this order items. We received this information from the marketplace. .</param>
         /// <param name="OrderItems">OrderItems (required).</param>
         /// <param name="TransitionLinks">TransitionLinks (required).</param>
-        public Order(MarketplaceTechnicalCode MarketplaceTechnicalCode = default(MarketplaceTechnicalCode), AccountId AccountId = default(AccountId), BeezUPOrderId BeezUPOrderId = default(BeezUPOrderId), BeezUPCommonHttpUrl BeezUPOrderUrl = default(BeezUPCommonHttpUrl), MarketplaceBusinessCode MarketplaceBusinessCode = default(MarketplaceBusinessCode), MarketplaceOrderId OrderMarketplaceOrderId = default(MarketplaceOrderId), BeezUPOrderStatus OrderStatusBeezUPOrderStatus = default(BeezUPOrderStatus), MarketplaceOrderStatus OrderStatusMarketplaceOrderStatus = default(MarketplaceOrderStatus), OrderMerchantOrderId OrderMerchantOrderId = default(OrderMerchantOrderId), OrderMerchantECommerceSoftwareName OrderMerchantECommerceSoftwareName = default(OrderMerchantECommerceSoftwareName), OrderMerchantECommerceSoftwareVersion OrderMerchantECommerceSoftwareVersion = default(OrderMerchantECommerceSoftwareVersion), DateTime? OrderPurchaseUtcDate = default(DateTime?), DateTime? OrderLastModificationUtcDate = default(DateTime?), DateTime? OrderMarketplaceLastModificationUtcDate = default(DateTime?), OrderBuyerName OrderBuyerName = default(OrderBuyerName), decimal? OrderTotalPrice = default(decimal?), BeezUPCommonCurrencyCode OrderCurrencyCode = default(BeezUPCommonCurrencyCode), Processing Processing = default(Processing), string ETag = default(string), List<BeezUPCommonLink2> Links = default(List<BeezUPCommonLink2>), string OrderMarketPlaceChannel = default(string), decimal? OrderTotalTax = default(decimal?), decimal? OrderTotalCommission = default(decimal?), string OrderPaymentMethod = default(string), DateTime? OrderPayingUtcDate = default(DateTime?), string OrderComment = default(string), string OrderShippingCivility = default(string), string OrderShippingCompanyName = default(string), string OrderShippingAddressName = default(string), string OrderShippingEmail = default(string), string OrderShippingAddressLine1 = default(string), string OrderShippingAddressLine2 = default(string), string OrderShippingAddressLine3 = default(string), string OrderShippingAddressPostalCode = default(string), string OrderShippingAddressCity = default(string), string OrderShippingAddressStateOrRegion = default(string), string OrderShippingAddressCountryName = default(string), string OrderShippingAddressCountryIsoCodeAlpha2 = default(string), string OrderShippingPhone = default(string), string OrderShippingMobilePhone = default(string), decimal? OrderShippingPrice = default(decimal?), string OrderShippingMethod = default(string), decimal? OrderShippingShippingTax = default(decimal?), DateTime? OrderShippingEarliestShipUtcDate = default(DateTime?), DateTime? OrderShippingLatestShipUtcDate = default(DateTime?), string OrderBuyerIdentifier = default(string), string OrderBuyerCivility = default(string), string OrderBuyerCompanyName = default(string), string OrderBuyerEmail = default(string), string OrderBuyerAddressLine1 = default(string), string OrderBuyerAddressLine2 = default(string), string OrderBuyerAddressLine3 = default(string), string OrderBuyerAddressPostalCode = default(string), string OrderBuyerAddressCity = default(string), string OrderBuyerAddressStateOrRegion = default(string), string OrderBuyerAddressCountryName = default(string), string OrderBuyerAddressCountryIsoCodeAlpha2 = default(string), string OrderBuyerPhone = default(string), string OrderBuyerMobilePhone = default(string), string OrderOrderSourceUri = default(string), string OrderOrderItemsSourceUri = default(string), List<OrderItem> OrderItems = default(List<OrderItem>), List<BeezUPCommonLink2> TransitionLinks = default(List<BeezUPCommonLink2>))
+        public Order(MarketplaceTechnicalCode MarketplaceTechnicalCode = default(MarketplaceTechnicalCode), AccountId AccountId = default(AccountId), BeezUPOrderId BeezUPOrderId = default(BeezUPOrderId), BeezUPCommonHttpUrl BeezUPOrderUrl = default(BeezUPCommonHttpUrl), MarketplaceBusinessCode MarketplaceBusinessCode = default(MarketplaceBusinessCode), MarketplaceOrderId OrderMarketplaceOrderId = default(MarketplaceOrderId), BeezUPOrderStatus OrderStatusBeezUPOrderStatus = default(BeezUPOrderStatus), MarketplaceOrderStatus OrderStatusMarketplaceOrderStatus = default(MarketplaceOrderStatus), OrderMerchantOrderId OrderMerchantOrderId = default(OrderMerchantOrderId), OrderMerchantECommerceSoftwareName OrderMerchantECommerceSoftwareName = default(OrderMerchantECommerceSoftwareName), OrderMerchantECommerceSoftwareVersion OrderMerchantECommerceSoftwareVersion = default(OrderMerchantECommerceSoftwareVersion), DateTime? OrderPurchaseUtcDate = default(DateTime?), DateTime? OrderLastModificationUtcDate = default(DateTime?), DateTime? OrderMarketplaceLastModificationUtcDate = default(DateTime?), OrderBuyerName OrderBuyerName = default(OrderBuyerName), decimal? OrderTotalPrice = default(decimal?), BeezUPCommonCurrencyCode OrderCurrencyCode = default(BeezUPCommonCurrencyCode), Processing Processing = default(Processing), Etag Etag = default(Etag), List<BeezUPCommonLink2> Links = default(List<BeezUPCommonLink2>), string OrderMarketPlaceChannel = default(string), decimal? OrderTotalTax = default(decimal?), decimal? OrderTotalCommission = default(decimal?), string OrderPaymentMethod = default(string), DateTime? OrderPayingUtcDate = default(DateTime?), string OrderComment = default(string), string OrderShippingCivility = default(string), string OrderShippingCompanyName = default(string), string OrderShippingAddressName = default(string), string OrderShippingEmail = default(string), string OrderShippingAddressLine1 = default(string), string OrderShippingAddressLine2 = default(string), string OrderShippingAddressLine3 = default(string), string OrderShippingAddressPostalCode = default(string), string OrderShippingAddressCity = default(string), string OrderShippingAddressStateOrRegion = default(string), string OrderShippingAddressCountryName = default(string), string OrderShippingAddressCountryIsoCodeAlpha2 = default(string), string OrderShippingPhone = default(string), string OrderShippingMobilePhone = default(string), decimal? OrderShippingPrice = default(decimal?), string OrderShippingMethod = default(string), decimal? OrderShippingShippingTax = default(decimal?), DateTime? OrderShippingEarliestShipUtcDate = default(DateTime?), DateTime? OrderShippingLatestShipUtcDate = default(DateTime?), string OrderBuyerIdentifier = default(string), string OrderBuyerCivility = default(string), string OrderBuyerCompanyName = default(string), string OrderBuyerEmail = default(string), string OrderBuyerAddressLine1 = default(string), string OrderBuyerAddressLine2 = default(string), string OrderBuyerAddressLine3 = default(string), string OrderBuyerAddressPostalCode = default(string), string OrderBuyerAddressCity = default(string), string OrderBuyerAddressStateOrRegion = default(string), string OrderBuyerAddressCountryName = default(string), string OrderBuyerAddressCountryIsoCodeAlpha2 = default(string), string OrderBuyerPhone = default(string), string OrderBuyerMobilePhone = default(string), string OrderOrderSourceUri = default(string), string OrderOrderItemsSourceUri = default(string), List<OrderItem> OrderItems = default(List<OrderItem>), List<BeezUPCommonLink2> TransitionLinks = default(List<BeezUPCommonLink2>))
         {
             // to ensure "MarketplaceTechnicalCode" is required (not null)
             if (MarketplaceTechnicalCode == null)
@@ -192,14 +192,14 @@ namespace IO.Swagger.Model
             {
                 this.Processing = Processing;
             }
-            // to ensure "ETag" is required (not null)
-            if (ETag == null)
+            // to ensure "Etag" is required (not null)
+            if (Etag == null)
             {
-                throw new InvalidDataException("ETag is a required property for Order and cannot be null");
+                throw new InvalidDataException("Etag is a required property for Order and cannot be null");
             }
             else
             {
-                this.ETag = ETag;
+                this.Etag = Etag;
             }
             // to ensure "Links" is required (not null)
             if (Links == null)
@@ -374,11 +374,10 @@ namespace IO.Swagger.Model
         [DataMember(Name="processing", EmitDefaultValue=false)]
         public Processing Processing { get; set; }
         /// <summary>
-        /// ETag value to identify the order. For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+        /// Gets or Sets Etag
         /// </summary>
-        /// <value>ETag value to identify the order. For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </value>
-        [DataMember(Name="eTag", EmitDefaultValue=false)]
-        public string ETag { get; set; }
+        [DataMember(Name="etag", EmitDefaultValue=false)]
+        public Etag Etag { get; set; }
         /// <summary>
         /// Gets or Sets Links
         /// </summary>
@@ -666,7 +665,7 @@ namespace IO.Swagger.Model
             sb.Append("  OrderTotalPrice: ").Append(OrderTotalPrice).Append("\n");
             sb.Append("  OrderCurrencyCode: ").Append(OrderCurrencyCode).Append("\n");
             sb.Append("  Processing: ").Append(Processing).Append("\n");
-            sb.Append("  ETag: ").Append(ETag).Append("\n");
+            sb.Append("  Etag: ").Append(Etag).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  OrderMarketPlaceChannel: ").Append(OrderMarketPlaceChannel).Append("\n");
             sb.Append("  OrderTotalTax: ").Append(OrderTotalTax).Append("\n");
@@ -838,9 +837,9 @@ namespace IO.Swagger.Model
                     this.Processing.Equals(other.Processing)
                 ) && 
                 (
-                    this.ETag == other.ETag ||
-                    this.ETag != null &&
-                    this.ETag.Equals(other.ETag)
+                    this.Etag == other.Etag ||
+                    this.Etag != null &&
+                    this.Etag.Equals(other.Etag)
                 ) && 
                 (
                     this.Links == other.Links ||
@@ -1111,8 +1110,8 @@ namespace IO.Swagger.Model
                     hash = hash * 59 + this.OrderCurrencyCode.GetHashCode();
                 if (this.Processing != null)
                     hash = hash * 59 + this.Processing.GetHashCode();
-                if (this.ETag != null)
-                    hash = hash * 59 + this.ETag.GetHashCode();
+                if (this.Etag != null)
+                    hash = hash * 59 + this.Etag.GetHashCode();
                 if (this.Links != null)
                     hash = hash * 59 + this.Links.GetHashCode();
                 if (this.OrderMarketPlaceChannel != null)

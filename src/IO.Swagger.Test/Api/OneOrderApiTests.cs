@@ -77,9 +77,10 @@ namespace IO.Swagger.Test
             //string changeOrderType = null;
             //string userName = null;
             //ChangeOrderRequest request = null;
+            //string ifMatch = null;
             //bool? testMode = null;
-            //var response = instance.ChangeOrder(marketplaceTechnicalCode, accountId, beezUPOrderId, changeOrderType, userName, request, testMode);
-            //Assert.IsInstanceOf<ChangeOrderResponse> (response, "response is ChangeOrderResponse");
+            //instance.ChangeOrder(marketplaceTechnicalCode, accountId, beezUPOrderId, changeOrderType, userName, request, ifMatch, testMode);
+            
         }
         
         /// <summary>
@@ -106,7 +107,8 @@ namespace IO.Swagger.Test
             //string marketplaceTechnicalCode = null;
             //int? accountId = null;
             //string beezUPOrderId = null;
-            //var response = instance.GetOrder(marketplaceTechnicalCode, accountId, beezUPOrderId);
+            //string ifNoneMatch = null;
+            //var response = instance.GetOrder(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
             //Assert.IsInstanceOf<Order> (response, "response is Order");
         }
         

@@ -65,12 +65,12 @@ namespace IO.Swagger.Test
         }
 
         /// <summary>
-        /// Test the property 'BeezUPOrderId'
+        /// Test the property 'Order'
         /// </summary>
         [Test]
-        public void BeezUPOrderIdTest()
+        public void OrderTest()
         {
-            // TODO unit test for the property 'BeezUPOrderId'
+            // TODO unit test for the property 'Order'
         }
         /// <summary>
         /// Test the property 'ChangeOrderRequest'

@@ -209,12 +209,12 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'Processing'
         }
         /// <summary>
-        /// Test the property 'ETag'
+        /// Test the property 'Etag'
         /// </summary>
         [Test]
-        public void ETagTest()
+        public void EtagTest()
         {
-            // TODO unit test for the property 'ETag'
+            // TODO unit test for the property 'Etag'
         }
         /// <summary>
         /// Test the property 'Links'

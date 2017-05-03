@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="changeorderlist"></a>
 # **ChangeOrderList**
-> void ChangeOrderList (string changeOrderType, string userName, ChangeOrderListRequest request, bool? testMode = null)
+> BatchOrderOperationResponse ChangeOrderList (string changeOrderType, string userName, ChangeOrderListRequest request, bool? testMode = null)
 
 Batches the change order operation.
 
@@ -46,7 +46,8 @@ namespace Example
             try
             {
                 // Batches the change order operation.
-                apiInstance.ChangeOrderList(changeOrderType, userName, request, testMode);
+                BatchOrderOperationResponse result = apiInstance.ChangeOrderList(changeOrderType, userName, request, testMode);
+                Debug.WriteLine(result);
             }
             catch (Exception e)
             {
@@ -68,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**BatchOrderOperationResponse**](BatchOrderOperationResponse.md)
 
 ### Authorization
 
@@ -83,7 +84,7 @@ void (empty response body)
 
 <a name="clearmerchantorderinfolist"></a>
 # **ClearMerchantOrderInfoList**
-> void ClearMerchantOrderInfoList (ClearMerchantOrderInfoListRequest request)
+> BatchOrderOperationResponse ClearMerchantOrderInfoList (ClearMerchantOrderInfoListRequest request)
 
 Batches the clear merchant order info operation.
 
@@ -115,7 +116,8 @@ namespace Example
             try
             {
                 // Batches the clear merchant order info operation.
-                apiInstance.ClearMerchantOrderInfoList(request);
+                BatchOrderOperationResponse result = apiInstance.ClearMerchantOrderInfoList(request);
+                Debug.WriteLine(result);
             }
             catch (Exception e)
             {
@@ -134,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**BatchOrderOperationResponse**](BatchOrderOperationResponse.md)
 
 ### Authorization
 
@@ -149,7 +151,7 @@ void (empty response body)
 
 <a name="setmerchantorderinfolist"></a>
 # **SetMerchantOrderInfoList**
-> void SetMerchantOrderInfoList (SetMerchantOrderInfoListRequest request)
+> BatchOrderOperationResponse SetMerchantOrderInfoList (SetMerchantOrderInfoListRequest request)
 
 Batches the set merchant order info operation.
 
@@ -181,7 +183,8 @@ namespace Example
             try
             {
                 // Batches the set merchant order info operation.
-                apiInstance.SetMerchantOrderInfoList(request);
+                BatchOrderOperationResponse result = apiInstance.SetMerchantOrderInfoList(request);
+                Debug.WriteLine(result);
             }
             catch (Exception e)
             {
@@ -200,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**BatchOrderOperationResponse**](BatchOrderOperationResponse.md)
 
 ### Authorization
 

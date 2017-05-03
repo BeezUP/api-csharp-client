@@ -37,9 +37,10 @@ namespace IO.Swagger.Api
         /// <param name="changeOrderType">The order change type</param>
         /// <param name="userName">Sometimes the user in the e-commerce application is not the same than the subscription key you indicate in your settings. We recommand you to indicate the login of the user in your appplication.</param>
         /// <param name="request"></param>
+        /// <param name="ifMatch">To ensure that you are making a change on the lastest version of the order. ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
         /// <param name="testMode">If true, the operation will be be commited. But the validation will be taken in account. (optional, default to false)</param>
-        /// <returns>ChangeOrderResponse</returns>
-        ChangeOrderResponse ChangeOrder (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, bool? testMode = null);
+        /// <returns></returns>
+        void ChangeOrder (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null);
 
         /// <summary>
         /// Change order status
@@ -54,9 +55,10 @@ namespace IO.Swagger.Api
         /// <param name="changeOrderType">The order change type</param>
         /// <param name="userName">Sometimes the user in the e-commerce application is not the same than the subscription key you indicate in your settings. We recommand you to indicate the login of the user in your appplication.</param>
         /// <param name="request"></param>
+        /// <param name="ifMatch">To ensure that you are making a change on the lastest version of the order. ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
         /// <param name="testMode">If true, the operation will be be commited. But the validation will be taken in account. (optional, default to false)</param>
-        /// <returns>ApiResponse of ChangeOrderResponse</returns>
-        ApiResponse<ChangeOrderResponse> ChangeOrderWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, bool? testMode = null);
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ChangeOrderWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null);
         /// <summary>
         /// Clear the merchant info related to this order
         /// </summary>
@@ -92,8 +94,9 @@ namespace IO.Swagger.Api
         /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The order BeezUP identifier</param>
+        /// <param name="ifNoneMatch">ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Order</returns>
-        Order GetOrder (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId);
+        Order GetOrder (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string ifNoneMatch = null);
 
         /// <summary>
         /// Get order details
@@ -105,8 +108,9 @@ namespace IO.Swagger.Api
         /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The order BeezUP identifier</param>
+        /// <param name="ifNoneMatch">ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>ApiResponse of Order</returns>
-        ApiResponse<Order> GetOrderWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId);
+        ApiResponse<Order> GetOrderWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string ifNoneMatch = null);
         /// <summary>
         /// Get the harvest history and the change status operations
         /// </summary>
@@ -199,9 +203,10 @@ namespace IO.Swagger.Api
         /// <param name="changeOrderType">The order change type</param>
         /// <param name="userName">Sometimes the user in the e-commerce application is not the same than the subscription key you indicate in your settings. We recommand you to indicate the login of the user in your appplication.</param>
         /// <param name="request"></param>
+        /// <param name="ifMatch">To ensure that you are making a change on the lastest version of the order. ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
         /// <param name="testMode">If true, the operation will be be commited. But the validation will be taken in account. (optional, default to false)</param>
-        /// <returns>Task of ChangeOrderResponse</returns>
-        System.Threading.Tasks.Task<ChangeOrderResponse> ChangeOrderAsync (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, bool? testMode = null);
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ChangeOrderAsync (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null);
 
         /// <summary>
         /// Change order status
@@ -216,9 +221,10 @@ namespace IO.Swagger.Api
         /// <param name="changeOrderType">The order change type</param>
         /// <param name="userName">Sometimes the user in the e-commerce application is not the same than the subscription key you indicate in your settings. We recommand you to indicate the login of the user in your appplication.</param>
         /// <param name="request"></param>
+        /// <param name="ifMatch">To ensure that you are making a change on the lastest version of the order. ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
         /// <param name="testMode">If true, the operation will be be commited. But the validation will be taken in account. (optional, default to false)</param>
-        /// <returns>Task of ApiResponse (ChangeOrderResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ChangeOrderResponse>> ChangeOrderAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, bool? testMode = null);
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ChangeOrderAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null);
         /// <summary>
         /// Clear the merchant info related to this order
         /// </summary>
@@ -254,8 +260,9 @@ namespace IO.Swagger.Api
         /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The order BeezUP identifier</param>
+        /// <param name="ifNoneMatch">ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of Order</returns>
-        System.Threading.Tasks.Task<Order> GetOrderAsync (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId);
+        System.Threading.Tasks.Task<Order> GetOrderAsync (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string ifNoneMatch = null);
 
         /// <summary>
         /// Get order details
@@ -267,8 +274,9 @@ namespace IO.Swagger.Api
         /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The order BeezUP identifier</param>
+        /// <param name="ifNoneMatch">ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of ApiResponse (Order)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Order>> GetOrderAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId);
+        System.Threading.Tasks.Task<ApiResponse<Order>> GetOrderAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string ifNoneMatch = null);
         /// <summary>
         /// Get the harvest history and the change status operations
         /// </summary>
@@ -468,12 +476,12 @@ namespace IO.Swagger.Api
         /// <param name="changeOrderType">The order change type</param>
         /// <param name="userName">Sometimes the user in the e-commerce application is not the same than the subscription key you indicate in your settings. We recommand you to indicate the login of the user in your appplication.</param>
         /// <param name="request"></param>
+        /// <param name="ifMatch">To ensure that you are making a change on the lastest version of the order. ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
         /// <param name="testMode">If true, the operation will be be commited. But the validation will be taken in account. (optional, default to false)</param>
-        /// <returns>ChangeOrderResponse</returns>
-        public ChangeOrderResponse ChangeOrder (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, bool? testMode = null)
+        /// <returns></returns>
+        public void ChangeOrder (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null)
         {
-             ApiResponse<ChangeOrderResponse> localVarResponse = ChangeOrderWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId, changeOrderType, userName, request, testMode);
-             return localVarResponse.Data;
+             ChangeOrderWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId, changeOrderType, userName, request, ifMatch, testMode);
         }
 
         /// <summary>
@@ -486,9 +494,10 @@ namespace IO.Swagger.Api
         /// <param name="changeOrderType">The order change type</param>
         /// <param name="userName">Sometimes the user in the e-commerce application is not the same than the subscription key you indicate in your settings. We recommand you to indicate the login of the user in your appplication.</param>
         /// <param name="request"></param>
+        /// <param name="ifMatch">To ensure that you are making a change on the lastest version of the order. ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
         /// <param name="testMode">If true, the operation will be be commited. But the validation will be taken in account. (optional, default to false)</param>
-        /// <returns>ApiResponse of ChangeOrderResponse</returns>
-        public ApiResponse< ChangeOrderResponse > ChangeOrderWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, bool? testMode = null)
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> ChangeOrderWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null)
         {
             // verify the required parameter 'marketplaceTechnicalCode' is set
             if (marketplaceTechnicalCode == null)
@@ -508,6 +517,9 @@ namespace IO.Swagger.Api
             // verify the required parameter 'request' is set
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling OneOrderApi->ChangeOrder");
+            // verify the required parameter 'ifMatch' is set
+            if (ifMatch == null)
+                throw new ApiException(400, "Missing required parameter 'ifMatch' when calling OneOrderApi->ChangeOrder");
 
             var localVarPath = "/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/{changeOrderType}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -540,6 +552,7 @@ namespace IO.Swagger.Api
             if (changeOrderType != null) localVarPathParams.Add("changeOrderType", Configuration.ApiClient.ParameterToString(changeOrderType)); // path parameter
             if (userName != null) localVarQueryParams.Add("userName", Configuration.ApiClient.ParameterToString(userName)); // query parameter
             if (testMode != null) localVarQueryParams.Add("testMode", Configuration.ApiClient.ParameterToString(testMode)); // query parameter
+            if (ifMatch != null) localVarHeaderParams.Add("If-Match", Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
             if (request != null && request.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
@@ -569,10 +582,10 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ChangeOrderResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ChangeOrderResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChangeOrderResponse)));
             
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
         }
 
         /// <summary>
@@ -585,12 +598,12 @@ namespace IO.Swagger.Api
         /// <param name="changeOrderType">The order change type</param>
         /// <param name="userName">Sometimes the user in the e-commerce application is not the same than the subscription key you indicate in your settings. We recommand you to indicate the login of the user in your appplication.</param>
         /// <param name="request"></param>
+        /// <param name="ifMatch">To ensure that you are making a change on the lastest version of the order. ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
         /// <param name="testMode">If true, the operation will be be commited. But the validation will be taken in account. (optional, default to false)</param>
-        /// <returns>Task of ChangeOrderResponse</returns>
-        public async System.Threading.Tasks.Task<ChangeOrderResponse> ChangeOrderAsync (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, bool? testMode = null)
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ChangeOrderAsync (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null)
         {
-             ApiResponse<ChangeOrderResponse> localVarResponse = await ChangeOrderAsyncWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId, changeOrderType, userName, request, testMode);
-             return localVarResponse.Data;
+             await ChangeOrderAsyncWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId, changeOrderType, userName, request, ifMatch, testMode);
 
         }
 
@@ -604,9 +617,10 @@ namespace IO.Swagger.Api
         /// <param name="changeOrderType">The order change type</param>
         /// <param name="userName">Sometimes the user in the e-commerce application is not the same than the subscription key you indicate in your settings. We recommand you to indicate the login of the user in your appplication.</param>
         /// <param name="request"></param>
+        /// <param name="ifMatch">To ensure that you are making a change on the lastest version of the order. ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
         /// <param name="testMode">If true, the operation will be be commited. But the validation will be taken in account. (optional, default to false)</param>
-        /// <returns>Task of ApiResponse (ChangeOrderResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ChangeOrderResponse>> ChangeOrderAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, bool? testMode = null)
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> ChangeOrderAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null)
         {
             // verify the required parameter 'marketplaceTechnicalCode' is set
             if (marketplaceTechnicalCode == null)
@@ -626,6 +640,9 @@ namespace IO.Swagger.Api
             // verify the required parameter 'request' is set
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling OneOrderApi->ChangeOrder");
+            // verify the required parameter 'ifMatch' is set
+            if (ifMatch == null)
+                throw new ApiException(400, "Missing required parameter 'ifMatch' when calling OneOrderApi->ChangeOrder");
 
             var localVarPath = "/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/{changeOrderType}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -658,6 +675,7 @@ namespace IO.Swagger.Api
             if (changeOrderType != null) localVarPathParams.Add("changeOrderType", Configuration.ApiClient.ParameterToString(changeOrderType)); // path parameter
             if (userName != null) localVarQueryParams.Add("userName", Configuration.ApiClient.ParameterToString(userName)); // query parameter
             if (testMode != null) localVarQueryParams.Add("testMode", Configuration.ApiClient.ParameterToString(testMode)); // query parameter
+            if (ifMatch != null) localVarHeaderParams.Add("If-Match", Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
             if (request != null && request.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
@@ -686,10 +704,10 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ChangeOrderResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ChangeOrderResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChangeOrderResponse)));
             
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
         }
 
         /// <summary>
@@ -875,10 +893,11 @@ namespace IO.Swagger.Api
         /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The order BeezUP identifier</param>
+        /// <param name="ifNoneMatch">ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Order</returns>
-        public Order GetOrder (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId)
+        public Order GetOrder (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string ifNoneMatch = null)
         {
-             ApiResponse<Order> localVarResponse = GetOrderWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId);
+             ApiResponse<Order> localVarResponse = GetOrderWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
              return localVarResponse.Data;
         }
 
@@ -889,8 +908,9 @@ namespace IO.Swagger.Api
         /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The order BeezUP identifier</param>
+        /// <param name="ifNoneMatch">ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>ApiResponse of Order</returns>
-        public ApiResponse< Order > GetOrderWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId)
+        public ApiResponse< Order > GetOrderWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string ifNoneMatch = null)
         {
             // verify the required parameter 'marketplaceTechnicalCode' is set
             if (marketplaceTechnicalCode == null)
@@ -930,6 +950,7 @@ namespace IO.Swagger.Api
             if (marketplaceTechnicalCode != null) localVarPathParams.Add("marketplaceTechnicalCode", Configuration.ApiClient.ParameterToString(marketplaceTechnicalCode)); // path parameter
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
             if (beezUPOrderId != null) localVarPathParams.Add("beezUPOrderId", Configuration.ApiClient.ParameterToString(beezUPOrderId)); // path parameter
+            if (ifNoneMatch != null) localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
 
             // authentication (api_key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
@@ -964,10 +985,11 @@ namespace IO.Swagger.Api
         /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The order BeezUP identifier</param>
+        /// <param name="ifNoneMatch">ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of Order</returns>
-        public async System.Threading.Tasks.Task<Order> GetOrderAsync (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId)
+        public async System.Threading.Tasks.Task<Order> GetOrderAsync (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string ifNoneMatch = null)
         {
-             ApiResponse<Order> localVarResponse = await GetOrderAsyncWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId);
+             ApiResponse<Order> localVarResponse = await GetOrderAsyncWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
              return localVarResponse.Data;
 
         }
@@ -979,8 +1001,9 @@ namespace IO.Swagger.Api
         /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The order BeezUP identifier</param>
+        /// <param name="ifNoneMatch">ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of ApiResponse (Order)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Order>> GetOrderAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId)
+        public async System.Threading.Tasks.Task<ApiResponse<Order>> GetOrderAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string ifNoneMatch = null)
         {
             // verify the required parameter 'marketplaceTechnicalCode' is set
             if (marketplaceTechnicalCode == null)
@@ -1020,6 +1043,7 @@ namespace IO.Swagger.Api
             if (marketplaceTechnicalCode != null) localVarPathParams.Add("marketplaceTechnicalCode", Configuration.ApiClient.ParameterToString(marketplaceTechnicalCode)); // path parameter
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
             if (beezUPOrderId != null) localVarPathParams.Add("beezUPOrderId", Configuration.ApiClient.ParameterToString(beezUPOrderId)); // path parameter
+            if (ifNoneMatch != null) localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
 
             // authentication (api_key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))

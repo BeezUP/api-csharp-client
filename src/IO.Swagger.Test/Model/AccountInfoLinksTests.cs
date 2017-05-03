@@ -65,12 +65,52 @@ namespace IO.Swagger.Test
         }
 
         /// <summary>
-        /// Test the property 'Tbd'
+        /// Test the property 'SavePersonalInfo'
         /// </summary>
         [Test]
-        public void TbdTest()
+        public void SavePersonalInfoTest()
         {
-            // TODO unit test for the property 'Tbd'
+            // TODO unit test for the property 'SavePersonalInfo'
+        }
+        /// <summary>
+        /// Test the property 'ChangePassword'
+        /// </summary>
+        [Test]
+        public void ChangePasswordTest()
+        {
+            // TODO unit test for the property 'ChangePassword'
+        }
+        /// <summary>
+        /// Test the property 'SaveCompanyInfo'
+        /// </summary>
+        [Test]
+        public void SaveCompanyInfoTest()
+        {
+            // TODO unit test for the property 'SaveCompanyInfo'
+        }
+        /// <summary>
+        /// Test the property 'SaveProfilePictureInfo'
+        /// </summary>
+        [Test]
+        public void SaveProfilePictureInfoTest()
+        {
+            // TODO unit test for the property 'SaveProfilePictureInfo'
+        }
+        /// <summary>
+        /// Test the property 'GetCreditCardInfo'
+        /// </summary>
+        [Test]
+        public void GetCreditCardInfoTest()
+        {
+            // TODO unit test for the property 'GetCreditCardInfo'
+        }
+        /// <summary>
+        /// Test the property 'SaveUserCreditCardLink'
+        /// </summary>
+        [Test]
+        public void SaveUserCreditCardLinkTest()
+        {
+            // TODO unit test for the property 'SaveUserCreditCardLink'
         }
 
     }

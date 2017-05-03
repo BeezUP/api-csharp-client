@@ -32,17 +32,52 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountInfoLinks" /> class.
         /// </summary>
-        /// <param name="Tbd">Tbd.</param>
-        public AccountInfoLinks(BeezUPCommonLink3 Tbd = default(BeezUPCommonLink3))
+        /// <param name="SavePersonalInfo">SavePersonalInfo.</param>
+        /// <param name="ChangePassword">ChangePassword.</param>
+        /// <param name="SaveCompanyInfo">SaveCompanyInfo.</param>
+        /// <param name="SaveProfilePictureInfo">SaveProfilePictureInfo.</param>
+        /// <param name="GetCreditCardInfo">GetCreditCardInfo.</param>
+        /// <param name="SaveUserCreditCardLink">SaveUserCreditCardLink.</param>
+        public AccountInfoLinks(LinksSavePersonalInfoLink SavePersonalInfo = default(LinksSavePersonalInfoLink), LinksChangePasswordLink ChangePassword = default(LinksChangePasswordLink), LinksSaveCompanyInfoLink SaveCompanyInfo = default(LinksSaveCompanyInfoLink), LinksSaveProfilePictureInfoLink SaveProfilePictureInfo = default(LinksSaveProfilePictureInfoLink), LinksGetCreditCardInfoLink GetCreditCardInfo = default(LinksGetCreditCardInfoLink), LinksSaveCreditCardInfoLink SaveUserCreditCardLink = default(LinksSaveCreditCardInfoLink))
         {
-            this.Tbd = Tbd;
+            this.SavePersonalInfo = SavePersonalInfo;
+            this.ChangePassword = ChangePassword;
+            this.SaveCompanyInfo = SaveCompanyInfo;
+            this.SaveProfilePictureInfo = SaveProfilePictureInfo;
+            this.GetCreditCardInfo = GetCreditCardInfo;
+            this.SaveUserCreditCardLink = SaveUserCreditCardLink;
         }
         
         /// <summary>
-        /// Gets or Sets Tbd
+        /// Gets or Sets SavePersonalInfo
         /// </summary>
-        [DataMember(Name="tbd", EmitDefaultValue=false)]
-        public BeezUPCommonLink3 Tbd { get; set; }
+        [DataMember(Name="savePersonalInfo", EmitDefaultValue=false)]
+        public LinksSavePersonalInfoLink SavePersonalInfo { get; set; }
+        /// <summary>
+        /// Gets or Sets ChangePassword
+        /// </summary>
+        [DataMember(Name="changePassword", EmitDefaultValue=false)]
+        public LinksChangePasswordLink ChangePassword { get; set; }
+        /// <summary>
+        /// Gets or Sets SaveCompanyInfo
+        /// </summary>
+        [DataMember(Name="saveCompanyInfo", EmitDefaultValue=false)]
+        public LinksSaveCompanyInfoLink SaveCompanyInfo { get; set; }
+        /// <summary>
+        /// Gets or Sets SaveProfilePictureInfo
+        /// </summary>
+        [DataMember(Name="saveProfilePictureInfo", EmitDefaultValue=false)]
+        public LinksSaveProfilePictureInfoLink SaveProfilePictureInfo { get; set; }
+        /// <summary>
+        /// Gets or Sets GetCreditCardInfo
+        /// </summary>
+        [DataMember(Name="getCreditCardInfo", EmitDefaultValue=false)]
+        public LinksGetCreditCardInfoLink GetCreditCardInfo { get; set; }
+        /// <summary>
+        /// Gets or Sets SaveUserCreditCardLink
+        /// </summary>
+        [DataMember(Name="saveUserCreditCardLink", EmitDefaultValue=false)]
+        public LinksSaveCreditCardInfoLink SaveUserCreditCardLink { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -51,7 +86,12 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class AccountInfoLinks {\n");
-            sb.Append("  Tbd: ").Append(Tbd).Append("\n");
+            sb.Append("  SavePersonalInfo: ").Append(SavePersonalInfo).Append("\n");
+            sb.Append("  ChangePassword: ").Append(ChangePassword).Append("\n");
+            sb.Append("  SaveCompanyInfo: ").Append(SaveCompanyInfo).Append("\n");
+            sb.Append("  SaveProfilePictureInfo: ").Append(SaveProfilePictureInfo).Append("\n");
+            sb.Append("  GetCreditCardInfo: ").Append(GetCreditCardInfo).Append("\n");
+            sb.Append("  SaveUserCreditCardLink: ").Append(SaveUserCreditCardLink).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -89,9 +129,34 @@ namespace IO.Swagger.Model
 
             return 
                 (
-                    this.Tbd == other.Tbd ||
-                    this.Tbd != null &&
-                    this.Tbd.Equals(other.Tbd)
+                    this.SavePersonalInfo == other.SavePersonalInfo ||
+                    this.SavePersonalInfo != null &&
+                    this.SavePersonalInfo.Equals(other.SavePersonalInfo)
+                ) && 
+                (
+                    this.ChangePassword == other.ChangePassword ||
+                    this.ChangePassword != null &&
+                    this.ChangePassword.Equals(other.ChangePassword)
+                ) && 
+                (
+                    this.SaveCompanyInfo == other.SaveCompanyInfo ||
+                    this.SaveCompanyInfo != null &&
+                    this.SaveCompanyInfo.Equals(other.SaveCompanyInfo)
+                ) && 
+                (
+                    this.SaveProfilePictureInfo == other.SaveProfilePictureInfo ||
+                    this.SaveProfilePictureInfo != null &&
+                    this.SaveProfilePictureInfo.Equals(other.SaveProfilePictureInfo)
+                ) && 
+                (
+                    this.GetCreditCardInfo == other.GetCreditCardInfo ||
+                    this.GetCreditCardInfo != null &&
+                    this.GetCreditCardInfo.Equals(other.GetCreditCardInfo)
+                ) && 
+                (
+                    this.SaveUserCreditCardLink == other.SaveUserCreditCardLink ||
+                    this.SaveUserCreditCardLink != null &&
+                    this.SaveUserCreditCardLink.Equals(other.SaveUserCreditCardLink)
                 );
         }
 
@@ -106,8 +171,18 @@ namespace IO.Swagger.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Tbd != null)
-                    hash = hash * 59 + this.Tbd.GetHashCode();
+                if (this.SavePersonalInfo != null)
+                    hash = hash * 59 + this.SavePersonalInfo.GetHashCode();
+                if (this.ChangePassword != null)
+                    hash = hash * 59 + this.ChangePassword.GetHashCode();
+                if (this.SaveCompanyInfo != null)
+                    hash = hash * 59 + this.SaveCompanyInfo.GetHashCode();
+                if (this.SaveProfilePictureInfo != null)
+                    hash = hash * 59 + this.SaveProfilePictureInfo.GetHashCode();
+                if (this.GetCreditCardInfo != null)
+                    hash = hash * 59 + this.GetCreditCardInfo.GetHashCode();
+                if (this.SaveUserCreditCardLink != null)
+                    hash = hash * 59 + this.SaveUserCreditCardLink.GetHashCode();
                 return hash;
             }
         }

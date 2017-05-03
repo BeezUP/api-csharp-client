@@ -35,8 +35,8 @@ namespace IO.Swagger.Api
         /// <param name="userName">Sometimes the user in the e-commerce application is not the same than the subscription key you indicate in your settings. We recommand you to indicate the login of the user in your appplication.</param>
         /// <param name="request"></param>
         /// <param name="testMode">If true, the operation will be be commited. But the validation will be taken in account. (optional, default to false)</param>
-        /// <returns></returns>
-        void ChangeOrderList (string changeOrderType, string userName, ChangeOrderListRequest request, bool? testMode = null);
+        /// <returns>BatchOrderOperationResponse</returns>
+        BatchOrderOperationResponse ChangeOrderList (string changeOrderType, string userName, ChangeOrderListRequest request, bool? testMode = null);
 
         /// <summary>
         /// Batches the change order operation.
@@ -49,8 +49,8 @@ namespace IO.Swagger.Api
         /// <param name="userName">Sometimes the user in the e-commerce application is not the same than the subscription key you indicate in your settings. We recommand you to indicate the login of the user in your appplication.</param>
         /// <param name="request"></param>
         /// <param name="testMode">If true, the operation will be be commited. But the validation will be taken in account. (optional, default to false)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ChangeOrderListWithHttpInfo (string changeOrderType, string userName, ChangeOrderListRequest request, bool? testMode = null);
+        /// <returns>ApiResponse of BatchOrderOperationResponse</returns>
+        ApiResponse<BatchOrderOperationResponse> ChangeOrderListWithHttpInfo (string changeOrderType, string userName, ChangeOrderListRequest request, bool? testMode = null);
         /// <summary>
         /// Batches the clear merchant order info operation.
         /// </summary>
@@ -59,8 +59,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
-        /// <returns></returns>
-        void ClearMerchantOrderInfoList (ClearMerchantOrderInfoListRequest request);
+        /// <returns>BatchOrderOperationResponse</returns>
+        BatchOrderOperationResponse ClearMerchantOrderInfoList (ClearMerchantOrderInfoListRequest request);
 
         /// <summary>
         /// Batches the clear merchant order info operation.
@@ -70,8 +70,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ClearMerchantOrderInfoListWithHttpInfo (ClearMerchantOrderInfoListRequest request);
+        /// <returns>ApiResponse of BatchOrderOperationResponse</returns>
+        ApiResponse<BatchOrderOperationResponse> ClearMerchantOrderInfoListWithHttpInfo (ClearMerchantOrderInfoListRequest request);
         /// <summary>
         /// Batches the set merchant order info operation.
         /// </summary>
@@ -80,8 +80,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
-        /// <returns></returns>
-        void SetMerchantOrderInfoList (SetMerchantOrderInfoListRequest request);
+        /// <returns>BatchOrderOperationResponse</returns>
+        BatchOrderOperationResponse SetMerchantOrderInfoList (SetMerchantOrderInfoListRequest request);
 
         /// <summary>
         /// Batches the set merchant order info operation.
@@ -91,8 +91,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> SetMerchantOrderInfoListWithHttpInfo (SetMerchantOrderInfoListRequest request);
+        /// <returns>ApiResponse of BatchOrderOperationResponse</returns>
+        ApiResponse<BatchOrderOperationResponse> SetMerchantOrderInfoListWithHttpInfo (SetMerchantOrderInfoListRequest request);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -106,8 +106,8 @@ namespace IO.Swagger.Api
         /// <param name="userName">Sometimes the user in the e-commerce application is not the same than the subscription key you indicate in your settings. We recommand you to indicate the login of the user in your appplication.</param>
         /// <param name="request"></param>
         /// <param name="testMode">If true, the operation will be be commited. But the validation will be taken in account. (optional, default to false)</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ChangeOrderListAsync (string changeOrderType, string userName, ChangeOrderListRequest request, bool? testMode = null);
+        /// <returns>Task of BatchOrderOperationResponse</returns>
+        System.Threading.Tasks.Task<BatchOrderOperationResponse> ChangeOrderListAsync (string changeOrderType, string userName, ChangeOrderListRequest request, bool? testMode = null);
 
         /// <summary>
         /// Batches the change order operation.
@@ -120,8 +120,8 @@ namespace IO.Swagger.Api
         /// <param name="userName">Sometimes the user in the e-commerce application is not the same than the subscription key you indicate in your settings. We recommand you to indicate the login of the user in your appplication.</param>
         /// <param name="request"></param>
         /// <param name="testMode">If true, the operation will be be commited. But the validation will be taken in account. (optional, default to false)</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ChangeOrderListAsyncWithHttpInfo (string changeOrderType, string userName, ChangeOrderListRequest request, bool? testMode = null);
+        /// <returns>Task of ApiResponse (BatchOrderOperationResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BatchOrderOperationResponse>> ChangeOrderListAsyncWithHttpInfo (string changeOrderType, string userName, ChangeOrderListRequest request, bool? testMode = null);
         /// <summary>
         /// Batches the clear merchant order info operation.
         /// </summary>
@@ -130,8 +130,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ClearMerchantOrderInfoListAsync (ClearMerchantOrderInfoListRequest request);
+        /// <returns>Task of BatchOrderOperationResponse</returns>
+        System.Threading.Tasks.Task<BatchOrderOperationResponse> ClearMerchantOrderInfoListAsync (ClearMerchantOrderInfoListRequest request);
 
         /// <summary>
         /// Batches the clear merchant order info operation.
@@ -141,8 +141,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ClearMerchantOrderInfoListAsyncWithHttpInfo (ClearMerchantOrderInfoListRequest request);
+        /// <returns>Task of ApiResponse (BatchOrderOperationResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BatchOrderOperationResponse>> ClearMerchantOrderInfoListAsyncWithHttpInfo (ClearMerchantOrderInfoListRequest request);
         /// <summary>
         /// Batches the set merchant order info operation.
         /// </summary>
@@ -151,8 +151,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task SetMerchantOrderInfoListAsync (SetMerchantOrderInfoListRequest request);
+        /// <returns>Task of BatchOrderOperationResponse</returns>
+        System.Threading.Tasks.Task<BatchOrderOperationResponse> SetMerchantOrderInfoListAsync (SetMerchantOrderInfoListRequest request);
 
         /// <summary>
         /// Batches the set merchant order info operation.
@@ -162,8 +162,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SetMerchantOrderInfoListAsyncWithHttpInfo (SetMerchantOrderInfoListRequest request);
+        /// <returns>Task of ApiResponse (BatchOrderOperationResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BatchOrderOperationResponse>> SetMerchantOrderInfoListAsyncWithHttpInfo (SetMerchantOrderInfoListRequest request);
         #endregion Asynchronous Operations
     }
 
@@ -284,10 +284,11 @@ namespace IO.Swagger.Api
         /// <param name="userName">Sometimes the user in the e-commerce application is not the same than the subscription key you indicate in your settings. We recommand you to indicate the login of the user in your appplication.</param>
         /// <param name="request"></param>
         /// <param name="testMode">If true, the operation will be be commited. But the validation will be taken in account. (optional, default to false)</param>
-        /// <returns></returns>
-        public void ChangeOrderList (string changeOrderType, string userName, ChangeOrderListRequest request, bool? testMode = null)
+        /// <returns>BatchOrderOperationResponse</returns>
+        public BatchOrderOperationResponse ChangeOrderList (string changeOrderType, string userName, ChangeOrderListRequest request, bool? testMode = null)
         {
-             ChangeOrderListWithHttpInfo(changeOrderType, userName, request, testMode);
+             ApiResponse<BatchOrderOperationResponse> localVarResponse = ChangeOrderListWithHttpInfo(changeOrderType, userName, request, testMode);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -298,8 +299,8 @@ namespace IO.Swagger.Api
         /// <param name="userName">Sometimes the user in the e-commerce application is not the same than the subscription key you indicate in your settings. We recommand you to indicate the login of the user in your appplication.</param>
         /// <param name="request"></param>
         /// <param name="testMode">If true, the operation will be be commited. But the validation will be taken in account. (optional, default to false)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> ChangeOrderListWithHttpInfo (string changeOrderType, string userName, ChangeOrderListRequest request, bool? testMode = null)
+        /// <returns>ApiResponse of BatchOrderOperationResponse</returns>
+        public ApiResponse< BatchOrderOperationResponse > ChangeOrderListWithHttpInfo (string changeOrderType, string userName, ChangeOrderListRequest request, bool? testMode = null)
         {
             // verify the required parameter 'changeOrderType' is set
             if (changeOrderType == null)
@@ -368,10 +369,10 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<BatchOrderOperationResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+                (BatchOrderOperationResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchOrderOperationResponse)));
+            
         }
 
         /// <summary>
@@ -382,10 +383,11 @@ namespace IO.Swagger.Api
         /// <param name="userName">Sometimes the user in the e-commerce application is not the same than the subscription key you indicate in your settings. We recommand you to indicate the login of the user in your appplication.</param>
         /// <param name="request"></param>
         /// <param name="testMode">If true, the operation will be be commited. But the validation will be taken in account. (optional, default to false)</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ChangeOrderListAsync (string changeOrderType, string userName, ChangeOrderListRequest request, bool? testMode = null)
+        /// <returns>Task of BatchOrderOperationResponse</returns>
+        public async System.Threading.Tasks.Task<BatchOrderOperationResponse> ChangeOrderListAsync (string changeOrderType, string userName, ChangeOrderListRequest request, bool? testMode = null)
         {
-             await ChangeOrderListAsyncWithHttpInfo(changeOrderType, userName, request, testMode);
+             ApiResponse<BatchOrderOperationResponse> localVarResponse = await ChangeOrderListAsyncWithHttpInfo(changeOrderType, userName, request, testMode);
+             return localVarResponse.Data;
 
         }
 
@@ -397,8 +399,8 @@ namespace IO.Swagger.Api
         /// <param name="userName">Sometimes the user in the e-commerce application is not the same than the subscription key you indicate in your settings. We recommand you to indicate the login of the user in your appplication.</param>
         /// <param name="request"></param>
         /// <param name="testMode">If true, the operation will be be commited. But the validation will be taken in account. (optional, default to false)</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> ChangeOrderListAsyncWithHttpInfo (string changeOrderType, string userName, ChangeOrderListRequest request, bool? testMode = null)
+        /// <returns>Task of ApiResponse (BatchOrderOperationResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<BatchOrderOperationResponse>> ChangeOrderListAsyncWithHttpInfo (string changeOrderType, string userName, ChangeOrderListRequest request, bool? testMode = null)
         {
             // verify the required parameter 'changeOrderType' is set
             if (changeOrderType == null)
@@ -466,10 +468,10 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<BatchOrderOperationResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+                (BatchOrderOperationResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchOrderOperationResponse)));
+            
         }
 
         /// <summary>
@@ -477,10 +479,11 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
-        /// <returns></returns>
-        public void ClearMerchantOrderInfoList (ClearMerchantOrderInfoListRequest request)
+        /// <returns>BatchOrderOperationResponse</returns>
+        public BatchOrderOperationResponse ClearMerchantOrderInfoList (ClearMerchantOrderInfoListRequest request)
         {
-             ClearMerchantOrderInfoListWithHttpInfo(request);
+             ApiResponse<BatchOrderOperationResponse> localVarResponse = ClearMerchantOrderInfoListWithHttpInfo(request);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -488,8 +491,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> ClearMerchantOrderInfoListWithHttpInfo (ClearMerchantOrderInfoListRequest request)
+        /// <returns>ApiResponse of BatchOrderOperationResponse</returns>
+        public ApiResponse< BatchOrderOperationResponse > ClearMerchantOrderInfoListWithHttpInfo (ClearMerchantOrderInfoListRequest request)
         {
             // verify the required parameter 'request' is set
             if (request == null)
@@ -549,10 +552,10 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<BatchOrderOperationResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+                (BatchOrderOperationResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchOrderOperationResponse)));
+            
         }
 
         /// <summary>
@@ -560,10 +563,11 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ClearMerchantOrderInfoListAsync (ClearMerchantOrderInfoListRequest request)
+        /// <returns>Task of BatchOrderOperationResponse</returns>
+        public async System.Threading.Tasks.Task<BatchOrderOperationResponse> ClearMerchantOrderInfoListAsync (ClearMerchantOrderInfoListRequest request)
         {
-             await ClearMerchantOrderInfoListAsyncWithHttpInfo(request);
+             ApiResponse<BatchOrderOperationResponse> localVarResponse = await ClearMerchantOrderInfoListAsyncWithHttpInfo(request);
+             return localVarResponse.Data;
 
         }
 
@@ -572,8 +576,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> ClearMerchantOrderInfoListAsyncWithHttpInfo (ClearMerchantOrderInfoListRequest request)
+        /// <returns>Task of ApiResponse (BatchOrderOperationResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<BatchOrderOperationResponse>> ClearMerchantOrderInfoListAsyncWithHttpInfo (ClearMerchantOrderInfoListRequest request)
         {
             // verify the required parameter 'request' is set
             if (request == null)
@@ -632,10 +636,10 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<BatchOrderOperationResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+                (BatchOrderOperationResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchOrderOperationResponse)));
+            
         }
 
         /// <summary>
@@ -643,10 +647,11 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
-        /// <returns></returns>
-        public void SetMerchantOrderInfoList (SetMerchantOrderInfoListRequest request)
+        /// <returns>BatchOrderOperationResponse</returns>
+        public BatchOrderOperationResponse SetMerchantOrderInfoList (SetMerchantOrderInfoListRequest request)
         {
-             SetMerchantOrderInfoListWithHttpInfo(request);
+             ApiResponse<BatchOrderOperationResponse> localVarResponse = SetMerchantOrderInfoListWithHttpInfo(request);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -654,8 +659,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> SetMerchantOrderInfoListWithHttpInfo (SetMerchantOrderInfoListRequest request)
+        /// <returns>ApiResponse of BatchOrderOperationResponse</returns>
+        public ApiResponse< BatchOrderOperationResponse > SetMerchantOrderInfoListWithHttpInfo (SetMerchantOrderInfoListRequest request)
         {
             // verify the required parameter 'request' is set
             if (request == null)
@@ -715,10 +720,10 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<BatchOrderOperationResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+                (BatchOrderOperationResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchOrderOperationResponse)));
+            
         }
 
         /// <summary>
@@ -726,10 +731,11 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task SetMerchantOrderInfoListAsync (SetMerchantOrderInfoListRequest request)
+        /// <returns>Task of BatchOrderOperationResponse</returns>
+        public async System.Threading.Tasks.Task<BatchOrderOperationResponse> SetMerchantOrderInfoListAsync (SetMerchantOrderInfoListRequest request)
         {
-             await SetMerchantOrderInfoListAsyncWithHttpInfo(request);
+             ApiResponse<BatchOrderOperationResponse> localVarResponse = await SetMerchantOrderInfoListAsyncWithHttpInfo(request);
+             return localVarResponse.Data;
 
         }
 
@@ -738,8 +744,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> SetMerchantOrderInfoListAsyncWithHttpInfo (SetMerchantOrderInfoListRequest request)
+        /// <returns>Task of ApiResponse (BatchOrderOperationResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<BatchOrderOperationResponse>> SetMerchantOrderInfoListAsyncWithHttpInfo (SetMerchantOrderInfoListRequest request)
         {
             // verify the required parameter 'request' is set
             if (request == null)
@@ -798,10 +804,10 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<BatchOrderOperationResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+                (BatchOrderOperationResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchOrderOperationResponse)));
+            
         }
 
     }

@@ -99,36 +99,14 @@ namespace IO.Swagger.Test
         }
         
         /// <summary>
-        /// Test GetContractsLinks
+        /// Test GetContracts
         /// </summary>
         [Test]
-        public void GetContractsLinksTest()
+        public void GetContractsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.GetContractsLinks();
-            //Assert.IsInstanceOf<List<BeezUPCommonLink2>> (response, "response is List<BeezUPCommonLink2>");
-        }
-        
-        /// <summary>
-        /// Test GetCurrentContract
-        /// </summary>
-        [Test]
-        public void GetCurrentContractTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.GetCurrentContract();
-            //Assert.IsInstanceOf<ContractInfo> (response, "response is ContractInfo");
-        }
-        
-        /// <summary>
-        /// Test GetNextContract
-        /// </summary>
-        [Test]
-        public void GetNextContractTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.GetNextContract();
-            //Assert.IsInstanceOf<ContractInfo> (response, "response is ContractInfo");
+            //var response = instance.GetContracts();
+            //Assert.IsInstanceOf<Contracts> (response, "response is Contracts");
         }
         
         /// <summary>

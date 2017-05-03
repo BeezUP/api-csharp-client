@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **OrderTotalPrice** | **decimal?** | The total price of this order (corresponding to the amount paid by the customer) | [optional] 
 **OrderCurrencyCode** | [**BeezUPCommonCurrencyCode**](BeezUPCommonCurrencyCode.md) |  | [optional] 
 **Processing** | [**Processing**](Processing.md) |  | 
-**ETag** | **string** | ETag value to identify the order. For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | 
+**Etag** | [**Etag**](Etag.md) |  | 
 **Links** | [**List&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

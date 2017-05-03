@@ -84,62 +84,24 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of BillingPeriods</returns>
         ApiResponse<BillingPeriods> GetBillingPeriodsWithHttpInfo ();
         /// <summary>
-        /// Get contracts links
+        /// Get contract list
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;BeezUPCommonLink2&gt;</returns>
-        List<BeezUPCommonLink2> GetContractsLinks ();
+        /// <returns>Contracts</returns>
+        Contracts GetContracts ();
 
         /// <summary>
-        /// Get contracts links
+        /// Get contract list
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;BeezUPCommonLink2&gt;</returns>
-        ApiResponse<List<BeezUPCommonLink2>> GetContractsLinksWithHttpInfo ();
-        /// <summary>
-        /// Get the conditions of your current contract
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ContractInfo</returns>
-        ContractInfo GetCurrentContract ();
-
-        /// <summary>
-        /// Get the conditions of your current contract
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of ContractInfo</returns>
-        ApiResponse<ContractInfo> GetCurrentContractWithHttpInfo ();
-        /// <summary>
-        /// Get the conditions of your next contract
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ContractInfo</returns>
-        ContractInfo GetNextContract ();
-
-        /// <summary>
-        /// Get the conditions of your next contract
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of ContractInfo</returns>
-        ApiResponse<ContractInfo> GetNextContractWithHttpInfo ();
+        /// <returns>ApiResponse of Contracts</returns>
+        ApiResponse<Contracts> GetContractsWithHttpInfo ();
         /// <summary>
         /// Get offer pricing
         /// </summary>
@@ -282,62 +244,24 @@ namespace IO.Swagger.Api
         /// <returns>Task of ApiResponse (BillingPeriods)</returns>
         System.Threading.Tasks.Task<ApiResponse<BillingPeriods>> GetBillingPeriodsAsyncWithHttpInfo ();
         /// <summary>
-        /// Get contracts links
+        /// Get contract list
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;BeezUPCommonLink2&gt;</returns>
-        System.Threading.Tasks.Task<List<BeezUPCommonLink2>> GetContractsLinksAsync ();
+        /// <returns>Task of Contracts</returns>
+        System.Threading.Tasks.Task<Contracts> GetContractsAsync ();
 
         /// <summary>
-        /// Get contracts links
+        /// Get contract list
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;BeezUPCommonLink2&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BeezUPCommonLink2>>> GetContractsLinksAsyncWithHttpInfo ();
-        /// <summary>
-        /// Get the conditions of your current contract
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ContractInfo</returns>
-        System.Threading.Tasks.Task<ContractInfo> GetCurrentContractAsync ();
-
-        /// <summary>
-        /// Get the conditions of your current contract
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (ContractInfo)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ContractInfo>> GetCurrentContractAsyncWithHttpInfo ();
-        /// <summary>
-        /// Get the conditions of your next contract
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ContractInfo</returns>
-        System.Threading.Tasks.Task<ContractInfo> GetNextContractAsync ();
-
-        /// <summary>
-        /// Get the conditions of your next contract
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (ContractInfo)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ContractInfo>> GetNextContractAsyncWithHttpInfo ();
+        /// <returns>Task of ApiResponse (Contracts)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Contracts>> GetContractsAsyncWithHttpInfo ();
         /// <summary>
         /// Get offer pricing
         /// </summary>
@@ -981,22 +905,22 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get contracts links 
+        /// Get contract list 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;BeezUPCommonLink2&gt;</returns>
-        public List<BeezUPCommonLink2> GetContractsLinks ()
+        /// <returns>Contracts</returns>
+        public Contracts GetContracts ()
         {
-             ApiResponse<List<BeezUPCommonLink2>> localVarResponse = GetContractsLinksWithHttpInfo();
+             ApiResponse<Contracts> localVarResponse = GetContractsWithHttpInfo();
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get contracts links 
+        /// Get contract list 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;BeezUPCommonLink2&gt;</returns>
-        public ApiResponse< List<BeezUPCommonLink2> > GetContractsLinksWithHttpInfo ()
+        /// <returns>ApiResponse of Contracts</returns>
+        public ApiResponse< Contracts > GetContractsWithHttpInfo ()
         {
 
             var localVarPath = "/v2/user/customer/contracts";
@@ -1041,34 +965,34 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetContractsLinks", localVarResponse);
+                Exception exception = ExceptionFactory("GetContracts", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<BeezUPCommonLink2>>(localVarStatusCode,
+            return new ApiResponse<Contracts>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<BeezUPCommonLink2>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BeezUPCommonLink2>)));
+                (Contracts) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Contracts)));
             
         }
 
         /// <summary>
-        /// Get contracts links 
+        /// Get contract list 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;BeezUPCommonLink2&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BeezUPCommonLink2>> GetContractsLinksAsync ()
+        /// <returns>Task of Contracts</returns>
+        public async System.Threading.Tasks.Task<Contracts> GetContractsAsync ()
         {
-             ApiResponse<List<BeezUPCommonLink2>> localVarResponse = await GetContractsLinksAsyncWithHttpInfo();
+             ApiResponse<Contracts> localVarResponse = await GetContractsAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Get contracts links 
+        /// Get contract list 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;BeezUPCommonLink2&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BeezUPCommonLink2>>> GetContractsLinksAsyncWithHttpInfo ()
+        /// <returns>Task of ApiResponse (Contracts)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Contracts>> GetContractsAsyncWithHttpInfo ()
         {
 
             var localVarPath = "/v2/user/customer/contracts";
@@ -1112,297 +1036,13 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetContractsLinks", localVarResponse);
+                Exception exception = ExceptionFactory("GetContracts", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<BeezUPCommonLink2>>(localVarStatusCode,
+            return new ApiResponse<Contracts>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<BeezUPCommonLink2>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BeezUPCommonLink2>)));
-            
-        }
-
-        /// <summary>
-        /// Get the conditions of your current contract 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ContractInfo</returns>
-        public ContractInfo GetCurrentContract ()
-        {
-             ApiResponse<ContractInfo> localVarResponse = GetCurrentContractWithHttpInfo();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get the conditions of your current contract 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of ContractInfo</returns>
-        public ApiResponse< ContractInfo > GetCurrentContractWithHttpInfo ()
-        {
-
-            var localVarPath = "/v2/user/customer/contracts/current";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // authentication (api_key) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
-            {
-                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetCurrentContract", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<ContractInfo>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ContractInfo) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContractInfo)));
-            
-        }
-
-        /// <summary>
-        /// Get the conditions of your current contract 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ContractInfo</returns>
-        public async System.Threading.Tasks.Task<ContractInfo> GetCurrentContractAsync ()
-        {
-             ApiResponse<ContractInfo> localVarResponse = await GetCurrentContractAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get the conditions of your current contract 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (ContractInfo)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ContractInfo>> GetCurrentContractAsyncWithHttpInfo ()
-        {
-
-            var localVarPath = "/v2/user/customer/contracts/current";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // authentication (api_key) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
-            {
-                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetCurrentContract", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<ContractInfo>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ContractInfo) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContractInfo)));
-            
-        }
-
-        /// <summary>
-        /// Get the conditions of your next contract 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ContractInfo</returns>
-        public ContractInfo GetNextContract ()
-        {
-             ApiResponse<ContractInfo> localVarResponse = GetNextContractWithHttpInfo();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get the conditions of your next contract 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of ContractInfo</returns>
-        public ApiResponse< ContractInfo > GetNextContractWithHttpInfo ()
-        {
-
-            var localVarPath = "/v2/user/customer/contracts/next";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // authentication (api_key) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
-            {
-                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetNextContract", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<ContractInfo>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ContractInfo) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContractInfo)));
-            
-        }
-
-        /// <summary>
-        /// Get the conditions of your next contract 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ContractInfo</returns>
-        public async System.Threading.Tasks.Task<ContractInfo> GetNextContractAsync ()
-        {
-             ApiResponse<ContractInfo> localVarResponse = await GetNextContractAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get the conditions of your next contract 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (ContractInfo)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ContractInfo>> GetNextContractAsyncWithHttpInfo ()
-        {
-
-            var localVarPath = "/v2/user/customer/contracts/next";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // authentication (api_key) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
-            {
-                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetNextContract", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<ContractInfo>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ContractInfo) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContractInfo)));
+                (Contracts) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Contracts)));
             
         }
 

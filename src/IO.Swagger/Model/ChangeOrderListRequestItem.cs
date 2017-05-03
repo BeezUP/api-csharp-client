@@ -37,18 +37,18 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ChangeOrderListRequestItem" /> class.
         /// </summary>
-        /// <param name="BeezUPOrderId">BeezUPOrderId (required).</param>
+        /// <param name="Order">Order (required).</param>
         /// <param name="ChangeOrderRequest">ChangeOrderRequest (required).</param>
-        public ChangeOrderListRequestItem(BeezUPOrderId BeezUPOrderId = default(BeezUPOrderId), ChangeOrderRequest ChangeOrderRequest = default(ChangeOrderRequest))
+        public ChangeOrderListRequestItem(OrderIdentifierWithETag Order = default(OrderIdentifierWithETag), ChangeOrderRequest ChangeOrderRequest = default(ChangeOrderRequest))
         {
-            // to ensure "BeezUPOrderId" is required (not null)
-            if (BeezUPOrderId == null)
+            // to ensure "Order" is required (not null)
+            if (Order == null)
             {
-                throw new InvalidDataException("BeezUPOrderId is a required property for ChangeOrderListRequestItem and cannot be null");
+                throw new InvalidDataException("Order is a required property for ChangeOrderListRequestItem and cannot be null");
             }
             else
             {
-                this.BeezUPOrderId = BeezUPOrderId;
+                this.Order = Order;
             }
             // to ensure "ChangeOrderRequest" is required (not null)
             if (ChangeOrderRequest == null)
@@ -62,10 +62,10 @@ namespace IO.Swagger.Model
         }
         
         /// <summary>
-        /// Gets or Sets BeezUPOrderId
+        /// Gets or Sets Order
         /// </summary>
-        [DataMember(Name="beezUPOrderId", EmitDefaultValue=false)]
-        public BeezUPOrderId BeezUPOrderId { get; set; }
+        [DataMember(Name="order", EmitDefaultValue=false)]
+        public OrderIdentifierWithETag Order { get; set; }
         /// <summary>
         /// Gets or Sets ChangeOrderRequest
         /// </summary>
@@ -79,7 +79,7 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ChangeOrderListRequestItem {\n");
-            sb.Append("  BeezUPOrderId: ").Append(BeezUPOrderId).Append("\n");
+            sb.Append("  Order: ").Append(Order).Append("\n");
             sb.Append("  ChangeOrderRequest: ").Append(ChangeOrderRequest).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -118,9 +118,9 @@ namespace IO.Swagger.Model
 
             return 
                 (
-                    this.BeezUPOrderId == other.BeezUPOrderId ||
-                    this.BeezUPOrderId != null &&
-                    this.BeezUPOrderId.Equals(other.BeezUPOrderId)
+                    this.Order == other.Order ||
+                    this.Order != null &&
+                    this.Order.Equals(other.Order)
                 ) && 
                 (
                     this.ChangeOrderRequest == other.ChangeOrderRequest ||
@@ -140,8 +140,8 @@ namespace IO.Swagger.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.BeezUPOrderId != null)
-                    hash = hash * 59 + this.BeezUPOrderId.GetHashCode();
+                if (this.Order != null)
+                    hash = hash * 59 + this.Order.GetHashCode();
                 if (this.ChangeOrderRequest != null)
                     hash = hash * 59 + this.ChangeOrderRequest.GetHashCode();
                 return hash;

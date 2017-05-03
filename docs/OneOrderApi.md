@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="changeorder"></a>
 # **ChangeOrder**
-> ChangeOrderResponse ChangeOrder (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, bool? testMode = null)
+> void ChangeOrder (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null)
 
 Change order status
 
@@ -45,13 +45,13 @@ namespace Example
             var changeOrderType = changeOrderType_example;  // string | The order change type
             var userName = userName_example;  // string | Sometimes the user in the e-commerce application is not the same than the subscription key you indicate in your settings. We recommand you to indicate the login of the user in your appplication.
             var request = new ChangeOrderRequest(); // ChangeOrderRequest | 
+            var ifMatch = ifMatch_example;  // string | To ensure that you are making a change on the lastest version of the order. ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
             var testMode = false;  // bool? | If true, the operation will be be commited. But the validation will be taken in account. (optional)  (default to false)
 
             try
             {
                 // Change order status
-                ChangeOrderResponse result = apiInstance.ChangeOrder(marketplaceTechnicalCode, accountId, beezUPOrderId, changeOrderType, userName, request, testMode);
-                Debug.WriteLine(result);
+                apiInstance.ChangeOrder(marketplaceTechnicalCode, accountId, beezUPOrderId, changeOrderType, userName, request, ifMatch, testMode);
             }
             catch (Exception e)
             {
@@ -72,11 +72,12 @@ Name | Type | Description  | Notes
  **changeOrderType** | **string**| The order change type | 
  **userName** | **string**| Sometimes the user in the e-commerce application is not the same than the subscription key you indicate in your settings. We recommand you to indicate the login of the user in your appplication. | 
  **request** | [**ChangeOrderRequest**](ChangeOrderRequest.md)|  | 
+ **ifMatch** | **string**| To ensure that you are making a change on the lastest version of the order. ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | 
  **testMode** | **bool?**| If true, the operation will be be commited. But the validation will be taken in account. | [optional] [default to false]
 
 ### Return type
 
-[**ChangeOrderResponse**](ChangeOrderResponse.md)
+void (empty response body)
 
 ### Authorization
 
@@ -159,7 +160,7 @@ void (empty response body)
 
 <a name="getorder"></a>
 # **GetOrder**
-> Order GetOrder (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId)
+> Order GetOrder (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string ifNoneMatch = null)
 
 Get order details
 
@@ -187,11 +188,12 @@ namespace Example
             var marketplaceTechnicalCode = Amazon;  // string | The marketplace technical code
             var accountId = 1001;  // int? | The account identifier
             var beezUPOrderId = 00000000000000000000000000000000000000000000000;  // string | The order BeezUP identifier
+            var ifNoneMatch = ifNoneMatch_example;  // string | ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional) 
 
             try
             {
                 // Get order details
-                Order result = apiInstance.GetOrder(marketplaceTechnicalCode, accountId, beezUPOrderId);
+                Order result = apiInstance.GetOrder(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -210,6 +212,7 @@ Name | Type | Description  | Notes
  **marketplaceTechnicalCode** | **string**| The marketplace technical code | 
  **accountId** | **int?**| The account identifier | 
  **beezUPOrderId** | **string**| The order BeezUP identifier | 
+ **ifNoneMatch** | **string**| ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional] 
 
 ### Return type
 

@@ -75,8 +75,8 @@ namespace IO.Swagger.Test
             //string userName = null;
             //ChangeOrderListRequest request = null;
             //bool? testMode = null;
-            //instance.ChangeOrderList(changeOrderType, userName, request, testMode);
-            
+            //var response = instance.ChangeOrderList(changeOrderType, userName, request, testMode);
+            //Assert.IsInstanceOf<BatchOrderOperationResponse> (response, "response is BatchOrderOperationResponse");
         }
         
         /// <summary>
@@ -87,8 +87,8 @@ namespace IO.Swagger.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //ClearMerchantOrderInfoListRequest request = null;
-            //instance.ClearMerchantOrderInfoList(request);
-            
+            //var response = instance.ClearMerchantOrderInfoList(request);
+            //Assert.IsInstanceOf<BatchOrderOperationResponse> (response, "response is BatchOrderOperationResponse");
         }
         
         /// <summary>
@@ -99,8 +99,8 @@ namespace IO.Swagger.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //SetMerchantOrderInfoListRequest request = null;
-            //instance.SetMerchantOrderInfoList(request);
-            
+            //var response = instance.SetMerchantOrderInfoList(request);
+            //Assert.IsInstanceOf<BatchOrderOperationResponse> (response, "response is BatchOrderOperationResponse");
         }
         
     }

@@ -7,9 +7,7 @@ Method | HTTP request | Description
 [**CreateContract**](ContractsApi.md#createcontract) | **POST** /v2/user/customer/contracts | Create a new contract
 [**DeleteNextContract**](ContractsApi.md#deletenextcontract) | **DELETE** /v2/user/customer/contracts/next | Delete your next contract
 [**GetBillingPeriods**](ContractsApi.md#getbillingperiods) | **GET** /v2/user/customer/billingPeriods | Get billing periods conditions
-[**GetContractsLinks**](ContractsApi.md#getcontractslinks) | **GET** /v2/user/customer/contracts | Get contracts links
-[**GetCurrentContract**](ContractsApi.md#getcurrentcontract) | **GET** /v2/user/customer/contracts/current | Get the conditions of your current contract
-[**GetNextContract**](ContractsApi.md#getnextcontract) | **GET** /v2/user/customer/contracts/next | Get the conditions of your next contract
+[**GetContracts**](ContractsApi.md#getcontracts) | **GET** /v2/user/customer/contracts | Get contract list
 [**GetOffer**](ContractsApi.md#getoffer) | **POST** /v2/user/customer/offers | Get offer pricing
 [**GetStandardOffers**](ContractsApi.md#getstandardoffers) | **GET** /v2/user/customer/offers | Get all standard offers
 [**ReactivateCurrentContract**](ContractsApi.md#reactivatecurrentcontract) | **POST** /v2/user/customer/contracts/current/reenableAutoRenewal | Reactivate your terminated contract.
@@ -204,11 +202,11 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getcontractslinks"></a>
-# **GetContractsLinks**
-> List<BeezUPCommonLink2> GetContractsLinks ()
+<a name="getcontracts"></a>
+# **GetContracts**
+> Contracts GetContracts ()
 
-Get contracts links
+Get contract list
 
 ### Example
 ```csharp
@@ -220,7 +218,7 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class GetContractsLinksExample
+    public class GetContractsExample
     {
         public void main()
         {
@@ -234,13 +232,13 @@ namespace Example
 
             try
             {
-                // Get contracts links
-                List&lt;BeezUPCommonLink2&gt; result = apiInstance.GetContractsLinks();
+                // Get contract list
+                Contracts result = apiInstance.GetContracts();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ContractsApi.GetContractsLinks: " + e.Message );
+                Debug.Print("Exception when calling ContractsApi.GetContracts: " + e.Message );
             }
         }
     }
@@ -252,129 +250,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List<BeezUPCommonLink2>**](BeezUPCommonLink2.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="getcurrentcontract"></a>
-# **GetCurrentContract**
-> ContractInfo GetCurrentContract ()
-
-Get the conditions of your current contract
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
-
-namespace Example
-{
-    public class GetCurrentContractExample
-    {
-        public void main()
-        {
-            
-            // Configure API key authorization: api_key
-            Configuration.Default.ApiKey.Add("Ocp-Apim-Subscription-Key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Ocp-Apim-Subscription-Key", "Bearer");
-
-            var apiInstance = new ContractsApi();
-
-            try
-            {
-                // Get the conditions of your current contract
-                ContractInfo result = apiInstance.GetCurrentContract();
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling ContractsApi.GetCurrentContract: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**ContractInfo**](ContractInfo.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="getnextcontract"></a>
-# **GetNextContract**
-> ContractInfo GetNextContract ()
-
-Get the conditions of your next contract
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
-
-namespace Example
-{
-    public class GetNextContractExample
-    {
-        public void main()
-        {
-            
-            // Configure API key authorization: api_key
-            Configuration.Default.ApiKey.Add("Ocp-Apim-Subscription-Key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Ocp-Apim-Subscription-Key", "Bearer");
-
-            var apiInstance = new ContractsApi();
-
-            try
-            {
-                // Get the conditions of your next contract
-                ContractInfo result = apiInstance.GetNextContract();
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling ContractsApi.GetNextContract: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**ContractInfo**](ContractInfo.md)
+[**Contracts**](Contracts.md)
 
 ### Authorization
 
