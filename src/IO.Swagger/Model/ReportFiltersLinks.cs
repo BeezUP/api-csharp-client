@@ -33,9 +33,11 @@ namespace IO.Swagger.Model
         /// Initializes a new instance of the <see cref="ReportFiltersLinks" /> class.
         /// </summary>
         /// <param name="Self">Self.</param>
-        public ReportFiltersLinks(LinksGetReportFiltersLink Self = default(LinksGetReportFiltersLink))
+        /// <param name="Save">Save.</param>
+        public ReportFiltersLinks(LinksGetReportFiltersLink Self = default(LinksGetReportFiltersLink), LinksSaveReportFilterLink Save = default(LinksSaveReportFilterLink))
         {
             this.Self = Self;
+            this.Save = Save;
         }
         
         /// <summary>
@@ -43,6 +45,11 @@ namespace IO.Swagger.Model
         /// </summary>
         [DataMember(Name="self", EmitDefaultValue=false)]
         public LinksGetReportFiltersLink Self { get; set; }
+        /// <summary>
+        /// Gets or Sets Save
+        /// </summary>
+        [DataMember(Name="save", EmitDefaultValue=false)]
+        public LinksSaveReportFilterLink Save { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -52,6 +59,7 @@ namespace IO.Swagger.Model
             var sb = new StringBuilder();
             sb.Append("class ReportFiltersLinks {\n");
             sb.Append("  Self: ").Append(Self).Append("\n");
+            sb.Append("  Save: ").Append(Save).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -92,6 +100,11 @@ namespace IO.Swagger.Model
                     this.Self == other.Self ||
                     this.Self != null &&
                     this.Self.Equals(other.Self)
+                ) && 
+                (
+                    this.Save == other.Save ||
+                    this.Save != null &&
+                    this.Save.Equals(other.Save)
                 );
         }
 
@@ -108,6 +121,8 @@ namespace IO.Swagger.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.Self != null)
                     hash = hash * 59 + this.Self.GetHashCode();
+                if (this.Save != null)
+                    hash = hash * 59 + this.Save.GetHashCode();
                 return hash;
             }
         }

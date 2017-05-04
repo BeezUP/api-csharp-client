@@ -34,7 +34,7 @@ namespace IO.Swagger.Model
         /// </summary>
         /// <param name="_ReportFilters">_ReportFilters.</param>
         /// <param name="Links">Links.</param>
-        public ReportFilters(List<ReportFilterHeader> _ReportFilters = default(List<ReportFilterHeader>), List<BeezUPCommonLink2> Links = default(List<BeezUPCommonLink2>))
+        public ReportFilters(List<ReportFilterHeader> _ReportFilters = default(List<ReportFilterHeader>), ReportFiltersLinks Links = default(ReportFiltersLinks))
         {
             this._ReportFilters = _ReportFilters;
             this.Links = Links;
@@ -49,7 +49,7 @@ namespace IO.Swagger.Model
         /// Gets or Sets Links
         /// </summary>
         [DataMember(Name="links", EmitDefaultValue=false)]
-        public List<BeezUPCommonLink2> Links { get; set; }
+        public ReportFiltersLinks Links { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -104,7 +104,7 @@ namespace IO.Swagger.Model
                 (
                     this.Links == other.Links ||
                     this.Links != null &&
-                    this.Links.SequenceEqual(other.Links)
+                    this.Links.Equals(other.Links)
                 );
         }
 

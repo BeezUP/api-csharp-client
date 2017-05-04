@@ -72,6 +72,14 @@ namespace IO.Swagger.Test
         {
             // TODO unit test for the property 'Self'
         }
+        /// <summary>
+        /// Test the property 'Save'
+        /// </summary>
+        [Test]
+        public void SaveTest()
+        {
+            // TODO unit test for the property 'Save'
+        }
 
     }
 
