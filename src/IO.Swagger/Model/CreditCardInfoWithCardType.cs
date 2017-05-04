@@ -38,7 +38,7 @@ namespace IO.Swagger.Model
         /// Initializes a new instance of the <see cref="CreditCardInfoWithCardType" /> class.
         /// </summary>
         /// <param name="CardNumber">CardNumber (required).</param>
-        /// <param name="CardVerificationCode">CardVerificationCode.</param>
+        /// <param name="CardVerificationCode">CardVerificationCode (required).</param>
         /// <param name="ExpirationMonth">ExpirationMonth (required).</param>
         /// <param name="ExpirationYear">ExpirationYear (required).</param>
         /// <param name="CardType">Your credit card type. Example: VISA, MasterCard, etc... (required).</param>
@@ -52,6 +52,15 @@ namespace IO.Swagger.Model
             else
             {
                 this.CardNumber = CardNumber;
+            }
+            // to ensure "CardVerificationCode" is required (not null)
+            if (CardVerificationCode == null)
+            {
+                throw new InvalidDataException("CardVerificationCode is a required property for CreditCardInfoWithCardType and cannot be null");
+            }
+            else
+            {
+                this.CardVerificationCode = CardVerificationCode;
             }
             // to ensure "ExpirationMonth" is required (not null)
             if (ExpirationMonth == null)
@@ -80,7 +89,6 @@ namespace IO.Swagger.Model
             {
                 this.CardType = CardType;
             }
-            this.CardVerificationCode = CardVerificationCode;
         }
         
         /// <summary>
