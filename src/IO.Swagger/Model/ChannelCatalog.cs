@@ -40,7 +40,7 @@ namespace IO.Swagger.Model
         /// <param name="ChannelId">ChannelId (required).</param>
         /// <param name="ChannelName">ChannelName (required).</param>
         /// <param name="ChannelImageUrl">ChannelImageUrl (required).</param>
-        /// <param name="ProductCount">The product count exported considering category mapping. Not all filters have been applied..</param>
+        /// <param name="ProductCount">The product count exported considering category mapping. Not all filters have been applied. (required).</param>
         /// <param name="Enabled">Indicates if the channel catalog is active (required).</param>
         /// <param name="IsMarketplace">Indicates if this channel catalog is related to a marketplace (required).</param>
         /// <param name="ChannelCatalogId">ChannelCatalogId (required).</param>
@@ -50,9 +50,9 @@ namespace IO.Swagger.Model
         /// <param name="ColumnMappings">ColumnMappings.</param>
         /// <param name="ExclusionFilters">ExclusionFilters.</param>
         /// <param name="ExportUrl">ExportUrl.</param>
-        /// <param name="Status">Status (required).</param>
+        /// <param name="State">State (required).</param>
         /// <param name="Links">Indicates the actions you can do on a channel catalog (required).</param>
-        public ChannelCatalog(BeezUPCommonChannelId ChannelId = default(BeezUPCommonChannelId), BeezUPCommonChannelName ChannelName = default(BeezUPCommonChannelName), BeezUPCommonHttpUrl ChannelImageUrl = default(BeezUPCommonHttpUrl), int? ProductCount = default(int?), bool? Enabled = default(bool?), bool? IsMarketplace = default(bool?), BeezUPCommonChannelCatalogId ChannelCatalogId = default(BeezUPCommonChannelCatalogId), BeezUPCommonStoreId StoreId = default(BeezUPCommonStoreId), GeneralSettings GeneralSettings = default(GeneralSettings), CostSettings CostSettings = default(CostSettings), ColumnMappingWithNameList ColumnMappings = default(ColumnMappingWithNameList), ExclusionFilters ExclusionFilters = default(ExclusionFilters), BeezUPCommonHttpUrl ExportUrl = default(BeezUPCommonHttpUrl), ChannelCatalogStatus Status = default(ChannelCatalogStatus), List<BeezUPCommonLink2> Links = default(List<BeezUPCommonLink2>))
+        public ChannelCatalog(BeezUPCommonChannelId ChannelId = default(BeezUPCommonChannelId), BeezUPCommonChannelName ChannelName = default(BeezUPCommonChannelName), BeezUPCommonHttpUrl ChannelImageUrl = default(BeezUPCommonHttpUrl), int? ProductCount = default(int?), bool? Enabled = default(bool?), bool? IsMarketplace = default(bool?), BeezUPCommonChannelCatalogId ChannelCatalogId = default(BeezUPCommonChannelCatalogId), BeezUPCommonStoreId StoreId = default(BeezUPCommonStoreId), GeneralSettings GeneralSettings = default(GeneralSettings), CostSettings CostSettings = default(CostSettings), ColumnMappingWithNameList ColumnMappings = default(ColumnMappingWithNameList), ExclusionFilters ExclusionFilters = default(ExclusionFilters), BeezUPCommonHttpUrl ExportUrl = default(BeezUPCommonHttpUrl), ChannelCatalogState State = default(ChannelCatalogState), List<BeezUPCommonLink2> Links = default(List<BeezUPCommonLink2>))
         {
             // to ensure "ChannelId" is required (not null)
             if (ChannelId == null)
@@ -80,6 +80,15 @@ namespace IO.Swagger.Model
             else
             {
                 this.ChannelImageUrl = ChannelImageUrl;
+            }
+            // to ensure "ProductCount" is required (not null)
+            if (ProductCount == null)
+            {
+                throw new InvalidDataException("ProductCount is a required property for ChannelCatalog and cannot be null");
+            }
+            else
+            {
+                this.ProductCount = ProductCount;
             }
             // to ensure "Enabled" is required (not null)
             if (Enabled == null)
@@ -135,14 +144,14 @@ namespace IO.Swagger.Model
             {
                 this.CostSettings = CostSettings;
             }
-            // to ensure "Status" is required (not null)
-            if (Status == null)
+            // to ensure "State" is required (not null)
+            if (State == null)
             {
-                throw new InvalidDataException("Status is a required property for ChannelCatalog and cannot be null");
+                throw new InvalidDataException("State is a required property for ChannelCatalog and cannot be null");
             }
             else
             {
-                this.Status = Status;
+                this.State = State;
             }
             // to ensure "Links" is required (not null)
             if (Links == null)
@@ -153,7 +162,6 @@ namespace IO.Swagger.Model
             {
                 this.Links = Links;
             }
-            this.ProductCount = ProductCount;
             this.ColumnMappings = ColumnMappings;
             this.ExclusionFilters = ExclusionFilters;
             this.ExportUrl = ExportUrl;
@@ -228,10 +236,10 @@ namespace IO.Swagger.Model
         [DataMember(Name="exportUrl", EmitDefaultValue=false)]
         public BeezUPCommonHttpUrl ExportUrl { get; set; }
         /// <summary>
-        /// Gets or Sets Status
+        /// Gets or Sets State
         /// </summary>
-        [DataMember(Name="status", EmitDefaultValue=false)]
-        public ChannelCatalogStatus Status { get; set; }
+        [DataMember(Name="state", EmitDefaultValue=false)]
+        public ChannelCatalogState State { get; set; }
         /// <summary>
         /// Indicates the actions you can do on a channel catalog
         /// </summary>
@@ -259,7 +267,7 @@ namespace IO.Swagger.Model
             sb.Append("  ColumnMappings: ").Append(ColumnMappings).Append("\n");
             sb.Append("  ExclusionFilters: ").Append(ExclusionFilters).Append("\n");
             sb.Append("  ExportUrl: ").Append(ExportUrl).Append("\n");
-            sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  State: ").Append(State).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -363,9 +371,9 @@ namespace IO.Swagger.Model
                     this.ExportUrl.Equals(other.ExportUrl)
                 ) && 
                 (
-                    this.Status == other.Status ||
-                    this.Status != null &&
-                    this.Status.Equals(other.Status)
+                    this.State == other.State ||
+                    this.State != null &&
+                    this.State.Equals(other.State)
                 ) && 
                 (
                     this.Links == other.Links ||
@@ -411,8 +419,8 @@ namespace IO.Swagger.Model
                     hash = hash * 59 + this.ExclusionFilters.GetHashCode();
                 if (this.ExportUrl != null)
                     hash = hash * 59 + this.ExportUrl.GetHashCode();
-                if (this.Status != null)
-                    hash = hash * 59 + this.Status.GetHashCode();
+                if (this.State != null)
+                    hash = hash * 59 + this.State.GetHashCode();
                 if (this.Links != null)
                     hash = hash * 59 + this.Links.GetHashCode();
                 return hash;

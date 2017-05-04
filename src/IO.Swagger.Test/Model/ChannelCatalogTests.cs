@@ -169,12 +169,12 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'ExportUrl'
         }
         /// <summary>
-        /// Test the property 'Status'
+        /// Test the property 'State'
         /// </summary>
         [Test]
-        public void StatusTest()
+        public void StateTest()
         {
-            // TODO unit test for the property 'Status'
+            // TODO unit test for the property 'State'
         }
         /// <summary>
         /// Test the property 'Links'

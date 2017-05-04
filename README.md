@@ -386,7 +386,7 @@ Class | Method | HTTP request | Description
  - [Model.ChannelCatalogProductInfoLinks](docs/ChannelCatalogProductInfoLinks.md)
  - [Model.ChannelCatalogProductInfoList](docs/ChannelCatalogProductInfoList.md)
  - [Model.ChannelCatalogProductInfoListLinks](docs/ChannelCatalogProductInfoListLinks.md)
- - [Model.ChannelCatalogStatus](docs/ChannelCatalogStatus.md)
+ - [Model.ChannelCatalogState](docs/ChannelCatalogState.md)
  - [Model.ChannelCategory](docs/ChannelCategory.md)
  - [Model.ChannelCategoryChannelCode](docs/ChannelCategoryChannelCode.md)
  - [Model.ChannelCategoryColumnOverride](docs/ChannelCategoryColumnOverride.md)
