@@ -73,14 +73,6 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'CardNumber'
         }
         /// <summary>
-        /// Test the property 'CardVerificationCode'
-        /// </summary>
-        [Test]
-        public void CardVerificationCodeTest()
-        {
-            // TODO unit test for the property 'CardVerificationCode'
-        }
-        /// <summary>
         /// Test the property 'ExpirationMonth'
         /// </summary>
         [Test]

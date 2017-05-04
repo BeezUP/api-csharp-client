@@ -38,11 +38,10 @@ namespace IO.Swagger.Model
         /// Initializes a new instance of the <see cref="CreditCardInfoWithCardType" /> class.
         /// </summary>
         /// <param name="CardNumber">CardNumber (required).</param>
-        /// <param name="CardVerificationCode">CardVerificationCode (required).</param>
         /// <param name="ExpirationMonth">ExpirationMonth (required).</param>
         /// <param name="ExpirationYear">ExpirationYear (required).</param>
         /// <param name="CardType">Your credit card type. Example: VISA, MasterCard, etc... (required).</param>
-        public CreditCardInfoWithCardType(CardNumber CardNumber = default(CardNumber), CardVerificationCode CardVerificationCode = default(CardVerificationCode), ExpirationMonth ExpirationMonth = default(ExpirationMonth), ExpirationYear ExpirationYear = default(ExpirationYear), string CardType = default(string))
+        public CreditCardInfoWithCardType(CardNumber CardNumber = default(CardNumber), ExpirationMonth ExpirationMonth = default(ExpirationMonth), ExpirationYear ExpirationYear = default(ExpirationYear), string CardType = default(string))
         {
             // to ensure "CardNumber" is required (not null)
             if (CardNumber == null)
@@ -52,15 +51,6 @@ namespace IO.Swagger.Model
             else
             {
                 this.CardNumber = CardNumber;
-            }
-            // to ensure "CardVerificationCode" is required (not null)
-            if (CardVerificationCode == null)
-            {
-                throw new InvalidDataException("CardVerificationCode is a required property for CreditCardInfoWithCardType and cannot be null");
-            }
-            else
-            {
-                this.CardVerificationCode = CardVerificationCode;
             }
             // to ensure "ExpirationMonth" is required (not null)
             if (ExpirationMonth == null)
@@ -97,11 +87,6 @@ namespace IO.Swagger.Model
         [DataMember(Name="cardNumber", EmitDefaultValue=false)]
         public CardNumber CardNumber { get; set; }
         /// <summary>
-        /// Gets or Sets CardVerificationCode
-        /// </summary>
-        [DataMember(Name="cardVerificationCode", EmitDefaultValue=false)]
-        public CardVerificationCode CardVerificationCode { get; set; }
-        /// <summary>
         /// Gets or Sets ExpirationMonth
         /// </summary>
         [DataMember(Name="expirationMonth", EmitDefaultValue=false)]
@@ -126,7 +111,6 @@ namespace IO.Swagger.Model
             var sb = new StringBuilder();
             sb.Append("class CreditCardInfoWithCardType {\n");
             sb.Append("  CardNumber: ").Append(CardNumber).Append("\n");
-            sb.Append("  CardVerificationCode: ").Append(CardVerificationCode).Append("\n");
             sb.Append("  ExpirationMonth: ").Append(ExpirationMonth).Append("\n");
             sb.Append("  ExpirationYear: ").Append(ExpirationYear).Append("\n");
             sb.Append("  CardType: ").Append(CardType).Append("\n");
@@ -172,11 +156,6 @@ namespace IO.Swagger.Model
                     this.CardNumber.Equals(other.CardNumber)
                 ) && 
                 (
-                    this.CardVerificationCode == other.CardVerificationCode ||
-                    this.CardVerificationCode != null &&
-                    this.CardVerificationCode.Equals(other.CardVerificationCode)
-                ) && 
-                (
                     this.ExpirationMonth == other.ExpirationMonth ||
                     this.ExpirationMonth != null &&
                     this.ExpirationMonth.Equals(other.ExpirationMonth)
@@ -206,8 +185,6 @@ namespace IO.Swagger.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.CardNumber != null)
                     hash = hash * 59 + this.CardNumber.GetHashCode();
-                if (this.CardVerificationCode != null)
-                    hash = hash * 59 + this.CardVerificationCode.GetHashCode();
                 if (this.ExpirationMonth != null)
                     hash = hash * 59 + this.ExpirationMonth.GetHashCode();
                 if (this.ExpirationYear != null)
