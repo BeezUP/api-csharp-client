@@ -46,8 +46,8 @@ namespace IO.Swagger.Model
         /// <param name="TurnOver">The Turnover for this channel (required).</param>
         /// <param name="Margin">The margin for this channel (required).</param>
         /// <param name="PerformanceIndicator">The performance indicator based on the performance indicator formula indicated in the request for this channel (required).</param>
-        /// <param name="Links">The action list on this channel.</param>
-        public ReportByChannel(BeezUPCommonChannelBasicInfo Channel = default(BeezUPCommonChannelBasicInfo), int? EnabledProductCount = default(int?), int? CatalogProductCount = default(int?), int? ClickCount = default(int?), decimal? Cost = default(decimal?), int? OrderCount = default(int?), decimal? TurnOver = default(decimal?), decimal? Margin = default(decimal?), decimal? PerformanceIndicator = default(decimal?), List<BeezUPCommonLink2> Links = default(List<BeezUPCommonLink2>))
+        /// <param name="Links">Links.</param>
+        public ReportByChannel(BeezUPCommonChannelBasicInfo Channel = default(BeezUPCommonChannelBasicInfo), int? EnabledProductCount = default(int?), int? CatalogProductCount = default(int?), int? ClickCount = default(int?), decimal? Cost = default(decimal?), int? OrderCount = default(int?), decimal? TurnOver = default(decimal?), decimal? Margin = default(decimal?), decimal? PerformanceIndicator = default(decimal?), ReportByChannelLinks Links = default(ReportByChannelLinks))
         {
             // to ensure "Channel" is required (not null)
             if (Channel == null)
@@ -187,11 +187,10 @@ namespace IO.Swagger.Model
         [DataMember(Name="performanceIndicator", EmitDefaultValue=false)]
         public decimal? PerformanceIndicator { get; set; }
         /// <summary>
-        /// The action list on this channel
+        /// Gets or Sets Links
         /// </summary>
-        /// <value>The action list on this channel</value>
         [DataMember(Name="links", EmitDefaultValue=false)]
-        public List<BeezUPCommonLink2> Links { get; set; }
+        public ReportByChannelLinks Links { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -294,7 +293,7 @@ namespace IO.Swagger.Model
                 (
                     this.Links == other.Links ||
                     this.Links != null &&
-                    this.Links.SequenceEqual(other.Links)
+                    this.Links.Equals(other.Links)
                 );
         }
 

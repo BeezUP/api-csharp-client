@@ -47,8 +47,8 @@ namespace IO.Swagger.Model
         /// <param name="TurnOver">The Turnover for this category (required).</param>
         /// <param name="Margin">The margin for this category (required).</param>
         /// <param name="PerformanceIndicator">The performance indicator based on the performance indicator formula indicated in the request for this category (required).</param>
-        /// <param name="Links">The action list on this catagory.</param>
-        public ReportByCategory(BeezUPCommonCatalogCategoryId CatalogCategoryId = default(BeezUPCommonCatalogCategoryId), BeezUPCommonCatalogCategoryPath CatalogCategoryPath = default(BeezUPCommonCatalogCategoryPath), int? EnabledProductCount = default(int?), int? CatalogProductCount = default(int?), int? ClickCount = default(int?), decimal? Cost = default(decimal?), int? OrderCount = default(int?), decimal? TurnOver = default(decimal?), decimal? Margin = default(decimal?), decimal? PerformanceIndicator = default(decimal?), List<BeezUPCommonLink2> Links = default(List<BeezUPCommonLink2>))
+        /// <param name="Links">Links.</param>
+        public ReportByCategory(BeezUPCommonCatalogCategoryId CatalogCategoryId = default(BeezUPCommonCatalogCategoryId), BeezUPCommonCatalogCategoryPath CatalogCategoryPath = default(BeezUPCommonCatalogCategoryPath), int? EnabledProductCount = default(int?), int? CatalogProductCount = default(int?), int? ClickCount = default(int?), decimal? Cost = default(decimal?), int? OrderCount = default(int?), decimal? TurnOver = default(decimal?), decimal? Margin = default(decimal?), decimal? PerformanceIndicator = default(decimal?), ReportByCategoryLinks Links = default(ReportByCategoryLinks))
         {
             // to ensure "CatalogCategoryId" is required (not null)
             if (CatalogCategoryId == null)
@@ -194,11 +194,10 @@ namespace IO.Swagger.Model
         [DataMember(Name="performanceIndicator", EmitDefaultValue=false)]
         public decimal? PerformanceIndicator { get; set; }
         /// <summary>
-        /// The action list on this catagory
+        /// Gets or Sets Links
         /// </summary>
-        /// <value>The action list on this catagory</value>
         [DataMember(Name="links", EmitDefaultValue=false)]
-        public List<BeezUPCommonLink2> Links { get; set; }
+        public ReportByCategoryLinks Links { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -307,7 +306,7 @@ namespace IO.Swagger.Model
                 (
                     this.Links == other.Links ||
                     this.Links != null &&
-                    this.Links.SequenceEqual(other.Links)
+                    this.Links.Equals(other.Links)
                 );
         }
 

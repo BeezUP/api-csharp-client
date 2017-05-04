@@ -6174,7 +6174,7 @@ Name | Type | Description  | Notes
 
 <a name="getstorereportbydayexport"></a>
 # **GetStoreReportByDayExport**
-> List<BeezUPCommonLink2> GetStoreReportByDayExport (string storeId, string format, ReportByDayRequest request)
+> BeezUPCommonLink3 GetStoreReportByDayExport (string storeId, string format, ReportByDayRequest request)
 
 Get the report by day
 
@@ -6208,7 +6208,7 @@ namespace Example
             try
             {
                 // Get the report by day
-                List&lt;BeezUPCommonLink2&gt; result = apiInstance.GetStoreReportByDayExport(storeId, format, request);
+                BeezUPCommonLink3 result = apiInstance.GetStoreReportByDayExport(storeId, format, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -6230,7 +6230,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<BeezUPCommonLink2>**](BeezUPCommonLink2.md)
+[**BeezUPCommonLink3**](BeezUPCommonLink3.md)
 
 ### Authorization
 

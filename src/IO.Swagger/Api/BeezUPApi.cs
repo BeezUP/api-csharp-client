@@ -2065,8 +2065,8 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>List&lt;BeezUPCommonLink2&gt;</returns>
-        List<BeezUPCommonLink2> GetStoreReportByDayExport (string storeId, string format, ReportByDayRequest request);
+        /// <returns>BeezUPCommonLink3</returns>
+        BeezUPCommonLink3 GetStoreReportByDayExport (string storeId, string format, ReportByDayRequest request);
 
         /// <summary>
         /// Get the report by day
@@ -2078,8 +2078,8 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>ApiResponse of List&lt;BeezUPCommonLink2&gt;</returns>
-        ApiResponse<List<BeezUPCommonLink2>> GetStoreReportByDayExportWithHttpInfo (string storeId, string format, ReportByDayRequest request);
+        /// <returns>ApiResponse of BeezUPCommonLink3</returns>
+        ApiResponse<BeezUPCommonLink3> GetStoreReportByDayExportWithHttpInfo (string storeId, string format, ReportByDayRequest request);
         /// <summary>
         /// Get the report by product
         /// </summary>
@@ -5664,8 +5664,8 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>Task of List&lt;BeezUPCommonLink2&gt;</returns>
-        System.Threading.Tasks.Task<List<BeezUPCommonLink2>> GetStoreReportByDayExportAsync (string storeId, string format, ReportByDayRequest request);
+        /// <returns>Task of BeezUPCommonLink3</returns>
+        System.Threading.Tasks.Task<BeezUPCommonLink3> GetStoreReportByDayExportAsync (string storeId, string format, ReportByDayRequest request);
 
         /// <summary>
         /// Get the report by day
@@ -5677,8 +5677,8 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>Task of ApiResponse (List&lt;BeezUPCommonLink2&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BeezUPCommonLink2>>> GetStoreReportByDayExportAsyncWithHttpInfo (string storeId, string format, ReportByDayRequest request);
+        /// <returns>Task of ApiResponse (BeezUPCommonLink3)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BeezUPCommonLink3>> GetStoreReportByDayExportAsyncWithHttpInfo (string storeId, string format, ReportByDayRequest request);
         /// <summary>
         /// Get the report by product
         /// </summary>
@@ -22405,10 +22405,10 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>List&lt;BeezUPCommonLink2&gt;</returns>
-        public List<BeezUPCommonLink2> GetStoreReportByDayExport (string storeId, string format, ReportByDayRequest request)
+        /// <returns>BeezUPCommonLink3</returns>
+        public BeezUPCommonLink3 GetStoreReportByDayExport (string storeId, string format, ReportByDayRequest request)
         {
-             ApiResponse<List<BeezUPCommonLink2>> localVarResponse = GetStoreReportByDayExportWithHttpInfo(storeId, format, request);
+             ApiResponse<BeezUPCommonLink3> localVarResponse = GetStoreReportByDayExportWithHttpInfo(storeId, format, request);
              return localVarResponse.Data;
         }
 
@@ -22419,8 +22419,8 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>ApiResponse of List&lt;BeezUPCommonLink2&gt;</returns>
-        public ApiResponse< List<BeezUPCommonLink2> > GetStoreReportByDayExportWithHttpInfo (string storeId, string format, ReportByDayRequest request)
+        /// <returns>ApiResponse of BeezUPCommonLink3</returns>
+        public ApiResponse< BeezUPCommonLink3 > GetStoreReportByDayExportWithHttpInfo (string storeId, string format, ReportByDayRequest request)
         {
             // verify the required parameter 'storeId' is set
             if (storeId == null)
@@ -22488,9 +22488,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<BeezUPCommonLink2>>(localVarStatusCode,
+            return new ApiResponse<BeezUPCommonLink3>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<BeezUPCommonLink2>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BeezUPCommonLink2>)));
+                (BeezUPCommonLink3) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BeezUPCommonLink3)));
             
         }
 
@@ -22501,10 +22501,10 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>Task of List&lt;BeezUPCommonLink2&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BeezUPCommonLink2>> GetStoreReportByDayExportAsync (string storeId, string format, ReportByDayRequest request)
+        /// <returns>Task of BeezUPCommonLink3</returns>
+        public async System.Threading.Tasks.Task<BeezUPCommonLink3> GetStoreReportByDayExportAsync (string storeId, string format, ReportByDayRequest request)
         {
-             ApiResponse<List<BeezUPCommonLink2>> localVarResponse = await GetStoreReportByDayExportAsyncWithHttpInfo(storeId, format, request);
+             ApiResponse<BeezUPCommonLink3> localVarResponse = await GetStoreReportByDayExportAsyncWithHttpInfo(storeId, format, request);
              return localVarResponse.Data;
 
         }
@@ -22516,8 +22516,8 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>Task of ApiResponse (List&lt;BeezUPCommonLink2&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BeezUPCommonLink2>>> GetStoreReportByDayExportAsyncWithHttpInfo (string storeId, string format, ReportByDayRequest request)
+        /// <returns>Task of ApiResponse (BeezUPCommonLink3)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<BeezUPCommonLink3>> GetStoreReportByDayExportAsyncWithHttpInfo (string storeId, string format, ReportByDayRequest request)
         {
             // verify the required parameter 'storeId' is set
             if (storeId == null)
@@ -22584,9 +22584,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<BeezUPCommonLink2>>(localVarStatusCode,
+            return new ApiResponse<BeezUPCommonLink3>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<BeezUPCommonLink2>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BeezUPCommonLink2>)));
+                (BeezUPCommonLink3) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BeezUPCommonLink3)));
             
         }
 

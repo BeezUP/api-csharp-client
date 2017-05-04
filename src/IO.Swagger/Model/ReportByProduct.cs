@@ -46,8 +46,8 @@ namespace IO.Swagger.Model
         /// <param name="TurnOver">The Turnover for this product (required).</param>
         /// <param name="Margin">The margin for this product (required).</param>
         /// <param name="PerformanceIndicator">The performance indicator based on the performance indicator formula indicated in the request for this product (required).</param>
-        /// <param name="Links">The action list on this product (required).</param>
-        public ReportByProduct(BeezUPCommonProductBasicInfo Product = default(BeezUPCommonProductBasicInfo), int? EnabledOnChannelCount = default(int?), int? ChannelCount = default(int?), int? ClickCount = default(int?), decimal? Cost = default(decimal?), int? OrderCount = default(int?), decimal? TurnOver = default(decimal?), decimal? Margin = default(decimal?), decimal? PerformanceIndicator = default(decimal?), List<BeezUPCommonLink2> Links = default(List<BeezUPCommonLink2>))
+        /// <param name="Links">Links (required).</param>
+        public ReportByProduct(BeezUPCommonProductBasicInfo Product = default(BeezUPCommonProductBasicInfo), int? EnabledOnChannelCount = default(int?), int? ChannelCount = default(int?), int? ClickCount = default(int?), decimal? Cost = default(decimal?), int? OrderCount = default(int?), decimal? TurnOver = default(decimal?), decimal? Margin = default(decimal?), decimal? PerformanceIndicator = default(decimal?), ReportByProductLinks Links = default(ReportByProductLinks))
         {
             // to ensure "Product" is required (not null)
             if (Product == null)
@@ -195,11 +195,10 @@ namespace IO.Swagger.Model
         [DataMember(Name="performanceIndicator", EmitDefaultValue=false)]
         public decimal? PerformanceIndicator { get; set; }
         /// <summary>
-        /// The action list on this product
+        /// Gets or Sets Links
         /// </summary>
-        /// <value>The action list on this product</value>
         [DataMember(Name="links", EmitDefaultValue=false)]
-        public List<BeezUPCommonLink2> Links { get; set; }
+        public ReportByProductLinks Links { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -302,7 +301,7 @@ namespace IO.Swagger.Model
                 (
                     this.Links == other.Links ||
                     this.Links != null &&
-                    this.Links.SequenceEqual(other.Links)
+                    this.Links.Equals(other.Links)
                 );
         }
 

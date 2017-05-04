@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **TurnOver** | **decimal?** | The Turnover for this product | 
 **Margin** | **decimal?** | The margin for this product | 
 **PerformanceIndicator** | **decimal?** | The performance indicator based on the performance indicator formula indicated in the request for this product | 
-**Links** | [**List&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md) | The action list on this product | 
+**Links** | [**ReportByProductLinks**](ReportByProductLinks.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

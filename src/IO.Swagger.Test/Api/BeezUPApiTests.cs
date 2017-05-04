@@ -1227,7 +1227,7 @@ namespace IO.Swagger.Test
             //string format = null;
             //ReportByDayRequest request = null;
             //var response = instance.GetStoreReportByDayExport(storeId, format, request);
-            //Assert.IsInstanceOf<List<BeezUPCommonLink2>> (response, "response is List<BeezUPCommonLink2>");
+            //Assert.IsInstanceOf<BeezUPCommonLink3> (response, "response is BeezUPCommonLink3");
         }
         
         /// <summary>
