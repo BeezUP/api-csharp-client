@@ -34,7 +34,7 @@ namespace IO.Swagger.Model
         /// </summary>
         /// <param name="Links">Indicates how to create a channel catalog and how to get the channel catalog list.</param>
         /// <param name="ChannelCatalogs">ChannelCatalogs.</param>
-        public ChannelCatalogList(List<BeezUPCommonLink2> Links = default(List<BeezUPCommonLink2>), List<ChannelCatalogHeader> ChannelCatalogs = default(List<ChannelCatalogHeader>))
+        public ChannelCatalogList(List<BeezUPCommonLink2> Links = default(List<BeezUPCommonLink2>), List<ChannelCatalog> ChannelCatalogs = default(List<ChannelCatalog>))
         {
             this.Links = Links;
             this.ChannelCatalogs = ChannelCatalogs;
@@ -50,7 +50,7 @@ namespace IO.Swagger.Model
         /// Gets or Sets ChannelCatalogs
         /// </summary>
         [DataMember(Name="channelCatalogs", EmitDefaultValue=false)]
-        public List<ChannelCatalogHeader> ChannelCatalogs { get; set; }
+        public List<ChannelCatalog> ChannelCatalogs { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
