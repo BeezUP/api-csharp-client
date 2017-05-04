@@ -359,6 +359,7 @@ Class | Method | HTTP request | Description
  - [Model.CatalogColumns](docs/CatalogColumns.md)
  - [Model.Categories](docs/Categories.md)
  - [Model.Category](docs/Category.md)
+ - [Model.CategoryMappingState](docs/CategoryMappingState.md)
  - [Model.CategoryMappingStatus](docs/CategoryMappingStatus.md)
  - [Model.ChangeCustomColumnExpressionRequest](docs/ChangeCustomColumnExpressionRequest.md)
  - [Model.ChangeCustomColumnRequest](docs/ChangeCustomColumnRequest.md)
