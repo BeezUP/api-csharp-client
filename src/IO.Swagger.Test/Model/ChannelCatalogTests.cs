@@ -65,6 +65,30 @@ namespace IO.Swagger.Test
         }
 
         /// <summary>
+        /// Test the property 'ChannelId'
+        /// </summary>
+        [Test]
+        public void ChannelIdTest()
+        {
+            // TODO unit test for the property 'ChannelId'
+        }
+        /// <summary>
+        /// Test the property 'ChannelName'
+        /// </summary>
+        [Test]
+        public void ChannelNameTest()
+        {
+            // TODO unit test for the property 'ChannelName'
+        }
+        /// <summary>
+        /// Test the property 'ChannelImageUrl'
+        /// </summary>
+        [Test]
+        public void ChannelImageUrlTest()
+        {
+            // TODO unit test for the property 'ChannelImageUrl'
+        }
+        /// <summary>
         /// Test the property 'Enabled'
         /// </summary>
         [Test]
@@ -87,22 +111,6 @@ namespace IO.Swagger.Test
         public void ChannelCatalogIdTest()
         {
             // TODO unit test for the property 'ChannelCatalogId'
-        }
-        /// <summary>
-        /// Test the property 'ChannelId'
-        /// </summary>
-        [Test]
-        public void ChannelIdTest()
-        {
-            // TODO unit test for the property 'ChannelId'
-        }
-        /// <summary>
-        /// Test the property 'ChannelName'
-        /// </summary>
-        [Test]
-        public void ChannelNameTest()
-        {
-            // TODO unit test for the property 'ChannelName'
         }
         /// <summary>
         /// Test the property 'StoreId'
