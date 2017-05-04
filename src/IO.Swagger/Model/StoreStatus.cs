@@ -24,9 +24,9 @@ using System.ComponentModel.DataAnnotations;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// The store status * Active:  When the store is active * SystemBlocked:  When the store is blocked by the system * UserBlocked: When the store is blocked on GO not on the system 
+    /// The store status * Active:  When the store is active * SystemBlocked:  When the store is blocked by the system * UserBlocked: When the store is blocked on GO not on the system * NotActivated: When the email is not verified 
     /// </summary>
-    /// <value>The store status * Active:  When the store is active * SystemBlocked:  When the store is blocked by the system * UserBlocked: When the store is blocked on GO not on the system </value>
+    /// <value>The store status * Active:  When the store is active * SystemBlocked:  When the store is blocked by the system * UserBlocked: When the store is blocked on GO not on the system * NotActivated: When the email is not verified </value>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum StoreStatus
     {
