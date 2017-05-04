@@ -89,6 +89,14 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'ChannelImageUrl'
         }
         /// <summary>
+        /// Test the property 'ProductCount'
+        /// </summary>
+        [Test]
+        public void ProductCountTest()
+        {
+            // TODO unit test for the property 'ProductCount'
+        }
+        /// <summary>
         /// Test the property 'Enabled'
         /// </summary>
         [Test]

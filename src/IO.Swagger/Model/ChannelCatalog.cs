@@ -40,18 +40,19 @@ namespace IO.Swagger.Model
         /// <param name="ChannelId">ChannelId (required).</param>
         /// <param name="ChannelName">ChannelName (required).</param>
         /// <param name="ChannelImageUrl">ChannelImageUrl (required).</param>
-        /// <param name="Enabled">Indicates if the channel catalog is active.</param>
-        /// <param name="IsMarketplace">Indicates if this channel catalog is related to a marketplace.</param>
+        /// <param name="ProductCount">The product count exported considering category mapping. Not all filters have been applied..</param>
+        /// <param name="Enabled">Indicates if the channel catalog is active (required).</param>
+        /// <param name="IsMarketplace">Indicates if this channel catalog is related to a marketplace (required).</param>
         /// <param name="ChannelCatalogId">ChannelCatalogId (required).</param>
         /// <param name="StoreId">StoreId (required).</param>
-        /// <param name="GeneralSettings">GeneralSettings.</param>
-        /// <param name="CostSettings">CostSettings.</param>
+        /// <param name="GeneralSettings">GeneralSettings (required).</param>
+        /// <param name="CostSettings">CostSettings (required).</param>
         /// <param name="ColumnMappings">ColumnMappings.</param>
         /// <param name="ExclusionFilters">ExclusionFilters.</param>
         /// <param name="ExportUrl">ExportUrl.</param>
-        /// <param name="Status">Status.</param>
-        /// <param name="Links">Indicates the actions you can do on a channel catalog.</param>
-        public ChannelCatalog(BeezUPCommonChannelId ChannelId = default(BeezUPCommonChannelId), BeezUPCommonChannelName ChannelName = default(BeezUPCommonChannelName), BeezUPCommonHttpUrl ChannelImageUrl = default(BeezUPCommonHttpUrl), bool? Enabled = default(bool?), bool? IsMarketplace = default(bool?), BeezUPCommonChannelCatalogId ChannelCatalogId = default(BeezUPCommonChannelCatalogId), BeezUPCommonStoreId StoreId = default(BeezUPCommonStoreId), GeneralSettings GeneralSettings = default(GeneralSettings), CostSettings CostSettings = default(CostSettings), ColumnMappingWithNameList ColumnMappings = default(ColumnMappingWithNameList), ExclusionFilters ExclusionFilters = default(ExclusionFilters), BeezUPCommonHttpUrl ExportUrl = default(BeezUPCommonHttpUrl), ChannelCatalogStatus Status = default(ChannelCatalogStatus), List<BeezUPCommonLink2> Links = default(List<BeezUPCommonLink2>))
+        /// <param name="Status">Status (required).</param>
+        /// <param name="Links">Indicates the actions you can do on a channel catalog (required).</param>
+        public ChannelCatalog(BeezUPCommonChannelId ChannelId = default(BeezUPCommonChannelId), BeezUPCommonChannelName ChannelName = default(BeezUPCommonChannelName), BeezUPCommonHttpUrl ChannelImageUrl = default(BeezUPCommonHttpUrl), int? ProductCount = default(int?), bool? Enabled = default(bool?), bool? IsMarketplace = default(bool?), BeezUPCommonChannelCatalogId ChannelCatalogId = default(BeezUPCommonChannelCatalogId), BeezUPCommonStoreId StoreId = default(BeezUPCommonStoreId), GeneralSettings GeneralSettings = default(GeneralSettings), CostSettings CostSettings = default(CostSettings), ColumnMappingWithNameList ColumnMappings = default(ColumnMappingWithNameList), ExclusionFilters ExclusionFilters = default(ExclusionFilters), BeezUPCommonHttpUrl ExportUrl = default(BeezUPCommonHttpUrl), ChannelCatalogStatus Status = default(ChannelCatalogStatus), List<BeezUPCommonLink2> Links = default(List<BeezUPCommonLink2>))
         {
             // to ensure "ChannelId" is required (not null)
             if (ChannelId == null)
@@ -80,6 +81,24 @@ namespace IO.Swagger.Model
             {
                 this.ChannelImageUrl = ChannelImageUrl;
             }
+            // to ensure "Enabled" is required (not null)
+            if (Enabled == null)
+            {
+                throw new InvalidDataException("Enabled is a required property for ChannelCatalog and cannot be null");
+            }
+            else
+            {
+                this.Enabled = Enabled;
+            }
+            // to ensure "IsMarketplace" is required (not null)
+            if (IsMarketplace == null)
+            {
+                throw new InvalidDataException("IsMarketplace is a required property for ChannelCatalog and cannot be null");
+            }
+            else
+            {
+                this.IsMarketplace = IsMarketplace;
+            }
             // to ensure "ChannelCatalogId" is required (not null)
             if (ChannelCatalogId == null)
             {
@@ -98,15 +117,46 @@ namespace IO.Swagger.Model
             {
                 this.StoreId = StoreId;
             }
-            this.Enabled = Enabled;
-            this.IsMarketplace = IsMarketplace;
-            this.GeneralSettings = GeneralSettings;
-            this.CostSettings = CostSettings;
+            // to ensure "GeneralSettings" is required (not null)
+            if (GeneralSettings == null)
+            {
+                throw new InvalidDataException("GeneralSettings is a required property for ChannelCatalog and cannot be null");
+            }
+            else
+            {
+                this.GeneralSettings = GeneralSettings;
+            }
+            // to ensure "CostSettings" is required (not null)
+            if (CostSettings == null)
+            {
+                throw new InvalidDataException("CostSettings is a required property for ChannelCatalog and cannot be null");
+            }
+            else
+            {
+                this.CostSettings = CostSettings;
+            }
+            // to ensure "Status" is required (not null)
+            if (Status == null)
+            {
+                throw new InvalidDataException("Status is a required property for ChannelCatalog and cannot be null");
+            }
+            else
+            {
+                this.Status = Status;
+            }
+            // to ensure "Links" is required (not null)
+            if (Links == null)
+            {
+                throw new InvalidDataException("Links is a required property for ChannelCatalog and cannot be null");
+            }
+            else
+            {
+                this.Links = Links;
+            }
+            this.ProductCount = ProductCount;
             this.ColumnMappings = ColumnMappings;
             this.ExclusionFilters = ExclusionFilters;
             this.ExportUrl = ExportUrl;
-            this.Status = Status;
-            this.Links = Links;
         }
         
         /// <summary>
@@ -124,6 +174,12 @@ namespace IO.Swagger.Model
         /// </summary>
         [DataMember(Name="channelImageUrl", EmitDefaultValue=false)]
         public BeezUPCommonHttpUrl ChannelImageUrl { get; set; }
+        /// <summary>
+        /// The product count exported considering category mapping. Not all filters have been applied.
+        /// </summary>
+        /// <value>The product count exported considering category mapping. Not all filters have been applied.</value>
+        [DataMember(Name="productCount", EmitDefaultValue=false)]
+        public int? ProductCount { get; set; }
         /// <summary>
         /// Indicates if the channel catalog is active
         /// </summary>
@@ -193,6 +249,7 @@ namespace IO.Swagger.Model
             sb.Append("  ChannelId: ").Append(ChannelId).Append("\n");
             sb.Append("  ChannelName: ").Append(ChannelName).Append("\n");
             sb.Append("  ChannelImageUrl: ").Append(ChannelImageUrl).Append("\n");
+            sb.Append("  ProductCount: ").Append(ProductCount).Append("\n");
             sb.Append("  Enabled: ").Append(Enabled).Append("\n");
             sb.Append("  IsMarketplace: ").Append(IsMarketplace).Append("\n");
             sb.Append("  ChannelCatalogId: ").Append(ChannelCatalogId).Append("\n");
@@ -254,6 +311,11 @@ namespace IO.Swagger.Model
                     this.ChannelImageUrl == other.ChannelImageUrl ||
                     this.ChannelImageUrl != null &&
                     this.ChannelImageUrl.Equals(other.ChannelImageUrl)
+                ) && 
+                (
+                    this.ProductCount == other.ProductCount ||
+                    this.ProductCount != null &&
+                    this.ProductCount.Equals(other.ProductCount)
                 ) && 
                 (
                     this.Enabled == other.Enabled ||
@@ -329,6 +391,8 @@ namespace IO.Swagger.Model
                     hash = hash * 59 + this.ChannelName.GetHashCode();
                 if (this.ChannelImageUrl != null)
                     hash = hash * 59 + this.ChannelImageUrl.GetHashCode();
+                if (this.ProductCount != null)
+                    hash = hash * 59 + this.ProductCount.GetHashCode();
                 if (this.Enabled != null)
                     hash = hash * 59 + this.Enabled.GetHashCode();
                 if (this.IsMarketplace != null)
