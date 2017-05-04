@@ -37,12 +37,12 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BeezUPCommonUserErrorMessage" /> class.
         /// </summary>
-        /// <param name="DocUrl">The documentation related to this operation..</param>
+        /// <param name="DocUrl">DocUrl.</param>
         /// <param name="Code">the error code. The error code can be a pattern containing the argument&#39;s name (required).</param>
         /// <param name="Message">The error message (required).</param>
         /// <param name="CultureName">If the error is translated, the culture name will be indicated.</param>
         /// <param name="Arguments">a dictionary string/object.</param>
-        public BeezUPCommonUserErrorMessage(string DocUrl = default(string), string Code = default(string), string Message = default(string), string CultureName = default(string), List<BeezUPCommonUserErrorMessageArguments> Arguments = default(List<BeezUPCommonUserErrorMessageArguments>))
+        public BeezUPCommonUserErrorMessage(BeezUPCommonDocUrl DocUrl = default(BeezUPCommonDocUrl), string Code = default(string), string Message = default(string), string CultureName = default(string), List<BeezUPCommonUserErrorMessageArguments> Arguments = default(List<BeezUPCommonUserErrorMessageArguments>))
         {
             // to ensure "Code" is required (not null)
             if (Code == null)
@@ -68,11 +68,10 @@ namespace IO.Swagger.Model
         }
         
         /// <summary>
-        /// The documentation related to this operation.
+        /// Gets or Sets DocUrl
         /// </summary>
-        /// <value>The documentation related to this operation.</value>
         [DataMember(Name="docUrl", EmitDefaultValue=false)]
-        public string DocUrl { get; set; }
+        public BeezUPCommonDocUrl DocUrl { get; set; }
         /// <summary>
         /// the error code. The error code can be a pattern containing the argument&#39;s name
         /// </summary>

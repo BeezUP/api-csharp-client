@@ -73,14 +73,6 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'EntryCount'
         }
         /// <summary>
-        /// Test the property 'Links'
-        /// </summary>
-        [Test]
-        public void LinksTest()
-        {
-            // TODO unit test for the property 'Links'
-        }
-        /// <summary>
         /// Test the property 'PageCount'
         /// </summary>
         [Test]
@@ -95,6 +87,14 @@ namespace IO.Swagger.Test
         public void TotalEntryCountTest()
         {
             // TODO unit test for the property 'TotalEntryCount'
+        }
+        /// <summary>
+        /// Test the property 'Links'
+        /// </summary>
+        [Test]
+        public void LinksTest()
+        {
+            // TODO unit test for the property 'Links'
         }
 
     }

@@ -33,15 +33,15 @@ namespace IO.Swagger.Model
         /// Initializes a new instance of the <see cref="BeezUPCommonPaginationResult" /> class.
         /// </summary>
         /// <param name="EntryCount">The entry count currently returned.</param>
-        /// <param name="Links">Links.</param>
         /// <param name="PageCount">The page count.</param>
         /// <param name="TotalEntryCount">The total entry count.</param>
-        public BeezUPCommonPaginationResult(int? EntryCount = default(int?), BeezUPCommonPaginationResultLinks Links = default(BeezUPCommonPaginationResultLinks), int? PageCount = default(int?), int? TotalEntryCount = default(int?))
+        /// <param name="Links">Links.</param>
+        public BeezUPCommonPaginationResult(int? EntryCount = default(int?), int? PageCount = default(int?), int? TotalEntryCount = default(int?), BeezUPCommonPaginationResultLinks Links = default(BeezUPCommonPaginationResultLinks))
         {
             this.EntryCount = EntryCount;
-            this.Links = Links;
             this.PageCount = PageCount;
             this.TotalEntryCount = TotalEntryCount;
+            this.Links = Links;
         }
         
         /// <summary>
@@ -50,11 +50,6 @@ namespace IO.Swagger.Model
         /// <value>The entry count currently returned</value>
         [DataMember(Name="entryCount", EmitDefaultValue=false)]
         public int? EntryCount { get; set; }
-        /// <summary>
-        /// Gets or Sets Links
-        /// </summary>
-        [DataMember(Name="links", EmitDefaultValue=false)]
-        public BeezUPCommonPaginationResultLinks Links { get; set; }
         /// <summary>
         /// The page count
         /// </summary>
@@ -68,6 +63,11 @@ namespace IO.Swagger.Model
         [DataMember(Name="totalEntryCount", EmitDefaultValue=false)]
         public int? TotalEntryCount { get; set; }
         /// <summary>
+        /// Gets or Sets Links
+        /// </summary>
+        [DataMember(Name="links", EmitDefaultValue=false)]
+        public BeezUPCommonPaginationResultLinks Links { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -76,9 +76,9 @@ namespace IO.Swagger.Model
             var sb = new StringBuilder();
             sb.Append("class BeezUPCommonPaginationResult {\n");
             sb.Append("  EntryCount: ").Append(EntryCount).Append("\n");
-            sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  PageCount: ").Append(PageCount).Append("\n");
             sb.Append("  TotalEntryCount: ").Append(TotalEntryCount).Append("\n");
+            sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -121,11 +121,6 @@ namespace IO.Swagger.Model
                     this.EntryCount.Equals(other.EntryCount)
                 ) && 
                 (
-                    this.Links == other.Links ||
-                    this.Links != null &&
-                    this.Links.Equals(other.Links)
-                ) && 
-                (
                     this.PageCount == other.PageCount ||
                     this.PageCount != null &&
                     this.PageCount.Equals(other.PageCount)
@@ -134,6 +129,11 @@ namespace IO.Swagger.Model
                     this.TotalEntryCount == other.TotalEntryCount ||
                     this.TotalEntryCount != null &&
                     this.TotalEntryCount.Equals(other.TotalEntryCount)
+                ) && 
+                (
+                    this.Links == other.Links ||
+                    this.Links != null &&
+                    this.Links.Equals(other.Links)
                 );
         }
 
@@ -150,12 +150,12 @@ namespace IO.Swagger.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.EntryCount != null)
                     hash = hash * 59 + this.EntryCount.GetHashCode();
-                if (this.Links != null)
-                    hash = hash * 59 + this.Links.GetHashCode();
                 if (this.PageCount != null)
                     hash = hash * 59 + this.PageCount.GetHashCode();
                 if (this.TotalEntryCount != null)
                     hash = hash * 59 + this.TotalEntryCount.GetHashCode();
+                if (this.Links != null)
+                    hash = hash * 59 + this.Links.GetHashCode();
                 return hash;
             }
         }
