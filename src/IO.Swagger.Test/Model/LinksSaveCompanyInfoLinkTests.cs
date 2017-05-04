@@ -65,6 +65,14 @@ namespace IO.Swagger.Test
         }
 
         /// <summary>
+        /// Test the property 'DocUrl'
+        /// </summary>
+        [Test]
+        public void DocUrlTest()
+        {
+            // TODO unit test for the property 'DocUrl'
+        }
+        /// <summary>
         /// Test the property 'Description'
         /// </summary>
         [Test]

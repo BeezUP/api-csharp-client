@@ -134,7 +134,7 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BeezUPCommonLinkParameter3" /> class.
         /// </summary>
-        /// <param name="Value">The value of the parameter.</param>
+        /// <param name="Value">The value of the parameter. It can be an integer a string or an object..</param>
         /// <param name="Required">Required.</param>
         /// <param name="_In">* path: if the parameter must be pass in the path uri * header: if the parameter must be passed in http header * query: if the parameter must be passed in querystring * body: if the paramter must be passed in the body .</param>
         /// <param name="Type">The value type of the parameter.</param>
@@ -142,7 +142,7 @@ namespace IO.Swagger.Model
         /// <param name="LovRequired">If true, you MUST use indicate a value from the list of values otherwise it&#39;s a freetext.</param>
         /// <param name="Description">description of the parameter.</param>
         /// <param name="Schema">schema of the parameter.</param>
-        public BeezUPCommonLinkParameter3(string Value = default(string), bool? Required = default(bool?), InEnum? _In = default(InEnum?), TypeEnum? Type = default(TypeEnum?), BeezUPCommonLOVLink2 LovLink = default(BeezUPCommonLOVLink2), bool? LovRequired = default(bool?), string Description = default(string), string Schema = default(string))
+        public BeezUPCommonLinkParameter3(Object Value = default(Object), bool? Required = default(bool?), InEnum? _In = default(InEnum?), TypeEnum? Type = default(TypeEnum?), BeezUPCommonLOVLink2 LovLink = default(BeezUPCommonLOVLink2), bool? LovRequired = default(bool?), string Description = default(string), string Schema = default(string))
         {
             this.Value = Value;
             this.Required = Required;
@@ -155,11 +155,11 @@ namespace IO.Swagger.Model
         }
         
         /// <summary>
-        /// The value of the parameter
+        /// The value of the parameter. It can be an integer a string or an object.
         /// </summary>
-        /// <value>The value of the parameter</value>
+        /// <value>The value of the parameter. It can be an integer a string or an object.</value>
         [DataMember(Name="value", EmitDefaultValue=false)]
-        public string Value { get; set; }
+        public Object Value { get; set; }
         /// <summary>
         /// Gets or Sets Required
         /// </summary>

@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// The technical code of the marketplace.
+    /// The technical code of the marketplace
     /// </summary>
     [DataContract]
     public partial class MarketplaceTechnicalCode :  IEquatable<MarketplaceTechnicalCode>, IValidatableObject

@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// Indicates the configuration applied on the column (catalog or custom) during the importation process. You have to define the BeezUP Column Name property OR the custom configuration property.
+    /// Indicates the configuration applied on the column (catalog or custom) during the importation process.
     /// </summary>
     [DataContract]
     public partial class ColumnConfiguration :  IEquatable<ColumnConfiguration>, IValidatableObject
@@ -32,12 +32,43 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ColumnConfiguration" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected ColumnConfiguration() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ColumnConfiguration" /> class.
+        /// </summary>
         /// <param name="BeezUPColumnName">BeezUPColumnName.</param>
-        /// <param name="CustomConfiguration">CustomConfiguration.</param>
-        public ColumnConfiguration(BeezUPCommonBeezUPColumnName BeezUPColumnName = default(BeezUPCommonBeezUPColumnName), ColumnCustomConfiguration CustomConfiguration = default(ColumnCustomConfiguration))
+        /// <param name="ColumnImportance">ColumnImportance (required).</param>
+        /// <param name="ColumnDataType">ColumnDataType (required).</param>
+        /// <param name="ColumnCultureName">ColumnCultureName.</param>
+        /// <param name="ColumnFormat">ColumnFormat.</param>
+        /// <param name="CanBeTruncated">CanBeTruncated.</param>
+        /// <param name="DisplayGroupName">DisplayGroupName.</param>
+        public ColumnConfiguration(BeezUPCommonBeezUPColumnName BeezUPColumnName = default(BeezUPCommonBeezUPColumnName), BeezUPCommonColumnImportance ColumnImportance = default(BeezUPCommonColumnImportance), BeezUPCommonColumnDataType ColumnDataType = default(BeezUPCommonColumnDataType), ColumnCultureName ColumnCultureName = default(ColumnCultureName), ColumnFormat ColumnFormat = default(ColumnFormat), CanBeTruncated CanBeTruncated = default(CanBeTruncated), DisplayGroupName DisplayGroupName = default(DisplayGroupName))
         {
+            // to ensure "ColumnImportance" is required (not null)
+            if (ColumnImportance == null)
+            {
+                throw new InvalidDataException("ColumnImportance is a required property for ColumnConfiguration and cannot be null");
+            }
+            else
+            {
+                this.ColumnImportance = ColumnImportance;
+            }
+            // to ensure "ColumnDataType" is required (not null)
+            if (ColumnDataType == null)
+            {
+                throw new InvalidDataException("ColumnDataType is a required property for ColumnConfiguration and cannot be null");
+            }
+            else
+            {
+                this.ColumnDataType = ColumnDataType;
+            }
             this.BeezUPColumnName = BeezUPColumnName;
-            this.CustomConfiguration = CustomConfiguration;
+            this.ColumnCultureName = ColumnCultureName;
+            this.ColumnFormat = ColumnFormat;
+            this.CanBeTruncated = CanBeTruncated;
+            this.DisplayGroupName = DisplayGroupName;
         }
         
         /// <summary>
@@ -46,10 +77,35 @@ namespace IO.Swagger.Model
         [DataMember(Name="beezUPColumnName", EmitDefaultValue=false)]
         public BeezUPCommonBeezUPColumnName BeezUPColumnName { get; set; }
         /// <summary>
-        /// Gets or Sets CustomConfiguration
+        /// Gets or Sets ColumnImportance
         /// </summary>
-        [DataMember(Name="customConfiguration", EmitDefaultValue=false)]
-        public ColumnCustomConfiguration CustomConfiguration { get; set; }
+        [DataMember(Name="columnImportance", EmitDefaultValue=false)]
+        public BeezUPCommonColumnImportance ColumnImportance { get; set; }
+        /// <summary>
+        /// Gets or Sets ColumnDataType
+        /// </summary>
+        [DataMember(Name="columnDataType", EmitDefaultValue=false)]
+        public BeezUPCommonColumnDataType ColumnDataType { get; set; }
+        /// <summary>
+        /// Gets or Sets ColumnCultureName
+        /// </summary>
+        [DataMember(Name="columnCultureName", EmitDefaultValue=false)]
+        public ColumnCultureName ColumnCultureName { get; set; }
+        /// <summary>
+        /// Gets or Sets ColumnFormat
+        /// </summary>
+        [DataMember(Name="columnFormat", EmitDefaultValue=false)]
+        public ColumnFormat ColumnFormat { get; set; }
+        /// <summary>
+        /// Gets or Sets CanBeTruncated
+        /// </summary>
+        [DataMember(Name="canBeTruncated", EmitDefaultValue=false)]
+        public CanBeTruncated CanBeTruncated { get; set; }
+        /// <summary>
+        /// Gets or Sets DisplayGroupName
+        /// </summary>
+        [DataMember(Name="displayGroupName", EmitDefaultValue=false)]
+        public DisplayGroupName DisplayGroupName { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -59,7 +115,12 @@ namespace IO.Swagger.Model
             var sb = new StringBuilder();
             sb.Append("class ColumnConfiguration {\n");
             sb.Append("  BeezUPColumnName: ").Append(BeezUPColumnName).Append("\n");
-            sb.Append("  CustomConfiguration: ").Append(CustomConfiguration).Append("\n");
+            sb.Append("  ColumnImportance: ").Append(ColumnImportance).Append("\n");
+            sb.Append("  ColumnDataType: ").Append(ColumnDataType).Append("\n");
+            sb.Append("  ColumnCultureName: ").Append(ColumnCultureName).Append("\n");
+            sb.Append("  ColumnFormat: ").Append(ColumnFormat).Append("\n");
+            sb.Append("  CanBeTruncated: ").Append(CanBeTruncated).Append("\n");
+            sb.Append("  DisplayGroupName: ").Append(DisplayGroupName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -102,9 +163,34 @@ namespace IO.Swagger.Model
                     this.BeezUPColumnName.Equals(other.BeezUPColumnName)
                 ) && 
                 (
-                    this.CustomConfiguration == other.CustomConfiguration ||
-                    this.CustomConfiguration != null &&
-                    this.CustomConfiguration.Equals(other.CustomConfiguration)
+                    this.ColumnImportance == other.ColumnImportance ||
+                    this.ColumnImportance != null &&
+                    this.ColumnImportance.Equals(other.ColumnImportance)
+                ) && 
+                (
+                    this.ColumnDataType == other.ColumnDataType ||
+                    this.ColumnDataType != null &&
+                    this.ColumnDataType.Equals(other.ColumnDataType)
+                ) && 
+                (
+                    this.ColumnCultureName == other.ColumnCultureName ||
+                    this.ColumnCultureName != null &&
+                    this.ColumnCultureName.Equals(other.ColumnCultureName)
+                ) && 
+                (
+                    this.ColumnFormat == other.ColumnFormat ||
+                    this.ColumnFormat != null &&
+                    this.ColumnFormat.Equals(other.ColumnFormat)
+                ) && 
+                (
+                    this.CanBeTruncated == other.CanBeTruncated ||
+                    this.CanBeTruncated != null &&
+                    this.CanBeTruncated.Equals(other.CanBeTruncated)
+                ) && 
+                (
+                    this.DisplayGroupName == other.DisplayGroupName ||
+                    this.DisplayGroupName != null &&
+                    this.DisplayGroupName.Equals(other.DisplayGroupName)
                 );
         }
 
@@ -121,8 +207,18 @@ namespace IO.Swagger.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.BeezUPColumnName != null)
                     hash = hash * 59 + this.BeezUPColumnName.GetHashCode();
-                if (this.CustomConfiguration != null)
-                    hash = hash * 59 + this.CustomConfiguration.GetHashCode();
+                if (this.ColumnImportance != null)
+                    hash = hash * 59 + this.ColumnImportance.GetHashCode();
+                if (this.ColumnDataType != null)
+                    hash = hash * 59 + this.ColumnDataType.GetHashCode();
+                if (this.ColumnCultureName != null)
+                    hash = hash * 59 + this.ColumnCultureName.GetHashCode();
+                if (this.ColumnFormat != null)
+                    hash = hash * 59 + this.ColumnFormat.GetHashCode();
+                if (this.CanBeTruncated != null)
+                    hash = hash * 59 + this.CanBeTruncated.GetHashCode();
+                if (this.DisplayGroupName != null)
+                    hash = hash * 59 + this.DisplayGroupName.GetHashCode();
                 return hash;
             }
         }

@@ -73,12 +73,52 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'BeezUPColumnName'
         }
         /// <summary>
-        /// Test the property 'CustomConfiguration'
+        /// Test the property 'ColumnImportance'
         /// </summary>
         [Test]
-        public void CustomConfigurationTest()
+        public void ColumnImportanceTest()
         {
-            // TODO unit test for the property 'CustomConfiguration'
+            // TODO unit test for the property 'ColumnImportance'
+        }
+        /// <summary>
+        /// Test the property 'ColumnDataType'
+        /// </summary>
+        [Test]
+        public void ColumnDataTypeTest()
+        {
+            // TODO unit test for the property 'ColumnDataType'
+        }
+        /// <summary>
+        /// Test the property 'ColumnCultureName'
+        /// </summary>
+        [Test]
+        public void ColumnCultureNameTest()
+        {
+            // TODO unit test for the property 'ColumnCultureName'
+        }
+        /// <summary>
+        /// Test the property 'ColumnFormat'
+        /// </summary>
+        [Test]
+        public void ColumnFormatTest()
+        {
+            // TODO unit test for the property 'ColumnFormat'
+        }
+        /// <summary>
+        /// Test the property 'CanBeTruncated'
+        /// </summary>
+        [Test]
+        public void CanBeTruncatedTest()
+        {
+            // TODO unit test for the property 'CanBeTruncated'
+        }
+        /// <summary>
+        /// Test the property 'DisplayGroupName'
+        /// </summary>
+        [Test]
+        public void DisplayGroupNameTest()
+        {
+            // TODO unit test for the property 'DisplayGroupName'
         }
 
     }

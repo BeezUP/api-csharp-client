@@ -83,7 +83,13 @@ namespace IO.Swagger.Model
         /// Enum Unknown for "Unknown"
         /// </summary>
         [EnumMember(Value = "Unknown")]
-        Unknown
+        Unknown,
+        
+        /// <summary>
+        /// Enum ImageUrl for "ImageUrl"
+        /// </summary>
+        [EnumMember(Value = "ImageUrl")]
+        ImageUrl
     }
 
 }

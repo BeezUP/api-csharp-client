@@ -3,6 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**DocUrl** | [**BeezUPCommonDocUrl**](BeezUPCommonDocUrl.md) |  | [optional] 
 **Description** | **string** | The description of the link | [optional] 
 **Href** | [**BeezUPCommonHref**](BeezUPCommonHref.md) |  | [optional] 
 **OperationId** | [**BeezUPCommonOperationId**](BeezUPCommonOperationId.md) |  | [optional] 

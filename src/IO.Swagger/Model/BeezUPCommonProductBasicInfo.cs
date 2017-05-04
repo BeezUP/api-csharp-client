@@ -41,7 +41,7 @@ namespace IO.Swagger.Model
         /// <param name="ProductSku">The product SKU (required).</param>
         /// <param name="ProductTitle">The product tile (required).</param>
         /// <param name="ProductImageUrl">The product image Url (required).</param>
-        /// <param name="ProductActive">Indicates if the product still exists in your catalog (required).</param>
+        /// <param name="ProductActive">Indicates if the product still exists in your catalog.</param>
         public BeezUPCommonProductBasicInfo(string ProductId = default(string), string ProductSku = default(string), string ProductTitle = default(string), string ProductImageUrl = default(string), bool? ProductActive = default(bool?))
         {
             // to ensure "ProductId" is required (not null)
@@ -80,15 +80,7 @@ namespace IO.Swagger.Model
             {
                 this.ProductImageUrl = ProductImageUrl;
             }
-            // to ensure "ProductActive" is required (not null)
-            if (ProductActive == null)
-            {
-                throw new InvalidDataException("ProductActive is a required property for BeezUPCommonProductBasicInfo and cannot be null");
-            }
-            else
-            {
-                this.ProductActive = ProductActive;
-            }
+            this.ProductActive = ProductActive;
         }
         
         /// <summary>

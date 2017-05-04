@@ -43,10 +43,12 @@ namespace IO.Swagger.Model
         /// <param name="CategoryFilter">CategoryFilter.</param>
         /// <param name="IndicatorFilters">IndicatorFilters.</param>
         /// <param name="AdvancedFilters">AdvancedFilters (required).</param>
+        /// <param name="PageSize">PageSize.</param>
+        /// <param name="PageNumber">PageNumber.</param>
         /// <param name="ProductColumnsToDisplay">ProductColumnsToDisplay.</param>
         /// <param name="ProductState">ProductState (required).</param>
         /// <param name="ProductFilters">ProductFilters.</param>
-        public ReportByProductRequest(BeezUPCommonChannelId ChannelId = default(BeezUPCommonChannelId), DateTime? BeginPeriodUtcDate = default(DateTime?), DateTime? EndPeriodUtcDate = default(DateTime?), ReportCategoryFilter CategoryFilter = default(ReportCategoryFilter), List<ReportIndicatorFilter> IndicatorFilters = default(List<ReportIndicatorFilter>), ReportAdvancedFilters AdvancedFilters = default(ReportAdvancedFilters), List<BeezUPCommonCatalogColumnId> ProductColumnsToDisplay = default(List<BeezUPCommonCatalogColumnId>), ProductStateFilter ProductState = default(ProductStateFilter), ProductFilters ProductFilters = default(ProductFilters))
+        public ReportByProductRequest(BeezUPCommonChannelId ChannelId = default(BeezUPCommonChannelId), DateTime? BeginPeriodUtcDate = default(DateTime?), DateTime? EndPeriodUtcDate = default(DateTime?), ReportCategoryFilter CategoryFilter = default(ReportCategoryFilter), List<ReportIndicatorFilter> IndicatorFilters = default(List<ReportIndicatorFilter>), ReportAdvancedFilters AdvancedFilters = default(ReportAdvancedFilters), PageSize PageSize = default(PageSize), PageNumber PageNumber = default(PageNumber), List<BeezUPCommonCatalogColumnId> ProductColumnsToDisplay = default(List<BeezUPCommonCatalogColumnId>), ProductStateFilter ProductState = default(ProductStateFilter), ProductFilters ProductFilters = default(ProductFilters))
         {
             // to ensure "BeginPeriodUtcDate" is required (not null)
             if (BeginPeriodUtcDate == null)
@@ -87,6 +89,8 @@ namespace IO.Swagger.Model
             this.ChannelId = ChannelId;
             this.CategoryFilter = CategoryFilter;
             this.IndicatorFilters = IndicatorFilters;
+            this.PageSize = PageSize;
+            this.PageNumber = PageNumber;
             this.ProductColumnsToDisplay = ProductColumnsToDisplay;
             this.ProductFilters = ProductFilters;
         }
@@ -124,6 +128,16 @@ namespace IO.Swagger.Model
         [DataMember(Name="advancedFilters", EmitDefaultValue=false)]
         public ReportAdvancedFilters AdvancedFilters { get; set; }
         /// <summary>
+        /// Gets or Sets PageSize
+        /// </summary>
+        [DataMember(Name="pageSize", EmitDefaultValue=false)]
+        public PageSize PageSize { get; set; }
+        /// <summary>
+        /// Gets or Sets PageNumber
+        /// </summary>
+        [DataMember(Name="pageNumber", EmitDefaultValue=false)]
+        public PageNumber PageNumber { get; set; }
+        /// <summary>
         /// Gets or Sets ProductColumnsToDisplay
         /// </summary>
         [DataMember(Name="productColumnsToDisplay", EmitDefaultValue=false)]
@@ -152,6 +166,8 @@ namespace IO.Swagger.Model
             sb.Append("  CategoryFilter: ").Append(CategoryFilter).Append("\n");
             sb.Append("  IndicatorFilters: ").Append(IndicatorFilters).Append("\n");
             sb.Append("  AdvancedFilters: ").Append(AdvancedFilters).Append("\n");
+            sb.Append("  PageSize: ").Append(PageSize).Append("\n");
+            sb.Append("  PageNumber: ").Append(PageNumber).Append("\n");
             sb.Append("  ProductColumnsToDisplay: ").Append(ProductColumnsToDisplay).Append("\n");
             sb.Append("  ProductState: ").Append(ProductState).Append("\n");
             sb.Append("  ProductFilters: ").Append(ProductFilters).Append("\n");
@@ -222,6 +238,16 @@ namespace IO.Swagger.Model
                     this.AdvancedFilters.Equals(other.AdvancedFilters)
                 ) && 
                 (
+                    this.PageSize == other.PageSize ||
+                    this.PageSize != null &&
+                    this.PageSize.Equals(other.PageSize)
+                ) && 
+                (
+                    this.PageNumber == other.PageNumber ||
+                    this.PageNumber != null &&
+                    this.PageNumber.Equals(other.PageNumber)
+                ) && 
+                (
                     this.ProductColumnsToDisplay == other.ProductColumnsToDisplay ||
                     this.ProductColumnsToDisplay != null &&
                     this.ProductColumnsToDisplay.SequenceEqual(other.ProductColumnsToDisplay)
@@ -261,6 +287,10 @@ namespace IO.Swagger.Model
                     hash = hash * 59 + this.IndicatorFilters.GetHashCode();
                 if (this.AdvancedFilters != null)
                     hash = hash * 59 + this.AdvancedFilters.GetHashCode();
+                if (this.PageSize != null)
+                    hash = hash * 59 + this.PageSize.GetHashCode();
+                if (this.PageNumber != null)
+                    hash = hash * 59 + this.PageNumber.GetHashCode();
                 if (this.ProductColumnsToDisplay != null)
                     hash = hash * 59 + this.ProductColumnsToDisplay.GetHashCode();
                 if (this.ProductState != null)

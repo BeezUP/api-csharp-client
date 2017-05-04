@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **CategoryFilter** | [**ReportCategoryFilter**](ReportCategoryFilter.md) |  | [optional] 
 **IndicatorFilters** | [**List&lt;ReportIndicatorFilter&gt;**](ReportIndicatorFilter.md) |  | [optional] 
 **AdvancedFilters** | [**ReportAdvancedFilters**](ReportAdvancedFilters.md) |  | 
+**PageSize** | [**PageSize**](PageSize.md) |  | [optional] 
+**PageNumber** | [**PageNumber**](PageNumber.md) |  | [optional] 
 **ProductColumnsToDisplay** | [**List&lt;BeezUPCommonCatalogColumnId&gt;**](BeezUPCommonCatalogColumnId.md) |  | [optional] 
 **ProductState** | [**ProductStateFilter**](ProductStateFilter.md) |  | 
 **ProductFilters** | [**ProductFilters**](ProductFilters.md) |  | [optional] 

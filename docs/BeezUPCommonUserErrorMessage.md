@@ -3,6 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**DocUrl** | **string** | The documentation related to this operation. | [optional] 
 **Code** | **string** | the error code. The error code can be a pattern containing the argument&#39;s name | 
 **Message** | **string** | The error message | 
 **CultureName** | **string** | If the error is translated, the culture name will be indicated | [optional] 

@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// ETag value to identify the order. \\ This information is required for the operation GetOrder and ChangeOrder. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+    /// ETag value to identify the order.\\ This information is required for the operation GetOrder and ChangeOrder.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
     /// </summary>
     [DataContract]
     public partial class Etag :  IEquatable<Etag>, IValidatableObject

@@ -41,14 +41,14 @@ namespace IO.Swagger.Model
         /// <param name="ProductSku">The product SKU (required).</param>
         /// <param name="ProductTitle">The product tile (required).</param>
         /// <param name="ProductImageUrl">The product image Url (required).</param>
-        /// <param name="ProductActive">Indicates if the product still exists in your catalog (required).</param>
+        /// <param name="ProductActive">Indicates if the product still exists in your catalog.</param>
         /// <param name="Overrides">Overrides (required).</param>
         /// <param name="Disabled">Indicates if the product has been disabled or not (required) (default to false).</param>
         /// <param name="CategoryMapped">Indicates if the product&#39;s category has been mapped to a channel category (required).</param>
         /// <param name="Excluded">Indicates if the product has been excluded by a exclusion filter (required) (default to false).</param>
         /// <param name="ExcludedBy">ExcludedBy.</param>
         /// <param name="Links">Links (required).</param>
-        public ChannelCatalogProductInfo(string ProductId = default(string), string ProductSku = default(string), string ProductTitle = default(string), string ProductImageUrl = default(string), bool? ProductActive = default(bool?), ProductOverrides Overrides = default(ProductOverrides), bool? Disabled = false, bool? CategoryMapped = default(bool?), bool? Excluded = false, List<ExclusionFilterName> ExcludedBy = default(List<ExclusionFilterName>), ChannelCatalogProductInfoLinks Links = default(ChannelCatalogProductInfoLinks))
+        public ChannelCatalogProductInfo(string ProductId = default(string), string ProductSku = default(string), string ProductTitle = default(string), string ProductImageUrl = default(string), bool? ProductActive = default(bool?), ProductOverridesWithCatalogValues Overrides = default(ProductOverridesWithCatalogValues), bool? Disabled = false, bool? CategoryMapped = default(bool?), bool? Excluded = false, List<ExclusionFilterName> ExcludedBy = default(List<ExclusionFilterName>), ChannelCatalogProductInfoLinks Links = default(ChannelCatalogProductInfoLinks))
         {
             // to ensure "ProductId" is required (not null)
             if (ProductId == null)
@@ -85,15 +85,6 @@ namespace IO.Swagger.Model
             else
             {
                 this.ProductImageUrl = ProductImageUrl;
-            }
-            // to ensure "ProductActive" is required (not null)
-            if (ProductActive == null)
-            {
-                throw new InvalidDataException("ProductActive is a required property for ChannelCatalogProductInfo and cannot be null");
-            }
-            else
-            {
-                this.ProductActive = ProductActive;
             }
             // to ensure "Overrides" is required (not null)
             if (Overrides == null)
@@ -140,6 +131,7 @@ namespace IO.Swagger.Model
             {
                 this.Links = Links;
             }
+            this.ProductActive = ProductActive;
             this.ExcludedBy = ExcludedBy;
         }
         
@@ -177,7 +169,7 @@ namespace IO.Swagger.Model
         /// Gets or Sets Overrides
         /// </summary>
         [DataMember(Name="overrides", EmitDefaultValue=false)]
-        public ProductOverrides Overrides { get; set; }
+        public ProductOverridesWithCatalogValues Overrides { get; set; }
         /// <summary>
         /// Indicates if the product has been disabled or not
         /// </summary>

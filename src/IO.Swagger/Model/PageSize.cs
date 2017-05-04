@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// Indicate the order count per page
+    /// Indicate the item count per page
     /// </summary>
     [DataContract]
     public partial class PageSize :  IEquatable<PageSize>, IValidatableObject

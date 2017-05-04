@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// Represent the reporting of the orders exportation.
+    /// Represent the reporting of the Order report exportations
     /// </summary>
     [DataContract]
     public partial class OrderExportationReporting :  IEquatable<OrderExportationReporting>, IValidatableObject

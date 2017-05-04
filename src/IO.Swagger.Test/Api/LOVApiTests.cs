@@ -88,30 +88,6 @@ namespace IO.Swagger.Test
             //Assert.IsInstanceOf<List<BeezUPCommonListOfValueItem>> (response, "response is List<BeezUPCommonListOfValueItem>");
         }
         
-        /// <summary>
-        /// Test GetUserListNames
-        /// </summary>
-        [Test]
-        public void GetUserListNamesTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.GetUserListNames();
-            //Assert.IsInstanceOf<List<BeezUPCommonLOVLink2>> (response, "response is List<BeezUPCommonLOVLink2>");
-        }
-        
-        /// <summary>
-        /// Test GetUserListOfValues
-        /// </summary>
-        [Test]
-        public void GetUserListOfValuesTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string listName = null;
-            //List<string> acceptLanguage = null;
-            //var response = instance.GetUserListOfValues(listName, acceptLanguage);
-            //Assert.IsInstanceOf<List<BeezUPCommonListOfValueItem>> (response, "response is List<BeezUPCommonListOfValueItem>");
-        }
-        
     }
 
 }

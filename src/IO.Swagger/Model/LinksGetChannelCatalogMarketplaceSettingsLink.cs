@@ -32,6 +32,7 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="LinksGetChannelCatalogMarketplaceSettingsLink" /> class.
         /// </summary>
+        /// <param name="DocUrl">DocUrl.</param>
         /// <param name="Description">The description of the link.</param>
         /// <param name="Href">Href.</param>
         /// <param name="OperationId">OperationId.</param>
@@ -39,8 +40,9 @@ namespace IO.Swagger.Model
         /// <param name="Parameters">Parameters.</param>
         /// <param name="Templated">indicates whether the href is templated or not.</param>
         /// <param name="Info">Info.</param>
-        public LinksGetChannelCatalogMarketplaceSettingsLink(string Description = default(string), BeezUPCommonHref Href = default(BeezUPCommonHref), BeezUPCommonOperationId OperationId = default(BeezUPCommonOperationId), BeezUPCommonHttpMethod Method = default(BeezUPCommonHttpMethod), Dictionary<string, BeezUPCommonLinkParameter3> Parameters = default(Dictionary<string, BeezUPCommonLinkParameter3>), bool? Templated = default(bool?), BeezUPCommonInfoSummaries Info = default(BeezUPCommonInfoSummaries))
+        public LinksGetChannelCatalogMarketplaceSettingsLink(BeezUPCommonDocUrl DocUrl = default(BeezUPCommonDocUrl), string Description = default(string), BeezUPCommonHref Href = default(BeezUPCommonHref), BeezUPCommonOperationId OperationId = default(BeezUPCommonOperationId), BeezUPCommonHttpMethod Method = default(BeezUPCommonHttpMethod), Dictionary<string, BeezUPCommonLinkParameter3> Parameters = default(Dictionary<string, BeezUPCommonLinkParameter3>), bool? Templated = default(bool?), BeezUPCommonInfoSummaries Info = default(BeezUPCommonInfoSummaries))
         {
+            this.DocUrl = DocUrl;
             this.Description = Description;
             this.Href = Href;
             this.OperationId = OperationId;
@@ -50,6 +52,11 @@ namespace IO.Swagger.Model
             this.Info = Info;
         }
         
+        /// <summary>
+        /// Gets or Sets DocUrl
+        /// </summary>
+        [DataMember(Name="docUrl", EmitDefaultValue=false)]
+        public BeezUPCommonDocUrl DocUrl { get; set; }
         /// <summary>
         /// The description of the link
         /// </summary>
@@ -95,6 +102,7 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class LinksGetChannelCatalogMarketplaceSettingsLink {\n");
+            sb.Append("  DocUrl: ").Append(DocUrl).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Href: ").Append(Href).Append("\n");
             sb.Append("  OperationId: ").Append(OperationId).Append("\n");
@@ -138,6 +146,11 @@ namespace IO.Swagger.Model
                 return false;
 
             return 
+                (
+                    this.DocUrl == other.DocUrl ||
+                    this.DocUrl != null &&
+                    this.DocUrl.Equals(other.DocUrl)
+                ) && 
                 (
                     this.Description == other.Description ||
                     this.Description != null &&
@@ -186,6 +199,8 @@ namespace IO.Swagger.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.DocUrl != null)
+                    hash = hash * 59 + this.DocUrl.GetHashCode();
                 if (this.Description != null)
                     hash = hash * 59 + this.Description.GetHashCode();
                 if (this.Href != null)

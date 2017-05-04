@@ -49,8 +49,8 @@ namespace IO.Swagger.Model
         /// <param name="OrderMerchantECommerceSoftwareName">OrderMerchantECommerceSoftwareName.</param>
         /// <param name="OrderMerchantECommerceSoftwareVersion">OrderMerchantECommerceSoftwareVersion.</param>
         /// <param name="OrderPurchaseUtcDate">The purchase date of this order (required).</param>
-        /// <param name="OrderLastModificationUtcDate">The last modification UTC date done by BeezUP of this order. (required).</param>
-        /// <param name="OrderMarketplaceLastModificationUtcDate">The last modification UTC date done by the marketplace on this order. (required).</param>
+        /// <param name="OrderLastModificationUtcDate">The last modification UTC date done by BeezUP of this order (required).</param>
+        /// <param name="OrderMarketplaceLastModificationUtcDate">The last modification UTC date done by the marketplace on this order (required).</param>
         /// <param name="OrderBuyerName">OrderBuyerName.</param>
         /// <param name="OrderTotalPrice">The total price of this order (corresponding to the amount paid by the customer).</param>
         /// <param name="OrderCurrencyCode">OrderCurrencyCode.</param>
@@ -341,15 +341,15 @@ namespace IO.Swagger.Model
         [DataMember(Name="order_PurchaseUtcDate", EmitDefaultValue=false)]
         public DateTime? OrderPurchaseUtcDate { get; set; }
         /// <summary>
-        /// The last modification UTC date done by BeezUP of this order.
+        /// The last modification UTC date done by BeezUP of this order
         /// </summary>
-        /// <value>The last modification UTC date done by BeezUP of this order.</value>
+        /// <value>The last modification UTC date done by BeezUP of this order</value>
         [DataMember(Name="order_LastModificationUtcDate", EmitDefaultValue=false)]
         public DateTime? OrderLastModificationUtcDate { get; set; }
         /// <summary>
-        /// The last modification UTC date done by the marketplace on this order.
+        /// The last modification UTC date done by the marketplace on this order
         /// </summary>
-        /// <value>The last modification UTC date done by the marketplace on this order.</value>
+        /// <value>The last modification UTC date done by the marketplace on this order</value>
         [DataMember(Name="order_MarketplaceLastModificationUtcDate", EmitDefaultValue=false)]
         public DateTime? OrderMarketplaceLastModificationUtcDate { get; set; }
         /// <summary>

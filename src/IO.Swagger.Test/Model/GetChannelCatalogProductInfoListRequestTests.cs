@@ -80,6 +80,46 @@ namespace IO.Swagger.Test
         {
             // TODO unit test for the property 'Title'
         }
+        /// <summary>
+        /// Test the property 'Overrided'
+        /// </summary>
+        [Test]
+        public void OverridedTest()
+        {
+            // TODO unit test for the property 'Overrided'
+        }
+        /// <summary>
+        /// Test the property 'Disabled'
+        /// </summary>
+        [Test]
+        public void DisabledTest()
+        {
+            // TODO unit test for the property 'Disabled'
+        }
+        /// <summary>
+        /// Test the property 'CategoryMapped'
+        /// </summary>
+        [Test]
+        public void CategoryMappedTest()
+        {
+            // TODO unit test for the property 'CategoryMapped'
+        }
+        /// <summary>
+        /// Test the property 'Excluded'
+        /// </summary>
+        [Test]
+        public void ExcludedTest()
+        {
+            // TODO unit test for the property 'Excluded'
+        }
+        /// <summary>
+        /// Test the property 'Active'
+        /// </summary>
+        [Test]
+        public void ActiveTest()
+        {
+            // TODO unit test for the property 'Active'
+        }
 
     }
 

@@ -41,7 +41,7 @@ namespace IO.Swagger.Model
         /// <param name="ProductSku">The product SKU (required).</param>
         /// <param name="ProductTitle">The product tile (required).</param>
         /// <param name="ProductImageUrl">The product image Url (required).</param>
-        /// <param name="ProductActive">Indicates if the product still exists in your catalog (required).</param>
+        /// <param name="ProductActive">Indicates if the product still exists in your catalog.</param>
         /// <param name="UnitPrice">The product&#39;s unit price related to this order (required).</param>
         /// <param name="Quantity">Indicate the product&#39;s quantity ordered. (required).</param>
         /// <param name="Margin">Indicate the product&#39;s margin related to this order. (required).</param>
@@ -83,15 +83,6 @@ namespace IO.Swagger.Model
             {
                 this.ProductImageUrl = ProductImageUrl;
             }
-            // to ensure "ProductActive" is required (not null)
-            if (ProductActive == null)
-            {
-                throw new InvalidDataException("ProductActive is a required property for TrackedOrderProduct and cannot be null");
-            }
-            else
-            {
-                this.ProductActive = ProductActive;
-            }
             // to ensure "UnitPrice" is required (not null)
             if (UnitPrice == null)
             {
@@ -119,6 +110,7 @@ namespace IO.Swagger.Model
             {
                 this.Margin = Margin;
             }
+            this.ProductActive = ProductActive;
         }
         
         /// <summary>

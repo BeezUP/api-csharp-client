@@ -24,9 +24,9 @@ using System.ComponentModel.DataAnnotations;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// Indicates on which date you want to make the filter.
+    /// Indicates on which date you want to make the filter
     /// </summary>
-    /// <value>Indicates on which date you want to make the filter.</value>
+    /// <value>Indicates on which date you want to make the filter</value>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum DateSearchType
     {

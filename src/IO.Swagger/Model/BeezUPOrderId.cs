@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// The order BeezUP identifier
+    /// The BeezUP Order identifier
     /// </summary>
     [DataContract]
     public partial class BeezUPOrderId :  IEquatable<BeezUPOrderId>, IValidatableObject

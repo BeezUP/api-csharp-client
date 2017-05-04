@@ -77,17 +77,6 @@ namespace IO.Swagger.Test
         }
         
         /// <summary>
-        /// Test Logout
-        /// </summary>
-        [Test]
-        public void LogoutTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //instance.Logout();
-            
-        }
-        
-        /// <summary>
         /// Test LostPassword
         /// </summary>
         [Test]

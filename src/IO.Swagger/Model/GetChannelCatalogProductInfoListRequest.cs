@@ -32,26 +32,66 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GetChannelCatalogProductInfoListRequest" /> class.
         /// </summary>
-        /// <param name="Sku">The product sku to search.</param>
-        /// <param name="Title">The  product title to search.</param>
-        public GetChannelCatalogProductInfoListRequest(string Sku = default(string), string Title = default(string))
+        /// <param name="Sku">Search by product sku. If null the filter will not be taken in account..</param>
+        /// <param name="Title">Search by product title. If null the filter will not be taken in account..</param>
+        /// <param name="Overrided">Search overrided products. If null the filter will not be taken in account..</param>
+        /// <param name="Disabled">Search disabled products. If null the filter will not be taken in account..</param>
+        /// <param name="CategoryMapped">Search product with category mapped with the channel. If null the filter will not be taken in account..</param>
+        /// <param name="Excluded">Search excluded products by at least an exclusion filter. If null the filter will not be taken in account..</param>
+        /// <param name="Active">If false, search for product absent from the current catalog. If null the filter will not be taken in account..</param>
+        public GetChannelCatalogProductInfoListRequest(string Sku = default(string), string Title = default(string), bool? Overrided = default(bool?), bool? Disabled = default(bool?), bool? CategoryMapped = default(bool?), bool? Excluded = default(bool?), bool? Active = default(bool?))
         {
             this.Sku = Sku;
             this.Title = Title;
+            this.Overrided = Overrided;
+            this.Disabled = Disabled;
+            this.CategoryMapped = CategoryMapped;
+            this.Excluded = Excluded;
+            this.Active = Active;
         }
         
         /// <summary>
-        /// The product sku to search
+        /// Search by product sku. If null the filter will not be taken in account.
         /// </summary>
-        /// <value>The product sku to search</value>
+        /// <value>Search by product sku. If null the filter will not be taken in account.</value>
         [DataMember(Name="sku", EmitDefaultValue=false)]
         public string Sku { get; set; }
         /// <summary>
-        /// The  product title to search
+        /// Search by product title. If null the filter will not be taken in account.
         /// </summary>
-        /// <value>The  product title to search</value>
+        /// <value>Search by product title. If null the filter will not be taken in account.</value>
         [DataMember(Name="title", EmitDefaultValue=false)]
         public string Title { get; set; }
+        /// <summary>
+        /// Search overrided products. If null the filter will not be taken in account.
+        /// </summary>
+        /// <value>Search overrided products. If null the filter will not be taken in account.</value>
+        [DataMember(Name="overrided", EmitDefaultValue=false)]
+        public bool? Overrided { get; set; }
+        /// <summary>
+        /// Search disabled products. If null the filter will not be taken in account.
+        /// </summary>
+        /// <value>Search disabled products. If null the filter will not be taken in account.</value>
+        [DataMember(Name="disabled", EmitDefaultValue=false)]
+        public bool? Disabled { get; set; }
+        /// <summary>
+        /// Search product with category mapped with the channel. If null the filter will not be taken in account.
+        /// </summary>
+        /// <value>Search product with category mapped with the channel. If null the filter will not be taken in account.</value>
+        [DataMember(Name="categoryMapped", EmitDefaultValue=false)]
+        public bool? CategoryMapped { get; set; }
+        /// <summary>
+        /// Search excluded products by at least an exclusion filter. If null the filter will not be taken in account.
+        /// </summary>
+        /// <value>Search excluded products by at least an exclusion filter. If null the filter will not be taken in account.</value>
+        [DataMember(Name="excluded", EmitDefaultValue=false)]
+        public bool? Excluded { get; set; }
+        /// <summary>
+        /// If false, search for product absent from the current catalog. If null the filter will not be taken in account.
+        /// </summary>
+        /// <value>If false, search for product absent from the current catalog. If null the filter will not be taken in account.</value>
+        [DataMember(Name="active", EmitDefaultValue=false)]
+        public bool? Active { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -62,6 +102,11 @@ namespace IO.Swagger.Model
             sb.Append("class GetChannelCatalogProductInfoListRequest {\n");
             sb.Append("  Sku: ").Append(Sku).Append("\n");
             sb.Append("  Title: ").Append(Title).Append("\n");
+            sb.Append("  Overrided: ").Append(Overrided).Append("\n");
+            sb.Append("  Disabled: ").Append(Disabled).Append("\n");
+            sb.Append("  CategoryMapped: ").Append(CategoryMapped).Append("\n");
+            sb.Append("  Excluded: ").Append(Excluded).Append("\n");
+            sb.Append("  Active: ").Append(Active).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +152,31 @@ namespace IO.Swagger.Model
                     this.Title == other.Title ||
                     this.Title != null &&
                     this.Title.Equals(other.Title)
+                ) && 
+                (
+                    this.Overrided == other.Overrided ||
+                    this.Overrided != null &&
+                    this.Overrided.Equals(other.Overrided)
+                ) && 
+                (
+                    this.Disabled == other.Disabled ||
+                    this.Disabled != null &&
+                    this.Disabled.Equals(other.Disabled)
+                ) && 
+                (
+                    this.CategoryMapped == other.CategoryMapped ||
+                    this.CategoryMapped != null &&
+                    this.CategoryMapped.Equals(other.CategoryMapped)
+                ) && 
+                (
+                    this.Excluded == other.Excluded ||
+                    this.Excluded != null &&
+                    this.Excluded.Equals(other.Excluded)
+                ) && 
+                (
+                    this.Active == other.Active ||
+                    this.Active != null &&
+                    this.Active.Equals(other.Active)
                 );
         }
 
@@ -125,6 +195,16 @@ namespace IO.Swagger.Model
                     hash = hash * 59 + this.Sku.GetHashCode();
                 if (this.Title != null)
                     hash = hash * 59 + this.Title.GetHashCode();
+                if (this.Overrided != null)
+                    hash = hash * 59 + this.Overrided.GetHashCode();
+                if (this.Disabled != null)
+                    hash = hash * 59 + this.Disabled.GetHashCode();
+                if (this.CategoryMapped != null)
+                    hash = hash * 59 + this.CategoryMapped.GetHashCode();
+                if (this.Excluded != null)
+                    hash = hash * 59 + this.Excluded.GetHashCode();
+                if (this.Active != null)
+                    hash = hash * 59 + this.Active.GetHashCode();
                 return hash;
             }
         }

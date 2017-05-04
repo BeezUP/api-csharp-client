@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **CategoryFilter** | [**ReportCategoryFilter**](ReportCategoryFilter.md) |  | [optional] 
 **IndicatorFilters** | [**List&lt;ReportIndicatorFilter&gt;**](ReportIndicatorFilter.md) |  | [optional] 
 **AdvancedFilters** | [**ReportAdvancedFilters**](ReportAdvancedFilters.md) |  | 
+**PageSize** | [**PageSize**](PageSize.md) |  | [optional] 
+**PageNumber** | [**PageNumber**](PageNumber.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

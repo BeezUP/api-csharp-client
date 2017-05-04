@@ -33,10 +33,10 @@ namespace IO.Swagger.Model
         /// Initializes a new instance of the <see cref="BeezUPCommonPaginationResult" /> class.
         /// </summary>
         /// <param name="EntryCount">The entry count currently returned.</param>
-        /// <param name="Links">The navigation links &#39;first&#39;, &#39;last&#39;, &#39;next&#39;, &#39;previous&#39;.</param>
+        /// <param name="Links">Links.</param>
         /// <param name="PageCount">The page count.</param>
         /// <param name="TotalEntryCount">The total entry count.</param>
-        public BeezUPCommonPaginationResult(int? EntryCount = default(int?), List<BeezUPCommonLink2> Links = default(List<BeezUPCommonLink2>), int? PageCount = default(int?), int? TotalEntryCount = default(int?))
+        public BeezUPCommonPaginationResult(int? EntryCount = default(int?), BeezUPCommonPaginationResultLinks Links = default(BeezUPCommonPaginationResultLinks), int? PageCount = default(int?), int? TotalEntryCount = default(int?))
         {
             this.EntryCount = EntryCount;
             this.Links = Links;
@@ -51,11 +51,10 @@ namespace IO.Swagger.Model
         [DataMember(Name="entryCount", EmitDefaultValue=false)]
         public int? EntryCount { get; set; }
         /// <summary>
-        /// The navigation links &#39;first&#39;, &#39;last&#39;, &#39;next&#39;, &#39;previous&#39;
+        /// Gets or Sets Links
         /// </summary>
-        /// <value>The navigation links &#39;first&#39;, &#39;last&#39;, &#39;next&#39;, &#39;previous&#39;</value>
         [DataMember(Name="links", EmitDefaultValue=false)]
-        public List<BeezUPCommonLink2> Links { get; set; }
+        public BeezUPCommonPaginationResultLinks Links { get; set; }
         /// <summary>
         /// The page count
         /// </summary>
@@ -124,7 +123,7 @@ namespace IO.Swagger.Model
                 (
                     this.Links == other.Links ||
                     this.Links != null &&
-                    this.Links.SequenceEqual(other.Links)
+                    this.Links.Equals(other.Links)
                 ) && 
                 (
                     this.PageCount == other.PageCount ||

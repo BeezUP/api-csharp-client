@@ -43,7 +43,9 @@ namespace IO.Swagger.Model
         /// <param name="CategoryFilter">CategoryFilter.</param>
         /// <param name="IndicatorFilters">IndicatorFilters.</param>
         /// <param name="AdvancedFilters">AdvancedFilters (required).</param>
-        public ReportByCategoryRequest(BeezUPCommonChannelId ChannelId = default(BeezUPCommonChannelId), DateTime? BeginPeriodUtcDate = default(DateTime?), DateTime? EndPeriodUtcDate = default(DateTime?), ReportCategoryFilter CategoryFilter = default(ReportCategoryFilter), List<ReportIndicatorFilter> IndicatorFilters = default(List<ReportIndicatorFilter>), ReportAdvancedFilters AdvancedFilters = default(ReportAdvancedFilters))
+        /// <param name="PageSize">PageSize.</param>
+        /// <param name="PageNumber">PageNumber.</param>
+        public ReportByCategoryRequest(BeezUPCommonChannelId ChannelId = default(BeezUPCommonChannelId), DateTime? BeginPeriodUtcDate = default(DateTime?), DateTime? EndPeriodUtcDate = default(DateTime?), ReportCategoryFilter CategoryFilter = default(ReportCategoryFilter), List<ReportIndicatorFilter> IndicatorFilters = default(List<ReportIndicatorFilter>), ReportAdvancedFilters AdvancedFilters = default(ReportAdvancedFilters), PageSize PageSize = default(PageSize), PageNumber PageNumber = default(PageNumber))
         {
             // to ensure "BeginPeriodUtcDate" is required (not null)
             if (BeginPeriodUtcDate == null)
@@ -75,6 +77,8 @@ namespace IO.Swagger.Model
             this.ChannelId = ChannelId;
             this.CategoryFilter = CategoryFilter;
             this.IndicatorFilters = IndicatorFilters;
+            this.PageSize = PageSize;
+            this.PageNumber = PageNumber;
         }
         
         /// <summary>
@@ -110,6 +114,16 @@ namespace IO.Swagger.Model
         [DataMember(Name="advancedFilters", EmitDefaultValue=false)]
         public ReportAdvancedFilters AdvancedFilters { get; set; }
         /// <summary>
+        /// Gets or Sets PageSize
+        /// </summary>
+        [DataMember(Name="pageSize", EmitDefaultValue=false)]
+        public PageSize PageSize { get; set; }
+        /// <summary>
+        /// Gets or Sets PageNumber
+        /// </summary>
+        [DataMember(Name="pageNumber", EmitDefaultValue=false)]
+        public PageNumber PageNumber { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -123,6 +137,8 @@ namespace IO.Swagger.Model
             sb.Append("  CategoryFilter: ").Append(CategoryFilter).Append("\n");
             sb.Append("  IndicatorFilters: ").Append(IndicatorFilters).Append("\n");
             sb.Append("  AdvancedFilters: ").Append(AdvancedFilters).Append("\n");
+            sb.Append("  PageSize: ").Append(PageSize).Append("\n");
+            sb.Append("  PageNumber: ").Append(PageNumber).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -188,6 +204,16 @@ namespace IO.Swagger.Model
                     this.AdvancedFilters == other.AdvancedFilters ||
                     this.AdvancedFilters != null &&
                     this.AdvancedFilters.Equals(other.AdvancedFilters)
+                ) && 
+                (
+                    this.PageSize == other.PageSize ||
+                    this.PageSize != null &&
+                    this.PageSize.Equals(other.PageSize)
+                ) && 
+                (
+                    this.PageNumber == other.PageNumber ||
+                    this.PageNumber != null &&
+                    this.PageNumber.Equals(other.PageNumber)
                 );
         }
 
@@ -214,6 +240,10 @@ namespace IO.Swagger.Model
                     hash = hash * 59 + this.IndicatorFilters.GetHashCode();
                 if (this.AdvancedFilters != null)
                     hash = hash * 59 + this.AdvancedFilters.GetHashCode();
+                if (this.PageSize != null)
+                    hash = hash * 59 + this.PageSize.GetHashCode();
+                if (this.PageNumber != null)
+                    hash = hash * 59 + this.PageNumber.GetHashCode();
                 return hash;
             }
         }
