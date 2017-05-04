@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **UserId** | **string** | The userId that executed the rule if any | [optional] 
 **ExecutionSource** | [**RuleExecutionReportingExecutionSource**](RuleExecutionReportingExecutionSource.md) |  | 
 **ReportUrl** | **string** | The url for the excel report for this execution | [optional] 
-**Links** | [**List&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md) | Links to retrieve/action on this rule execution | [optional] 
+**Links** | [**DefinitionsruleExecutionReportingLinks**](DefinitionsruleExecutionReportingLinks.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

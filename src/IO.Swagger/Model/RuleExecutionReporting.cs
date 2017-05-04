@@ -50,8 +50,8 @@ namespace IO.Swagger.Model
         /// <param name="UserId">The userId that executed the rule if any.</param>
         /// <param name="ExecutionSource">ExecutionSource (required).</param>
         /// <param name="ReportUrl">The url for the excel report for this execution.</param>
-        /// <param name="Links">Links to retrieve/action on this rule execution.</param>
-        public RuleExecutionReporting(string RuleId = default(string), string RuleName = default(string), DateTime? StartedUtcDate = default(DateTime?), DateTime? CompletedUtcDate = default(DateTime?), RuleExecutionReportingStatus Status = default(RuleExecutionReportingStatus), RuleExecutionReportingErrorType ErrorType = default(RuleExecutionReportingErrorType), int? AffectedProductCount = default(int?), int? ActiveAffectedProductCount = default(int?), int? AffectedChannelCount = default(int?), OptimisationActionName OptimisationActionName = default(OptimisationActionName), string UserId = default(string), RuleExecutionReportingExecutionSource ExecutionSource = default(RuleExecutionReportingExecutionSource), string ReportUrl = default(string), List<BeezUPCommonLink2> Links = default(List<BeezUPCommonLink2>))
+        /// <param name="Links">Links.</param>
+        public RuleExecutionReporting(string RuleId = default(string), string RuleName = default(string), DateTime? StartedUtcDate = default(DateTime?), DateTime? CompletedUtcDate = default(DateTime?), RuleExecutionReportingStatus Status = default(RuleExecutionReportingStatus), RuleExecutionReportingErrorType ErrorType = default(RuleExecutionReportingErrorType), int? AffectedProductCount = default(int?), int? ActiveAffectedProductCount = default(int?), int? AffectedChannelCount = default(int?), OptimisationActionName OptimisationActionName = default(OptimisationActionName), string UserId = default(string), RuleExecutionReportingExecutionSource ExecutionSource = default(RuleExecutionReportingExecutionSource), string ReportUrl = default(string), DefinitionsruleExecutionReportingLinks Links = default(DefinitionsruleExecutionReportingLinks))
         {
             // to ensure "RuleId" is required (not null)
             if (RuleId == null)
@@ -176,11 +176,10 @@ namespace IO.Swagger.Model
         [DataMember(Name="reportUrl", EmitDefaultValue=false)]
         public string ReportUrl { get; set; }
         /// <summary>
-        /// Links to retrieve/action on this rule execution
+        /// Gets or Sets Links
         /// </summary>
-        /// <value>Links to retrieve/action on this rule execution</value>
         [DataMember(Name="links", EmitDefaultValue=false)]
-        public List<BeezUPCommonLink2> Links { get; set; }
+        public DefinitionsruleExecutionReportingLinks Links { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -307,7 +306,7 @@ namespace IO.Swagger.Model
                 (
                     this.Links == other.Links ||
                     this.Links != null &&
-                    this.Links.SequenceEqual(other.Links)
+                    this.Links.Equals(other.Links)
                 );
         }
 

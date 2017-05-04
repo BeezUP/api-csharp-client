@@ -24,46 +24,36 @@ using System.ComponentModel.DataAnnotations;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// ReportFilterHeader
+    /// RuleList
     /// </summary>
     [DataContract]
-    public partial class ReportFilterHeader :  IEquatable<ReportFilterHeader>, IValidatableObject
+    public partial class RuleList :  IEquatable<RuleList>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ReportFilterHeader" /> class.
+        /// Initializes a new instance of the <see cref="RuleList" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected ReportFilterHeader() { }
+        protected RuleList() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="ReportFilterHeader" /> class.
+        /// Initializes a new instance of the <see cref="RuleList" /> class.
         /// </summary>
-        /// <param name="ReportFilterId">Report filter identifier (required).</param>
-        /// <param name="ReportFilterName">Report filter name (required).</param>
+        /// <param name="Rules">Rule list (required).</param>
         /// <param name="Links">Links (required).</param>
-        public ReportFilterHeader(string ReportFilterId = default(string), string ReportFilterName = default(string), ReportFilterHeaderLinks Links = default(ReportFilterHeaderLinks))
+        public RuleList(List<Rule> Rules = default(List<Rule>), RuleListLinks Links = default(RuleListLinks))
         {
-            // to ensure "ReportFilterId" is required (not null)
-            if (ReportFilterId == null)
+            // to ensure "Rules" is required (not null)
+            if (Rules == null)
             {
-                throw new InvalidDataException("ReportFilterId is a required property for ReportFilterHeader and cannot be null");
+                throw new InvalidDataException("Rules is a required property for RuleList and cannot be null");
             }
             else
             {
-                this.ReportFilterId = ReportFilterId;
-            }
-            // to ensure "ReportFilterName" is required (not null)
-            if (ReportFilterName == null)
-            {
-                throw new InvalidDataException("ReportFilterName is a required property for ReportFilterHeader and cannot be null");
-            }
-            else
-            {
-                this.ReportFilterName = ReportFilterName;
+                this.Rules = Rules;
             }
             // to ensure "Links" is required (not null)
             if (Links == null)
             {
-                throw new InvalidDataException("Links is a required property for ReportFilterHeader and cannot be null");
+                throw new InvalidDataException("Links is a required property for RuleList and cannot be null");
             }
             else
             {
@@ -72,22 +62,16 @@ namespace IO.Swagger.Model
         }
         
         /// <summary>
-        /// Report filter identifier
+        /// Rule list
         /// </summary>
-        /// <value>Report filter identifier</value>
-        [DataMember(Name="reportFilterId", EmitDefaultValue=false)]
-        public string ReportFilterId { get; set; }
-        /// <summary>
-        /// Report filter name
-        /// </summary>
-        /// <value>Report filter name</value>
-        [DataMember(Name="reportFilterName", EmitDefaultValue=false)]
-        public string ReportFilterName { get; set; }
+        /// <value>Rule list</value>
+        [DataMember(Name="rules", EmitDefaultValue=false)]
+        public List<Rule> Rules { get; set; }
         /// <summary>
         /// Gets or Sets Links
         /// </summary>
         [DataMember(Name="links", EmitDefaultValue=false)]
-        public ReportFilterHeaderLinks Links { get; set; }
+        public RuleListLinks Links { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -95,9 +79,8 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ReportFilterHeader {\n");
-            sb.Append("  ReportFilterId: ").Append(ReportFilterId).Append("\n");
-            sb.Append("  ReportFilterName: ").Append(ReportFilterName).Append("\n");
+            sb.Append("class RuleList {\n");
+            sb.Append("  Rules: ").Append(Rules).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -120,15 +103,15 @@ namespace IO.Swagger.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as ReportFilterHeader);
+            return this.Equals(obj as RuleList);
         }
 
         /// <summary>
-        /// Returns true if ReportFilterHeader instances are equal
+        /// Returns true if RuleList instances are equal
         /// </summary>
-        /// <param name="other">Instance of ReportFilterHeader to be compared</param>
+        /// <param name="other">Instance of RuleList to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ReportFilterHeader other)
+        public bool Equals(RuleList other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -136,14 +119,9 @@ namespace IO.Swagger.Model
 
             return 
                 (
-                    this.ReportFilterId == other.ReportFilterId ||
-                    this.ReportFilterId != null &&
-                    this.ReportFilterId.Equals(other.ReportFilterId)
-                ) && 
-                (
-                    this.ReportFilterName == other.ReportFilterName ||
-                    this.ReportFilterName != null &&
-                    this.ReportFilterName.Equals(other.ReportFilterName)
+                    this.Rules == other.Rules ||
+                    this.Rules != null &&
+                    this.Rules.SequenceEqual(other.Rules)
                 ) && 
                 (
                     this.Links == other.Links ||
@@ -163,10 +141,8 @@ namespace IO.Swagger.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.ReportFilterId != null)
-                    hash = hash * 59 + this.ReportFilterId.GetHashCode();
-                if (this.ReportFilterName != null)
-                    hash = hash * 59 + this.ReportFilterName.GetHashCode();
+                if (this.Rules != null)
+                    hash = hash * 59 + this.Rules.GetHashCode();
                 if (this.Links != null)
                     hash = hash * 59 + this.Links.GetHashCode();
                 return hash;

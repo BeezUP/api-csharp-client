@@ -3339,7 +3339,7 @@ void (empty response body)
 
 <a name="exportstorereportbycategory"></a>
 # **ExportStoreReportByCategory**
-> List<BeezUPCommonLink2> ExportStoreReportByCategory (string storeId, string format, ReportByCategoryRequest request)
+> BeezUPCommonLink3 ExportStoreReportByCategory (string storeId, string format, ReportByCategoryRequest request)
 
 Export the report by category
 
@@ -3373,7 +3373,7 @@ namespace Example
             try
             {
                 // Export the report by category
-                List&lt;BeezUPCommonLink2&gt; result = apiInstance.ExportStoreReportByCategory(storeId, format, request);
+                BeezUPCommonLink3 result = apiInstance.ExportStoreReportByCategory(storeId, format, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -3395,7 +3395,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<BeezUPCommonLink2>**](BeezUPCommonLink2.md)
+[**BeezUPCommonLink3**](BeezUPCommonLink3.md)
 
 ### Authorization
 
@@ -3410,7 +3410,7 @@ Name | Type | Description  | Notes
 
 <a name="exportstorereportbychannel"></a>
 # **ExportStoreReportByChannel**
-> List<BeezUPCommonLink2> ExportStoreReportByChannel (string storeId, string format, ReportByChannelRequest request)
+> BeezUPCommonLink3 ExportStoreReportByChannel (string storeId, string format, ReportByChannelRequest request)
 
 Export the report by channel
 
@@ -3444,7 +3444,7 @@ namespace Example
             try
             {
                 // Export the report by channel
-                List&lt;BeezUPCommonLink2&gt; result = apiInstance.ExportStoreReportByChannel(storeId, format, request);
+                BeezUPCommonLink3 result = apiInstance.ExportStoreReportByChannel(storeId, format, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -3466,7 +3466,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<BeezUPCommonLink2>**](BeezUPCommonLink2.md)
+[**BeezUPCommonLink3**](BeezUPCommonLink3.md)
 
 ### Authorization
 
@@ -3481,7 +3481,7 @@ Name | Type | Description  | Notes
 
 <a name="exportstorereportbyproduct"></a>
 # **ExportStoreReportByProduct**
-> List<BeezUPCommonLink2> ExportStoreReportByProduct (string storeId, string format, ReportByProductRequest request)
+> BeezUPCommonLink3 ExportStoreReportByProduct (string storeId, string format, ReportByProductRequest request)
 
 Export the report by product
 
@@ -3515,7 +3515,7 @@ namespace Example
             try
             {
                 // Export the report by product
-                List&lt;BeezUPCommonLink2&gt; result = apiInstance.ExportStoreReportByProduct(storeId, format, request);
+                BeezUPCommonLink3 result = apiInstance.ExportStoreReportByProduct(storeId, format, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -3537,7 +3537,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<BeezUPCommonLink2>**](BeezUPCommonLink2.md)
+[**BeezUPCommonLink3**](BeezUPCommonLink3.md)
 
 ### Authorization
 
@@ -5577,7 +5577,7 @@ Name | Type | Description  | Notes
 
 <a name="getrules"></a>
 # **GetRules**
-> Rules GetRules (string storeId)
+> RuleList GetRules (string storeId)
 
 Gets the list of rules for a given store
 
@@ -5607,7 +5607,7 @@ namespace Example
             try
             {
                 // Gets the list of rules for a given store
-                Rules result = apiInstance.GetRules(storeId);
+                RuleList result = apiInstance.GetRules(storeId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -5627,7 +5627,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Rules**](Rules.md)
+[**RuleList**](RuleList.md)
 
 ### Authorization
 

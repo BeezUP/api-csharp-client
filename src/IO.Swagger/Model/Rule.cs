@@ -47,8 +47,8 @@ namespace IO.Swagger.Model
         /// <param name="Enabled">Is the rule enabled (required).</param>
         /// <param name="ValidityStartUtcDate">Rule validity start utc date.</param>
         /// <param name="ValidityEndUtcDate">Rule validity end utc date.</param>
-        /// <param name="Links">Links to retrieve/action on other entities (required).</param>
-        public Rule(string RuleId = default(string), string RuleName = default(string), RuleLastExecutionStatus LastExecutionStatus = default(RuleLastExecutionStatus), DateTime? LastExecutionUtcDate = default(DateTime?), OptimisationActionName ActionName = default(OptimisationActionName), string ReportFilterId = default(string), int? Position = default(int?), bool? Enabled = default(bool?), DateTime? ValidityStartUtcDate = default(DateTime?), DateTime? ValidityEndUtcDate = default(DateTime?), List<BeezUPCommonLink2> Links = default(List<BeezUPCommonLink2>))
+        /// <param name="Links">Links (required).</param>
+        public Rule(string RuleId = default(string), string RuleName = default(string), RuleLastExecutionStatus LastExecutionStatus = default(RuleLastExecutionStatus), DateTime? LastExecutionUtcDate = default(DateTime?), OptimisationActionName ActionName = default(OptimisationActionName), string ReportFilterId = default(string), int? Position = default(int?), bool? Enabled = default(bool?), DateTime? ValidityStartUtcDate = default(DateTime?), DateTime? ValidityEndUtcDate = default(DateTime?), DefinitionsruleLinks Links = default(DefinitionsruleLinks))
         {
             // to ensure "RuleId" is required (not null)
             if (RuleId == null)
@@ -178,11 +178,10 @@ namespace IO.Swagger.Model
         [DataMember(Name="validityEndUtcDate", EmitDefaultValue=false)]
         public DateTime? ValidityEndUtcDate { get; set; }
         /// <summary>
-        /// Links to retrieve/action on other entities
+        /// Gets or Sets Links
         /// </summary>
-        /// <value>Links to retrieve/action on other entities</value>
         [DataMember(Name="links", EmitDefaultValue=false)]
-        public List<BeezUPCommonLink2> Links { get; set; }
+        public DefinitionsruleLinks Links { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -291,7 +290,7 @@ namespace IO.Swagger.Model
                 (
                     this.Links == other.Links ||
                     this.Links != null &&
-                    this.Links.SequenceEqual(other.Links)
+                    this.Links.Equals(other.Links)
                 );
         }
 

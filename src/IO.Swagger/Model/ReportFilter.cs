@@ -40,8 +40,8 @@ namespace IO.Swagger.Model
         /// <param name="ReportFilterId">Report filter identifier (required).</param>
         /// <param name="ReportFilterName">Report filter name (required).</param>
         /// <param name="Parameters">Parameters (required).</param>
-        /// <param name="Links">Indicates the actions you can do on this report filter.</param>
-        public ReportFilter(string ReportFilterId = default(string), string ReportFilterName = default(string), ReportFilterParameters Parameters = default(ReportFilterParameters), List<BeezUPCommonLink2> Links = default(List<BeezUPCommonLink2>))
+        /// <param name="Links">Links.</param>
+        public ReportFilter(string ReportFilterId = default(string), string ReportFilterName = default(string), ReportFilterParameters Parameters = default(ReportFilterParameters), ReportFilterLinks Links = default(ReportFilterLinks))
         {
             // to ensure "ReportFilterId" is required (not null)
             if (ReportFilterId == null)
@@ -91,11 +91,10 @@ namespace IO.Swagger.Model
         [DataMember(Name="parameters", EmitDefaultValue=false)]
         public ReportFilterParameters Parameters { get; set; }
         /// <summary>
-        /// Indicates the actions you can do on this report filter
+        /// Gets or Sets Links
         /// </summary>
-        /// <value>Indicates the actions you can do on this report filter</value>
         [DataMember(Name="links", EmitDefaultValue=false)]
-        public List<BeezUPCommonLink2> Links { get; set; }
+        public ReportFilterLinks Links { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -162,7 +161,7 @@ namespace IO.Swagger.Model
                 (
                     this.Links == other.Links ||
                     this.Links != null &&
-                    this.Links.SequenceEqual(other.Links)
+                    this.Links.Equals(other.Links)
                 );
         }
 

@@ -1120,8 +1120,8 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>List&lt;BeezUPCommonLink2&gt;</returns>
-        List<BeezUPCommonLink2> ExportStoreReportByCategory (string storeId, string format, ReportByCategoryRequest request);
+        /// <returns>BeezUPCommonLink3</returns>
+        BeezUPCommonLink3 ExportStoreReportByCategory (string storeId, string format, ReportByCategoryRequest request);
 
         /// <summary>
         /// Export the report by category
@@ -1133,8 +1133,8 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>ApiResponse of List&lt;BeezUPCommonLink2&gt;</returns>
-        ApiResponse<List<BeezUPCommonLink2>> ExportStoreReportByCategoryWithHttpInfo (string storeId, string format, ReportByCategoryRequest request);
+        /// <returns>ApiResponse of BeezUPCommonLink3</returns>
+        ApiResponse<BeezUPCommonLink3> ExportStoreReportByCategoryWithHttpInfo (string storeId, string format, ReportByCategoryRequest request);
         /// <summary>
         /// Export the report by channel
         /// </summary>
@@ -1145,8 +1145,8 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>List&lt;BeezUPCommonLink2&gt;</returns>
-        List<BeezUPCommonLink2> ExportStoreReportByChannel (string storeId, string format, ReportByChannelRequest request);
+        /// <returns>BeezUPCommonLink3</returns>
+        BeezUPCommonLink3 ExportStoreReportByChannel (string storeId, string format, ReportByChannelRequest request);
 
         /// <summary>
         /// Export the report by channel
@@ -1158,8 +1158,8 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>ApiResponse of List&lt;BeezUPCommonLink2&gt;</returns>
-        ApiResponse<List<BeezUPCommonLink2>> ExportStoreReportByChannelWithHttpInfo (string storeId, string format, ReportByChannelRequest request);
+        /// <returns>ApiResponse of BeezUPCommonLink3</returns>
+        ApiResponse<BeezUPCommonLink3> ExportStoreReportByChannelWithHttpInfo (string storeId, string format, ReportByChannelRequest request);
         /// <summary>
         /// Export the report by product
         /// </summary>
@@ -1170,8 +1170,8 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>List&lt;BeezUPCommonLink2&gt;</returns>
-        List<BeezUPCommonLink2> ExportStoreReportByProduct (string storeId, string format, ReportByProductRequest request);
+        /// <returns>BeezUPCommonLink3</returns>
+        BeezUPCommonLink3 ExportStoreReportByProduct (string storeId, string format, ReportByProductRequest request);
 
         /// <summary>
         /// Export the report by product
@@ -1183,8 +1183,8 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>ApiResponse of List&lt;BeezUPCommonLink2&gt;</returns>
-        ApiResponse<List<BeezUPCommonLink2>> ExportStoreReportByProductWithHttpInfo (string storeId, string format, ReportByProductRequest request);
+        /// <returns>ApiResponse of BeezUPCommonLink3</returns>
+        ApiResponse<BeezUPCommonLink3> ExportStoreReportByProductWithHttpInfo (string storeId, string format, ReportByProductRequest request);
         /// <summary>
         /// Get list of configured automatic Order status transitions
         /// </summary>
@@ -1866,8 +1866,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="storeId">Your store identifier</param>
-        /// <returns>Rules</returns>
-        Rules GetRules (string storeId);
+        /// <returns>RuleList</returns>
+        RuleList GetRules (string storeId);
 
         /// <summary>
         /// Gets the list of rules for a given store
@@ -1877,8 +1877,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="storeId">Your store identifier</param>
-        /// <returns>ApiResponse of Rules</returns>
-        ApiResponse<Rules> GetRulesWithHttpInfo (string storeId);
+        /// <returns>ApiResponse of RuleList</returns>
+        ApiResponse<RuleList> GetRulesWithHttpInfo (string storeId);
         /// <summary>
         /// Get the rules execution history
         /// </summary>
@@ -4719,8 +4719,8 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>Task of List&lt;BeezUPCommonLink2&gt;</returns>
-        System.Threading.Tasks.Task<List<BeezUPCommonLink2>> ExportStoreReportByCategoryAsync (string storeId, string format, ReportByCategoryRequest request);
+        /// <returns>Task of BeezUPCommonLink3</returns>
+        System.Threading.Tasks.Task<BeezUPCommonLink3> ExportStoreReportByCategoryAsync (string storeId, string format, ReportByCategoryRequest request);
 
         /// <summary>
         /// Export the report by category
@@ -4732,8 +4732,8 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>Task of ApiResponse (List&lt;BeezUPCommonLink2&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BeezUPCommonLink2>>> ExportStoreReportByCategoryAsyncWithHttpInfo (string storeId, string format, ReportByCategoryRequest request);
+        /// <returns>Task of ApiResponse (BeezUPCommonLink3)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BeezUPCommonLink3>> ExportStoreReportByCategoryAsyncWithHttpInfo (string storeId, string format, ReportByCategoryRequest request);
         /// <summary>
         /// Export the report by channel
         /// </summary>
@@ -4744,8 +4744,8 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>Task of List&lt;BeezUPCommonLink2&gt;</returns>
-        System.Threading.Tasks.Task<List<BeezUPCommonLink2>> ExportStoreReportByChannelAsync (string storeId, string format, ReportByChannelRequest request);
+        /// <returns>Task of BeezUPCommonLink3</returns>
+        System.Threading.Tasks.Task<BeezUPCommonLink3> ExportStoreReportByChannelAsync (string storeId, string format, ReportByChannelRequest request);
 
         /// <summary>
         /// Export the report by channel
@@ -4757,8 +4757,8 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>Task of ApiResponse (List&lt;BeezUPCommonLink2&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BeezUPCommonLink2>>> ExportStoreReportByChannelAsyncWithHttpInfo (string storeId, string format, ReportByChannelRequest request);
+        /// <returns>Task of ApiResponse (BeezUPCommonLink3)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BeezUPCommonLink3>> ExportStoreReportByChannelAsyncWithHttpInfo (string storeId, string format, ReportByChannelRequest request);
         /// <summary>
         /// Export the report by product
         /// </summary>
@@ -4769,8 +4769,8 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>Task of List&lt;BeezUPCommonLink2&gt;</returns>
-        System.Threading.Tasks.Task<List<BeezUPCommonLink2>> ExportStoreReportByProductAsync (string storeId, string format, ReportByProductRequest request);
+        /// <returns>Task of BeezUPCommonLink3</returns>
+        System.Threading.Tasks.Task<BeezUPCommonLink3> ExportStoreReportByProductAsync (string storeId, string format, ReportByProductRequest request);
 
         /// <summary>
         /// Export the report by product
@@ -4782,8 +4782,8 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>Task of ApiResponse (List&lt;BeezUPCommonLink2&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BeezUPCommonLink2>>> ExportStoreReportByProductAsyncWithHttpInfo (string storeId, string format, ReportByProductRequest request);
+        /// <returns>Task of ApiResponse (BeezUPCommonLink3)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BeezUPCommonLink3>> ExportStoreReportByProductAsyncWithHttpInfo (string storeId, string format, ReportByProductRequest request);
         /// <summary>
         /// Get list of configured automatic Order status transitions
         /// </summary>
@@ -5465,8 +5465,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="storeId">Your store identifier</param>
-        /// <returns>Task of Rules</returns>
-        System.Threading.Tasks.Task<Rules> GetRulesAsync (string storeId);
+        /// <returns>Task of RuleList</returns>
+        System.Threading.Tasks.Task<RuleList> GetRulesAsync (string storeId);
 
         /// <summary>
         /// Gets the list of rules for a given store
@@ -5476,8 +5476,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="storeId">Your store identifier</param>
-        /// <returns>Task of ApiResponse (Rules)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Rules>> GetRulesAsyncWithHttpInfo (string storeId);
+        /// <returns>Task of ApiResponse (RuleList)</returns>
+        System.Threading.Tasks.Task<ApiResponse<RuleList>> GetRulesAsyncWithHttpInfo (string storeId);
         /// <summary>
         /// Get the rules execution history
         /// </summary>
@@ -15417,10 +15417,10 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>List&lt;BeezUPCommonLink2&gt;</returns>
-        public List<BeezUPCommonLink2> ExportStoreReportByCategory (string storeId, string format, ReportByCategoryRequest request)
+        /// <returns>BeezUPCommonLink3</returns>
+        public BeezUPCommonLink3 ExportStoreReportByCategory (string storeId, string format, ReportByCategoryRequest request)
         {
-             ApiResponse<List<BeezUPCommonLink2>> localVarResponse = ExportStoreReportByCategoryWithHttpInfo(storeId, format, request);
+             ApiResponse<BeezUPCommonLink3> localVarResponse = ExportStoreReportByCategoryWithHttpInfo(storeId, format, request);
              return localVarResponse.Data;
         }
 
@@ -15431,8 +15431,8 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>ApiResponse of List&lt;BeezUPCommonLink2&gt;</returns>
-        public ApiResponse< List<BeezUPCommonLink2> > ExportStoreReportByCategoryWithHttpInfo (string storeId, string format, ReportByCategoryRequest request)
+        /// <returns>ApiResponse of BeezUPCommonLink3</returns>
+        public ApiResponse< BeezUPCommonLink3 > ExportStoreReportByCategoryWithHttpInfo (string storeId, string format, ReportByCategoryRequest request)
         {
             // verify the required parameter 'storeId' is set
             if (storeId == null)
@@ -15500,9 +15500,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<BeezUPCommonLink2>>(localVarStatusCode,
+            return new ApiResponse<BeezUPCommonLink3>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<BeezUPCommonLink2>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BeezUPCommonLink2>)));
+                (BeezUPCommonLink3) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BeezUPCommonLink3)));
             
         }
 
@@ -15513,10 +15513,10 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>Task of List&lt;BeezUPCommonLink2&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BeezUPCommonLink2>> ExportStoreReportByCategoryAsync (string storeId, string format, ReportByCategoryRequest request)
+        /// <returns>Task of BeezUPCommonLink3</returns>
+        public async System.Threading.Tasks.Task<BeezUPCommonLink3> ExportStoreReportByCategoryAsync (string storeId, string format, ReportByCategoryRequest request)
         {
-             ApiResponse<List<BeezUPCommonLink2>> localVarResponse = await ExportStoreReportByCategoryAsyncWithHttpInfo(storeId, format, request);
+             ApiResponse<BeezUPCommonLink3> localVarResponse = await ExportStoreReportByCategoryAsyncWithHttpInfo(storeId, format, request);
              return localVarResponse.Data;
 
         }
@@ -15528,8 +15528,8 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>Task of ApiResponse (List&lt;BeezUPCommonLink2&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BeezUPCommonLink2>>> ExportStoreReportByCategoryAsyncWithHttpInfo (string storeId, string format, ReportByCategoryRequest request)
+        /// <returns>Task of ApiResponse (BeezUPCommonLink3)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<BeezUPCommonLink3>> ExportStoreReportByCategoryAsyncWithHttpInfo (string storeId, string format, ReportByCategoryRequest request)
         {
             // verify the required parameter 'storeId' is set
             if (storeId == null)
@@ -15596,9 +15596,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<BeezUPCommonLink2>>(localVarStatusCode,
+            return new ApiResponse<BeezUPCommonLink3>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<BeezUPCommonLink2>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BeezUPCommonLink2>)));
+                (BeezUPCommonLink3) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BeezUPCommonLink3)));
             
         }
 
@@ -15609,10 +15609,10 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>List&lt;BeezUPCommonLink2&gt;</returns>
-        public List<BeezUPCommonLink2> ExportStoreReportByChannel (string storeId, string format, ReportByChannelRequest request)
+        /// <returns>BeezUPCommonLink3</returns>
+        public BeezUPCommonLink3 ExportStoreReportByChannel (string storeId, string format, ReportByChannelRequest request)
         {
-             ApiResponse<List<BeezUPCommonLink2>> localVarResponse = ExportStoreReportByChannelWithHttpInfo(storeId, format, request);
+             ApiResponse<BeezUPCommonLink3> localVarResponse = ExportStoreReportByChannelWithHttpInfo(storeId, format, request);
              return localVarResponse.Data;
         }
 
@@ -15623,8 +15623,8 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>ApiResponse of List&lt;BeezUPCommonLink2&gt;</returns>
-        public ApiResponse< List<BeezUPCommonLink2> > ExportStoreReportByChannelWithHttpInfo (string storeId, string format, ReportByChannelRequest request)
+        /// <returns>ApiResponse of BeezUPCommonLink3</returns>
+        public ApiResponse< BeezUPCommonLink3 > ExportStoreReportByChannelWithHttpInfo (string storeId, string format, ReportByChannelRequest request)
         {
             // verify the required parameter 'storeId' is set
             if (storeId == null)
@@ -15692,9 +15692,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<BeezUPCommonLink2>>(localVarStatusCode,
+            return new ApiResponse<BeezUPCommonLink3>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<BeezUPCommonLink2>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BeezUPCommonLink2>)));
+                (BeezUPCommonLink3) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BeezUPCommonLink3)));
             
         }
 
@@ -15705,10 +15705,10 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>Task of List&lt;BeezUPCommonLink2&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BeezUPCommonLink2>> ExportStoreReportByChannelAsync (string storeId, string format, ReportByChannelRequest request)
+        /// <returns>Task of BeezUPCommonLink3</returns>
+        public async System.Threading.Tasks.Task<BeezUPCommonLink3> ExportStoreReportByChannelAsync (string storeId, string format, ReportByChannelRequest request)
         {
-             ApiResponse<List<BeezUPCommonLink2>> localVarResponse = await ExportStoreReportByChannelAsyncWithHttpInfo(storeId, format, request);
+             ApiResponse<BeezUPCommonLink3> localVarResponse = await ExportStoreReportByChannelAsyncWithHttpInfo(storeId, format, request);
              return localVarResponse.Data;
 
         }
@@ -15720,8 +15720,8 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>Task of ApiResponse (List&lt;BeezUPCommonLink2&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BeezUPCommonLink2>>> ExportStoreReportByChannelAsyncWithHttpInfo (string storeId, string format, ReportByChannelRequest request)
+        /// <returns>Task of ApiResponse (BeezUPCommonLink3)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<BeezUPCommonLink3>> ExportStoreReportByChannelAsyncWithHttpInfo (string storeId, string format, ReportByChannelRequest request)
         {
             // verify the required parameter 'storeId' is set
             if (storeId == null)
@@ -15788,9 +15788,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<BeezUPCommonLink2>>(localVarStatusCode,
+            return new ApiResponse<BeezUPCommonLink3>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<BeezUPCommonLink2>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BeezUPCommonLink2>)));
+                (BeezUPCommonLink3) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BeezUPCommonLink3)));
             
         }
 
@@ -15801,10 +15801,10 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>List&lt;BeezUPCommonLink2&gt;</returns>
-        public List<BeezUPCommonLink2> ExportStoreReportByProduct (string storeId, string format, ReportByProductRequest request)
+        /// <returns>BeezUPCommonLink3</returns>
+        public BeezUPCommonLink3 ExportStoreReportByProduct (string storeId, string format, ReportByProductRequest request)
         {
-             ApiResponse<List<BeezUPCommonLink2>> localVarResponse = ExportStoreReportByProductWithHttpInfo(storeId, format, request);
+             ApiResponse<BeezUPCommonLink3> localVarResponse = ExportStoreReportByProductWithHttpInfo(storeId, format, request);
              return localVarResponse.Data;
         }
 
@@ -15815,8 +15815,8 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>ApiResponse of List&lt;BeezUPCommonLink2&gt;</returns>
-        public ApiResponse< List<BeezUPCommonLink2> > ExportStoreReportByProductWithHttpInfo (string storeId, string format, ReportByProductRequest request)
+        /// <returns>ApiResponse of BeezUPCommonLink3</returns>
+        public ApiResponse< BeezUPCommonLink3 > ExportStoreReportByProductWithHttpInfo (string storeId, string format, ReportByProductRequest request)
         {
             // verify the required parameter 'storeId' is set
             if (storeId == null)
@@ -15884,9 +15884,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<BeezUPCommonLink2>>(localVarStatusCode,
+            return new ApiResponse<BeezUPCommonLink3>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<BeezUPCommonLink2>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BeezUPCommonLink2>)));
+                (BeezUPCommonLink3) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BeezUPCommonLink3)));
             
         }
 
@@ -15897,10 +15897,10 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>Task of List&lt;BeezUPCommonLink2&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BeezUPCommonLink2>> ExportStoreReportByProductAsync (string storeId, string format, ReportByProductRequest request)
+        /// <returns>Task of BeezUPCommonLink3</returns>
+        public async System.Threading.Tasks.Task<BeezUPCommonLink3> ExportStoreReportByProductAsync (string storeId, string format, ReportByProductRequest request)
         {
-             ApiResponse<List<BeezUPCommonLink2>> localVarResponse = await ExportStoreReportByProductAsyncWithHttpInfo(storeId, format, request);
+             ApiResponse<BeezUPCommonLink3> localVarResponse = await ExportStoreReportByProductAsyncWithHttpInfo(storeId, format, request);
              return localVarResponse.Data;
 
         }
@@ -15912,8 +15912,8 @@ namespace IO.Swagger.Api
         /// <param name="storeId">Your store identifier</param>
         /// <param name="format"></param>
         /// <param name="request"></param>
-        /// <returns>Task of ApiResponse (List&lt;BeezUPCommonLink2&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BeezUPCommonLink2>>> ExportStoreReportByProductAsyncWithHttpInfo (string storeId, string format, ReportByProductRequest request)
+        /// <returns>Task of ApiResponse (BeezUPCommonLink3)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<BeezUPCommonLink3>> ExportStoreReportByProductAsyncWithHttpInfo (string storeId, string format, ReportByProductRequest request)
         {
             // verify the required parameter 'storeId' is set
             if (storeId == null)
@@ -15980,9 +15980,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<BeezUPCommonLink2>>(localVarStatusCode,
+            return new ApiResponse<BeezUPCommonLink3>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<BeezUPCommonLink2>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BeezUPCommonLink2>)));
+                (BeezUPCommonLink3) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BeezUPCommonLink3)));
             
         }
 
@@ -20927,10 +20927,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="storeId">Your store identifier</param>
-        /// <returns>Rules</returns>
-        public Rules GetRules (string storeId)
+        /// <returns>RuleList</returns>
+        public RuleList GetRules (string storeId)
         {
-             ApiResponse<Rules> localVarResponse = GetRulesWithHttpInfo(storeId);
+             ApiResponse<RuleList> localVarResponse = GetRulesWithHttpInfo(storeId);
              return localVarResponse.Data;
         }
 
@@ -20939,8 +20939,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="storeId">Your store identifier</param>
-        /// <returns>ApiResponse of Rules</returns>
-        public ApiResponse< Rules > GetRulesWithHttpInfo (string storeId)
+        /// <returns>ApiResponse of RuleList</returns>
+        public ApiResponse< RuleList > GetRulesWithHttpInfo (string storeId)
         {
             // verify the required parameter 'storeId' is set
             if (storeId == null)
@@ -20993,9 +20993,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Rules>(localVarStatusCode,
+            return new ApiResponse<RuleList>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Rules) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Rules)));
+                (RuleList) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RuleList)));
             
         }
 
@@ -21004,10 +21004,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="storeId">Your store identifier</param>
-        /// <returns>Task of Rules</returns>
-        public async System.Threading.Tasks.Task<Rules> GetRulesAsync (string storeId)
+        /// <returns>Task of RuleList</returns>
+        public async System.Threading.Tasks.Task<RuleList> GetRulesAsync (string storeId)
         {
-             ApiResponse<Rules> localVarResponse = await GetRulesAsyncWithHttpInfo(storeId);
+             ApiResponse<RuleList> localVarResponse = await GetRulesAsyncWithHttpInfo(storeId);
              return localVarResponse.Data;
 
         }
@@ -21017,8 +21017,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="storeId">Your store identifier</param>
-        /// <returns>Task of ApiResponse (Rules)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Rules>> GetRulesAsyncWithHttpInfo (string storeId)
+        /// <returns>Task of ApiResponse (RuleList)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<RuleList>> GetRulesAsyncWithHttpInfo (string storeId)
         {
             // verify the required parameter 'storeId' is set
             if (storeId == null)
@@ -21070,9 +21070,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Rules>(localVarStatusCode,
+            return new ApiResponse<RuleList>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Rules) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Rules)));
+                (RuleList) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RuleList)));
             
         }
 

@@ -690,7 +690,7 @@ namespace IO.Swagger.Test
             //string format = null;
             //ReportByCategoryRequest request = null;
             //var response = instance.ExportStoreReportByCategory(storeId, format, request);
-            //Assert.IsInstanceOf<List<BeezUPCommonLink2>> (response, "response is List<BeezUPCommonLink2>");
+            //Assert.IsInstanceOf<BeezUPCommonLink3> (response, "response is BeezUPCommonLink3");
         }
         
         /// <summary>
@@ -704,7 +704,7 @@ namespace IO.Swagger.Test
             //string format = null;
             //ReportByChannelRequest request = null;
             //var response = instance.ExportStoreReportByChannel(storeId, format, request);
-            //Assert.IsInstanceOf<List<BeezUPCommonLink2>> (response, "response is List<BeezUPCommonLink2>");
+            //Assert.IsInstanceOf<BeezUPCommonLink3> (response, "response is BeezUPCommonLink3");
         }
         
         /// <summary>
@@ -718,7 +718,7 @@ namespace IO.Swagger.Test
             //string format = null;
             //ReportByProductRequest request = null;
             //var response = instance.ExportStoreReportByProduct(storeId, format, request);
-            //Assert.IsInstanceOf<List<BeezUPCommonLink2>> (response, "response is List<BeezUPCommonLink2>");
+            //Assert.IsInstanceOf<BeezUPCommonLink3> (response, "response is BeezUPCommonLink3");
         }
         
         /// <summary>
@@ -1113,7 +1113,7 @@ namespace IO.Swagger.Test
             // TODO uncomment below to test the method and replace null with proper value
             //string storeId = null;
             //var response = instance.GetRules(storeId);
-            //Assert.IsInstanceOf<Rules> (response, "response is Rules");
+            //Assert.IsInstanceOf<RuleList> (response, "response is RuleList");
         }
         
         /// <summary>

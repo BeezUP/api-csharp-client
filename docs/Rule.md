@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Enabled** | **bool?** | Is the rule enabled | 
 **ValidityStartUtcDate** | **DateTime?** | Rule validity start utc date | [optional] 
 **ValidityEndUtcDate** | **DateTime?** | Rule validity end utc date | [optional] 
-**Links** | [**List&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md) | Links to retrieve/action on other entities | 
+**Links** | [**DefinitionsruleLinks**](DefinitionsruleLinks.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
