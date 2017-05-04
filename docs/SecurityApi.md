@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="login"></a>
 # **Login**
-> ApiCredentials Login (LoginRequest request = null)
+> ApiCredentials Login (LoginRequest request)
 
 Login
 
@@ -33,7 +33,7 @@ namespace Example
         {
             
             var apiInstance = new SecurityApi();
-            var request = new LoginRequest(); // LoginRequest |  (optional) 
+            var request = new LoginRequest(); // LoginRequest | 
 
             try
             {
@@ -54,7 +54,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**LoginRequest**](LoginRequest.md)|  | [optional] 
+ **request** | [**LoginRequest**](LoginRequest.md)|  | 
 
 ### Return type
 
@@ -73,7 +73,7 @@ No authorization required
 
 <a name="lostpassword"></a>
 # **LostPassword**
-> void LostPassword (Email email = null)
+> void LostPassword (BeezUPCommonEmail email)
 
 Lost password
 
@@ -95,7 +95,7 @@ namespace Example
         {
             
             var apiInstance = new SecurityApi();
-            var email = new Email(); // Email | Your email (optional) 
+            var email = new BeezUPCommonEmail(); // BeezUPCommonEmail | Your email
 
             try
             {
@@ -115,7 +115,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **email** | [**Email**](Email.md)| Your email | [optional] 
+ **email** | [**BeezUPCommonEmail**](BeezUPCommonEmail.md)| Your email | 
 
 ### Return type
 
@@ -134,7 +134,7 @@ No authorization required
 
 <a name="register"></a>
 # **Register**
-> void Register (RegisterRequest request = null)
+> void Register (RegisterRequest request)
 
 User Registration
 
@@ -156,7 +156,7 @@ namespace Example
         {
             
             var apiInstance = new SecurityApi();
-            var request = new RegisterRequest(); // RegisterRequest |  (optional) 
+            var request = new RegisterRequest(); // RegisterRequest | 
 
             try
             {
@@ -176,7 +176,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**RegisterRequest**](RegisterRequest.md)|  | [optional] 
+ **request** | [**RegisterRequest**](RegisterRequest.md)|  | 
 
 ### Return type
 

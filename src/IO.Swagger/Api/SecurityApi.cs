@@ -31,9 +31,9 @@ namespace IO.Swagger.Api
         /// User Login - The login will give your tokens
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>ApiCredentials</returns>
-        ApiCredentials Login (LoginRequest request = null);
+        ApiCredentials Login (LoginRequest request);
 
         /// <summary>
         /// Login
@@ -42,9 +42,9 @@ namespace IO.Swagger.Api
         /// User Login - The login will give your tokens
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>ApiResponse of ApiCredentials</returns>
-        ApiResponse<ApiCredentials> LoginWithHttpInfo (LoginRequest request = null);
+        ApiResponse<ApiCredentials> LoginWithHttpInfo (LoginRequest request);
         /// <summary>
         /// Lost password
         /// </summary>
@@ -52,9 +52,9 @@ namespace IO.Swagger.Api
         /// Lost password - Your password will be regenerated and sent to your email
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email">Your email (optional)</param>
+        /// <param name="email">Your email</param>
         /// <returns></returns>
-        void LostPassword (Email email = null);
+        void LostPassword (BeezUPCommonEmail email);
 
         /// <summary>
         /// Lost password
@@ -63,9 +63,9 @@ namespace IO.Swagger.Api
         /// Lost password - Your password will be regenerated and sent to your email
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email">Your email (optional)</param>
+        /// <param name="email">Your email</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> LostPasswordWithHttpInfo (Email email = null);
+        ApiResponse<Object> LostPasswordWithHttpInfo (BeezUPCommonEmail email);
         /// <summary>
         /// User Registration
         /// </summary>
@@ -73,9 +73,9 @@ namespace IO.Swagger.Api
         /// User Registration - Create a new user on BeezUP
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns></returns>
-        void Register (RegisterRequest request = null);
+        void Register (RegisterRequest request);
 
         /// <summary>
         /// User Registration
@@ -84,9 +84,9 @@ namespace IO.Swagger.Api
         /// User Registration - Create a new user on BeezUP
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RegisterWithHttpInfo (RegisterRequest request = null);
+        ApiResponse<Object> RegisterWithHttpInfo (RegisterRequest request);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -96,9 +96,9 @@ namespace IO.Swagger.Api
         /// User Login - The login will give your tokens
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>Task of ApiCredentials</returns>
-        System.Threading.Tasks.Task<ApiCredentials> LoginAsync (LoginRequest request = null);
+        System.Threading.Tasks.Task<ApiCredentials> LoginAsync (LoginRequest request);
 
         /// <summary>
         /// Login
@@ -107,9 +107,9 @@ namespace IO.Swagger.Api
         /// User Login - The login will give your tokens
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>Task of ApiResponse (ApiCredentials)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ApiCredentials>> LoginAsyncWithHttpInfo (LoginRequest request = null);
+        System.Threading.Tasks.Task<ApiResponse<ApiCredentials>> LoginAsyncWithHttpInfo (LoginRequest request);
         /// <summary>
         /// Lost password
         /// </summary>
@@ -117,9 +117,9 @@ namespace IO.Swagger.Api
         /// Lost password - Your password will be regenerated and sent to your email
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email">Your email (optional)</param>
+        /// <param name="email">Your email</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task LostPasswordAsync (Email email = null);
+        System.Threading.Tasks.Task LostPasswordAsync (BeezUPCommonEmail email);
 
         /// <summary>
         /// Lost password
@@ -128,9 +128,9 @@ namespace IO.Swagger.Api
         /// Lost password - Your password will be regenerated and sent to your email
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email">Your email (optional)</param>
+        /// <param name="email">Your email</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> LostPasswordAsyncWithHttpInfo (Email email = null);
+        System.Threading.Tasks.Task<ApiResponse<Object>> LostPasswordAsyncWithHttpInfo (BeezUPCommonEmail email);
         /// <summary>
         /// User Registration
         /// </summary>
@@ -138,9 +138,9 @@ namespace IO.Swagger.Api
         /// User Registration - Create a new user on BeezUP
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RegisterAsync (RegisterRequest request = null);
+        System.Threading.Tasks.Task RegisterAsync (RegisterRequest request);
 
         /// <summary>
         /// User Registration
@@ -149,9 +149,9 @@ namespace IO.Swagger.Api
         /// User Registration - Create a new user on BeezUP
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RegisterAsyncWithHttpInfo (RegisterRequest request = null);
+        System.Threading.Tasks.Task<ApiResponse<Object>> RegisterAsyncWithHttpInfo (RegisterRequest request);
         #endregion Asynchronous Operations
     }
 
@@ -268,9 +268,9 @@ namespace IO.Swagger.Api
         /// Login User Login - The login will give your tokens
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>ApiCredentials</returns>
-        public ApiCredentials Login (LoginRequest request = null)
+        public ApiCredentials Login (LoginRequest request)
         {
              ApiResponse<ApiCredentials> localVarResponse = LoginWithHttpInfo(request);
              return localVarResponse.Data;
@@ -280,10 +280,13 @@ namespace IO.Swagger.Api
         /// Login User Login - The login will give your tokens
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>ApiResponse of ApiCredentials</returns>
-        public ApiResponse< ApiCredentials > LoginWithHttpInfo (LoginRequest request = null)
+        public ApiResponse< ApiCredentials > LoginWithHttpInfo (LoginRequest request)
         {
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling SecurityApi->Login");
 
             var localVarPath = "/v2/public/security/login";
             var localVarPathParams = new Dictionary<String, String>();
@@ -343,9 +346,9 @@ namespace IO.Swagger.Api
         /// Login User Login - The login will give your tokens
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>Task of ApiCredentials</returns>
-        public async System.Threading.Tasks.Task<ApiCredentials> LoginAsync (LoginRequest request = null)
+        public async System.Threading.Tasks.Task<ApiCredentials> LoginAsync (LoginRequest request)
         {
              ApiResponse<ApiCredentials> localVarResponse = await LoginAsyncWithHttpInfo(request);
              return localVarResponse.Data;
@@ -356,10 +359,13 @@ namespace IO.Swagger.Api
         /// Login User Login - The login will give your tokens
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>Task of ApiResponse (ApiCredentials)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ApiCredentials>> LoginAsyncWithHttpInfo (LoginRequest request = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ApiCredentials>> LoginAsyncWithHttpInfo (LoginRequest request)
         {
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling SecurityApi->Login");
 
             var localVarPath = "/v2/public/security/login";
             var localVarPathParams = new Dictionary<String, String>();
@@ -419,9 +425,9 @@ namespace IO.Swagger.Api
         /// Lost password Lost password - Your password will be regenerated and sent to your email
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email">Your email (optional)</param>
+        /// <param name="email">Your email</param>
         /// <returns></returns>
-        public void LostPassword (Email email = null)
+        public void LostPassword (BeezUPCommonEmail email)
         {
              LostPasswordWithHttpInfo(email);
         }
@@ -430,10 +436,13 @@ namespace IO.Swagger.Api
         /// Lost password Lost password - Your password will be regenerated and sent to your email
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email">Your email (optional)</param>
+        /// <param name="email">Your email</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> LostPasswordWithHttpInfo (Email email = null)
+        public ApiResponse<Object> LostPasswordWithHttpInfo (BeezUPCommonEmail email)
         {
+            // verify the required parameter 'email' is set
+            if (email == null)
+                throw new ApiException(400, "Missing required parameter 'email' when calling SecurityApi->LostPassword");
 
             var localVarPath = "/v2/public/security/lostpassword";
             var localVarPathParams = new Dictionary<String, String>();
@@ -493,9 +502,9 @@ namespace IO.Swagger.Api
         /// Lost password Lost password - Your password will be regenerated and sent to your email
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email">Your email (optional)</param>
+        /// <param name="email">Your email</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task LostPasswordAsync (Email email = null)
+        public async System.Threading.Tasks.Task LostPasswordAsync (BeezUPCommonEmail email)
         {
              await LostPasswordAsyncWithHttpInfo(email);
 
@@ -505,10 +514,13 @@ namespace IO.Swagger.Api
         /// Lost password Lost password - Your password will be regenerated and sent to your email
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="email">Your email (optional)</param>
+        /// <param name="email">Your email</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> LostPasswordAsyncWithHttpInfo (Email email = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> LostPasswordAsyncWithHttpInfo (BeezUPCommonEmail email)
         {
+            // verify the required parameter 'email' is set
+            if (email == null)
+                throw new ApiException(400, "Missing required parameter 'email' when calling SecurityApi->LostPassword");
 
             var localVarPath = "/v2/public/security/lostpassword";
             var localVarPathParams = new Dictionary<String, String>();
@@ -568,9 +580,9 @@ namespace IO.Swagger.Api
         /// User Registration User Registration - Create a new user on BeezUP
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns></returns>
-        public void Register (RegisterRequest request = null)
+        public void Register (RegisterRequest request)
         {
              RegisterWithHttpInfo(request);
         }
@@ -579,10 +591,13 @@ namespace IO.Swagger.Api
         /// User Registration User Registration - Create a new user on BeezUP
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> RegisterWithHttpInfo (RegisterRequest request = null)
+        public ApiResponse<Object> RegisterWithHttpInfo (RegisterRequest request)
         {
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling SecurityApi->Register");
 
             var localVarPath = "/v2/public/security/register";
             var localVarPathParams = new Dictionary<String, String>();
@@ -642,9 +657,9 @@ namespace IO.Swagger.Api
         /// User Registration User Registration - Create a new user on BeezUP
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RegisterAsync (RegisterRequest request = null)
+        public async System.Threading.Tasks.Task RegisterAsync (RegisterRequest request)
         {
              await RegisterAsyncWithHttpInfo(request);
 
@@ -654,10 +669,13 @@ namespace IO.Swagger.Api
         /// User Registration User Registration - Create a new user on BeezUP
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> RegisterAsyncWithHttpInfo (RegisterRequest request = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> RegisterAsyncWithHttpInfo (RegisterRequest request)
         {
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling SecurityApi->Register");
 
             var localVarPath = "/v2/public/security/register";
             var localVarPathParams = new Dictionary<String, String>();

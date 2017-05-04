@@ -83,7 +83,7 @@ namespace IO.Swagger.Test
         public void LostPasswordTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Email email = null;
+            //BeezUPCommonEmail email = null;
             //instance.LostPassword(email);
             
         }

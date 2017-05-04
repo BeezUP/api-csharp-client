@@ -36,7 +36,7 @@ namespace IO.Swagger.Model
         /// <param name="CurrencyCode">CurrencyCode.</param>
         /// <param name="Categories">Categories.</param>
         /// <param name="Links">Links.</param>
-        public ReportByCategoryResponse(BeezUPCommonPaginationResult PaginationResult = default(BeezUPCommonPaginationResult), BeezUPCommonCurrencyCode CurrencyCode = default(BeezUPCommonCurrencyCode), List<ReportByCategory> Categories = default(List<ReportByCategory>), List<BeezUPCommonLink2> Links = default(List<BeezUPCommonLink2>))
+        public ReportByCategoryResponse(BeezUPCommonPaginationResult PaginationResult = default(BeezUPCommonPaginationResult), BeezUPCommonCurrencyCode CurrencyCode = default(BeezUPCommonCurrencyCode), List<ReportByCategory> Categories = default(List<ReportByCategory>), ReportByCategoryResponseLinks Links = default(ReportByCategoryResponseLinks))
         {
             this.PaginationResult = PaginationResult;
             this.CurrencyCode = CurrencyCode;
@@ -63,7 +63,7 @@ namespace IO.Swagger.Model
         /// Gets or Sets Links
         /// </summary>
         [DataMember(Name="links", EmitDefaultValue=false)]
-        public List<BeezUPCommonLink2> Links { get; set; }
+        public ReportByCategoryResponseLinks Links { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -130,7 +130,7 @@ namespace IO.Swagger.Model
                 (
                     this.Links == other.Links ||
                     this.Links != null &&
-                    this.Links.SequenceEqual(other.Links)
+                    this.Links.Equals(other.Links)
                 );
         }
 

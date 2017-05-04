@@ -40,7 +40,7 @@ namespace IO.Swagger.Model
         /// <param name="PaginationResult">PaginationResult (required).</param>
         /// <param name="Products">Products (required).</param>
         /// <param name="Links">Links (required).</param>
-        public ReportByProductResponse(BeezUPCommonPaginationResult PaginationResult = default(BeezUPCommonPaginationResult), List<ReportByProduct> Products = default(List<ReportByProduct>), List<BeezUPCommonLink2> Links = default(List<BeezUPCommonLink2>))
+        public ReportByProductResponse(BeezUPCommonPaginationResult PaginationResult = default(BeezUPCommonPaginationResult), List<ReportByProduct> Products = default(List<ReportByProduct>), ReportByProductResponseLinks Links = default(ReportByProductResponseLinks))
         {
             // to ensure "PaginationResult" is required (not null)
             if (PaginationResult == null)
@@ -85,7 +85,7 @@ namespace IO.Swagger.Model
         /// Gets or Sets Links
         /// </summary>
         [DataMember(Name="links", EmitDefaultValue=false)]
-        public List<BeezUPCommonLink2> Links { get; set; }
+        public ReportByProductResponseLinks Links { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -146,7 +146,7 @@ namespace IO.Swagger.Model
                 (
                     this.Links == other.Links ||
                     this.Links != null &&
-                    this.Links.SequenceEqual(other.Links)
+                    this.Links.Equals(other.Links)
                 );
         }
 

@@ -1,10 +1,10 @@
-# IO.Swagger.Model.LoginRequest
+# IO.Swagger.Model.ReportByChannelResponseLinks
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Login** | [**BeezUPCommonEmail**](BeezUPCommonEmail.md) |  | 
-**Password** | **string** | Your password | 
+**EnableAllProducts** | [**LinksOptimiseLink**](LinksOptimiseLink.md) |  | [optional] 
+**DisableAllProducts** | [**LinksOptimiseLink**](LinksOptimiseLink.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

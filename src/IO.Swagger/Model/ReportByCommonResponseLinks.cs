@@ -24,54 +24,32 @@ using System.ComponentModel.DataAnnotations;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// LoginRequest
+    /// ReportByCommonResponseLinks
     /// </summary>
     [DataContract]
-    public partial class LoginRequest :  IEquatable<LoginRequest>, IValidatableObject
+    public partial class ReportByCommonResponseLinks :  IEquatable<ReportByCommonResponseLinks>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="LoginRequest" /> class.
+        /// Initializes a new instance of the <see cref="ReportByCommonResponseLinks" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected LoginRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LoginRequest" /> class.
-        /// </summary>
-        /// <param name="Login">Login (required).</param>
-        /// <param name="Password">Your password (required).</param>
-        public LoginRequest(BeezUPCommonEmail Login = default(BeezUPCommonEmail), string Password = default(string))
+        /// <param name="EnableAllProducts">EnableAllProducts.</param>
+        /// <param name="DisableAllProducts">DisableAllProducts.</param>
+        public ReportByCommonResponseLinks(LinksOptimiseLink EnableAllProducts = default(LinksOptimiseLink), LinksOptimiseLink DisableAllProducts = default(LinksOptimiseLink))
         {
-            // to ensure "Login" is required (not null)
-            if (Login == null)
-            {
-                throw new InvalidDataException("Login is a required property for LoginRequest and cannot be null");
-            }
-            else
-            {
-                this.Login = Login;
-            }
-            // to ensure "Password" is required (not null)
-            if (Password == null)
-            {
-                throw new InvalidDataException("Password is a required property for LoginRequest and cannot be null");
-            }
-            else
-            {
-                this.Password = Password;
-            }
+            this.EnableAllProducts = EnableAllProducts;
+            this.DisableAllProducts = DisableAllProducts;
         }
         
         /// <summary>
-        /// Gets or Sets Login
+        /// Gets or Sets EnableAllProducts
         /// </summary>
-        [DataMember(Name="login", EmitDefaultValue=false)]
-        public BeezUPCommonEmail Login { get; set; }
+        [DataMember(Name="enableAllProducts", EmitDefaultValue=false)]
+        public LinksOptimiseLink EnableAllProducts { get; set; }
         /// <summary>
-        /// Your password
+        /// Gets or Sets DisableAllProducts
         /// </summary>
-        /// <value>Your password</value>
-        [DataMember(Name="password", EmitDefaultValue=false)]
-        public string Password { get; set; }
+        [DataMember(Name="disableAllProducts", EmitDefaultValue=false)]
+        public LinksOptimiseLink DisableAllProducts { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -79,9 +57,9 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class LoginRequest {\n");
-            sb.Append("  Login: ").Append(Login).Append("\n");
-            sb.Append("  Password: ").Append(Password).Append("\n");
+            sb.Append("class ReportByCommonResponseLinks {\n");
+            sb.Append("  EnableAllProducts: ").Append(EnableAllProducts).Append("\n");
+            sb.Append("  DisableAllProducts: ").Append(DisableAllProducts).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -103,15 +81,15 @@ namespace IO.Swagger.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as LoginRequest);
+            return this.Equals(obj as ReportByCommonResponseLinks);
         }
 
         /// <summary>
-        /// Returns true if LoginRequest instances are equal
+        /// Returns true if ReportByCommonResponseLinks instances are equal
         /// </summary>
-        /// <param name="other">Instance of LoginRequest to be compared</param>
+        /// <param name="other">Instance of ReportByCommonResponseLinks to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(LoginRequest other)
+        public bool Equals(ReportByCommonResponseLinks other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -119,14 +97,14 @@ namespace IO.Swagger.Model
 
             return 
                 (
-                    this.Login == other.Login ||
-                    this.Login != null &&
-                    this.Login.Equals(other.Login)
+                    this.EnableAllProducts == other.EnableAllProducts ||
+                    this.EnableAllProducts != null &&
+                    this.EnableAllProducts.Equals(other.EnableAllProducts)
                 ) && 
                 (
-                    this.Password == other.Password ||
-                    this.Password != null &&
-                    this.Password.Equals(other.Password)
+                    this.DisableAllProducts == other.DisableAllProducts ||
+                    this.DisableAllProducts != null &&
+                    this.DisableAllProducts.Equals(other.DisableAllProducts)
                 );
         }
 
@@ -141,10 +119,10 @@ namespace IO.Swagger.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Login != null)
-                    hash = hash * 59 + this.Login.GetHashCode();
-                if (this.Password != null)
-                    hash = hash * 59 + this.Password.GetHashCode();
+                if (this.EnableAllProducts != null)
+                    hash = hash * 59 + this.EnableAllProducts.GetHashCode();
+                if (this.DisableAllProducts != null)
+                    hash = hash * 59 + this.DisableAllProducts.GetHashCode();
                 return hash;
             }
         }

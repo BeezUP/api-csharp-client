@@ -113,6 +113,22 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'AdvancedFilters'
         }
         /// <summary>
+        /// Test the property 'PageSize'
+        /// </summary>
+        [Test]
+        public void PageSizeTest()
+        {
+            // TODO unit test for the property 'PageSize'
+        }
+        /// <summary>
+        /// Test the property 'PageNumber'
+        /// </summary>
+        [Test]
+        public void PageNumberTest()
+        {
+            // TODO unit test for the property 'PageNumber'
+        }
+        /// <summary>
         /// Test the property 'ProductState'
         /// </summary>
         [Test]
