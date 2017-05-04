@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CardNumber** | [**CardNumber**](CardNumber.md) |  | 
-**CardVerificationCode** | [**CardVerificationCode**](CardVerificationCode.md) |  | 
+**CardVerificationCode** | [**CardVerificationCode**](CardVerificationCode.md) |  | [optional] 
 **ExpirationMonth** | [**ExpirationMonth**](ExpirationMonth.md) |  | 
 **ExpirationYear** | [**ExpirationYear**](ExpirationYear.md) |  | 
 **CardType** | **string** | Your credit card type. Example: VISA, MasterCard, etc... | 
