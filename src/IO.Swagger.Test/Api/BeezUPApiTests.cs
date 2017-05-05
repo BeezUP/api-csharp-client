@@ -353,7 +353,7 @@ namespace IO.Swagger.Test
             // TODO uncomment below to test the method and replace null with proper value
             //string marketplaceTechnicalCode = null;
             //int? accountId = null;
-            //string beezUPOrderId = null;
+            //Guid? beezUPOrderId = null;
             //string changeOrderType = null;
             //string userName = null;
             //ChangeOrderRequest request = null;
@@ -399,7 +399,7 @@ namespace IO.Swagger.Test
             // TODO uncomment below to test the method and replace null with proper value
             //string marketplaceTechnicalCode = null;
             //int? accountId = null;
-            //string beezUPOrderId = null;
+            //Guid? beezUPOrderId = null;
             //instance.ClearMerchantOrderInfo(marketplaceTechnicalCode, accountId, beezUPOrderId);
             
         }
@@ -979,7 +979,7 @@ namespace IO.Swagger.Test
             // TODO uncomment below to test the method and replace null with proper value
             //string marketplaceTechnicalCode = null;
             //int? accountId = null;
-            //string beezUPOrderId = null;
+            //Guid? beezUPOrderId = null;
             //string ifNoneMatch = null;
             //var response = instance.GetOrder(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
             //Assert.IsInstanceOf<Order> (response, "response is Order");
@@ -1007,7 +1007,7 @@ namespace IO.Swagger.Test
             // TODO uncomment below to test the method and replace null with proper value
             //string marketplaceTechnicalCode = null;
             //int? accountId = null;
-            //string beezUPOrderId = null;
+            //Guid? beezUPOrderId = null;
             //var response = instance.GetOrderHistory(marketplaceTechnicalCode, accountId, beezUPOrderId);
             //Assert.IsInstanceOf<OrderHistory> (response, "response is OrderHistory");
         }
@@ -1405,7 +1405,7 @@ namespace IO.Swagger.Test
             // TODO uncomment below to test the method and replace null with proper value
             //string marketplaceTechnicalCode = null;
             //int? accountId = null;
-            //string beezUPOrderId = null;
+            //Guid? beezUPOrderId = null;
             //instance.HarvestOrder(marketplaceTechnicalCode, accountId, beezUPOrderId);
             
         }
@@ -2029,7 +2029,7 @@ namespace IO.Swagger.Test
             // TODO uncomment below to test the method and replace null with proper value
             //string marketplaceTechnicalCode = null;
             //int? accountId = null;
-            //string beezUPOrderId = null;
+            //Guid? beezUPOrderId = null;
             //SetMerchantOrderInfoRequest request = null;
             //instance.SetMerchantOrderInfo(marketplaceTechnicalCode, accountId, beezUPOrderId, request);
             

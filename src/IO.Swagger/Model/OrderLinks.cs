@@ -38,7 +38,8 @@ namespace IO.Swagger.Model
         /// Initializes a new instance of the <see cref="OrderLinks" /> class.
         /// </summary>
         /// <param name="Self">Self (required).</param>
-        public OrderLinks(DefinitionslinksGetOrderLink Self = default(DefinitionslinksGetOrderLink))
+        /// <param name="History">History.</param>
+        public OrderLinks(DefinitionslinksGetOrderLink Self = default(DefinitionslinksGetOrderLink), DefinitionslinksGetOrderHistoryLink History = default(DefinitionslinksGetOrderHistoryLink))
         {
             // to ensure "Self" is required (not null)
             if (Self == null)
@@ -49,6 +50,7 @@ namespace IO.Swagger.Model
             {
                 this.Self = Self;
             }
+            this.History = History;
         }
         
         /// <summary>
@@ -56,6 +58,11 @@ namespace IO.Swagger.Model
         /// </summary>
         [DataMember(Name="self", EmitDefaultValue=false)]
         public DefinitionslinksGetOrderLink Self { get; set; }
+        /// <summary>
+        /// Gets or Sets History
+        /// </summary>
+        [DataMember(Name="history", EmitDefaultValue=false)]
+        public DefinitionslinksGetOrderHistoryLink History { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -65,6 +72,7 @@ namespace IO.Swagger.Model
             var sb = new StringBuilder();
             sb.Append("class OrderLinks {\n");
             sb.Append("  Self: ").Append(Self).Append("\n");
+            sb.Append("  History: ").Append(History).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,6 +113,11 @@ namespace IO.Swagger.Model
                     this.Self == other.Self ||
                     this.Self != null &&
                     this.Self.Equals(other.Self)
+                ) && 
+                (
+                    this.History == other.History ||
+                    this.History != null &&
+                    this.History.Equals(other.History)
                 );
         }
 
@@ -121,6 +134,8 @@ namespace IO.Swagger.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.Self != null)
                     hash = hash * 59 + this.Self.GetHashCode();
+                if (this.History != null)
+                    hash = hash * 59 + this.History.GetHashCode();
                 return hash;
             }
         }

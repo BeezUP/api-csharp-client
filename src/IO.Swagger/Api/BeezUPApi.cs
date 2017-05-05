@@ -534,7 +534,7 @@ namespace IO.Swagger.Api
         /// <param name="ifMatch">ETag value to identify the last known version of requested Order, to ensure that you are making a change on the lastest version of the order.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
         /// <param name="testMode">If true, the operation will be not be sent to marketplace. But the validation will be taken in account. (optional, default to false)</param>
         /// <returns></returns>
-        void ChangeOrder (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null);
+        void ChangeOrder (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null);
 
         /// <summary>
         /// Change your marketplace Order Information (accept, ship, etc.)
@@ -552,7 +552,7 @@ namespace IO.Swagger.Api
         /// <param name="ifMatch">ETag value to identify the last known version of requested Order, to ensure that you are making a change on the lastest version of the order.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
         /// <param name="testMode">If true, the operation will be not be sent to marketplace. But the validation will be taken in account. (optional, default to false)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ChangeOrderWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null);
+        ApiResponse<Object> ChangeOrderWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null);
         /// <summary>
         /// Send a batch of operations to change your marketplace Order information (accept, ship, etc.)
         /// </summary>
@@ -612,7 +612,7 @@ namespace IO.Swagger.Api
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <returns></returns>
-        void ClearMerchantOrderInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId);
+        void ClearMerchantOrderInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId);
 
         /// <summary>
         /// Clear an Order&#39;s merchant information
@@ -625,7 +625,7 @@ namespace IO.Swagger.Api
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ClearMerchantOrderInfoWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId);
+        ApiResponse<Object> ClearMerchantOrderInfoWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId);
         /// <summary>
         /// Send a batch of operations to clear an Order&#39;s merchant information
         /// </summary>
@@ -1632,7 +1632,7 @@ namespace IO.Swagger.Api
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <param name="ifNoneMatch">ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Order</returns>
-        Order GetOrder (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string ifNoneMatch = null);
+        Order GetOrder (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null);
 
         /// <summary>
         /// Get full Order and Order Item(s) properties
@@ -1646,7 +1646,7 @@ namespace IO.Swagger.Api
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <param name="ifNoneMatch">ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>ApiResponse of Order</returns>
-        ApiResponse<Order> GetOrderWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string ifNoneMatch = null);
+        ApiResponse<Order> GetOrderWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null);
         /// <summary>
         /// Get a paginated list of Order report exportations
         /// </summary>
@@ -1681,7 +1681,7 @@ namespace IO.Swagger.Api
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <returns>OrderHistory</returns>
-        OrderHistory GetOrderHistory (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId);
+        OrderHistory GetOrderHistory (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId);
 
         /// <summary>
         /// Get an Order&#39;s harvest and change history
@@ -1694,7 +1694,7 @@ namespace IO.Swagger.Api
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <returns>ApiResponse of OrderHistory</returns>
-        ApiResponse<OrderHistory> GetOrderHistoryWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId);
+        ApiResponse<OrderHistory> GetOrderHistoryWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId);
         /// <summary>
         /// Get a paginated list of all Orders with all Order and Order Item(s) properties
         /// </summary>
@@ -2381,7 +2381,7 @@ namespace IO.Swagger.Api
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <returns></returns>
-        void HarvestOrder (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId);
+        void HarvestOrder (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId);
 
         /// <summary>
         /// Send harvest request for a single Order
@@ -2394,7 +2394,7 @@ namespace IO.Swagger.Api
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> HarvestOrderWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId);
+        ApiResponse<Object> HarvestOrderWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId);
         /// <summary>
         /// Activate the auto importation of the last successful manual catalog importation.
         /// </summary>
@@ -3489,7 +3489,7 @@ namespace IO.Swagger.Api
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <param name="request"></param>
         /// <returns></returns>
-        void SetMerchantOrderInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, SetMerchantOrderInfoRequest request);
+        void SetMerchantOrderInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, SetMerchantOrderInfoRequest request);
 
         /// <summary>
         /// Set an Order&#39;s merchant information
@@ -3503,7 +3503,7 @@ namespace IO.Swagger.Api
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <param name="request"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> SetMerchantOrderInfoWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, SetMerchantOrderInfoRequest request);
+        ApiResponse<Object> SetMerchantOrderInfoWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, SetMerchantOrderInfoRequest request);
         /// <summary>
         /// Send a batch of operations to set an Order&#39;s merchant information
         /// </summary>
@@ -4152,7 +4152,7 @@ namespace IO.Swagger.Api
         /// <param name="ifMatch">ETag value to identify the last known version of requested Order, to ensure that you are making a change on the lastest version of the order.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
         /// <param name="testMode">If true, the operation will be not be sent to marketplace. But the validation will be taken in account. (optional, default to false)</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ChangeOrderAsync (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null);
+        System.Threading.Tasks.Task ChangeOrderAsync (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null);
 
         /// <summary>
         /// Change your marketplace Order Information (accept, ship, etc.)
@@ -4170,7 +4170,7 @@ namespace IO.Swagger.Api
         /// <param name="ifMatch">ETag value to identify the last known version of requested Order, to ensure that you are making a change on the lastest version of the order.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
         /// <param name="testMode">If true, the operation will be not be sent to marketplace. But the validation will be taken in account. (optional, default to false)</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ChangeOrderAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null);
+        System.Threading.Tasks.Task<ApiResponse<Object>> ChangeOrderAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null);
         /// <summary>
         /// Send a batch of operations to change your marketplace Order information (accept, ship, etc.)
         /// </summary>
@@ -4230,7 +4230,7 @@ namespace IO.Swagger.Api
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ClearMerchantOrderInfoAsync (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId);
+        System.Threading.Tasks.Task ClearMerchantOrderInfoAsync (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId);
 
         /// <summary>
         /// Clear an Order&#39;s merchant information
@@ -4243,7 +4243,7 @@ namespace IO.Swagger.Api
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ClearMerchantOrderInfoAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> ClearMerchantOrderInfoAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId);
         /// <summary>
         /// Send a batch of operations to clear an Order&#39;s merchant information
         /// </summary>
@@ -5250,7 +5250,7 @@ namespace IO.Swagger.Api
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <param name="ifNoneMatch">ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of Order</returns>
-        System.Threading.Tasks.Task<Order> GetOrderAsync (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string ifNoneMatch = null);
+        System.Threading.Tasks.Task<Order> GetOrderAsync (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null);
 
         /// <summary>
         /// Get full Order and Order Item(s) properties
@@ -5264,7 +5264,7 @@ namespace IO.Swagger.Api
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <param name="ifNoneMatch">ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of ApiResponse (Order)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Order>> GetOrderAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string ifNoneMatch = null);
+        System.Threading.Tasks.Task<ApiResponse<Order>> GetOrderAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null);
         /// <summary>
         /// Get a paginated list of Order report exportations
         /// </summary>
@@ -5299,7 +5299,7 @@ namespace IO.Swagger.Api
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <returns>Task of OrderHistory</returns>
-        System.Threading.Tasks.Task<OrderHistory> GetOrderHistoryAsync (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId);
+        System.Threading.Tasks.Task<OrderHistory> GetOrderHistoryAsync (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId);
 
         /// <summary>
         /// Get an Order&#39;s harvest and change history
@@ -5312,7 +5312,7 @@ namespace IO.Swagger.Api
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <returns>Task of ApiResponse (OrderHistory)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OrderHistory>> GetOrderHistoryAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId);
+        System.Threading.Tasks.Task<ApiResponse<OrderHistory>> GetOrderHistoryAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId);
         /// <summary>
         /// Get a paginated list of all Orders with all Order and Order Item(s) properties
         /// </summary>
@@ -5999,7 +5999,7 @@ namespace IO.Swagger.Api
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task HarvestOrderAsync (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId);
+        System.Threading.Tasks.Task HarvestOrderAsync (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId);
 
         /// <summary>
         /// Send harvest request for a single Order
@@ -6012,7 +6012,7 @@ namespace IO.Swagger.Api
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> HarvestOrderAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> HarvestOrderAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId);
         /// <summary>
         /// Activate the auto importation of the last successful manual catalog importation.
         /// </summary>
@@ -7107,7 +7107,7 @@ namespace IO.Swagger.Api
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <param name="request"></param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task SetMerchantOrderInfoAsync (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, SetMerchantOrderInfoRequest request);
+        System.Threading.Tasks.Task SetMerchantOrderInfoAsync (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, SetMerchantOrderInfoRequest request);
 
         /// <summary>
         /// Set an Order&#39;s merchant information
@@ -7121,7 +7121,7 @@ namespace IO.Swagger.Api
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <param name="request"></param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SetMerchantOrderInfoAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, SetMerchantOrderInfoRequest request);
+        System.Threading.Tasks.Task<ApiResponse<Object>> SetMerchantOrderInfoAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, SetMerchantOrderInfoRequest request);
         /// <summary>
         /// Send a batch of operations to set an Order&#39;s merchant information
         /// </summary>
@@ -11055,7 +11055,7 @@ namespace IO.Swagger.Api
         /// <param name="ifMatch">ETag value to identify the last known version of requested Order, to ensure that you are making a change on the lastest version of the order.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
         /// <param name="testMode">If true, the operation will be not be sent to marketplace. But the validation will be taken in account. (optional, default to false)</param>
         /// <returns></returns>
-        public void ChangeOrder (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null)
+        public void ChangeOrder (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null)
         {
              ChangeOrderWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId, changeOrderType, userName, request, ifMatch, testMode);
         }
@@ -11073,7 +11073,7 @@ namespace IO.Swagger.Api
         /// <param name="ifMatch">ETag value to identify the last known version of requested Order, to ensure that you are making a change on the lastest version of the order.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
         /// <param name="testMode">If true, the operation will be not be sent to marketplace. But the validation will be taken in account. (optional, default to false)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> ChangeOrderWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null)
+        public ApiResponse<Object> ChangeOrderWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null)
         {
             // verify the required parameter 'marketplaceTechnicalCode' is set
             if (marketplaceTechnicalCode == null)
@@ -11177,7 +11177,7 @@ namespace IO.Swagger.Api
         /// <param name="ifMatch">ETag value to identify the last known version of requested Order, to ensure that you are making a change on the lastest version of the order.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
         /// <param name="testMode">If true, the operation will be not be sent to marketplace. But the validation will be taken in account. (optional, default to false)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ChangeOrderAsync (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null)
+        public async System.Threading.Tasks.Task ChangeOrderAsync (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null)
         {
              await ChangeOrderAsyncWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId, changeOrderType, userName, request, ifMatch, testMode);
 
@@ -11196,7 +11196,7 @@ namespace IO.Swagger.Api
         /// <param name="ifMatch">ETag value to identify the last known version of requested Order, to ensure that you are making a change on the lastest version of the order.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
         /// <param name="testMode">If true, the operation will be not be sent to marketplace. But the validation will be taken in account. (optional, default to false)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> ChangeOrderAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> ChangeOrderAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null)
         {
             // verify the required parameter 'marketplaceTechnicalCode' is set
             if (marketplaceTechnicalCode == null)
@@ -11658,7 +11658,7 @@ namespace IO.Swagger.Api
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <returns></returns>
-        public void ClearMerchantOrderInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId)
+        public void ClearMerchantOrderInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId)
         {
              ClearMerchantOrderInfoWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId);
         }
@@ -11671,7 +11671,7 @@ namespace IO.Swagger.Api
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> ClearMerchantOrderInfoWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId)
+        public ApiResponse<Object> ClearMerchantOrderInfoWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId)
         {
             // verify the required parameter 'marketplaceTechnicalCode' is set
             if (marketplaceTechnicalCode == null)
@@ -11746,7 +11746,7 @@ namespace IO.Swagger.Api
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ClearMerchantOrderInfoAsync (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId)
+        public async System.Threading.Tasks.Task ClearMerchantOrderInfoAsync (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId)
         {
              await ClearMerchantOrderInfoAsyncWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId);
 
@@ -11760,7 +11760,7 @@ namespace IO.Swagger.Api
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> ClearMerchantOrderInfoAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> ClearMerchantOrderInfoAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId)
         {
             // verify the required parameter 'marketplaceTechnicalCode' is set
             if (marketplaceTechnicalCode == null)
@@ -19255,7 +19255,7 @@ namespace IO.Swagger.Api
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <param name="ifNoneMatch">ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Order</returns>
-        public Order GetOrder (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string ifNoneMatch = null)
+        public Order GetOrder (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null)
         {
              ApiResponse<Order> localVarResponse = GetOrderWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
              return localVarResponse.Data;
@@ -19270,7 +19270,7 @@ namespace IO.Swagger.Api
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <param name="ifNoneMatch">ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>ApiResponse of Order</returns>
-        public ApiResponse< Order > GetOrderWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string ifNoneMatch = null)
+        public ApiResponse< Order > GetOrderWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null)
         {
             // verify the required parameter 'marketplaceTechnicalCode' is set
             if (marketplaceTechnicalCode == null)
@@ -19347,7 +19347,7 @@ namespace IO.Swagger.Api
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <param name="ifNoneMatch">ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of Order</returns>
-        public async System.Threading.Tasks.Task<Order> GetOrderAsync (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string ifNoneMatch = null)
+        public async System.Threading.Tasks.Task<Order> GetOrderAsync (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null)
         {
              ApiResponse<Order> localVarResponse = await GetOrderAsyncWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
              return localVarResponse.Data;
@@ -19363,7 +19363,7 @@ namespace IO.Swagger.Api
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <param name="ifNoneMatch">ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of ApiResponse (Order)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Order>> GetOrderAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, string ifNoneMatch = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Order>> GetOrderAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null)
         {
             // verify the required parameter 'marketplaceTechnicalCode' is set
             if (marketplaceTechnicalCode == null)
@@ -19604,7 +19604,7 @@ namespace IO.Swagger.Api
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <returns>OrderHistory</returns>
-        public OrderHistory GetOrderHistory (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId)
+        public OrderHistory GetOrderHistory (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId)
         {
              ApiResponse<OrderHistory> localVarResponse = GetOrderHistoryWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId);
              return localVarResponse.Data;
@@ -19618,7 +19618,7 @@ namespace IO.Swagger.Api
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <returns>ApiResponse of OrderHistory</returns>
-        public ApiResponse< OrderHistory > GetOrderHistoryWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId)
+        public ApiResponse< OrderHistory > GetOrderHistoryWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId)
         {
             // verify the required parameter 'marketplaceTechnicalCode' is set
             if (marketplaceTechnicalCode == null)
@@ -19693,7 +19693,7 @@ namespace IO.Swagger.Api
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <returns>Task of OrderHistory</returns>
-        public async System.Threading.Tasks.Task<OrderHistory> GetOrderHistoryAsync (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId)
+        public async System.Threading.Tasks.Task<OrderHistory> GetOrderHistoryAsync (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId)
         {
              ApiResponse<OrderHistory> localVarResponse = await GetOrderHistoryAsyncWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId);
              return localVarResponse.Data;
@@ -19708,7 +19708,7 @@ namespace IO.Swagger.Api
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <returns>Task of ApiResponse (OrderHistory)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<OrderHistory>> GetOrderHistoryAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId)
+        public async System.Threading.Tasks.Task<ApiResponse<OrderHistory>> GetOrderHistoryAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId)
         {
             // verify the required parameter 'marketplaceTechnicalCode' is set
             if (marketplaceTechnicalCode == null)
@@ -24756,7 +24756,7 @@ namespace IO.Swagger.Api
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <returns></returns>
-        public void HarvestOrder (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId)
+        public void HarvestOrder (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId)
         {
              HarvestOrderWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId);
         }
@@ -24769,7 +24769,7 @@ namespace IO.Swagger.Api
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> HarvestOrderWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId)
+        public ApiResponse<Object> HarvestOrderWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId)
         {
             // verify the required parameter 'marketplaceTechnicalCode' is set
             if (marketplaceTechnicalCode == null)
@@ -24844,7 +24844,7 @@ namespace IO.Swagger.Api
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task HarvestOrderAsync (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId)
+        public async System.Threading.Tasks.Task HarvestOrderAsync (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId)
         {
              await HarvestOrderAsyncWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId);
 
@@ -24858,7 +24858,7 @@ namespace IO.Swagger.Api
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> HarvestOrderAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> HarvestOrderAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId)
         {
             // verify the required parameter 'marketplaceTechnicalCode' is set
             if (marketplaceTechnicalCode == null)
@@ -32881,7 +32881,7 @@ namespace IO.Swagger.Api
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <param name="request"></param>
         /// <returns></returns>
-        public void SetMerchantOrderInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, SetMerchantOrderInfoRequest request)
+        public void SetMerchantOrderInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, SetMerchantOrderInfoRequest request)
         {
              SetMerchantOrderInfoWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId, request);
         }
@@ -32895,7 +32895,7 @@ namespace IO.Swagger.Api
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <param name="request"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> SetMerchantOrderInfoWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, SetMerchantOrderInfoRequest request)
+        public ApiResponse<Object> SetMerchantOrderInfoWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, SetMerchantOrderInfoRequest request)
         {
             // verify the required parameter 'marketplaceTechnicalCode' is set
             if (marketplaceTechnicalCode == null)
@@ -32982,7 +32982,7 @@ namespace IO.Swagger.Api
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <param name="request"></param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task SetMerchantOrderInfoAsync (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, SetMerchantOrderInfoRequest request)
+        public async System.Threading.Tasks.Task SetMerchantOrderInfoAsync (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, SetMerchantOrderInfoRequest request)
         {
              await SetMerchantOrderInfoAsyncWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId, request);
 
@@ -32997,7 +32997,7 @@ namespace IO.Swagger.Api
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <param name="request"></param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> SetMerchantOrderInfoAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, string beezUPOrderId, SetMerchantOrderInfoRequest request)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> SetMerchantOrderInfoAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, SetMerchantOrderInfoRequest request)
         {
             // verify the required parameter 'marketplaceTechnicalCode' is set
             if (marketplaceTechnicalCode == null)
