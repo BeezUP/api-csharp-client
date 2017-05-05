@@ -11,7 +11,7 @@ Contact: support@beezup.com
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{299A5A87-0811-4E62-B17C-4DB64D3FEB1F}</ProjectGuid>
+    <ProjectGuid>{6912E17A-6D5C-4566-BF62-9F94CE71BB00}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IO.Swagger</RootNamespace>

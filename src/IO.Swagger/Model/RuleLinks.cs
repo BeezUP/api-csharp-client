@@ -41,7 +41,7 @@ namespace IO.Swagger.Model
         /// <param name="Disable">Disable.</param>
         /// <param name="Update">Update.</param>
         /// <param name="ReportFilter">ReportFilter.</param>
-        public RuleLinks(DefinitionslinksGetRuleLink Self = default(DefinitionslinksGetRuleLink), DefinitionslinksRunRuleLink Run = default(DefinitionslinksRunRuleLink), DefinitionslinksDeleteRuleLink Delete = default(DefinitionslinksDeleteRuleLink), DefinitionslinksMoveUpRuleLink Moveup = default(DefinitionslinksMoveUpRuleLink), DefinitionslinksMoveDownRuleLink Movedown = default(DefinitionslinksMoveDownRuleLink), DefinitionslinksEnableRuleLink Enable = default(DefinitionslinksEnableRuleLink), DefinitionslinksDisableRuleLink Disable = default(DefinitionslinksDisableRuleLink), DefinitionslinksUpdateRuleLink Update = default(DefinitionslinksUpdateRuleLink), DefinitionslinksGetReportFilterLink ReportFilter = default(DefinitionslinksGetReportFilterLink))
+        public RuleLinks(LinksGetRuleLink Self = default(LinksGetRuleLink), LinksRunRuleLink Run = default(LinksRunRuleLink), LinksDeleteRuleLink Delete = default(LinksDeleteRuleLink), LinksMoveUpRuleLink Moveup = default(LinksMoveUpRuleLink), LinksMoveDownRuleLink Movedown = default(LinksMoveDownRuleLink), LinksEnableRuleLink Enable = default(LinksEnableRuleLink), LinksDisableRuleLink Disable = default(LinksDisableRuleLink), LinksUpdateRuleLink Update = default(LinksUpdateRuleLink), LinksGetReportFilterLink ReportFilter = default(LinksGetReportFilterLink))
         {
             this.Self = Self;
             this.Run = Run;
@@ -58,47 +58,47 @@ namespace IO.Swagger.Model
         /// Gets or Sets Self
         /// </summary>
         [DataMember(Name="self", EmitDefaultValue=false)]
-        public DefinitionslinksGetRuleLink Self { get; set; }
+        public LinksGetRuleLink Self { get; set; }
         /// <summary>
         /// Gets or Sets Run
         /// </summary>
         [DataMember(Name="run", EmitDefaultValue=false)]
-        public DefinitionslinksRunRuleLink Run { get; set; }
+        public LinksRunRuleLink Run { get; set; }
         /// <summary>
         /// Gets or Sets Delete
         /// </summary>
         [DataMember(Name="delete", EmitDefaultValue=false)]
-        public DefinitionslinksDeleteRuleLink Delete { get; set; }
+        public LinksDeleteRuleLink Delete { get; set; }
         /// <summary>
         /// Gets or Sets Moveup
         /// </summary>
         [DataMember(Name="moveup", EmitDefaultValue=false)]
-        public DefinitionslinksMoveUpRuleLink Moveup { get; set; }
+        public LinksMoveUpRuleLink Moveup { get; set; }
         /// <summary>
         /// Gets or Sets Movedown
         /// </summary>
         [DataMember(Name="movedown", EmitDefaultValue=false)]
-        public DefinitionslinksMoveDownRuleLink Movedown { get; set; }
+        public LinksMoveDownRuleLink Movedown { get; set; }
         /// <summary>
         /// Gets or Sets Enable
         /// </summary>
         [DataMember(Name="enable", EmitDefaultValue=false)]
-        public DefinitionslinksEnableRuleLink Enable { get; set; }
+        public LinksEnableRuleLink Enable { get; set; }
         /// <summary>
         /// Gets or Sets Disable
         /// </summary>
         [DataMember(Name="disable", EmitDefaultValue=false)]
-        public DefinitionslinksDisableRuleLink Disable { get; set; }
+        public LinksDisableRuleLink Disable { get; set; }
         /// <summary>
         /// Gets or Sets Update
         /// </summary>
         [DataMember(Name="update", EmitDefaultValue=false)]
-        public DefinitionslinksUpdateRuleLink Update { get; set; }
+        public LinksUpdateRuleLink Update { get; set; }
         /// <summary>
         /// Gets or Sets ReportFilter
         /// </summary>
         [DataMember(Name="reportFilter", EmitDefaultValue=false)]
-        public DefinitionslinksGetReportFilterLink ReportFilter { get; set; }
+        public LinksGetReportFilterLink ReportFilter { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
