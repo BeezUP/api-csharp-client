@@ -32,12 +32,33 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderExportations" /> class.
         /// </summary>
-        /// <param name="PaginationResult">PaginationResult.</param>
-        /// <param name="Exportations">Exportations.</param>
+        [JsonConstructorAttribute]
+        protected OrderExportations() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrderExportations" /> class.
+        /// </summary>
+        /// <param name="PaginationResult">PaginationResult (required).</param>
+        /// <param name="Exportations">Exportations (required).</param>
         public OrderExportations(BeezUPCommonPaginationResult PaginationResult = default(BeezUPCommonPaginationResult), List<OrderExportationReporting> Exportations = default(List<OrderExportationReporting>))
         {
-            this.PaginationResult = PaginationResult;
-            this.Exportations = Exportations;
+            // to ensure "PaginationResult" is required (not null)
+            if (PaginationResult == null)
+            {
+                throw new InvalidDataException("PaginationResult is a required property for OrderExportations and cannot be null");
+            }
+            else
+            {
+                this.PaginationResult = PaginationResult;
+            }
+            // to ensure "Exportations" is required (not null)
+            if (Exportations == null)
+            {
+                throw new InvalidDataException("Exportations is a required property for OrderExportations and cannot be null");
+            }
+            else
+            {
+                this.Exportations = Exportations;
+            }
         }
         
         /// <summary>

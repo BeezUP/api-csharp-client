@@ -24,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// ExportOrderListRequest
+    /// The message request to export order list. The store identifier is requested to regroup the exportations.
     /// </summary>
     [DataContract]
     public partial class ExportOrderListRequest :  IEquatable<ExportOrderListRequest>, IValidatableObject
