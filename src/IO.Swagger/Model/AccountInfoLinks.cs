@@ -32,22 +32,83 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountInfoLinks" /> class.
         /// </summary>
-        /// <param name="SavePersonalInfo">SavePersonalInfo.</param>
-        /// <param name="ChangePassword">ChangePassword.</param>
-        /// <param name="SaveCompanyInfo">SaveCompanyInfo.</param>
-        /// <param name="GetProfilePictureInfo">GetProfilePictureInfo.</param>
-        /// <param name="SaveProfilePictureInfo">SaveProfilePictureInfo.</param>
-        /// <param name="GetCreditCardInfo">GetCreditCardInfo.</param>
-        /// <param name="SaveUserCreditCardLink">SaveUserCreditCardLink.</param>
+        [JsonConstructorAttribute]
+        protected AccountInfoLinks() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AccountInfoLinks" /> class.
+        /// </summary>
+        /// <param name="SavePersonalInfo">SavePersonalInfo (required).</param>
+        /// <param name="ChangePassword">ChangePassword (required).</param>
+        /// <param name="SaveCompanyInfo">SaveCompanyInfo (required).</param>
+        /// <param name="GetProfilePictureInfo">GetProfilePictureInfo (required).</param>
+        /// <param name="SaveProfilePictureInfo">SaveProfilePictureInfo (required).</param>
+        /// <param name="GetCreditCardInfo">GetCreditCardInfo (required).</param>
+        /// <param name="SaveUserCreditCardLink">SaveUserCreditCardLink (required).</param>
         public AccountInfoLinks(LinksSavePersonalInfoLink SavePersonalInfo = default(LinksSavePersonalInfoLink), LinksChangePasswordLink ChangePassword = default(LinksChangePasswordLink), LinksSaveCompanyInfoLink SaveCompanyInfo = default(LinksSaveCompanyInfoLink), LinksGetProfilePictureInfoLink GetProfilePictureInfo = default(LinksGetProfilePictureInfoLink), LinksSaveProfilePictureInfoLink SaveProfilePictureInfo = default(LinksSaveProfilePictureInfoLink), LinksGetCreditCardInfoLink GetCreditCardInfo = default(LinksGetCreditCardInfoLink), LinksSaveCreditCardInfoLink SaveUserCreditCardLink = default(LinksSaveCreditCardInfoLink))
         {
-            this.SavePersonalInfo = SavePersonalInfo;
-            this.ChangePassword = ChangePassword;
-            this.SaveCompanyInfo = SaveCompanyInfo;
-            this.GetProfilePictureInfo = GetProfilePictureInfo;
-            this.SaveProfilePictureInfo = SaveProfilePictureInfo;
-            this.GetCreditCardInfo = GetCreditCardInfo;
-            this.SaveUserCreditCardLink = SaveUserCreditCardLink;
+            // to ensure "SavePersonalInfo" is required (not null)
+            if (SavePersonalInfo == null)
+            {
+                throw new InvalidDataException("SavePersonalInfo is a required property for AccountInfoLinks and cannot be null");
+            }
+            else
+            {
+                this.SavePersonalInfo = SavePersonalInfo;
+            }
+            // to ensure "ChangePassword" is required (not null)
+            if (ChangePassword == null)
+            {
+                throw new InvalidDataException("ChangePassword is a required property for AccountInfoLinks and cannot be null");
+            }
+            else
+            {
+                this.ChangePassword = ChangePassword;
+            }
+            // to ensure "SaveCompanyInfo" is required (not null)
+            if (SaveCompanyInfo == null)
+            {
+                throw new InvalidDataException("SaveCompanyInfo is a required property for AccountInfoLinks and cannot be null");
+            }
+            else
+            {
+                this.SaveCompanyInfo = SaveCompanyInfo;
+            }
+            // to ensure "GetProfilePictureInfo" is required (not null)
+            if (GetProfilePictureInfo == null)
+            {
+                throw new InvalidDataException("GetProfilePictureInfo is a required property for AccountInfoLinks and cannot be null");
+            }
+            else
+            {
+                this.GetProfilePictureInfo = GetProfilePictureInfo;
+            }
+            // to ensure "SaveProfilePictureInfo" is required (not null)
+            if (SaveProfilePictureInfo == null)
+            {
+                throw new InvalidDataException("SaveProfilePictureInfo is a required property for AccountInfoLinks and cannot be null");
+            }
+            else
+            {
+                this.SaveProfilePictureInfo = SaveProfilePictureInfo;
+            }
+            // to ensure "GetCreditCardInfo" is required (not null)
+            if (GetCreditCardInfo == null)
+            {
+                throw new InvalidDataException("GetCreditCardInfo is a required property for AccountInfoLinks and cannot be null");
+            }
+            else
+            {
+                this.GetCreditCardInfo = GetCreditCardInfo;
+            }
+            // to ensure "SaveUserCreditCardLink" is required (not null)
+            if (SaveUserCreditCardLink == null)
+            {
+                throw new InvalidDataException("SaveUserCreditCardLink is a required property for AccountInfoLinks and cannot be null");
+            }
+            else
+            {
+                this.SaveUserCreditCardLink = SaveUserCreditCardLink;
+            }
         }
         
         /// <summary>
