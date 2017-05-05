@@ -32,36 +32,87 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountInfo" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected AccountInfo() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AccountInfo" /> class.
+        /// </summary>
+        /// <param name="UserId">UserId (required).</param>
+        /// <param name="Email">Email (required).</param>
+        /// <param name="PersonalInfo">PersonalInfo (required).</param>
+        /// <param name="Status">Status (required).</param>
+        /// <param name="CompanyInfo">CompanyInfo (required).</param>
+        /// <param name="ProfilePictureUrl">ProfilePictureUrl (required).</param>
+        /// <param name="Links">Links (required).</param>
         /// <param name="Info">Info.</param>
-        /// <param name="Links">Links.</param>
-        /// <param name="UserId">UserId.</param>
-        /// <param name="Email">Email.</param>
-        /// <param name="PersonalInfo">PersonalInfo.</param>
-        /// <param name="Status">Status.</param>
-        /// <param name="CompanyInfo">CompanyInfo.</param>
-        /// <param name="ProfilePictureInfo">ProfilePictureInfo.</param>
-        public AccountInfo(BeezUPCommonInfoSummaries Info = default(BeezUPCommonInfoSummaries), AccountInfoLinks Links = default(AccountInfoLinks), BeezUPCommonUserId UserId = default(BeezUPCommonUserId), BeezUPCommonEmail Email = default(BeezUPCommonEmail), PersonalInfo PersonalInfo = default(PersonalInfo), AccountStatus Status = default(AccountStatus), CompanyInfo CompanyInfo = default(CompanyInfo), ProfilePictureInfo ProfilePictureInfo = default(ProfilePictureInfo))
+        public AccountInfo(BeezUPCommonUserId UserId = default(BeezUPCommonUserId), BeezUPCommonEmail Email = default(BeezUPCommonEmail), PersonalInfo PersonalInfo = default(PersonalInfo), AccountStatus Status = default(AccountStatus), CompanyInfo CompanyInfo = default(CompanyInfo), ProfilePictureUrl ProfilePictureUrl = default(ProfilePictureUrl), AccountInfoLinks Links = default(AccountInfoLinks), BeezUPCommonInfoSummaries Info = default(BeezUPCommonInfoSummaries))
         {
+            // to ensure "UserId" is required (not null)
+            if (UserId == null)
+            {
+                throw new InvalidDataException("UserId is a required property for AccountInfo and cannot be null");
+            }
+            else
+            {
+                this.UserId = UserId;
+            }
+            // to ensure "Email" is required (not null)
+            if (Email == null)
+            {
+                throw new InvalidDataException("Email is a required property for AccountInfo and cannot be null");
+            }
+            else
+            {
+                this.Email = Email;
+            }
+            // to ensure "PersonalInfo" is required (not null)
+            if (PersonalInfo == null)
+            {
+                throw new InvalidDataException("PersonalInfo is a required property for AccountInfo and cannot be null");
+            }
+            else
+            {
+                this.PersonalInfo = PersonalInfo;
+            }
+            // to ensure "Status" is required (not null)
+            if (Status == null)
+            {
+                throw new InvalidDataException("Status is a required property for AccountInfo and cannot be null");
+            }
+            else
+            {
+                this.Status = Status;
+            }
+            // to ensure "CompanyInfo" is required (not null)
+            if (CompanyInfo == null)
+            {
+                throw new InvalidDataException("CompanyInfo is a required property for AccountInfo and cannot be null");
+            }
+            else
+            {
+                this.CompanyInfo = CompanyInfo;
+            }
+            // to ensure "ProfilePictureUrl" is required (not null)
+            if (ProfilePictureUrl == null)
+            {
+                throw new InvalidDataException("ProfilePictureUrl is a required property for AccountInfo and cannot be null");
+            }
+            else
+            {
+                this.ProfilePictureUrl = ProfilePictureUrl;
+            }
+            // to ensure "Links" is required (not null)
+            if (Links == null)
+            {
+                throw new InvalidDataException("Links is a required property for AccountInfo and cannot be null");
+            }
+            else
+            {
+                this.Links = Links;
+            }
             this.Info = Info;
-            this.Links = Links;
-            this.UserId = UserId;
-            this.Email = Email;
-            this.PersonalInfo = PersonalInfo;
-            this.Status = Status;
-            this.CompanyInfo = CompanyInfo;
-            this.ProfilePictureInfo = ProfilePictureInfo;
         }
         
-        /// <summary>
-        /// Gets or Sets Info
-        /// </summary>
-        [DataMember(Name="info", EmitDefaultValue=false)]
-        public BeezUPCommonInfoSummaries Info { get; set; }
-        /// <summary>
-        /// Gets or Sets Links
-        /// </summary>
-        [DataMember(Name="links", EmitDefaultValue=false)]
-        public AccountInfoLinks Links { get; set; }
         /// <summary>
         /// Gets or Sets UserId
         /// </summary>
@@ -88,10 +139,20 @@ namespace IO.Swagger.Model
         [DataMember(Name="companyInfo", EmitDefaultValue=false)]
         public CompanyInfo CompanyInfo { get; set; }
         /// <summary>
-        /// Gets or Sets ProfilePictureInfo
+        /// Gets or Sets ProfilePictureUrl
         /// </summary>
-        [DataMember(Name="profilePictureInfo", EmitDefaultValue=false)]
-        public ProfilePictureInfo ProfilePictureInfo { get; set; }
+        [DataMember(Name="profilePictureUrl", EmitDefaultValue=false)]
+        public ProfilePictureUrl ProfilePictureUrl { get; set; }
+        /// <summary>
+        /// Gets or Sets Links
+        /// </summary>
+        [DataMember(Name="links", EmitDefaultValue=false)]
+        public AccountInfoLinks Links { get; set; }
+        /// <summary>
+        /// Gets or Sets Info
+        /// </summary>
+        [DataMember(Name="info", EmitDefaultValue=false)]
+        public BeezUPCommonInfoSummaries Info { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -100,14 +161,14 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class AccountInfo {\n");
-            sb.Append("  Info: ").Append(Info).Append("\n");
-            sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  UserId: ").Append(UserId).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  PersonalInfo: ").Append(PersonalInfo).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  CompanyInfo: ").Append(CompanyInfo).Append("\n");
-            sb.Append("  ProfilePictureInfo: ").Append(ProfilePictureInfo).Append("\n");
+            sb.Append("  ProfilePictureUrl: ").Append(ProfilePictureUrl).Append("\n");
+            sb.Append("  Links: ").Append(Links).Append("\n");
+            sb.Append("  Info: ").Append(Info).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -145,16 +206,6 @@ namespace IO.Swagger.Model
 
             return 
                 (
-                    this.Info == other.Info ||
-                    this.Info != null &&
-                    this.Info.Equals(other.Info)
-                ) && 
-                (
-                    this.Links == other.Links ||
-                    this.Links != null &&
-                    this.Links.Equals(other.Links)
-                ) && 
-                (
                     this.UserId == other.UserId ||
                     this.UserId != null &&
                     this.UserId.Equals(other.UserId)
@@ -180,9 +231,19 @@ namespace IO.Swagger.Model
                     this.CompanyInfo.Equals(other.CompanyInfo)
                 ) && 
                 (
-                    this.ProfilePictureInfo == other.ProfilePictureInfo ||
-                    this.ProfilePictureInfo != null &&
-                    this.ProfilePictureInfo.Equals(other.ProfilePictureInfo)
+                    this.ProfilePictureUrl == other.ProfilePictureUrl ||
+                    this.ProfilePictureUrl != null &&
+                    this.ProfilePictureUrl.Equals(other.ProfilePictureUrl)
+                ) && 
+                (
+                    this.Links == other.Links ||
+                    this.Links != null &&
+                    this.Links.Equals(other.Links)
+                ) && 
+                (
+                    this.Info == other.Info ||
+                    this.Info != null &&
+                    this.Info.Equals(other.Info)
                 );
         }
 
@@ -197,10 +258,6 @@ namespace IO.Swagger.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Info != null)
-                    hash = hash * 59 + this.Info.GetHashCode();
-                if (this.Links != null)
-                    hash = hash * 59 + this.Links.GetHashCode();
                 if (this.UserId != null)
                     hash = hash * 59 + this.UserId.GetHashCode();
                 if (this.Email != null)
@@ -211,8 +268,12 @@ namespace IO.Swagger.Model
                     hash = hash * 59 + this.Status.GetHashCode();
                 if (this.CompanyInfo != null)
                     hash = hash * 59 + this.CompanyInfo.GetHashCode();
-                if (this.ProfilePictureInfo != null)
-                    hash = hash * 59 + this.ProfilePictureInfo.GetHashCode();
+                if (this.ProfilePictureUrl != null)
+                    hash = hash * 59 + this.ProfilePictureUrl.GetHashCode();
+                if (this.Links != null)
+                    hash = hash * 59 + this.Links.GetHashCode();
+                if (this.Info != null)
+                    hash = hash * 59 + this.Info.GetHashCode();
                 return hash;
             }
         }

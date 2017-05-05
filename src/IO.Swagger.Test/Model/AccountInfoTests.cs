@@ -65,22 +65,6 @@ namespace IO.Swagger.Test
         }
 
         /// <summary>
-        /// Test the property 'Info'
-        /// </summary>
-        [Test]
-        public void InfoTest()
-        {
-            // TODO unit test for the property 'Info'
-        }
-        /// <summary>
-        /// Test the property 'Links'
-        /// </summary>
-        [Test]
-        public void LinksTest()
-        {
-            // TODO unit test for the property 'Links'
-        }
-        /// <summary>
         /// Test the property 'UserId'
         /// </summary>
         [Test]
@@ -121,12 +105,28 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'CompanyInfo'
         }
         /// <summary>
-        /// Test the property 'ProfilePictureInfo'
+        /// Test the property 'ProfilePictureUrl'
         /// </summary>
         [Test]
-        public void ProfilePictureInfoTest()
+        public void ProfilePictureUrlTest()
         {
-            // TODO unit test for the property 'ProfilePictureInfo'
+            // TODO unit test for the property 'ProfilePictureUrl'
+        }
+        /// <summary>
+        /// Test the property 'Links'
+        /// </summary>
+        [Test]
+        public void LinksTest()
+        {
+            // TODO unit test for the property 'Links'
+        }
+        /// <summary>
+        /// Test the property 'Info'
+        /// </summary>
+        [Test]
+        public void InfoTest()
+        {
+            // TODO unit test for the property 'Info'
         }
 
     }
