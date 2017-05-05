@@ -41,7 +41,7 @@ namespace IO.Swagger.Model
         /// <param name="LastName">Your friend&#39;s user last name (required).</param>
         /// <param name="FirstName">Your friend&#39;s user first name (required).</param>
         /// <param name="Email">Email (required).</param>
-        /// <param name="ProfilePictureUrl">ProfilePictureUrl (required).</param>
+        /// <param name="ProfilePictureUrl">ProfilePictureUrl.</param>
         /// <param name="CountryIsoCodeAlpha3">CountryIsoCodeAlpha3 (required).</param>
         /// <param name="Company">Your friend&#39;s user company name (required).</param>
         /// <param name="WhatIDo">Your friend&#39;s user occupation in his company (required).</param>
@@ -83,15 +83,6 @@ namespace IO.Swagger.Model
             {
                 this.Email = Email;
             }
-            // to ensure "ProfilePictureUrl" is required (not null)
-            if (ProfilePictureUrl == null)
-            {
-                throw new InvalidDataException("ProfilePictureUrl is a required property for UserFriendInfo and cannot be null");
-            }
-            else
-            {
-                this.ProfilePictureUrl = ProfilePictureUrl;
-            }
             // to ensure "CountryIsoCodeAlpha3" is required (not null)
             if (CountryIsoCodeAlpha3 == null)
             {
@@ -119,6 +110,7 @@ namespace IO.Swagger.Model
             {
                 this.WhatIDo = WhatIDo;
             }
+            this.ProfilePictureUrl = ProfilePictureUrl;
         }
         
         /// <summary>

@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **OrderCurrencyCode** | [**BeezUPCommonCurrencyCode**](BeezUPCommonCurrencyCode.md) |  | [optional] 
 **Processing** | [**Processing**](Processing.md) |  | 
 **Etag** | [**Etag**](Etag.md) |  | 
-**Links** | [**List&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md) |  | 
+**Links** | [**DefinitionsorderHeaderLinks**](DefinitionsorderHeaderLinks.md) |  | 
 **OrderMarketPlaceChannel** | **string** | Useful to identify the origin of the order. For example in Amazon. | [optional] 
 **OrderTotalTax** | **decimal?** | The total tax of this order | [optional] 
 **OrderTotalCommission** | **decimal?** | The total commission of this order | [optional] 
@@ -65,7 +65,7 @@ Name | Type | Description | Notes
 **OrderOrderSourceUri** | **string** | Technical information: The url to the source of this order. We received this information from the marketplace.  | [optional] 
 **OrderOrderItemsSourceUri** | **string** | Technical information: The url to the source of this order items. We received this information from the marketplace.  | [optional] 
 **OrderItems** | [**List&lt;OrderItem&gt;**](OrderItem.md) |  | 
-**TransitionLinks** | [**List&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md) |  | 
+**TransitionLinks** | [**OrderTransitionLinks**](OrderTransitionLinks.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **LastName** | **string** | Your friend&#39;s user last name | 
 **FirstName** | **string** | Your friend&#39;s user first name | 
 **Email** | [**FriendEmail**](FriendEmail.md) |  | 
-**ProfilePictureUrl** | [**FriendProfilePictureUrl**](FriendProfilePictureUrl.md) |  | 
+**ProfilePictureUrl** | [**FriendProfilePictureUrl**](FriendProfilePictureUrl.md) |  | [optional] 
 **CountryIsoCodeAlpha3** | [**FriendCountryIsoCodeAlpha3**](FriendCountryIsoCodeAlpha3.md) |  | 
 **Company** | **string** | Your friend&#39;s user company name | 
 **WhatIDo** | **string** | Your friend&#39;s user occupation in his company | 

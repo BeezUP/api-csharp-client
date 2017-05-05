@@ -57,7 +57,7 @@ namespace IO.Swagger.Model
         /// <param name="Processing">Processing (required).</param>
         /// <param name="Etag">Etag (required).</param>
         /// <param name="Links">Links (required).</param>
-        public OrderHeader(MarketplaceTechnicalCode MarketplaceTechnicalCode = default(MarketplaceTechnicalCode), AccountId AccountId = default(AccountId), BeezUPOrderId BeezUPOrderId = default(BeezUPOrderId), BeezUPCommonHttpUrl BeezUPOrderUrl = default(BeezUPCommonHttpUrl), MarketplaceBusinessCode MarketplaceBusinessCode = default(MarketplaceBusinessCode), MarketplaceOrderId OrderMarketplaceOrderId = default(MarketplaceOrderId), BeezUPOrderStatus OrderStatusBeezUPOrderStatus = default(BeezUPOrderStatus), MarketplaceOrderStatus OrderStatusMarketplaceOrderStatus = default(MarketplaceOrderStatus), OrderMerchantOrderId OrderMerchantOrderId = default(OrderMerchantOrderId), OrderMerchantECommerceSoftwareName OrderMerchantECommerceSoftwareName = default(OrderMerchantECommerceSoftwareName), OrderMerchantECommerceSoftwareVersion OrderMerchantECommerceSoftwareVersion = default(OrderMerchantECommerceSoftwareVersion), DateTime? OrderPurchaseUtcDate = default(DateTime?), DateTime? OrderLastModificationUtcDate = default(DateTime?), DateTime? OrderMarketplaceLastModificationUtcDate = default(DateTime?), OrderBuyerName OrderBuyerName = default(OrderBuyerName), decimal? OrderTotalPrice = default(decimal?), BeezUPCommonCurrencyCode OrderCurrencyCode = default(BeezUPCommonCurrencyCode), Processing Processing = default(Processing), Etag Etag = default(Etag), List<BeezUPCommonLink2> Links = default(List<BeezUPCommonLink2>))
+        public OrderHeader(MarketplaceTechnicalCode MarketplaceTechnicalCode = default(MarketplaceTechnicalCode), AccountId AccountId = default(AccountId), BeezUPOrderId BeezUPOrderId = default(BeezUPOrderId), BeezUPCommonHttpUrl BeezUPOrderUrl = default(BeezUPCommonHttpUrl), MarketplaceBusinessCode MarketplaceBusinessCode = default(MarketplaceBusinessCode), MarketplaceOrderId OrderMarketplaceOrderId = default(MarketplaceOrderId), BeezUPOrderStatus OrderStatusBeezUPOrderStatus = default(BeezUPOrderStatus), MarketplaceOrderStatus OrderStatusMarketplaceOrderStatus = default(MarketplaceOrderStatus), OrderMerchantOrderId OrderMerchantOrderId = default(OrderMerchantOrderId), OrderMerchantECommerceSoftwareName OrderMerchantECommerceSoftwareName = default(OrderMerchantECommerceSoftwareName), OrderMerchantECommerceSoftwareVersion OrderMerchantECommerceSoftwareVersion = default(OrderMerchantECommerceSoftwareVersion), DateTime? OrderPurchaseUtcDate = default(DateTime?), DateTime? OrderLastModificationUtcDate = default(DateTime?), DateTime? OrderMarketplaceLastModificationUtcDate = default(DateTime?), OrderBuyerName OrderBuyerName = default(OrderBuyerName), decimal? OrderTotalPrice = default(decimal?), BeezUPCommonCurrencyCode OrderCurrencyCode = default(BeezUPCommonCurrencyCode), Processing Processing = default(Processing), Etag Etag = default(Etag), DefinitionsorderHeaderLinks Links = default(DefinitionsorderHeaderLinks))
         {
             // to ensure "MarketplaceTechnicalCode" is required (not null)
             if (MarketplaceTechnicalCode == null)
@@ -280,7 +280,7 @@ namespace IO.Swagger.Model
         /// Gets or Sets Links
         /// </summary>
         [DataMember(Name="links", EmitDefaultValue=false)]
-        public List<BeezUPCommonLink2> Links { get; set; }
+        public DefinitionsorderHeaderLinks Links { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -443,7 +443,7 @@ namespace IO.Swagger.Model
                 (
                     this.Links == other.Links ||
                     this.Links != null &&
-                    this.Links.SequenceEqual(other.Links)
+                    this.Links.Equals(other.Links)
                 );
         }
 

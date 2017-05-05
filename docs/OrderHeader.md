@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **OrderCurrencyCode** | [**BeezUPCommonCurrencyCode**](BeezUPCommonCurrencyCode.md) |  | [optional] 
 **Processing** | [**Processing**](Processing.md) |  | 
 **Etag** | [**Etag**](Etag.md) |  | 
-**Links** | [**List&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md) |  | 
+**Links** | [**DefinitionsorderHeaderLinks**](DefinitionsorderHeaderLinks.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
