@@ -41,8 +41,9 @@ namespace IO.Swagger.Model
         /// <param name="ChannelName">ChannelName (required).</param>
         /// <param name="ChannelLogoUrl">ChannelLogoUrl (required).</param>
         /// <param name="DescriptionAvailable">Indicates if we have more detailed information about this channel (required) (default to false).</param>
+        /// <param name="IsMarketplace">Indicates if the channel is a marketplace (required) (default to false).</param>
         /// <param name="Links">Links (required).</param>
-        public ChannelHeader(BeezUPCommonChannelId ChannelId = default(BeezUPCommonChannelId), BeezUPCommonChannelName ChannelName = default(BeezUPCommonChannelName), BeezUPCommonHttpUrl ChannelLogoUrl = default(BeezUPCommonHttpUrl), bool? DescriptionAvailable = false, ChannelHeaderLinks Links = default(ChannelHeaderLinks))
+        public ChannelHeader(BeezUPCommonChannelId ChannelId = default(BeezUPCommonChannelId), BeezUPCommonChannelName ChannelName = default(BeezUPCommonChannelName), BeezUPCommonHttpUrl ChannelLogoUrl = default(BeezUPCommonHttpUrl), bool? DescriptionAvailable = false, bool? IsMarketplace = false, ChannelHeaderLinks Links = default(ChannelHeaderLinks))
         {
             // to ensure "ChannelId" is required (not null)
             if (ChannelId == null)
@@ -80,6 +81,15 @@ namespace IO.Swagger.Model
             {
                 this.DescriptionAvailable = DescriptionAvailable;
             }
+            // to ensure "IsMarketplace" is required (not null)
+            if (IsMarketplace == null)
+            {
+                throw new InvalidDataException("IsMarketplace is a required property for ChannelHeader and cannot be null");
+            }
+            else
+            {
+                this.IsMarketplace = IsMarketplace;
+            }
             // to ensure "Links" is required (not null)
             if (Links == null)
             {
@@ -113,6 +123,12 @@ namespace IO.Swagger.Model
         [DataMember(Name="descriptionAvailable", EmitDefaultValue=false)]
         public bool? DescriptionAvailable { get; set; }
         /// <summary>
+        /// Indicates if the channel is a marketplace
+        /// </summary>
+        /// <value>Indicates if the channel is a marketplace</value>
+        [DataMember(Name="isMarketplace", EmitDefaultValue=false)]
+        public bool? IsMarketplace { get; set; }
+        /// <summary>
         /// Gets or Sets Links
         /// </summary>
         [DataMember(Name="links", EmitDefaultValue=false)]
@@ -129,6 +145,7 @@ namespace IO.Swagger.Model
             sb.Append("  ChannelName: ").Append(ChannelName).Append("\n");
             sb.Append("  ChannelLogoUrl: ").Append(ChannelLogoUrl).Append("\n");
             sb.Append("  DescriptionAvailable: ").Append(DescriptionAvailable).Append("\n");
+            sb.Append("  IsMarketplace: ").Append(IsMarketplace).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -187,6 +204,11 @@ namespace IO.Swagger.Model
                     this.DescriptionAvailable.Equals(other.DescriptionAvailable)
                 ) && 
                 (
+                    this.IsMarketplace == other.IsMarketplace ||
+                    this.IsMarketplace != null &&
+                    this.IsMarketplace.Equals(other.IsMarketplace)
+                ) && 
+                (
                     this.Links == other.Links ||
                     this.Links != null &&
                     this.Links.Equals(other.Links)
@@ -212,6 +234,8 @@ namespace IO.Swagger.Model
                     hash = hash * 59 + this.ChannelLogoUrl.GetHashCode();
                 if (this.DescriptionAvailable != null)
                     hash = hash * 59 + this.DescriptionAvailable.GetHashCode();
+                if (this.IsMarketplace != null)
+                    hash = hash * 59 + this.IsMarketplace.GetHashCode();
                 if (this.Links != null)
                     hash = hash * 59 + this.Links.GetHashCode();
                 return hash;

@@ -97,6 +97,14 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'DescriptionAvailable'
         }
         /// <summary>
+        /// Test the property 'IsMarketplace'
+        /// </summary>
+        [Test]
+        public void IsMarketplaceTest()
+        {
+            // TODO unit test for the property 'IsMarketplace'
+        }
+        /// <summary>
         /// Test the property 'Links'
         /// </summary>
         [Test]

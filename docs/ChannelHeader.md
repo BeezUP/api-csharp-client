@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **ChannelName** | [**BeezUPCommonChannelName**](BeezUPCommonChannelName.md) |  | 
 **ChannelLogoUrl** | [**BeezUPCommonHttpUrl**](BeezUPCommonHttpUrl.md) |  | 
 **DescriptionAvailable** | **bool?** | Indicates if we have more detailed information about this channel | [default to false]
+**IsMarketplace** | **bool?** | Indicates if the channel is a marketplace | [default to false]
 **Links** | [**ChannelHeaderLinks**](ChannelHeaderLinks.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
