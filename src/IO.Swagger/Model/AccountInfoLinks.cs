@@ -35,14 +35,16 @@ namespace IO.Swagger.Model
         /// <param name="SavePersonalInfo">SavePersonalInfo.</param>
         /// <param name="ChangePassword">ChangePassword.</param>
         /// <param name="SaveCompanyInfo">SaveCompanyInfo.</param>
+        /// <param name="GetProfilePictureInfo">GetProfilePictureInfo.</param>
         /// <param name="SaveProfilePictureInfo">SaveProfilePictureInfo.</param>
         /// <param name="GetCreditCardInfo">GetCreditCardInfo.</param>
         /// <param name="SaveUserCreditCardLink">SaveUserCreditCardLink.</param>
-        public AccountInfoLinks(LinksSavePersonalInfoLink SavePersonalInfo = default(LinksSavePersonalInfoLink), LinksChangePasswordLink ChangePassword = default(LinksChangePasswordLink), LinksSaveCompanyInfoLink SaveCompanyInfo = default(LinksSaveCompanyInfoLink), LinksSaveProfilePictureInfoLink SaveProfilePictureInfo = default(LinksSaveProfilePictureInfoLink), LinksGetCreditCardInfoLink GetCreditCardInfo = default(LinksGetCreditCardInfoLink), LinksSaveCreditCardInfoLink SaveUserCreditCardLink = default(LinksSaveCreditCardInfoLink))
+        public AccountInfoLinks(LinksSavePersonalInfoLink SavePersonalInfo = default(LinksSavePersonalInfoLink), LinksChangePasswordLink ChangePassword = default(LinksChangePasswordLink), LinksSaveCompanyInfoLink SaveCompanyInfo = default(LinksSaveCompanyInfoLink), LinksGetProfilePictureInfoLink GetProfilePictureInfo = default(LinksGetProfilePictureInfoLink), LinksSaveProfilePictureInfoLink SaveProfilePictureInfo = default(LinksSaveProfilePictureInfoLink), LinksGetCreditCardInfoLink GetCreditCardInfo = default(LinksGetCreditCardInfoLink), LinksSaveCreditCardInfoLink SaveUserCreditCardLink = default(LinksSaveCreditCardInfoLink))
         {
             this.SavePersonalInfo = SavePersonalInfo;
             this.ChangePassword = ChangePassword;
             this.SaveCompanyInfo = SaveCompanyInfo;
+            this.GetProfilePictureInfo = GetProfilePictureInfo;
             this.SaveProfilePictureInfo = SaveProfilePictureInfo;
             this.GetCreditCardInfo = GetCreditCardInfo;
             this.SaveUserCreditCardLink = SaveUserCreditCardLink;
@@ -63,6 +65,11 @@ namespace IO.Swagger.Model
         /// </summary>
         [DataMember(Name="saveCompanyInfo", EmitDefaultValue=false)]
         public LinksSaveCompanyInfoLink SaveCompanyInfo { get; set; }
+        /// <summary>
+        /// Gets or Sets GetProfilePictureInfo
+        /// </summary>
+        [DataMember(Name="getProfilePictureInfo", EmitDefaultValue=false)]
+        public LinksGetProfilePictureInfoLink GetProfilePictureInfo { get; set; }
         /// <summary>
         /// Gets or Sets SaveProfilePictureInfo
         /// </summary>
@@ -89,6 +96,7 @@ namespace IO.Swagger.Model
             sb.Append("  SavePersonalInfo: ").Append(SavePersonalInfo).Append("\n");
             sb.Append("  ChangePassword: ").Append(ChangePassword).Append("\n");
             sb.Append("  SaveCompanyInfo: ").Append(SaveCompanyInfo).Append("\n");
+            sb.Append("  GetProfilePictureInfo: ").Append(GetProfilePictureInfo).Append("\n");
             sb.Append("  SaveProfilePictureInfo: ").Append(SaveProfilePictureInfo).Append("\n");
             sb.Append("  GetCreditCardInfo: ").Append(GetCreditCardInfo).Append("\n");
             sb.Append("  SaveUserCreditCardLink: ").Append(SaveUserCreditCardLink).Append("\n");
@@ -144,6 +152,11 @@ namespace IO.Swagger.Model
                     this.SaveCompanyInfo.Equals(other.SaveCompanyInfo)
                 ) && 
                 (
+                    this.GetProfilePictureInfo == other.GetProfilePictureInfo ||
+                    this.GetProfilePictureInfo != null &&
+                    this.GetProfilePictureInfo.Equals(other.GetProfilePictureInfo)
+                ) && 
+                (
                     this.SaveProfilePictureInfo == other.SaveProfilePictureInfo ||
                     this.SaveProfilePictureInfo != null &&
                     this.SaveProfilePictureInfo.Equals(other.SaveProfilePictureInfo)
@@ -177,6 +190,8 @@ namespace IO.Swagger.Model
                     hash = hash * 59 + this.ChangePassword.GetHashCode();
                 if (this.SaveCompanyInfo != null)
                     hash = hash * 59 + this.SaveCompanyInfo.GetHashCode();
+                if (this.GetProfilePictureInfo != null)
+                    hash = hash * 59 + this.GetProfilePictureInfo.GetHashCode();
                 if (this.SaveProfilePictureInfo != null)
                     hash = hash * 59 + this.SaveProfilePictureInfo.GetHashCode();
                 if (this.GetCreditCardInfo != null)

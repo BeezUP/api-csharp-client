@@ -1740,6 +1740,25 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of OrderListLight</returns>
         ApiResponse<OrderListLight> GetOrderListLightWithHttpInfo (OrderListRequest request = null);
         /// <summary>
+        /// Get profile picture information
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ProfilePictureInfoResponse</returns>
+        ProfilePictureInfoResponse GetProfilePictureInfo ();
+
+        /// <summary>
+        /// Get profile picture information
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of ProfilePictureInfoResponse</returns>
+        ApiResponse<ProfilePictureInfoResponse> GetProfilePictureInfoWithHttpInfo ();
+        /// <summary>
         /// Fetch the publication history for an account, sorted by descending start date
         /// </summary>
         /// <remarks>
@@ -5338,6 +5357,25 @@ namespace IO.Swagger.Api
         /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse (OrderListLight)</returns>
         System.Threading.Tasks.Task<ApiResponse<OrderListLight>> GetOrderListLightAsyncWithHttpInfo (OrderListRequest request = null);
+        /// <summary>
+        /// Get profile picture information
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ProfilePictureInfoResponse</returns>
+        System.Threading.Tasks.Task<ProfilePictureInfoResponse> GetProfilePictureInfoAsync ();
+
+        /// <summary>
+        /// Get profile picture information
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (ProfilePictureInfoResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ProfilePictureInfoResponse>> GetProfilePictureInfoAsyncWithHttpInfo ();
         /// <summary>
         /// Fetch the publication history for an account, sorted by descending start date
         /// </summary>
@@ -20069,6 +20107,148 @@ namespace IO.Swagger.Api
             return new ApiResponse<OrderListLight>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (OrderListLight) Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrderListLight)));
+            
+        }
+
+        /// <summary>
+        /// Get profile picture information 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ProfilePictureInfoResponse</returns>
+        public ProfilePictureInfoResponse GetProfilePictureInfo ()
+        {
+             ApiResponse<ProfilePictureInfoResponse> localVarResponse = GetProfilePictureInfoWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get profile picture information 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of ProfilePictureInfoResponse</returns>
+        public ApiResponse< ProfilePictureInfoResponse > GetProfilePictureInfoWithHttpInfo ()
+        {
+
+            var localVarPath = "/v2/user/customer/account/profilePictureInfo";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // authentication (api_key) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
+            {
+                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetProfilePictureInfo", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ProfilePictureInfoResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ProfilePictureInfoResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProfilePictureInfoResponse)));
+            
+        }
+
+        /// <summary>
+        /// Get profile picture information 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ProfilePictureInfoResponse</returns>
+        public async System.Threading.Tasks.Task<ProfilePictureInfoResponse> GetProfilePictureInfoAsync ()
+        {
+             ApiResponse<ProfilePictureInfoResponse> localVarResponse = await GetProfilePictureInfoAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get profile picture information 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (ProfilePictureInfoResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ProfilePictureInfoResponse>> GetProfilePictureInfoAsyncWithHttpInfo ()
+        {
+
+            var localVarPath = "/v2/user/customer/account/profilePictureInfo";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // authentication (api_key) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
+            {
+                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetProfilePictureInfo", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ProfilePictureInfoResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ProfilePictureInfoResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProfilePictureInfoResponse)));
             
         }
 

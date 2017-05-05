@@ -81,6 +81,7 @@ Method | HTTP request | Description
 [**GetOrderHistory**](BeezUPApi.md#getorderhistory) | **GET** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history | Get an Order&#39;s harvest and change history
 [**GetOrderListFull**](BeezUPApi.md#getorderlistfull) | **POST** /v2/user/marketplaces/orders/list/full | Get a paginated list of all Orders with all Order and Order Item(s) properties
 [**GetOrderListLight**](BeezUPApi.md#getorderlistlight) | **POST** /v2/user/marketplaces/orders/list/light | Get a paginated list of all Orders without details
+[**GetProfilePictureInfo**](BeezUPApi.md#getprofilepictureinfo) | **GET** /v2/user/customer/account/profilePictureInfo | Get profile picture information
 [**GetPublications**](BeezUPApi.md#getpublications) | **GET** /v2/user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/history | Fetch the publication history for an account, sorted by descending start date
 [**GetReportFilter**](BeezUPApi.md#getreportfilter) | **GET** /v2/user/analytics/{storeId}/reports/filters/{reportFilterId} | Get the report filter description
 [**GetReportFilters**](BeezUPApi.md#getreportfilters) | **GET** /v2/user/analytics/{storeId}/reports/filters | Get report filter list for the given store
@@ -5224,6 +5225,67 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OrderListLight**](OrderListLight.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getprofilepictureinfo"></a>
+# **GetProfilePictureInfo**
+> ProfilePictureInfoResponse GetProfilePictureInfo ()
+
+Get profile picture information
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class GetProfilePictureInfoExample
+    {
+        public void main()
+        {
+            
+            // Configure API key authorization: api_key
+            Configuration.Default.ApiKey.Add("Ocp-Apim-Subscription-Key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Ocp-Apim-Subscription-Key", "Bearer");
+
+            var apiInstance = new BeezUPApi();
+
+            try
+            {
+                // Get profile picture information
+                ProfilePictureInfoResponse result = apiInstance.GetProfilePictureInfo();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling BeezUPApi.GetProfilePictureInfo: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**ProfilePictureInfoResponse**](ProfilePictureInfoResponse.md)
 
 ### Authorization
 

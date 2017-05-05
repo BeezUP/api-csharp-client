@@ -175,6 +175,7 @@ Class | Method | HTTP request | Description
 *BeezUPApi* | [**GetOrderHistory**](docs/BeezUPApi.md#getorderhistory) | **GET** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history | Get an Order's harvest and change history
 *BeezUPApi* | [**GetOrderListFull**](docs/BeezUPApi.md#getorderlistfull) | **POST** /v2/user/marketplaces/orders/list/full | Get a paginated list of all Orders with all Order and Order Item(s) properties
 *BeezUPApi* | [**GetOrderListLight**](docs/BeezUPApi.md#getorderlistlight) | **POST** /v2/user/marketplaces/orders/list/light | Get a paginated list of all Orders without details
+*BeezUPApi* | [**GetProfilePictureInfo**](docs/BeezUPApi.md#getprofilepictureinfo) | **GET** /v2/user/customer/account/profilePictureInfo | Get profile picture information
 *BeezUPApi* | [**GetPublications**](docs/BeezUPApi.md#getpublications) | **GET** /v2/user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/history | Fetch the publication history for an account, sorted by descending start date
 *BeezUPApi* | [**GetReportFilter**](docs/BeezUPApi.md#getreportfilter) | **GET** /v2/user/analytics/{storeId}/reports/filters/{reportFilterId} | Get the report filter description
 *BeezUPApi* | [**GetReportFilters**](docs/BeezUPApi.md#getreportfilters) | **GET** /v2/user/analytics/{storeId}/reports/filters | Get report filter list for the given store
@@ -530,6 +531,7 @@ Class | Method | HTTP request | Description
  - [Model.LinksGetCreditCardInfoLink](docs/LinksGetCreditCardInfoLink.md)
  - [Model.LinksGetMarketplaceAccountStoresLink](docs/LinksGetMarketplaceAccountStoresLink.md)
  - [Model.LinksGetOrderLink](docs/LinksGetOrderLink.md)
+ - [Model.LinksGetProfilePictureInfoLink](docs/LinksGetProfilePictureInfoLink.md)
  - [Model.LinksGetPublicationsLink](docs/LinksGetPublicationsLink.md)
  - [Model.LinksGetReportFilterLink](docs/LinksGetReportFilterLink.md)
  - [Model.LinksGetReportFiltersLink](docs/LinksGetReportFiltersLink.md)
@@ -625,6 +627,8 @@ Class | Method | HTTP request | Description
  - [Model.ProductValues](docs/ProductValues.md)
  - [Model.Products](docs/Products.md)
  - [Model.ProfilePictureInfo](docs/ProfilePictureInfo.md)
+ - [Model.ProfilePictureInfoResponse](docs/ProfilePictureInfoResponse.md)
+ - [Model.ProfilePictureInfoResponseLinks](docs/ProfilePictureInfoResponseLinks.md)
  - [Model.ProfilePictureUrl](docs/ProfilePictureUrl.md)
  - [Model.PromotionalCodeValidity](docs/PromotionalCodeValidity.md)
  - [Model.PublicationFeedReporting](docs/PublicationFeedReporting.md)

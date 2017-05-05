@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **SavePersonalInfo** | [**LinksSavePersonalInfoLink**](LinksSavePersonalInfoLink.md) |  | [optional] 
 **ChangePassword** | [**LinksChangePasswordLink**](LinksChangePasswordLink.md) |  | [optional] 
 **SaveCompanyInfo** | [**LinksSaveCompanyInfoLink**](LinksSaveCompanyInfoLink.md) |  | [optional] 
+**GetProfilePictureInfo** | [**LinksGetProfilePictureInfoLink**](LinksGetProfilePictureInfoLink.md) |  | [optional] 
 **SaveProfilePictureInfo** | [**LinksSaveProfilePictureInfoLink**](LinksSaveProfilePictureInfoLink.md) |  | [optional] 
 **GetCreditCardInfo** | [**LinksGetCreditCardInfoLink**](LinksGetCreditCardInfoLink.md) |  | [optional] 
 **SaveUserCreditCardLink** | [**LinksSaveCreditCardInfoLink**](LinksSaveCreditCardInfoLink.md) |  | [optional] 

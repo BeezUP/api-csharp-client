@@ -1038,6 +1038,17 @@ namespace IO.Swagger.Test
         }
         
         /// <summary>
+        /// Test GetProfilePictureInfo
+        /// </summary>
+        [Test]
+        public void GetProfilePictureInfoTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //var response = instance.GetProfilePictureInfo();
+            //Assert.IsInstanceOf<ProfilePictureInfoResponse> (response, "response is ProfilePictureInfoResponse");
+        }
+        
+        /// <summary>
         /// Test GetPublications
         /// </summary>
         [Test]

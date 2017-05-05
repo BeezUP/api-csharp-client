@@ -89,6 +89,14 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'SaveCompanyInfo'
         }
         /// <summary>
+        /// Test the property 'GetProfilePictureInfo'
+        /// </summary>
+        [Test]
+        public void GetProfilePictureInfoTest()
+        {
+            // TODO unit test for the property 'GetProfilePictureInfo'
+        }
+        /// <summary>
         /// Test the property 'SaveProfilePictureInfo'
         /// </summary>
         [Test]
