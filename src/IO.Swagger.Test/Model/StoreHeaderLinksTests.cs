@@ -96,6 +96,14 @@ namespace IO.Swagger.Test
         {
             // TODO unit test for the property 'GetShares'
         }
+        /// <summary>
+        /// Test the property 'Share'
+        /// </summary>
+        [Test]
+        public void ShareTest()
+        {
+            // TODO unit test for the property 'Share'
+        }
 
     }
 

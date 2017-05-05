@@ -36,12 +36,14 @@ namespace IO.Swagger.Model
         /// <param name="DeleteStore">DeleteStore.</param>
         /// <param name="UpdateStore">UpdateStore.</param>
         /// <param name="GetShares">GetShares.</param>
-        public StoreHeaderLinks(LinksGetStoreLink Self = default(LinksGetStoreLink), LinksDeleteStoreLink DeleteStore = default(LinksDeleteStoreLink), LinksUpdateStoreLink UpdateStore = default(LinksUpdateStoreLink), LinksGetSharesLink GetShares = default(LinksGetSharesLink))
+        /// <param name="Share">Share.</param>
+        public StoreHeaderLinks(LinksGetStoreLink Self = default(LinksGetStoreLink), LinksDeleteStoreLink DeleteStore = default(LinksDeleteStoreLink), LinksUpdateStoreLink UpdateStore = default(LinksUpdateStoreLink), LinksGetSharesLink GetShares = default(LinksGetSharesLink), LinksShareLink Share = default(LinksShareLink))
         {
             this.Self = Self;
             this.DeleteStore = DeleteStore;
             this.UpdateStore = UpdateStore;
             this.GetShares = GetShares;
+            this.Share = Share;
         }
         
         /// <summary>
@@ -65,6 +67,11 @@ namespace IO.Swagger.Model
         [DataMember(Name="getShares", EmitDefaultValue=false)]
         public LinksGetSharesLink GetShares { get; set; }
         /// <summary>
+        /// Gets or Sets Share
+        /// </summary>
+        [DataMember(Name="share", EmitDefaultValue=false)]
+        public LinksShareLink Share { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -76,6 +83,7 @@ namespace IO.Swagger.Model
             sb.Append("  DeleteStore: ").Append(DeleteStore).Append("\n");
             sb.Append("  UpdateStore: ").Append(UpdateStore).Append("\n");
             sb.Append("  GetShares: ").Append(GetShares).Append("\n");
+            sb.Append("  Share: ").Append(Share).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -131,6 +139,11 @@ namespace IO.Swagger.Model
                     this.GetShares == other.GetShares ||
                     this.GetShares != null &&
                     this.GetShares.Equals(other.GetShares)
+                ) && 
+                (
+                    this.Share == other.Share ||
+                    this.Share != null &&
+                    this.Share.Equals(other.Share)
                 );
         }
 
@@ -153,6 +166,8 @@ namespace IO.Swagger.Model
                     hash = hash * 59 + this.UpdateStore.GetHashCode();
                 if (this.GetShares != null)
                     hash = hash * 59 + this.GetShares.GetHashCode();
+                if (this.Share != null)
+                    hash = hash * 59 + this.Share.GetHashCode();
                 return hash;
             }
         }

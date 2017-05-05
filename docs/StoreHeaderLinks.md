@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **DeleteStore** | [**LinksDeleteStoreLink**](LinksDeleteStoreLink.md) |  | [optional] 
 **UpdateStore** | [**LinksUpdateStoreLink**](LinksUpdateStoreLink.md) |  | [optional] 
 **GetShares** | [**LinksGetSharesLink**](LinksGetSharesLink.md) |  | [optional] 
+**Share** | [**LinksShareLink**](LinksShareLink.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
