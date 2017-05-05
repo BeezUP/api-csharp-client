@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ProfilePictureUrl** | [**ProfilePictureUrl**](ProfilePictureUrl.md) |  | [optional] 
-**UseGravatarProfilePicture** | [**UseGravatarProfilePicture**](UseGravatarProfilePicture.md) |  | 
+**ProfilePictureSelected** | [**ProfilePictureSelected**](ProfilePictureSelected.md) |  | 
 **InitialsProfilePictureUrl** | [**InitialsProfilePictureUrl**](InitialsProfilePictureUrl.md) |  | 
 **GravatarProfilePictureUrl** | [**GravatarProfilePictureUrl**](GravatarProfilePictureUrl.md) |  | 
 

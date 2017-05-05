@@ -38,17 +38,17 @@ namespace IO.Swagger.Model
         /// Initializes a new instance of the <see cref="ProfilePictureInfo" /> class.
         /// </summary>
         /// <param name="ProfilePictureUrl">ProfilePictureUrl.</param>
-        /// <param name="UseGravatarProfilePicture">UseGravatarProfilePicture (required).</param>
-        public ProfilePictureInfo(ProfilePictureUrl ProfilePictureUrl = default(ProfilePictureUrl), UseGravatarProfilePicture UseGravatarProfilePicture = default(UseGravatarProfilePicture))
+        /// <param name="ProfilePictureSelected">ProfilePictureSelected (required).</param>
+        public ProfilePictureInfo(ProfilePictureUrl ProfilePictureUrl = default(ProfilePictureUrl), ProfilePictureSelected ProfilePictureSelected = default(ProfilePictureSelected))
         {
-            // to ensure "UseGravatarProfilePicture" is required (not null)
-            if (UseGravatarProfilePicture == null)
+            // to ensure "ProfilePictureSelected" is required (not null)
+            if (ProfilePictureSelected == null)
             {
-                throw new InvalidDataException("UseGravatarProfilePicture is a required property for ProfilePictureInfo and cannot be null");
+                throw new InvalidDataException("ProfilePictureSelected is a required property for ProfilePictureInfo and cannot be null");
             }
             else
             {
-                this.UseGravatarProfilePicture = UseGravatarProfilePicture;
+                this.ProfilePictureSelected = ProfilePictureSelected;
             }
             this.ProfilePictureUrl = ProfilePictureUrl;
         }
@@ -59,10 +59,10 @@ namespace IO.Swagger.Model
         [DataMember(Name="profilePictureUrl", EmitDefaultValue=false)]
         public ProfilePictureUrl ProfilePictureUrl { get; set; }
         /// <summary>
-        /// Gets or Sets UseGravatarProfilePicture
+        /// Gets or Sets ProfilePictureSelected
         /// </summary>
-        [DataMember(Name="useGravatarProfilePicture", EmitDefaultValue=false)]
-        public UseGravatarProfilePicture UseGravatarProfilePicture { get; set; }
+        [DataMember(Name="profilePictureSelected", EmitDefaultValue=false)]
+        public ProfilePictureSelected ProfilePictureSelected { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -72,7 +72,7 @@ namespace IO.Swagger.Model
             var sb = new StringBuilder();
             sb.Append("class ProfilePictureInfo {\n");
             sb.Append("  ProfilePictureUrl: ").Append(ProfilePictureUrl).Append("\n");
-            sb.Append("  UseGravatarProfilePicture: ").Append(UseGravatarProfilePicture).Append("\n");
+            sb.Append("  ProfilePictureSelected: ").Append(ProfilePictureSelected).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,9 +115,9 @@ namespace IO.Swagger.Model
                     this.ProfilePictureUrl.Equals(other.ProfilePictureUrl)
                 ) && 
                 (
-                    this.UseGravatarProfilePicture == other.UseGravatarProfilePicture ||
-                    this.UseGravatarProfilePicture != null &&
-                    this.UseGravatarProfilePicture.Equals(other.UseGravatarProfilePicture)
+                    this.ProfilePictureSelected == other.ProfilePictureSelected ||
+                    this.ProfilePictureSelected != null &&
+                    this.ProfilePictureSelected.Equals(other.ProfilePictureSelected)
                 );
         }
 
@@ -134,8 +134,8 @@ namespace IO.Swagger.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.ProfilePictureUrl != null)
                     hash = hash * 59 + this.ProfilePictureUrl.GetHashCode();
-                if (this.UseGravatarProfilePicture != null)
-                    hash = hash * 59 + this.UseGravatarProfilePicture.GetHashCode();
+                if (this.ProfilePictureSelected != null)
+                    hash = hash * 59 + this.ProfilePictureSelected.GetHashCode();
                 return hash;
             }
         }
