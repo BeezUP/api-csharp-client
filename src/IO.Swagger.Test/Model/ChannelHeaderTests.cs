@@ -89,6 +89,14 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'ChannelLogoUrl'
         }
         /// <summary>
+        /// Test the property 'DescriptionAvailable'
+        /// </summary>
+        [Test]
+        public void DescriptionAvailableTest()
+        {
+            // TODO unit test for the property 'DescriptionAvailable'
+        }
+        /// <summary>
         /// Test the property 'Links'
         /// </summary>
         [Test]
