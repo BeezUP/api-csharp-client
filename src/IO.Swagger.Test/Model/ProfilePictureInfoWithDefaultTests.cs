@@ -81,12 +81,12 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'UseGravatarProfilePicture'
         }
         /// <summary>
-        /// Test the property 'DefaultPictureUrl'
+        /// Test the property 'DefaultProfilePictureUrl'
         /// </summary>
         [Test]
-        public void DefaultPictureUrlTest()
+        public void DefaultProfilePictureUrlTest()
         {
-            // TODO unit test for the property 'DefaultPictureUrl'
+            // TODO unit test for the property 'DefaultProfilePictureUrl'
         }
 
     }

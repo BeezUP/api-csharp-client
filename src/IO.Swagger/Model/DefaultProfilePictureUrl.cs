@@ -24,16 +24,16 @@ using System.ComponentModel.DataAnnotations;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// Indicate the url of your picture profil
+    /// Indicate the default url of your picture profil
     /// </summary>
     [DataContract]
-    public partial class ProfilePictureUrl :  IEquatable<ProfilePictureUrl>, IValidatableObject
+    public partial class DefaultProfilePictureUrl :  IEquatable<DefaultProfilePictureUrl>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProfilePictureUrl" /> class.
+        /// Initializes a new instance of the <see cref="DefaultProfilePictureUrl" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        public ProfilePictureUrl()
+        public DefaultProfilePictureUrl()
         {
         }
         
@@ -44,7 +44,7 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ProfilePictureUrl {\n");
+            sb.Append("class DefaultProfilePictureUrl {\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -66,15 +66,15 @@ namespace IO.Swagger.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as ProfilePictureUrl);
+            return this.Equals(obj as DefaultProfilePictureUrl);
         }
 
         /// <summary>
-        /// Returns true if ProfilePictureUrl instances are equal
+        /// Returns true if DefaultProfilePictureUrl instances are equal
         /// </summary>
-        /// <param name="other">Instance of ProfilePictureUrl to be compared</param>
+        /// <param name="other">Instance of DefaultProfilePictureUrl to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ProfilePictureUrl other)
+        public bool Equals(DefaultProfilePictureUrl other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)

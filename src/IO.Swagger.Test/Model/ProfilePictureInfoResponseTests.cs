@@ -65,20 +65,20 @@ namespace IO.Swagger.Test
         }
 
         /// <summary>
-        /// Test the property 'Links'
-        /// </summary>
-        [Test]
-        public void LinksTest()
-        {
-            // TODO unit test for the property 'Links'
-        }
-        /// <summary>
         /// Test the property 'ProfilePictureInfo'
         /// </summary>
         [Test]
         public void ProfilePictureInfoTest()
         {
             // TODO unit test for the property 'ProfilePictureInfo'
+        }
+        /// <summary>
+        /// Test the property 'Links'
+        /// </summary>
+        [Test]
+        public void LinksTest()
+        {
+            // TODO unit test for the property 'Links'
         }
 
     }

@@ -37,19 +37,10 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ProfilePictureInfoResponse" /> class.
         /// </summary>
-        /// <param name="Links">Links (required).</param>
         /// <param name="ProfilePictureInfo">ProfilePictureInfo (required).</param>
-        public ProfilePictureInfoResponse(ProfilePictureInfoResponseLinks Links = default(ProfilePictureInfoResponseLinks), ProfilePictureInfoWithDefault ProfilePictureInfo = default(ProfilePictureInfoWithDefault))
+        /// <param name="Links">Links (required).</param>
+        public ProfilePictureInfoResponse(ProfilePictureInfoWithDefault ProfilePictureInfo = default(ProfilePictureInfoWithDefault), ProfilePictureInfoResponseLinks Links = default(ProfilePictureInfoResponseLinks))
         {
-            // to ensure "Links" is required (not null)
-            if (Links == null)
-            {
-                throw new InvalidDataException("Links is a required property for ProfilePictureInfoResponse and cannot be null");
-            }
-            else
-            {
-                this.Links = Links;
-            }
             // to ensure "ProfilePictureInfo" is required (not null)
             if (ProfilePictureInfo == null)
             {
@@ -59,18 +50,27 @@ namespace IO.Swagger.Model
             {
                 this.ProfilePictureInfo = ProfilePictureInfo;
             }
+            // to ensure "Links" is required (not null)
+            if (Links == null)
+            {
+                throw new InvalidDataException("Links is a required property for ProfilePictureInfoResponse and cannot be null");
+            }
+            else
+            {
+                this.Links = Links;
+            }
         }
         
-        /// <summary>
-        /// Gets or Sets Links
-        /// </summary>
-        [DataMember(Name="links", EmitDefaultValue=false)]
-        public ProfilePictureInfoResponseLinks Links { get; set; }
         /// <summary>
         /// Gets or Sets ProfilePictureInfo
         /// </summary>
         [DataMember(Name="profilePictureInfo", EmitDefaultValue=false)]
         public ProfilePictureInfoWithDefault ProfilePictureInfo { get; set; }
+        /// <summary>
+        /// Gets or Sets Links
+        /// </summary>
+        [DataMember(Name="links", EmitDefaultValue=false)]
+        public ProfilePictureInfoResponseLinks Links { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -79,8 +79,8 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ProfilePictureInfoResponse {\n");
-            sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  ProfilePictureInfo: ").Append(ProfilePictureInfo).Append("\n");
+            sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -118,14 +118,14 @@ namespace IO.Swagger.Model
 
             return 
                 (
-                    this.Links == other.Links ||
-                    this.Links != null &&
-                    this.Links.Equals(other.Links)
-                ) && 
-                (
                     this.ProfilePictureInfo == other.ProfilePictureInfo ||
                     this.ProfilePictureInfo != null &&
                     this.ProfilePictureInfo.Equals(other.ProfilePictureInfo)
+                ) && 
+                (
+                    this.Links == other.Links ||
+                    this.Links != null &&
+                    this.Links.Equals(other.Links)
                 );
         }
 
@@ -140,10 +140,10 @@ namespace IO.Swagger.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Links != null)
-                    hash = hash * 59 + this.Links.GetHashCode();
                 if (this.ProfilePictureInfo != null)
                     hash = hash * 59 + this.ProfilePictureInfo.GetHashCode();
+                if (this.Links != null)
+                    hash = hash * 59 + this.Links.GetHashCode();
                 return hash;
             }
         }
