@@ -81,12 +81,12 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'ColumnMappingStatus'
         }
         /// <summary>
-        /// Test the property 'CategoryMappingState'
+        /// Test the property 'CategoryMappingStatus'
         /// </summary>
         [Test]
-        public void CategoryMappingStateTest()
+        public void CategoryMappingStatusTest()
         {
-            // TODO unit test for the property 'CategoryMappingState'
+            // TODO unit test for the property 'CategoryMappingStatus'
         }
         /// <summary>
         /// Test the property 'ApiSettingStatus'
