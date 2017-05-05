@@ -593,6 +593,7 @@ Class | Method | HTTP request | Description
  - [Model.OrderIdentifier](docs/OrderIdentifier.md)
  - [Model.OrderIdentifierWithETag](docs/OrderIdentifierWithETag.md)
  - [Model.OrderItem](docs/OrderItem.md)
+ - [Model.OrderLinks](docs/OrderLinks.md)
  - [Model.OrderListFull](docs/OrderListFull.md)
  - [Model.OrderListLight](docs/OrderListLight.md)
  - [Model.OrderListRequest](docs/OrderListRequest.md)

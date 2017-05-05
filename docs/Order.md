@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **OrderCurrencyCode** | [**BeezUPCommonCurrencyCode**](BeezUPCommonCurrencyCode.md) |  | [optional] 
 **Processing** | [**Processing**](Processing.md) |  | 
 **Etag** | [**Etag**](Etag.md) |  | 
-**Links** | [**DefinitionsorderHeaderLinks**](DefinitionsorderHeaderLinks.md) |  | 
+**Links** | [**OrderLinks**](OrderLinks.md) |  | 
 **OrderMarketPlaceChannel** | **string** | Useful to identify the origin of the order. For example in Amazon. | [optional] 
 **OrderTotalTax** | **decimal?** | The total tax of this order | [optional] 
 **OrderTotalCommission** | **decimal?** | The total commission of this order | [optional] 
