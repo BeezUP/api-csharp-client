@@ -994,7 +994,8 @@ namespace IO.Swagger.Test
             // TODO uncomment below to test the method and replace null with proper value
             //int? pageNumber = null;
             //int? pageSize = null;
-            //var response = instance.GetOrderExportations(pageNumber, pageSize);
+            //string storeId = null;
+            //var response = instance.GetOrderExportations(pageNumber, pageSize, storeId);
             //Assert.IsInstanceOf<OrderExportations> (response, "response is OrderExportations");
         }
         

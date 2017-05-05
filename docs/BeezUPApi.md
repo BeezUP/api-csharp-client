@@ -4969,7 +4969,7 @@ Name | Type | Description  | Notes
 
 <a name="getorderexportations"></a>
 # **GetOrderExportations**
-> OrderExportations GetOrderExportations (int? pageNumber, int? pageSize)
+> OrderExportations GetOrderExportations (int? pageNumber, int? pageSize, string storeId)
 
 Get a paginated list of Order report exportations
 
@@ -4996,11 +4996,12 @@ namespace Example
             var apiInstance = new BeezUPApi();
             var pageNumber = 1;  // int? | The page number you want to get
             var pageSize = 25;  // int? | The count of Order report exportations you want to get
+            var storeId = storeId_example;  // string | The store identifier to regroup the order exportations
 
             try
             {
                 // Get a paginated list of Order report exportations
-                OrderExportations result = apiInstance.GetOrderExportations(pageNumber, pageSize);
+                OrderExportations result = apiInstance.GetOrderExportations(pageNumber, pageSize, storeId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -5018,6 +5019,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pageNumber** | **int?**| The page number you want to get | 
  **pageSize** | **int?**| The count of Order report exportations you want to get | 
+ **storeId** | **string**| The store identifier to regroup the order exportations | 
 
 ### Return type
 

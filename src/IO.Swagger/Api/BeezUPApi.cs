@@ -1656,8 +1656,9 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNumber">The page number you want to get</param>
         /// <param name="pageSize">The count of Order report exportations you want to get</param>
+        /// <param name="storeId">The store identifier to regroup the order exportations</param>
         /// <returns>OrderExportations</returns>
-        OrderExportations GetOrderExportations (int? pageNumber, int? pageSize);
+        OrderExportations GetOrderExportations (int? pageNumber, int? pageSize, string storeId);
 
         /// <summary>
         /// Get a paginated list of Order report exportations
@@ -1668,8 +1669,9 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNumber">The page number you want to get</param>
         /// <param name="pageSize">The count of Order report exportations you want to get</param>
+        /// <param name="storeId">The store identifier to regroup the order exportations</param>
         /// <returns>ApiResponse of OrderExportations</returns>
-        ApiResponse<OrderExportations> GetOrderExportationsWithHttpInfo (int? pageNumber, int? pageSize);
+        ApiResponse<OrderExportations> GetOrderExportationsWithHttpInfo (int? pageNumber, int? pageSize, string storeId);
         /// <summary>
         /// Get an Order&#39;s harvest and change history
         /// </summary>
@@ -5274,8 +5276,9 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNumber">The page number you want to get</param>
         /// <param name="pageSize">The count of Order report exportations you want to get</param>
+        /// <param name="storeId">The store identifier to regroup the order exportations</param>
         /// <returns>Task of OrderExportations</returns>
-        System.Threading.Tasks.Task<OrderExportations> GetOrderExportationsAsync (int? pageNumber, int? pageSize);
+        System.Threading.Tasks.Task<OrderExportations> GetOrderExportationsAsync (int? pageNumber, int? pageSize, string storeId);
 
         /// <summary>
         /// Get a paginated list of Order report exportations
@@ -5286,8 +5289,9 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNumber">The page number you want to get</param>
         /// <param name="pageSize">The count of Order report exportations you want to get</param>
+        /// <param name="storeId">The store identifier to regroup the order exportations</param>
         /// <returns>Task of ApiResponse (OrderExportations)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OrderExportations>> GetOrderExportationsAsyncWithHttpInfo (int? pageNumber, int? pageSize);
+        System.Threading.Tasks.Task<ApiResponse<OrderExportations>> GetOrderExportationsAsyncWithHttpInfo (int? pageNumber, int? pageSize, string storeId);
         /// <summary>
         /// Get an Order&#39;s harvest and change history
         /// </summary>
@@ -19436,10 +19440,11 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNumber">The page number you want to get</param>
         /// <param name="pageSize">The count of Order report exportations you want to get</param>
+        /// <param name="storeId">The store identifier to regroup the order exportations</param>
         /// <returns>OrderExportations</returns>
-        public OrderExportations GetOrderExportations (int? pageNumber, int? pageSize)
+        public OrderExportations GetOrderExportations (int? pageNumber, int? pageSize, string storeId)
         {
-             ApiResponse<OrderExportations> localVarResponse = GetOrderExportationsWithHttpInfo(pageNumber, pageSize);
+             ApiResponse<OrderExportations> localVarResponse = GetOrderExportationsWithHttpInfo(pageNumber, pageSize, storeId);
              return localVarResponse.Data;
         }
 
@@ -19449,8 +19454,9 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNumber">The page number you want to get</param>
         /// <param name="pageSize">The count of Order report exportations you want to get</param>
+        /// <param name="storeId">The store identifier to regroup the order exportations</param>
         /// <returns>ApiResponse of OrderExportations</returns>
-        public ApiResponse< OrderExportations > GetOrderExportationsWithHttpInfo (int? pageNumber, int? pageSize)
+        public ApiResponse< OrderExportations > GetOrderExportationsWithHttpInfo (int? pageNumber, int? pageSize, string storeId)
         {
             // verify the required parameter 'pageNumber' is set
             if (pageNumber == null)
@@ -19458,6 +19464,9 @@ namespace IO.Swagger.Api
             // verify the required parameter 'pageSize' is set
             if (pageSize == null)
                 throw new ApiException(400, "Missing required parameter 'pageSize' when calling BeezUPApi->GetOrderExportations");
+            // verify the required parameter 'storeId' is set
+            if (storeId == null)
+                throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetOrderExportations");
 
             var localVarPath = "/v2/user/marketplaces/orders/exportations";
             var localVarPathParams = new Dictionary<String, String>();
@@ -19486,6 +19495,7 @@ namespace IO.Swagger.Api
             localVarPathParams.Add("format", "json");
             if (pageNumber != null) localVarQueryParams.Add("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)); // query parameter
             if (pageSize != null) localVarQueryParams.Add("pageSize", Configuration.ApiClient.ParameterToString(pageSize)); // query parameter
+            if (storeId != null) localVarQueryParams.Add("storeId", Configuration.ApiClient.ParameterToString(storeId)); // query parameter
 
             // authentication (api_key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
@@ -19519,10 +19529,11 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNumber">The page number you want to get</param>
         /// <param name="pageSize">The count of Order report exportations you want to get</param>
+        /// <param name="storeId">The store identifier to regroup the order exportations</param>
         /// <returns>Task of OrderExportations</returns>
-        public async System.Threading.Tasks.Task<OrderExportations> GetOrderExportationsAsync (int? pageNumber, int? pageSize)
+        public async System.Threading.Tasks.Task<OrderExportations> GetOrderExportationsAsync (int? pageNumber, int? pageSize, string storeId)
         {
-             ApiResponse<OrderExportations> localVarResponse = await GetOrderExportationsAsyncWithHttpInfo(pageNumber, pageSize);
+             ApiResponse<OrderExportations> localVarResponse = await GetOrderExportationsAsyncWithHttpInfo(pageNumber, pageSize, storeId);
              return localVarResponse.Data;
 
         }
@@ -19533,8 +19544,9 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNumber">The page number you want to get</param>
         /// <param name="pageSize">The count of Order report exportations you want to get</param>
+        /// <param name="storeId">The store identifier to regroup the order exportations</param>
         /// <returns>Task of ApiResponse (OrderExportations)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<OrderExportations>> GetOrderExportationsAsyncWithHttpInfo (int? pageNumber, int? pageSize)
+        public async System.Threading.Tasks.Task<ApiResponse<OrderExportations>> GetOrderExportationsAsyncWithHttpInfo (int? pageNumber, int? pageSize, string storeId)
         {
             // verify the required parameter 'pageNumber' is set
             if (pageNumber == null)
@@ -19542,6 +19554,9 @@ namespace IO.Swagger.Api
             // verify the required parameter 'pageSize' is set
             if (pageSize == null)
                 throw new ApiException(400, "Missing required parameter 'pageSize' when calling BeezUPApi->GetOrderExportations");
+            // verify the required parameter 'storeId' is set
+            if (storeId == null)
+                throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetOrderExportations");
 
             var localVarPath = "/v2/user/marketplaces/orders/exportations";
             var localVarPathParams = new Dictionary<String, String>();
@@ -19570,6 +19585,7 @@ namespace IO.Swagger.Api
             localVarPathParams.Add("format", "json");
             if (pageNumber != null) localVarQueryParams.Add("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)); // query parameter
             if (pageSize != null) localVarQueryParams.Add("pageSize", Configuration.ApiClient.ParameterToString(pageSize)); // query parameter
+            if (storeId != null) localVarQueryParams.Add("storeId", Configuration.ApiClient.ParameterToString(storeId)); // query parameter
 
             // authentication (api_key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))

@@ -37,9 +37,19 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ExportOrderListRequest" /> class.
         /// </summary>
+        /// <param name="StoreId">StoreId (required).</param>
         /// <param name="OrderListRequest">OrderListRequest (required).</param>
-        public ExportOrderListRequest(OrderListRequest OrderListRequest = default(OrderListRequest))
+        public ExportOrderListRequest(BeezUPCommonStoreId StoreId = default(BeezUPCommonStoreId), OrderListRequest OrderListRequest = default(OrderListRequest))
         {
+            // to ensure "StoreId" is required (not null)
+            if (StoreId == null)
+            {
+                throw new InvalidDataException("StoreId is a required property for ExportOrderListRequest and cannot be null");
+            }
+            else
+            {
+                this.StoreId = StoreId;
+            }
             // to ensure "OrderListRequest" is required (not null)
             if (OrderListRequest == null)
             {
@@ -51,6 +61,11 @@ namespace IO.Swagger.Model
             }
         }
         
+        /// <summary>
+        /// Gets or Sets StoreId
+        /// </summary>
+        [DataMember(Name="storeId", EmitDefaultValue=false)]
+        public BeezUPCommonStoreId StoreId { get; set; }
         /// <summary>
         /// Gets or Sets OrderListRequest
         /// </summary>
@@ -64,6 +79,7 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ExportOrderListRequest {\n");
+            sb.Append("  StoreId: ").Append(StoreId).Append("\n");
             sb.Append("  OrderListRequest: ").Append(OrderListRequest).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -102,6 +118,11 @@ namespace IO.Swagger.Model
 
             return 
                 (
+                    this.StoreId == other.StoreId ||
+                    this.StoreId != null &&
+                    this.StoreId.Equals(other.StoreId)
+                ) && 
+                (
                     this.OrderListRequest == other.OrderListRequest ||
                     this.OrderListRequest != null &&
                     this.OrderListRequest.Equals(other.OrderListRequest)
@@ -119,6 +140,8 @@ namespace IO.Swagger.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.StoreId != null)
+                    hash = hash * 59 + this.StoreId.GetHashCode();
                 if (this.OrderListRequest != null)
                     hash = hash * 59 + this.OrderListRequest.GetHashCode();
                 return hash;
