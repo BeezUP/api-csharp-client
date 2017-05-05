@@ -32,12 +32,33 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ProfilePictureInfoResponseLinks" /> class.
         /// </summary>
-        /// <param name="Self">Self.</param>
-        /// <param name="Save">Save.</param>
+        [JsonConstructorAttribute]
+        protected ProfilePictureInfoResponseLinks() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProfilePictureInfoResponseLinks" /> class.
+        /// </summary>
+        /// <param name="Self">Self (required).</param>
+        /// <param name="Save">Save (required).</param>
         public ProfilePictureInfoResponseLinks(LinksGetProfilePictureInfoLink Self = default(LinksGetProfilePictureInfoLink), LinksSaveProfilePictureInfoLink Save = default(LinksSaveProfilePictureInfoLink))
         {
-            this.Self = Self;
-            this.Save = Save;
+            // to ensure "Self" is required (not null)
+            if (Self == null)
+            {
+                throw new InvalidDataException("Self is a required property for ProfilePictureInfoResponseLinks and cannot be null");
+            }
+            else
+            {
+                this.Self = Self;
+            }
+            // to ensure "Save" is required (not null)
+            if (Save == null)
+            {
+                throw new InvalidDataException("Save is a required property for ProfilePictureInfoResponseLinks and cannot be null");
+            }
+            else
+            {
+                this.Save = Save;
+            }
         }
         
         /// <summary>

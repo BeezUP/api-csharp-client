@@ -32,12 +32,33 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ProfilePictureInfoResponse" /> class.
         /// </summary>
-        /// <param name="Links">Links.</param>
-        /// <param name="ProfilePictureInfo">ProfilePictureInfo.</param>
-        public ProfilePictureInfoResponse(ProfilePictureInfoResponseLinks Links = default(ProfilePictureInfoResponseLinks), ProfilePictureInfo ProfilePictureInfo = default(ProfilePictureInfo))
+        [JsonConstructorAttribute]
+        protected ProfilePictureInfoResponse() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProfilePictureInfoResponse" /> class.
+        /// </summary>
+        /// <param name="Links">Links (required).</param>
+        /// <param name="ProfilePictureInfo">ProfilePictureInfo (required).</param>
+        public ProfilePictureInfoResponse(ProfilePictureInfoResponseLinks Links = default(ProfilePictureInfoResponseLinks), ProfilePictureInfoWithDefault ProfilePictureInfo = default(ProfilePictureInfoWithDefault))
         {
-            this.Links = Links;
-            this.ProfilePictureInfo = ProfilePictureInfo;
+            // to ensure "Links" is required (not null)
+            if (Links == null)
+            {
+                throw new InvalidDataException("Links is a required property for ProfilePictureInfoResponse and cannot be null");
+            }
+            else
+            {
+                this.Links = Links;
+            }
+            // to ensure "ProfilePictureInfo" is required (not null)
+            if (ProfilePictureInfo == null)
+            {
+                throw new InvalidDataException("ProfilePictureInfo is a required property for ProfilePictureInfoResponse and cannot be null");
+            }
+            else
+            {
+                this.ProfilePictureInfo = ProfilePictureInfo;
+            }
         }
         
         /// <summary>
@@ -49,7 +70,7 @@ namespace IO.Swagger.Model
         /// Gets or Sets ProfilePictureInfo
         /// </summary>
         [DataMember(Name="profilePictureInfo", EmitDefaultValue=false)]
-        public ProfilePictureInfo ProfilePictureInfo { get; set; }
+        public ProfilePictureInfoWithDefault ProfilePictureInfo { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

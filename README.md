@@ -629,6 +629,7 @@ Class | Method | HTTP request | Description
  - [Model.ProfilePictureInfo](docs/ProfilePictureInfo.md)
  - [Model.ProfilePictureInfoResponse](docs/ProfilePictureInfoResponse.md)
  - [Model.ProfilePictureInfoResponseLinks](docs/ProfilePictureInfoResponseLinks.md)
+ - [Model.ProfilePictureInfoWithDefault](docs/ProfilePictureInfoWithDefault.md)
  - [Model.ProfilePictureUrl](docs/ProfilePictureUrl.md)
  - [Model.PromotionalCodeValidity](docs/PromotionalCodeValidity.md)
  - [Model.PublicationFeedReporting](docs/PublicationFeedReporting.md)

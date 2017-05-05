@@ -3,8 +3,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Self** | [**LinksGetProfilePictureInfoLink**](LinksGetProfilePictureInfoLink.md) |  | [optional] 
-**Save** | [**LinksSaveProfilePictureInfoLink**](LinksSaveProfilePictureInfoLink.md) |  | [optional] 
+**Self** | [**LinksGetProfilePictureInfoLink**](LinksGetProfilePictureInfoLink.md) |  | 
+**Save** | [**LinksSaveProfilePictureInfoLink**](LinksSaveProfilePictureInfoLink.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
