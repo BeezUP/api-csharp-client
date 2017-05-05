@@ -39,8 +39,9 @@ namespace IO.Swagger.Model
         /// </summary>
         /// <param name="ProfilePictureUrl">ProfilePictureUrl.</param>
         /// <param name="UseGravatarProfilePicture">UseGravatarProfilePicture (required).</param>
-        /// <param name="DefaultProfilePictureUrl">DefaultProfilePictureUrl (required).</param>
-        public ProfilePictureInfoWithDefault(ProfilePictureUrl ProfilePictureUrl = default(ProfilePictureUrl), UseGravatarProfilePicture UseGravatarProfilePicture = default(UseGravatarProfilePicture), DefaultProfilePictureUrl DefaultProfilePictureUrl = default(DefaultProfilePictureUrl))
+        /// <param name="InitialsProfilePictureUrl">InitialsProfilePictureUrl (required).</param>
+        /// <param name="GravatarProfilePictureUrl">GravatarProfilePictureUrl (required).</param>
+        public ProfilePictureInfoWithDefault(ProfilePictureUrl ProfilePictureUrl = default(ProfilePictureUrl), UseGravatarProfilePicture UseGravatarProfilePicture = default(UseGravatarProfilePicture), InitialsProfilePictureUrl InitialsProfilePictureUrl = default(InitialsProfilePictureUrl), GravatarProfilePictureUrl GravatarProfilePictureUrl = default(GravatarProfilePictureUrl))
         {
             // to ensure "UseGravatarProfilePicture" is required (not null)
             if (UseGravatarProfilePicture == null)
@@ -51,14 +52,23 @@ namespace IO.Swagger.Model
             {
                 this.UseGravatarProfilePicture = UseGravatarProfilePicture;
             }
-            // to ensure "DefaultProfilePictureUrl" is required (not null)
-            if (DefaultProfilePictureUrl == null)
+            // to ensure "InitialsProfilePictureUrl" is required (not null)
+            if (InitialsProfilePictureUrl == null)
             {
-                throw new InvalidDataException("DefaultProfilePictureUrl is a required property for ProfilePictureInfoWithDefault and cannot be null");
+                throw new InvalidDataException("InitialsProfilePictureUrl is a required property for ProfilePictureInfoWithDefault and cannot be null");
             }
             else
             {
-                this.DefaultProfilePictureUrl = DefaultProfilePictureUrl;
+                this.InitialsProfilePictureUrl = InitialsProfilePictureUrl;
+            }
+            // to ensure "GravatarProfilePictureUrl" is required (not null)
+            if (GravatarProfilePictureUrl == null)
+            {
+                throw new InvalidDataException("GravatarProfilePictureUrl is a required property for ProfilePictureInfoWithDefault and cannot be null");
+            }
+            else
+            {
+                this.GravatarProfilePictureUrl = GravatarProfilePictureUrl;
             }
             this.ProfilePictureUrl = ProfilePictureUrl;
         }
@@ -74,10 +84,15 @@ namespace IO.Swagger.Model
         [DataMember(Name="useGravatarProfilePicture", EmitDefaultValue=false)]
         public UseGravatarProfilePicture UseGravatarProfilePicture { get; set; }
         /// <summary>
-        /// Gets or Sets DefaultProfilePictureUrl
+        /// Gets or Sets InitialsProfilePictureUrl
         /// </summary>
-        [DataMember(Name="defaultProfilePictureUrl", EmitDefaultValue=false)]
-        public DefaultProfilePictureUrl DefaultProfilePictureUrl { get; set; }
+        [DataMember(Name="initialsProfilePictureUrl", EmitDefaultValue=false)]
+        public InitialsProfilePictureUrl InitialsProfilePictureUrl { get; set; }
+        /// <summary>
+        /// Gets or Sets GravatarProfilePictureUrl
+        /// </summary>
+        [DataMember(Name="gravatarProfilePictureUrl", EmitDefaultValue=false)]
+        public GravatarProfilePictureUrl GravatarProfilePictureUrl { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -88,7 +103,8 @@ namespace IO.Swagger.Model
             sb.Append("class ProfilePictureInfoWithDefault {\n");
             sb.Append("  ProfilePictureUrl: ").Append(ProfilePictureUrl).Append("\n");
             sb.Append("  UseGravatarProfilePicture: ").Append(UseGravatarProfilePicture).Append("\n");
-            sb.Append("  DefaultProfilePictureUrl: ").Append(DefaultProfilePictureUrl).Append("\n");
+            sb.Append("  InitialsProfilePictureUrl: ").Append(InitialsProfilePictureUrl).Append("\n");
+            sb.Append("  GravatarProfilePictureUrl: ").Append(GravatarProfilePictureUrl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -136,9 +152,14 @@ namespace IO.Swagger.Model
                     this.UseGravatarProfilePicture.Equals(other.UseGravatarProfilePicture)
                 ) && 
                 (
-                    this.DefaultProfilePictureUrl == other.DefaultProfilePictureUrl ||
-                    this.DefaultProfilePictureUrl != null &&
-                    this.DefaultProfilePictureUrl.Equals(other.DefaultProfilePictureUrl)
+                    this.InitialsProfilePictureUrl == other.InitialsProfilePictureUrl ||
+                    this.InitialsProfilePictureUrl != null &&
+                    this.InitialsProfilePictureUrl.Equals(other.InitialsProfilePictureUrl)
+                ) && 
+                (
+                    this.GravatarProfilePictureUrl == other.GravatarProfilePictureUrl ||
+                    this.GravatarProfilePictureUrl != null &&
+                    this.GravatarProfilePictureUrl.Equals(other.GravatarProfilePictureUrl)
                 );
         }
 
@@ -157,8 +178,10 @@ namespace IO.Swagger.Model
                     hash = hash * 59 + this.ProfilePictureUrl.GetHashCode();
                 if (this.UseGravatarProfilePicture != null)
                     hash = hash * 59 + this.UseGravatarProfilePicture.GetHashCode();
-                if (this.DefaultProfilePictureUrl != null)
-                    hash = hash * 59 + this.DefaultProfilePictureUrl.GetHashCode();
+                if (this.InitialsProfilePictureUrl != null)
+                    hash = hash * 59 + this.InitialsProfilePictureUrl.GetHashCode();
+                if (this.GravatarProfilePictureUrl != null)
+                    hash = hash * 59 + this.GravatarProfilePictureUrl.GetHashCode();
                 return hash;
             }
         }
