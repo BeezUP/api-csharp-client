@@ -43,7 +43,7 @@ namespace IO.Swagger.Model
         /// <param name="ShowInMapping">ShowInMapping (required).</param>
         /// <param name="Configuration">Configuration (required).</param>
         /// <param name="RestrictedValues">RestrictedValues.</param>
-        public ChannelCategoryColumnOverride(BeezUPCommonChannelColumnId ChannelColumnId = default(BeezUPCommonChannelColumnId), BeezUPCommonChannelColumnName ChannelColumnName = default(BeezUPCommonChannelColumnName), ChannelColumnDescription ChannelColumnDescription = default(ChannelColumnDescription), ChannelColumnShowInMapping ShowInMapping = default(ChannelColumnShowInMapping), ChannelColumnConfiguration Configuration = default(ChannelColumnConfiguration), ChannelColumnRestrictedValues RestrictedValues = default(ChannelColumnRestrictedValues))
+        public ChannelCategoryColumnOverride(BeezUPCommonChannelColumnId ChannelColumnId = default(BeezUPCommonChannelColumnId), ChannelColumnName ChannelColumnName = default(ChannelColumnName), ChannelColumnDescription ChannelColumnDescription = default(ChannelColumnDescription), ChannelColumnShowInMapping ShowInMapping = default(ChannelColumnShowInMapping), ChannelColumnConfiguration Configuration = default(ChannelColumnConfiguration), ChannelColumnRestrictedValues RestrictedValues = default(ChannelColumnRestrictedValues))
         {
             // to ensure "ChannelColumnId" is required (not null)
             if (ChannelColumnId == null)
@@ -94,7 +94,7 @@ namespace IO.Swagger.Model
         /// Gets or Sets ChannelColumnName
         /// </summary>
         [DataMember(Name="channelColumnName", EmitDefaultValue=false)]
-        public BeezUPCommonChannelColumnName ChannelColumnName { get; set; }
+        public ChannelColumnName ChannelColumnName { get; set; }
         /// <summary>
         /// Gets or Sets ChannelColumnDescription
         /// </summary>

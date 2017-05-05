@@ -40,9 +40,8 @@ namespace IO.Swagger.Model
         /// <param name="ChannelId">ChannelId (required).</param>
         /// <param name="ChannelName">ChannelName (required).</param>
         /// <param name="ChannelLogoUrl">ChannelLogoUrl (required).</param>
-        /// <param name="DescriptionAvailable">Indicates if we have more detailed information about this channel (required) (default to false).</param>
         /// <param name="Links">Links (required).</param>
-        public ChannelHeader(BeezUPCommonChannelId ChannelId = default(BeezUPCommonChannelId), BeezUPCommonChannelName ChannelName = default(BeezUPCommonChannelName), BeezUPCommonHttpUrl ChannelLogoUrl = default(BeezUPCommonHttpUrl), bool? DescriptionAvailable = false, ChannelHeaderLinks Links = default(ChannelHeaderLinks))
+        public ChannelHeader(BeezUPCommonChannelId ChannelId = default(BeezUPCommonChannelId), BeezUPCommonChannelName ChannelName = default(BeezUPCommonChannelName), BeezUPCommonHttpUrl ChannelLogoUrl = default(BeezUPCommonHttpUrl), AvailableChannelLink Links = default(AvailableChannelLink))
         {
             // to ensure "ChannelId" is required (not null)
             if (ChannelId == null)
@@ -71,15 +70,6 @@ namespace IO.Swagger.Model
             {
                 this.ChannelLogoUrl = ChannelLogoUrl;
             }
-            // to ensure "DescriptionAvailable" is required (not null)
-            if (DescriptionAvailable == null)
-            {
-                throw new InvalidDataException("DescriptionAvailable is a required property for ChannelHeader and cannot be null");
-            }
-            else
-            {
-                this.DescriptionAvailable = DescriptionAvailable;
-            }
             // to ensure "Links" is required (not null)
             if (Links == null)
             {
@@ -107,16 +97,10 @@ namespace IO.Swagger.Model
         [DataMember(Name="channelLogoUrl", EmitDefaultValue=false)]
         public BeezUPCommonHttpUrl ChannelLogoUrl { get; set; }
         /// <summary>
-        /// Indicates if we have more detailed information about this channel
-        /// </summary>
-        /// <value>Indicates if we have more detailed information about this channel</value>
-        [DataMember(Name="descriptionAvailable", EmitDefaultValue=false)]
-        public bool? DescriptionAvailable { get; set; }
-        /// <summary>
         /// Gets or Sets Links
         /// </summary>
         [DataMember(Name="links", EmitDefaultValue=false)]
-        public ChannelHeaderLinks Links { get; set; }
+        public AvailableChannelLink Links { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -128,7 +112,6 @@ namespace IO.Swagger.Model
             sb.Append("  ChannelId: ").Append(ChannelId).Append("\n");
             sb.Append("  ChannelName: ").Append(ChannelName).Append("\n");
             sb.Append("  ChannelLogoUrl: ").Append(ChannelLogoUrl).Append("\n");
-            sb.Append("  DescriptionAvailable: ").Append(DescriptionAvailable).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -182,11 +165,6 @@ namespace IO.Swagger.Model
                     this.ChannelLogoUrl.Equals(other.ChannelLogoUrl)
                 ) && 
                 (
-                    this.DescriptionAvailable == other.DescriptionAvailable ||
-                    this.DescriptionAvailable != null &&
-                    this.DescriptionAvailable.Equals(other.DescriptionAvailable)
-                ) && 
-                (
                     this.Links == other.Links ||
                     this.Links != null &&
                     this.Links.Equals(other.Links)
@@ -210,8 +188,6 @@ namespace IO.Swagger.Model
                     hash = hash * 59 + this.ChannelName.GetHashCode();
                 if (this.ChannelLogoUrl != null)
                     hash = hash * 59 + this.ChannelLogoUrl.GetHashCode();
-                if (this.DescriptionAvailable != null)
-                    hash = hash * 59 + this.DescriptionAvailable.GetHashCode();
                 if (this.Links != null)
                     hash = hash * 59 + this.Links.GetHashCode();
                 return hash;

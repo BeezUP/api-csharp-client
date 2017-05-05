@@ -44,7 +44,7 @@ namespace IO.Swagger.Model
         /// <param name="Position">The position of the column starting from 1 (required).</param>
         /// <param name="Configuration">Configuration (required).</param>
         /// <param name="RestrictedValues">RestrictedValues.</param>
-        public ChannelColumn(BeezUPCommonChannelColumnId ChannelColumnId = default(BeezUPCommonChannelColumnId), BeezUPCommonChannelColumnName ChannelColumnName = default(BeezUPCommonChannelColumnName), ChannelColumnDescription ChannelColumnDescription = default(ChannelColumnDescription), ChannelColumnShowInMapping ShowInMapping = default(ChannelColumnShowInMapping), int? Position = default(int?), ChannelColumnConfiguration Configuration = default(ChannelColumnConfiguration), ChannelColumnRestrictedValues RestrictedValues = default(ChannelColumnRestrictedValues))
+        public ChannelColumn(BeezUPCommonChannelColumnId ChannelColumnId = default(BeezUPCommonChannelColumnId), ChannelColumnName ChannelColumnName = default(ChannelColumnName), ChannelColumnDescription ChannelColumnDescription = default(ChannelColumnDescription), ChannelColumnShowInMapping ShowInMapping = default(ChannelColumnShowInMapping), int? Position = default(int?), ChannelColumnConfiguration Configuration = default(ChannelColumnConfiguration), ChannelColumnRestrictedValues RestrictedValues = default(ChannelColumnRestrictedValues))
         {
             // to ensure "ChannelColumnId" is required (not null)
             if (ChannelColumnId == null)
@@ -104,7 +104,7 @@ namespace IO.Swagger.Model
         /// Gets or Sets ChannelColumnName
         /// </summary>
         [DataMember(Name="channelColumnName", EmitDefaultValue=false)]
-        public BeezUPCommonChannelColumnName ChannelColumnName { get; set; }
+        public ChannelColumnName ChannelColumnName { get; set; }
         /// <summary>
         /// Gets or Sets ChannelColumnDescription
         /// </summary>

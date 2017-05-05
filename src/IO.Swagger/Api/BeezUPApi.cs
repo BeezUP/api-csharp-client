@@ -1205,6 +1205,27 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of AutomaticTransitionInfos</returns>
         ApiResponse<AutomaticTransitionInfos> GetAutomaticTransitionsWithHttpInfo ();
         /// <summary>
+        /// List all available channel for this store
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="storeId">The store identifier</param>
+        /// <returns>List&lt;ChannelHeader&gt;</returns>
+        List<ChannelHeader> GetAvailableChannels (string storeId);
+
+        /// <summary>
+        /// List all available channel for this store
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="storeId">The store identifier</param>
+        /// <returns>ApiResponse of List&lt;ChannelHeader&gt;</returns>
+        ApiResponse<List<ChannelHeader>> GetAvailableChannelsWithHttpInfo (string storeId);
+        /// <summary>
         /// Get billing periods conditions
         /// </summary>
         /// <remarks>
@@ -1500,27 +1521,6 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of CreditCardInfoResponse</returns>
         ApiResponse<CreditCardInfoResponse> GetCreditCardInfoWithHttpInfo ();
-        /// <summary>
-        /// List all available channel for this store
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="storeId">The store identifier</param>
-        /// <returns>List&lt;ChannelHeader&gt;</returns>
-        List<ChannelHeader> GetCurrentChannels (string storeId);
-
-        /// <summary>
-        /// List all available channel for this store
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="storeId">The store identifier</param>
-        /// <returns>ApiResponse of List&lt;ChannelHeader&gt;</returns>
-        ApiResponse<List<ChannelHeader>> GetCurrentChannelsWithHttpInfo (string storeId);
         /// <summary>
         /// Get friend information
         /// </summary>
@@ -4825,6 +4825,27 @@ namespace IO.Swagger.Api
         /// <returns>Task of ApiResponse (AutomaticTransitionInfos)</returns>
         System.Threading.Tasks.Task<ApiResponse<AutomaticTransitionInfos>> GetAutomaticTransitionsAsyncWithHttpInfo ();
         /// <summary>
+        /// List all available channel for this store
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="storeId">The store identifier</param>
+        /// <returns>Task of List&lt;ChannelHeader&gt;</returns>
+        System.Threading.Tasks.Task<List<ChannelHeader>> GetAvailableChannelsAsync (string storeId);
+
+        /// <summary>
+        /// List all available channel for this store
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="storeId">The store identifier</param>
+        /// <returns>Task of ApiResponse (List&lt;ChannelHeader&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<ChannelHeader>>> GetAvailableChannelsAsyncWithHttpInfo (string storeId);
+        /// <summary>
         /// Get billing periods conditions
         /// </summary>
         /// <remarks>
@@ -5120,27 +5141,6 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (CreditCardInfoResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<CreditCardInfoResponse>> GetCreditCardInfoAsyncWithHttpInfo ();
-        /// <summary>
-        /// List all available channel for this store
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="storeId">The store identifier</param>
-        /// <returns>Task of List&lt;ChannelHeader&gt;</returns>
-        System.Threading.Tasks.Task<List<ChannelHeader>> GetCurrentChannelsAsync (string storeId);
-
-        /// <summary>
-        /// List all available channel for this store
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="storeId">The store identifier</param>
-        /// <returns>Task of ApiResponse (List&lt;ChannelHeader&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ChannelHeader>>> GetCurrentChannelsAsyncWithHttpInfo (string storeId);
         /// <summary>
         /// Get friend information
         /// </summary>
@@ -16171,6 +16171,160 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
+        /// List all available channel for this store 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="storeId">The store identifier</param>
+        /// <returns>List&lt;ChannelHeader&gt;</returns>
+        public List<ChannelHeader> GetAvailableChannels (string storeId)
+        {
+             ApiResponse<List<ChannelHeader>> localVarResponse = GetAvailableChannelsWithHttpInfo(storeId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List all available channel for this store 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="storeId">The store identifier</param>
+        /// <returns>ApiResponse of List&lt;ChannelHeader&gt;</returns>
+        public ApiResponse< List<ChannelHeader> > GetAvailableChannelsWithHttpInfo (string storeId)
+        {
+            // verify the required parameter 'storeId' is set
+            if (storeId == null)
+                throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetAvailableChannels");
+
+            var localVarPath = "/v2/user/channels/";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (storeId != null) localVarQueryParams.Add("storeId", Configuration.ApiClient.ParameterToString(storeId)); // query parameter
+
+            // authentication (api_key) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
+            {
+                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetAvailableChannels", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<ChannelHeader>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<ChannelHeader>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ChannelHeader>)));
+            
+        }
+
+        /// <summary>
+        /// List all available channel for this store 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="storeId">The store identifier</param>
+        /// <returns>Task of List&lt;ChannelHeader&gt;</returns>
+        public async System.Threading.Tasks.Task<List<ChannelHeader>> GetAvailableChannelsAsync (string storeId)
+        {
+             ApiResponse<List<ChannelHeader>> localVarResponse = await GetAvailableChannelsAsyncWithHttpInfo(storeId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// List all available channel for this store 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="storeId">The store identifier</param>
+        /// <returns>Task of ApiResponse (List&lt;ChannelHeader&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<ChannelHeader>>> GetAvailableChannelsAsyncWithHttpInfo (string storeId)
+        {
+            // verify the required parameter 'storeId' is set
+            if (storeId == null)
+                throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetAvailableChannels");
+
+            var localVarPath = "/v2/user/channels/";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (storeId != null) localVarQueryParams.Add("storeId", Configuration.ApiClient.ParameterToString(storeId)); // query parameter
+
+            // authentication (api_key) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
+            {
+                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetAvailableChannels", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<ChannelHeader>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (List<ChannelHeader>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ChannelHeader>)));
+            
+        }
+
+        /// <summary>
         /// Get billing periods conditions 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
@@ -18345,160 +18499,6 @@ namespace IO.Swagger.Api
             return new ApiResponse<CreditCardInfoResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (CreditCardInfoResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreditCardInfoResponse)));
-            
-        }
-
-        /// <summary>
-        /// List all available channel for this store 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="storeId">The store identifier</param>
-        /// <returns>List&lt;ChannelHeader&gt;</returns>
-        public List<ChannelHeader> GetCurrentChannels (string storeId)
-        {
-             ApiResponse<List<ChannelHeader>> localVarResponse = GetCurrentChannelsWithHttpInfo(storeId);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// List all available channel for this store 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="storeId">The store identifier</param>
-        /// <returns>ApiResponse of List&lt;ChannelHeader&gt;</returns>
-        public ApiResponse< List<ChannelHeader> > GetCurrentChannelsWithHttpInfo (string storeId)
-        {
-            // verify the required parameter 'storeId' is set
-            if (storeId == null)
-                throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetCurrentChannels");
-
-            var localVarPath = "/v2/user/channels/";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (storeId != null) localVarQueryParams.Add("storeId", Configuration.ApiClient.ParameterToString(storeId)); // query parameter
-
-            // authentication (api_key) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
-            {
-                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetCurrentChannels", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<ChannelHeader>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<ChannelHeader>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ChannelHeader>)));
-            
-        }
-
-        /// <summary>
-        /// List all available channel for this store 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="storeId">The store identifier</param>
-        /// <returns>Task of List&lt;ChannelHeader&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ChannelHeader>> GetCurrentChannelsAsync (string storeId)
-        {
-             ApiResponse<List<ChannelHeader>> localVarResponse = await GetCurrentChannelsAsyncWithHttpInfo(storeId);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// List all available channel for this store 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="storeId">The store identifier</param>
-        /// <returns>Task of ApiResponse (List&lt;ChannelHeader&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<ChannelHeader>>> GetCurrentChannelsAsyncWithHttpInfo (string storeId)
-        {
-            // verify the required parameter 'storeId' is set
-            if (storeId == null)
-                throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetCurrentChannels");
-
-            var localVarPath = "/v2/user/channels/";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (storeId != null) localVarQueryParams.Add("storeId", Configuration.ApiClient.ParameterToString(storeId)); // query parameter
-
-            // authentication (api_key) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
-            {
-                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetCurrentChannels", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<ChannelHeader>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<ChannelHeader>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ChannelHeader>)));
             
         }
 

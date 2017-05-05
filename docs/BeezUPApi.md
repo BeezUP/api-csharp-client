@@ -56,6 +56,7 @@ Method | HTTP request | Description
 [**ExportStoreReportByChannel**](BeezUPApi.md#exportstorereportbychannel) | **POST** /v2/user/analytics/{storeId}/reports/bychannel/export | Export the report by channel
 [**ExportStoreReportByProduct**](BeezUPApi.md#exportstorereportbyproduct) | **POST** /v2/user/analytics/{storeId}/reports/byproduct/export | Export the report by product
 [**GetAutomaticTransitions**](BeezUPApi.md#getautomatictransitions) | **GET** /v2/user/marketplaces/orders/automaticTransitions | Get list of configured automatic Order status transitions
+[**GetAvailableChannels**](BeezUPApi.md#getavailablechannels) | **GET** /v2/user/channels/ | List all available channel for this store
 [**GetBillingPeriods**](BeezUPApi.md#getbillingperiods) | **GET** /v2/user/customer/billingPeriods | Get billing periods conditions
 [**GetChannelCatalog**](BeezUPApi.md#getchannelcatalog) | **GET** /v2/user/channelCatalogs/{channelCatalogId} | Get the channel catalog information
 [**GetChannelCatalogCategories**](BeezUPApi.md#getchannelcatalogcategories) | **GET** /v2/user/channelCatalogs/{channelCatalogId}/categoryMappings | Get channel catalog categories
@@ -70,7 +71,6 @@ Method | HTTP request | Description
 [**GetChannelInfo**](BeezUPApi.md#getchannelinfo) | **GET** /v2/user/channels/{channelId} | Get channel information
 [**GetContracts**](BeezUPApi.md#getcontracts) | **GET** /v2/user/customer/contracts | Get contract list
 [**GetCreditCardInfo**](BeezUPApi.md#getcreditcardinfo) | **GET** /v2/user/customer/account/creditCardInfo | Get credit card information
-[**GetCurrentChannels**](BeezUPApi.md#getcurrentchannels) | **GET** /v2/user/channels/ | List all available channel for this store
 [**GetFriendInfo**](BeezUPApi.md#getfriendinfo) | **GET** /v2/user/customer/friends/{userId} | Get friend information
 [**GetInvoices**](BeezUPApi.md#getinvoices) | **GET** /v2/user/customer/invoices | Get all your invoices
 [**GetMarketplaceAccountStores**](BeezUPApi.md#getmarketplaceaccountstores) | **GET** /v2/user/marketplaces/channelcatalogs/ | Get  you marketplace channel catalog list
@@ -3612,6 +3612,71 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="getavailablechannels"></a>
+# **GetAvailableChannels**
+> List<ChannelHeader> GetAvailableChannels (string storeId)
+
+List all available channel for this store
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class GetAvailableChannelsExample
+    {
+        public void main()
+        {
+            
+            // Configure API key authorization: api_key
+            Configuration.Default.ApiKey.Add("Ocp-Apim-Subscription-Key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Ocp-Apim-Subscription-Key", "Bearer");
+
+            var apiInstance = new BeezUPApi();
+            var storeId = 04730364-9826-4ff3-92e4-51fccd02bf10;  // string | The store identifier
+
+            try
+            {
+                // List all available channel for this store
+                List&lt;ChannelHeader&gt; result = apiInstance.GetAvailableChannels(storeId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling BeezUPApi.GetAvailableChannels: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **storeId** | **string**| The store identifier | 
+
+### Return type
+
+[**List<ChannelHeader>**](ChannelHeader.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="getbillingperiods"></a>
 # **GetBillingPeriods**
 > BillingPeriods GetBillingPeriods ()
@@ -4504,71 +4569,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**CreditCardInfoResponse**](CreditCardInfoResponse.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="getcurrentchannels"></a>
-# **GetCurrentChannels**
-> List<ChannelHeader> GetCurrentChannels (string storeId)
-
-List all available channel for this store
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
-
-namespace Example
-{
-    public class GetCurrentChannelsExample
-    {
-        public void main()
-        {
-            
-            // Configure API key authorization: api_key
-            Configuration.Default.ApiKey.Add("Ocp-Apim-Subscription-Key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Ocp-Apim-Subscription-Key", "Bearer");
-
-            var apiInstance = new BeezUPApi();
-            var storeId = 04730364-9826-4ff3-92e4-51fccd02bf10;  // string | The store identifier
-
-            try
-            {
-                // List all available channel for this store
-                List&lt;ChannelHeader&gt; result = apiInstance.GetCurrentChannels(storeId);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling BeezUPApi.GetCurrentChannels: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **storeId** | **string**| The store identifier | 
-
-### Return type
-
-[**List<ChannelHeader>**](ChannelHeader.md)
 
 ### Authorization
 

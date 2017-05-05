@@ -733,6 +733,18 @@ namespace IO.Swagger.Test
         }
         
         /// <summary>
+        /// Test GetAvailableChannels
+        /// </summary>
+        [Test]
+        public void GetAvailableChannelsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string storeId = null;
+            //var response = instance.GetAvailableChannels(storeId);
+            //Assert.IsInstanceOf<List<ChannelHeader>> (response, "response is List<ChannelHeader>");
+        }
+        
+        /// <summary>
         /// Test GetBillingPeriods
         /// </summary>
         [Test]
@@ -899,18 +911,6 @@ namespace IO.Swagger.Test
             // TODO uncomment below to test the method and replace null with proper value
             //var response = instance.GetCreditCardInfo();
             //Assert.IsInstanceOf<CreditCardInfoResponse> (response, "response is CreditCardInfoResponse");
-        }
-        
-        /// <summary>
-        /// Test GetCurrentChannels
-        /// </summary>
-        [Test]
-        public void GetCurrentChannelsTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string storeId = null;
-            //var response = instance.GetCurrentChannels(storeId);
-            //Assert.IsInstanceOf<List<ChannelHeader>> (response, "response is List<ChannelHeader>");
         }
         
         /// <summary>
