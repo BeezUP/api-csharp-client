@@ -39,9 +39,9 @@ namespace IO.Swagger.Model
         /// </summary>
         /// <param name="ExportedProductCount">ExportedProductCount (required).</param>
         /// <param name="ColumnMappingStatus">ColumnMappingStatus (required).</param>
-        /// <param name="CategoryMappingState">CategoryMappingState.</param>
+        /// <param name="CategoryMappingStatus">CategoryMappingStatus (required).</param>
         /// <param name="ApiSettingStatus">ApiSettingStatus (required).</param>
-        public ChannelCatalogStatus(int? ExportedProductCount = default(int?), ColumnMappingStatus ColumnMappingStatus = default(ColumnMappingStatus), CategoryMappingState CategoryMappingState = default(CategoryMappingState), ApiSettingStatus ApiSettingStatus = default(ApiSettingStatus))
+        public ChannelCatalogStatus(int? ExportedProductCount = default(int?), ColumnMappingStatus ColumnMappingStatus = default(ColumnMappingStatus), CategoryMappingStatus CategoryMappingStatus = default(CategoryMappingStatus), ApiSettingStatus ApiSettingStatus = default(ApiSettingStatus))
         {
             // to ensure "ExportedProductCount" is required (not null)
             if (ExportedProductCount == null)
@@ -61,6 +61,15 @@ namespace IO.Swagger.Model
             {
                 this.ColumnMappingStatus = ColumnMappingStatus;
             }
+            // to ensure "CategoryMappingStatus" is required (not null)
+            if (CategoryMappingStatus == null)
+            {
+                throw new InvalidDataException("CategoryMappingStatus is a required property for ChannelCatalogStatus and cannot be null");
+            }
+            else
+            {
+                this.CategoryMappingStatus = CategoryMappingStatus;
+            }
             // to ensure "ApiSettingStatus" is required (not null)
             if (ApiSettingStatus == null)
             {
@@ -70,7 +79,6 @@ namespace IO.Swagger.Model
             {
                 this.ApiSettingStatus = ApiSettingStatus;
             }
-            this.CategoryMappingState = CategoryMappingState;
         }
         
         /// <summary>
@@ -84,10 +92,10 @@ namespace IO.Swagger.Model
         [DataMember(Name="columnMappingStatus", EmitDefaultValue=false)]
         public ColumnMappingStatus ColumnMappingStatus { get; set; }
         /// <summary>
-        /// Gets or Sets CategoryMappingState
+        /// Gets or Sets CategoryMappingStatus
         /// </summary>
-        [DataMember(Name="categoryMappingState", EmitDefaultValue=false)]
-        public CategoryMappingState CategoryMappingState { get; set; }
+        [DataMember(Name="categoryMappingStatus", EmitDefaultValue=false)]
+        public CategoryMappingStatus CategoryMappingStatus { get; set; }
         /// <summary>
         /// Gets or Sets ApiSettingStatus
         /// </summary>
@@ -103,7 +111,7 @@ namespace IO.Swagger.Model
             sb.Append("class ChannelCatalogStatus {\n");
             sb.Append("  ExportedProductCount: ").Append(ExportedProductCount).Append("\n");
             sb.Append("  ColumnMappingStatus: ").Append(ColumnMappingStatus).Append("\n");
-            sb.Append("  CategoryMappingState: ").Append(CategoryMappingState).Append("\n");
+            sb.Append("  CategoryMappingStatus: ").Append(CategoryMappingStatus).Append("\n");
             sb.Append("  ApiSettingStatus: ").Append(ApiSettingStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -152,9 +160,9 @@ namespace IO.Swagger.Model
                     this.ColumnMappingStatus.Equals(other.ColumnMappingStatus)
                 ) && 
                 (
-                    this.CategoryMappingState == other.CategoryMappingState ||
-                    this.CategoryMappingState != null &&
-                    this.CategoryMappingState.Equals(other.CategoryMappingState)
+                    this.CategoryMappingStatus == other.CategoryMappingStatus ||
+                    this.CategoryMappingStatus != null &&
+                    this.CategoryMappingStatus.Equals(other.CategoryMappingStatus)
                 ) && 
                 (
                     this.ApiSettingStatus == other.ApiSettingStatus ||
@@ -178,8 +186,8 @@ namespace IO.Swagger.Model
                     hash = hash * 59 + this.ExportedProductCount.GetHashCode();
                 if (this.ColumnMappingStatus != null)
                     hash = hash * 59 + this.ColumnMappingStatus.GetHashCode();
-                if (this.CategoryMappingState != null)
-                    hash = hash * 59 + this.CategoryMappingState.GetHashCode();
+                if (this.CategoryMappingStatus != null)
+                    hash = hash * 59 + this.CategoryMappingStatus.GetHashCode();
                 if (this.ApiSettingStatus != null)
                     hash = hash * 59 + this.ApiSettingStatus.GetHashCode();
                 return hash;

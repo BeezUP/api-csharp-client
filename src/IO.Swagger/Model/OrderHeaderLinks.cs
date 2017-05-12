@@ -38,7 +38,7 @@ namespace IO.Swagger.Model
         /// Initializes a new instance of the <see cref="OrderHeaderLinks" /> class.
         /// </summary>
         /// <param name="Self">Self (required).</param>
-        public OrderHeaderLinks(DefinitionslinksGetOrderLink Self = default(DefinitionslinksGetOrderLink))
+        public OrderHeaderLinks(LinksGetOrderLink Self = default(LinksGetOrderLink))
         {
             // to ensure "Self" is required (not null)
             if (Self == null)
@@ -55,7 +55,7 @@ namespace IO.Swagger.Model
         /// Gets or Sets Self
         /// </summary>
         [DataMember(Name="self", EmitDefaultValue=false)]
-        public DefinitionslinksGetOrderLink Self { get; set; }
+        public LinksGetOrderLink Self { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
