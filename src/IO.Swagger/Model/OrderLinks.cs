@@ -39,7 +39,7 @@ namespace IO.Swagger.Model
         /// </summary>
         /// <param name="Self">Self (required).</param>
         /// <param name="History">History.</param>
-        public OrderLinks(LinksGetOrderLink Self = default(LinksGetOrderLink), LinksGetOrderHistoryLink History = default(LinksGetOrderHistoryLink))
+        public OrderLinks(DefinitionslinksGetOrderLink Self = default(DefinitionslinksGetOrderLink), DefinitionslinksGetOrderHistoryLink History = default(DefinitionslinksGetOrderHistoryLink))
         {
             // to ensure "Self" is required (not null)
             if (Self == null)
@@ -57,12 +57,12 @@ namespace IO.Swagger.Model
         /// Gets or Sets Self
         /// </summary>
         [DataMember(Name="self", EmitDefaultValue=false)]
-        public LinksGetOrderLink Self { get; set; }
+        public DefinitionslinksGetOrderLink Self { get; set; }
         /// <summary>
         /// Gets or Sets History
         /// </summary>
         [DataMember(Name="history", EmitDefaultValue=false)]
-        public LinksGetOrderHistoryLink History { get; set; }
+        public DefinitionslinksGetOrderHistoryLink History { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

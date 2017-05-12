@@ -36,7 +36,7 @@ namespace IO.Swagger.Model
         /// <param name="Create">Create.</param>
         /// <param name="History">History.</param>
         /// <param name="Run">Run.</param>
-        public RuleListLinks(LinksGetRulesLink Self = default(LinksGetRulesLink), LinksCreateRuleLink Create = default(LinksCreateRuleLink), LinksGetRulesExecutionsLink History = default(LinksGetRulesExecutionsLink), LinksRunRulesLink Run = default(LinksRunRulesLink))
+        public RuleListLinks(DefinitionslinksGetRulesLink Self = default(DefinitionslinksGetRulesLink), DefinitionslinksCreateRuleLink Create = default(DefinitionslinksCreateRuleLink), DefinitionslinksGetRulesExecutionsLink History = default(DefinitionslinksGetRulesExecutionsLink), DefinitionslinksRunRulesLink Run = default(DefinitionslinksRunRulesLink))
         {
             this.Self = Self;
             this.Create = Create;
@@ -48,22 +48,22 @@ namespace IO.Swagger.Model
         /// Gets or Sets Self
         /// </summary>
         [DataMember(Name="self", EmitDefaultValue=false)]
-        public LinksGetRulesLink Self { get; set; }
+        public DefinitionslinksGetRulesLink Self { get; set; }
         /// <summary>
         /// Gets or Sets Create
         /// </summary>
         [DataMember(Name="create", EmitDefaultValue=false)]
-        public LinksCreateRuleLink Create { get; set; }
+        public DefinitionslinksCreateRuleLink Create { get; set; }
         /// <summary>
         /// Gets or Sets History
         /// </summary>
         [DataMember(Name="history", EmitDefaultValue=false)]
-        public LinksGetRulesExecutionsLink History { get; set; }
+        public DefinitionslinksGetRulesExecutionsLink History { get; set; }
         /// <summary>
         /// Gets or Sets Run
         /// </summary>
         [DataMember(Name="run", EmitDefaultValue=false)]
-        public LinksRunRulesLink Run { get; set; }
+        public DefinitionslinksRunRulesLink Run { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

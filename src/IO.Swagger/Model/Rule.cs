@@ -48,7 +48,7 @@ namespace IO.Swagger.Model
         /// <param name="ValidityStartUtcDate">Rule validity start utc date.</param>
         /// <param name="ValidityEndUtcDate">Rule validity end utc date.</param>
         /// <param name="Links">Links (required).</param>
-        public Rule(string RuleId = default(string), string RuleName = default(string), RuleLastExecutionStatus LastExecutionStatus = default(RuleLastExecutionStatus), DateTime? LastExecutionUtcDate = default(DateTime?), OptimisationActionName ActionName = default(OptimisationActionName), string ReportFilterId = default(string), int? Position = default(int?), bool? Enabled = default(bool?), DateTime? ValidityStartUtcDate = default(DateTime?), DateTime? ValidityEndUtcDate = default(DateTime?), RuleLinks Links = default(RuleLinks))
+        public Rule(string RuleId = default(string), string RuleName = default(string), RuleLastExecutionStatus LastExecutionStatus = default(RuleLastExecutionStatus), DateTime? LastExecutionUtcDate = default(DateTime?), OptimisationActionName ActionName = default(OptimisationActionName), string ReportFilterId = default(string), int? Position = default(int?), bool? Enabled = default(bool?), DateTime? ValidityStartUtcDate = default(DateTime?), DateTime? ValidityEndUtcDate = default(DateTime?), DefinitionsruleLinks Links = default(DefinitionsruleLinks))
         {
             // to ensure "RuleId" is required (not null)
             if (RuleId == null)
@@ -181,7 +181,7 @@ namespace IO.Swagger.Model
         /// Gets or Sets Links
         /// </summary>
         [DataMember(Name="links", EmitDefaultValue=false)]
-        public RuleLinks Links { get; set; }
+        public DefinitionsruleLinks Links { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
