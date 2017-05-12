@@ -51,7 +51,7 @@ namespace IO.Swagger.Model
         /// <param name="ExecutionSource">ExecutionSource (required).</param>
         /// <param name="ReportUrl">The url for the excel report for this execution.</param>
         /// <param name="Links">Links.</param>
-        public RuleExecutionReporting(string RuleId = default(string), string RuleName = default(string), DateTime? StartedUtcDate = default(DateTime?), DateTime? CompletedUtcDate = default(DateTime?), RuleExecutionReportingStatus Status = default(RuleExecutionReportingStatus), RuleExecutionReportingErrorType ErrorType = default(RuleExecutionReportingErrorType), int? AffectedProductCount = default(int?), int? ActiveAffectedProductCount = default(int?), int? AffectedChannelCount = default(int?), OptimisationActionName OptimisationActionName = default(OptimisationActionName), string UserId = default(string), RuleExecutionReportingExecutionSource ExecutionSource = default(RuleExecutionReportingExecutionSource), string ReportUrl = default(string), RuleExecutionReportingLinks Links = default(RuleExecutionReportingLinks))
+        public RuleExecutionReporting(string RuleId = default(string), string RuleName = default(string), DateTime? StartedUtcDate = default(DateTime?), DateTime? CompletedUtcDate = default(DateTime?), RuleExecutionReportingStatus Status = default(RuleExecutionReportingStatus), RuleExecutionReportingErrorType ErrorType = default(RuleExecutionReportingErrorType), int? AffectedProductCount = default(int?), int? ActiveAffectedProductCount = default(int?), int? AffectedChannelCount = default(int?), OptimisationActionName OptimisationActionName = default(OptimisationActionName), string UserId = default(string), RuleExecutionReportingExecutionSource ExecutionSource = default(RuleExecutionReportingExecutionSource), string ReportUrl = default(string), DefinitionsruleExecutionReportingLinks Links = default(DefinitionsruleExecutionReportingLinks))
         {
             // to ensure "RuleId" is required (not null)
             if (RuleId == null)
@@ -179,7 +179,7 @@ namespace IO.Swagger.Model
         /// Gets or Sets Links
         /// </summary>
         [DataMember(Name="links", EmitDefaultValue=false)]
-        public RuleExecutionReportingLinks Links { get; set; }
+        public DefinitionsruleExecutionReportingLinks Links { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
