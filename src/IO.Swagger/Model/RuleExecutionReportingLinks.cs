@@ -33,7 +33,7 @@ namespace IO.Swagger.Model
         /// Initializes a new instance of the <see cref="RuleExecutionReportingLinks" /> class.
         /// </summary>
         /// <param name="Rule">Rule.</param>
-        public RuleExecutionReportingLinks(DefinitionslinksGetRuleLink Rule = default(DefinitionslinksGetRuleLink))
+        public RuleExecutionReportingLinks(LinksGetRuleLink Rule = default(LinksGetRuleLink))
         {
             this.Rule = Rule;
         }
@@ -42,7 +42,7 @@ namespace IO.Swagger.Model
         /// Gets or Sets Rule
         /// </summary>
         [DataMember(Name="rule", EmitDefaultValue=false)]
-        public DefinitionslinksGetRuleLink Rule { get; set; }
+        public LinksGetRuleLink Rule { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

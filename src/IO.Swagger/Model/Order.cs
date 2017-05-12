@@ -74,7 +74,7 @@ namespace IO.Swagger.Model
         /// <param name="OrderShippingAddressCity">The shipping address city of this order.</param>
         /// <param name="OrderShippingAddressStateOrRegion">The shipping address state or region of this order.</param>
         /// <param name="OrderShippingAddressCountryName">The shipping address country name.</param>
-        /// <param name="OrderShippingAddressCountryIsoCodeAlpha2">The shipping address country iso code alpha 2 (see http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Decoding_table for more details).</param>
+        /// <param name="OrderShippingAddressCountryIsoCodeAlpha2">The shipping address country iso code alpha 2 (see http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#/decoding_table for more details).</param>
         /// <param name="OrderShippingPhone">The phone number of the person in the shipping address for this order.</param>
         /// <param name="OrderShippingMobilePhone">The mobile phone number of the person in the shipping address for this order.</param>
         /// <param name="OrderShippingPrice">The shipping price of this order.</param>
@@ -93,7 +93,7 @@ namespace IO.Swagger.Model
         /// <param name="OrderBuyerAddressCity">The Buyer address city of this order.</param>
         /// <param name="OrderBuyerAddressStateOrRegion">The Buyer address state or region of this order.</param>
         /// <param name="OrderBuyerAddressCountryName">The Buyer address country name.</param>
-        /// <param name="OrderBuyerAddressCountryIsoCodeAlpha2">The Buyer address country iso code alpha 2 (see http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Decoding_table for more details).</param>
+        /// <param name="OrderBuyerAddressCountryIsoCodeAlpha2">The Buyer address country iso code alpha 2 (see http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#/decoding_table for more details).</param>
         /// <param name="OrderBuyerPhone">The phone number of the buyer for this order.</param>
         /// <param name="OrderBuyerMobilePhone">The mobile phone number of the buyer for this order.</param>
         /// <param name="OrderOrderSourceUri">Technical information: The url to the source of this order. We received this information from the marketplace. .</param>
@@ -486,9 +486,9 @@ namespace IO.Swagger.Model
         [DataMember(Name="order_Shipping_AddressCountryName", EmitDefaultValue=false)]
         public string OrderShippingAddressCountryName { get; set; }
         /// <summary>
-        /// The shipping address country iso code alpha 2 (see http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Decoding_table for more details)
+        /// The shipping address country iso code alpha 2 (see http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#/decoding_table for more details)
         /// </summary>
-        /// <value>The shipping address country iso code alpha 2 (see http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Decoding_table for more details)</value>
+        /// <value>The shipping address country iso code alpha 2 (see http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#/decoding_table for more details)</value>
         [DataMember(Name="order_Shipping_AddressCountryIsoCodeAlpha2", EmitDefaultValue=false)]
         public string OrderShippingAddressCountryIsoCodeAlpha2 { get; set; }
         /// <summary>
@@ -600,9 +600,9 @@ namespace IO.Swagger.Model
         [DataMember(Name="order_Buyer_AddressCountryName", EmitDefaultValue=false)]
         public string OrderBuyerAddressCountryName { get; set; }
         /// <summary>
-        /// The Buyer address country iso code alpha 2 (see http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Decoding_table for more details)
+        /// The Buyer address country iso code alpha 2 (see http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#/decoding_table for more details)
         /// </summary>
-        /// <value>The Buyer address country iso code alpha 2 (see http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Decoding_table for more details)</value>
+        /// <value>The Buyer address country iso code alpha 2 (see http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#/decoding_table for more details)</value>
         [DataMember(Name="order_Buyer_AddressCountryIsoCodeAlpha2", EmitDefaultValue=false)]
         public string OrderBuyerAddressCountryIsoCodeAlpha2 { get; set; }
         /// <summary>
