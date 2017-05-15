@@ -43,8 +43,8 @@ namespace IO.Swagger.Model
         /// <param name="GetProfilePictureInfo">GetProfilePictureInfo (required).</param>
         /// <param name="SaveProfilePictureInfo">SaveProfilePictureInfo (required).</param>
         /// <param name="GetCreditCardInfo">GetCreditCardInfo (required).</param>
-        /// <param name="SaveUserCreditCardLink">SaveUserCreditCardLink (required).</param>
-        public AccountInfoLinks(LinksSavePersonalInfoLink SavePersonalInfo = default(LinksSavePersonalInfoLink), LinksChangePasswordLink ChangePassword = default(LinksChangePasswordLink), LinksSaveCompanyInfoLink SaveCompanyInfo = default(LinksSaveCompanyInfoLink), LinksGetProfilePictureInfoLink GetProfilePictureInfo = default(LinksGetProfilePictureInfoLink), LinksSaveProfilePictureInfoLink SaveProfilePictureInfo = default(LinksSaveProfilePictureInfoLink), LinksGetCreditCardInfoLink GetCreditCardInfo = default(LinksGetCreditCardInfoLink), LinksSaveCreditCardInfoLink SaveUserCreditCardLink = default(LinksSaveCreditCardInfoLink))
+        /// <param name="SaveCreditCardInfo">SaveCreditCardInfo (required).</param>
+        public AccountInfoLinks(LinksSavePersonalInfoLink SavePersonalInfo = default(LinksSavePersonalInfoLink), LinksChangePasswordLink ChangePassword = default(LinksChangePasswordLink), LinksSaveCompanyInfoLink SaveCompanyInfo = default(LinksSaveCompanyInfoLink), LinksGetProfilePictureInfoLink GetProfilePictureInfo = default(LinksGetProfilePictureInfoLink), LinksSaveProfilePictureInfoLink SaveProfilePictureInfo = default(LinksSaveProfilePictureInfoLink), LinksGetCreditCardInfoLink GetCreditCardInfo = default(LinksGetCreditCardInfoLink), LinksSaveCreditCardInfoLink SaveCreditCardInfo = default(LinksSaveCreditCardInfoLink))
         {
             // to ensure "SavePersonalInfo" is required (not null)
             if (SavePersonalInfo == null)
@@ -100,14 +100,14 @@ namespace IO.Swagger.Model
             {
                 this.GetCreditCardInfo = GetCreditCardInfo;
             }
-            // to ensure "SaveUserCreditCardLink" is required (not null)
-            if (SaveUserCreditCardLink == null)
+            // to ensure "SaveCreditCardInfo" is required (not null)
+            if (SaveCreditCardInfo == null)
             {
-                throw new InvalidDataException("SaveUserCreditCardLink is a required property for AccountInfoLinks and cannot be null");
+                throw new InvalidDataException("SaveCreditCardInfo is a required property for AccountInfoLinks and cannot be null");
             }
             else
             {
-                this.SaveUserCreditCardLink = SaveUserCreditCardLink;
+                this.SaveCreditCardInfo = SaveCreditCardInfo;
             }
         }
         
@@ -142,10 +142,10 @@ namespace IO.Swagger.Model
         [DataMember(Name="getCreditCardInfo", EmitDefaultValue=false)]
         public LinksGetCreditCardInfoLink GetCreditCardInfo { get; set; }
         /// <summary>
-        /// Gets or Sets SaveUserCreditCardLink
+        /// Gets or Sets SaveCreditCardInfo
         /// </summary>
-        [DataMember(Name="saveUserCreditCardLink", EmitDefaultValue=false)]
-        public LinksSaveCreditCardInfoLink SaveUserCreditCardLink { get; set; }
+        [DataMember(Name="saveCreditCardInfo", EmitDefaultValue=false)]
+        public LinksSaveCreditCardInfoLink SaveCreditCardInfo { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -160,7 +160,7 @@ namespace IO.Swagger.Model
             sb.Append("  GetProfilePictureInfo: ").Append(GetProfilePictureInfo).Append("\n");
             sb.Append("  SaveProfilePictureInfo: ").Append(SaveProfilePictureInfo).Append("\n");
             sb.Append("  GetCreditCardInfo: ").Append(GetCreditCardInfo).Append("\n");
-            sb.Append("  SaveUserCreditCardLink: ").Append(SaveUserCreditCardLink).Append("\n");
+            sb.Append("  SaveCreditCardInfo: ").Append(SaveCreditCardInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -228,9 +228,9 @@ namespace IO.Swagger.Model
                     this.GetCreditCardInfo.Equals(other.GetCreditCardInfo)
                 ) && 
                 (
-                    this.SaveUserCreditCardLink == other.SaveUserCreditCardLink ||
-                    this.SaveUserCreditCardLink != null &&
-                    this.SaveUserCreditCardLink.Equals(other.SaveUserCreditCardLink)
+                    this.SaveCreditCardInfo == other.SaveCreditCardInfo ||
+                    this.SaveCreditCardInfo != null &&
+                    this.SaveCreditCardInfo.Equals(other.SaveCreditCardInfo)
                 );
         }
 
@@ -257,8 +257,8 @@ namespace IO.Swagger.Model
                     hash = hash * 59 + this.SaveProfilePictureInfo.GetHashCode();
                 if (this.GetCreditCardInfo != null)
                     hash = hash * 59 + this.GetCreditCardInfo.GetHashCode();
-                if (this.SaveUserCreditCardLink != null)
-                    hash = hash * 59 + this.SaveUserCreditCardLink.GetHashCode();
+                if (this.SaveCreditCardInfo != null)
+                    hash = hash * 59 + this.SaveCreditCardInfo.GetHashCode();
                 return hash;
             }
         }

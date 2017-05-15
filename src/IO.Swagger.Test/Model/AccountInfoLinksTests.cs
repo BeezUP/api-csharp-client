@@ -113,12 +113,12 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'GetCreditCardInfo'
         }
         /// <summary>
-        /// Test the property 'SaveUserCreditCardLink'
+        /// Test the property 'SaveCreditCardInfo'
         /// </summary>
         [Test]
-        public void SaveUserCreditCardLinkTest()
+        public void SaveCreditCardInfoTest()
         {
-            // TODO unit test for the property 'SaveUserCreditCardLink'
+            // TODO unit test for the property 'SaveCreditCardInfo'
         }
 
     }

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **GetProfilePictureInfo** | [**LinksGetProfilePictureInfoLink**](LinksGetProfilePictureInfoLink.md) |  | 
 **SaveProfilePictureInfo** | [**LinksSaveProfilePictureInfoLink**](LinksSaveProfilePictureInfoLink.md) |  | 
 **GetCreditCardInfo** | [**LinksGetCreditCardInfoLink**](LinksGetCreditCardInfoLink.md) |  | 
-**SaveUserCreditCardLink** | [**LinksSaveCreditCardInfoLink**](LinksSaveCreditCardInfoLink.md) |  | 
+**SaveCreditCardInfo** | [**LinksSaveCreditCardInfoLink**](LinksSaveCreditCardInfoLink.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
