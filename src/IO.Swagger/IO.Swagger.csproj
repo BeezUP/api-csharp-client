@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Public - Security
+BeezUP API
 
-This API will allow you to create your account and to get your tokens. \\ If you lost your password, you have an operation to get it back. 
+This is the RESTful API of BeezUP which allows you to manage everything related to BeezUP
 
 OpenAPI spec version: 2.0
 Contact: support@beezup.com
@@ -11,7 +11,7 @@ Contact: support@beezup.com
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C08C116F-3414-41F1-9E99-2D09099EFE02}</ProjectGuid>
+    <ProjectGuid>{8A30FA14-4C03-416F-BAB2-90841088857C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IO.Swagger</RootNamespace>
