@@ -1,7 +1,7 @@
 /* 
  * BeezUP API
  *
- * This is the RESTful API of BeezUP which allows you to manage everything related to BeezUP
+ * # The REST API of BeezUP system ## Overview The REST APIs provide programmatic access to read and write BeezUP data.  Basically, with this API you will be able to do everything like you were with your browser on https://go.beezup.com !  The main features are: - Register and manage your account - Create and manage and share your stores with your friends/co-workers. - Import your product catalog and schedule the auto importation - Search the channels your want to use - Configure your channels for your catalogs to export your product information:     - cost and general settings     - category and columns mappings     - your will be able to create and manage your custom column     - put in place exlusion filters based on simple conditions on your product data     - override product values     - get product vision for a channel catalog scope - Analyze and optimize your performance of your catalogs on all yours channels with different type of reportings by day, channel, category and by product. - Automatize your optimisation by using rules! - And of course... Manage your orders harvested from all your marketplaces:     - Synchronize your orders in an uniformized way     - Get the available actions and update the order status - ...and more!  ## Authentication credentials The public API with the base path **_/v2/public** have been put in place to give you an entry point to our system for the user registration, login and lost password. The public API does not require any credentials. We give you the some public list of values and public channels for our public commercial web site [www.beezup.com](http://www.beezup.com).  The user API with the base path **_/v2/user** requires a token which is available on this page: https://go.beezup.com/Account/MyAccount  ## Things to keep in mind ### API Rate Limits - The BeezUP REST API is limited to 100 calls/minute.  ### Media type The default media type for requests and responses is application/json. Where noted, some operations support other content types. If no additional content type is mentioned for a specific operation, then the media type is application/json.  ### Required content type The required and default encoding for the request and responses is UTF8.  ### Required date time format All our date time are formatted in ISO 8601 format: 2014-06-24T16:25:00Z.  ### Base URL The Base URL of the BeezUP API Order Management REST API conforms to the following template.  https://api.beezup.com  All URLs returned by the BeezUP API are relative to this base URL, and all requests to the REST API must use this base URL template.  You can test our API on https://api-docs.beezup.com/swagger-ui\\ You can contact us on [gitter, #BeezUP/API](https://gitter.im/beezUP/API) 
  *
  * OpenAPI spec version: 2.0
  * Contact: support@beezup.com
@@ -30,128 +30,49 @@ namespace IO.Swagger.Model
     public partial class BeezUPCommonLinkParameter3 :  IEquatable<BeezUPCommonLinkParameter3>, IValidatableObject
     {
         /// <summary>
-        /// * path: if the parameter must be pass in the path uri * header: if the parameter must be passed in http header * query: if the parameter must be passed in querystring * body: if the paramter must be passed in the body 
+        /// Initializes a new instance of the <see cref="BeezUPCommonLinkParameter3" /> class.
         /// </summary>
-        /// <value>* path: if the parameter must be pass in the path uri * header: if the parameter must be passed in http header * query: if the parameter must be passed in querystring * body: if the paramter must be passed in the body </value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum InEnum
-        {
-            
-            /// <summary>
-            /// Enum Path for "path"
-            /// </summary>
-            [EnumMember(Value = "path")]
-            Path,
-            
-            /// <summary>
-            /// Enum Header for "header"
-            /// </summary>
-            [EnumMember(Value = "header")]
-            Header,
-            
-            /// <summary>
-            /// Enum Query for "query"
-            /// </summary>
-            [EnumMember(Value = "query")]
-            Query,
-            
-            /// <summary>
-            /// Enum Body for "body"
-            /// </summary>
-            [EnumMember(Value = "body")]
-            Body
-        }
-
-        /// <summary>
-        /// The value type of the parameter
-        /// </summary>
-        /// <value>The value type of the parameter</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum TypeEnum
-        {
-            
-            /// <summary>
-            /// Enum String for "string"
-            /// </summary>
-            [EnumMember(Value = "string")]
-            String,
-            
-            /// <summary>
-            /// Enum Integer for "integer"
-            /// </summary>
-            [EnumMember(Value = "integer")]
-            Integer,
-            
-            /// <summary>
-            /// Enum Number for "number"
-            /// </summary>
-            [EnumMember(Value = "number")]
-            Number,
-            
-            /// <summary>
-            /// Enum Boolean for "boolean"
-            /// </summary>
-            [EnumMember(Value = "boolean")]
-            Boolean,
-            
-            /// <summary>
-            /// Enum Object for "object"
-            /// </summary>
-            [EnumMember(Value = "object")]
-            Object,
-            
-            /// <summary>
-            /// Enum Array for "array"
-            /// </summary>
-            [EnumMember(Value = "array")]
-            Array,
-            
-            /// <summary>
-            /// Enum Date for "date"
-            /// </summary>
-            [EnumMember(Value = "date")]
-            Date,
-            
-            /// <summary>
-            /// Enum Datetime for "date-time"
-            /// </summary>
-            [EnumMember(Value = "date-time")]
-            Datetime
-        }
-
-        /// <summary>
-        /// * path: if the parameter must be pass in the path uri * header: if the parameter must be passed in http header * query: if the parameter must be passed in querystring * body: if the paramter must be passed in the body 
-        /// </summary>
-        /// <value>* path: if the parameter must be pass in the path uri * header: if the parameter must be passed in http header * query: if the parameter must be passed in querystring * body: if the paramter must be passed in the body </value>
-        [DataMember(Name="in", EmitDefaultValue=false)]
-        public InEnum? _In { get; set; }
-        /// <summary>
-        /// The value type of the parameter
-        /// </summary>
-        /// <value>The value type of the parameter</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
-        public TypeEnum? Type { get; set; }
+        [JsonConstructorAttribute]
+        protected BeezUPCommonLinkParameter3() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="BeezUPCommonLinkParameter3" /> class.
         /// </summary>
         /// <param name="Value">The value of the parameter. It can be an integer a string or an object..</param>
-        /// <param name="Required">Required.</param>
-        /// <param name="_In">* path: if the parameter must be pass in the path uri * header: if the parameter must be passed in http header * query: if the parameter must be passed in querystring * body: if the paramter must be passed in the body .</param>
-        /// <param name="Type">The value type of the parameter.</param>
-        /// <param name="LovLink">This parameter expect the values indicated in this list of values..</param>
-        /// <param name="LovRequired">If true, you MUST use indicate a value from the list of values otherwise it&#39;s a freetext.</param>
+        /// <param name="Required">Required (default to false).</param>
+        /// <param name="_In">_In (required).</param>
+        /// <param name="Type">Type.</param>
+        /// <param name="LovLink">LovLink.</param>
+        /// <param name="LovRequired">If true, you MUST indicate a value from the list of values otherwise it&#39;s a freetext.</param>
         /// <param name="Description">description of the parameter.</param>
         /// <param name="Schema">schema of the parameter.</param>
-        public BeezUPCommonLinkParameter3(Object Value = default(Object), bool? Required = default(bool?), InEnum? _In = default(InEnum?), TypeEnum? Type = default(TypeEnum?), BeezUPCommonLOVLink2 LovLink = default(BeezUPCommonLOVLink2), bool? LovRequired = default(bool?), string Description = default(string), string Schema = default(string))
+        /// <param name="Properties">If the parameter is an object with flexible properties (additionProperties/dictionary), we will describe the properties of the object..</param>
+        public BeezUPCommonLinkParameter3(Object Value = default(Object), bool? Required = false, BeezUPCommonParameterIn _In = default(BeezUPCommonParameterIn), BeezUPCommonParameterType Type = default(BeezUPCommonParameterType), BeezUPCommonLOVLink3 LovLink = default(BeezUPCommonLOVLink3), bool? LovRequired = default(bool?), string Description = default(string), string Schema = default(string), Dictionary<string, BeezUPCommonLinkParameterProperty3> Properties = default(Dictionary<string, BeezUPCommonLinkParameterProperty3>))
         {
+            // to ensure "_In" is required (not null)
+            if (_In == null)
+            {
+                throw new InvalidDataException("_In is a required property for BeezUPCommonLinkParameter3 and cannot be null");
+            }
+            else
+            {
+                this._In = _In;
+            }
             this.Value = Value;
-            this.Required = Required;
-            this._In = _In;
+            // use default value if no "Required" provided
+            if (Required == null)
+            {
+                this.Required = false;
+            }
+            else
+            {
+                this.Required = Required;
+            }
             this.Type = Type;
             this.LovLink = LovLink;
             this.LovRequired = LovRequired;
             this.Description = Description;
             this.Schema = Schema;
+            this.Properties = Properties;
         }
         
         /// <summary>
@@ -166,15 +87,24 @@ namespace IO.Swagger.Model
         [DataMember(Name="required", EmitDefaultValue=false)]
         public bool? Required { get; set; }
         /// <summary>
-        /// This parameter expect the values indicated in this list of values.
+        /// Gets or Sets _In
         /// </summary>
-        /// <value>This parameter expect the values indicated in this list of values.</value>
-        [DataMember(Name="lovLink", EmitDefaultValue=false)]
-        public BeezUPCommonLOVLink2 LovLink { get; set; }
+        [DataMember(Name="in", EmitDefaultValue=false)]
+        public BeezUPCommonParameterIn _In { get; set; }
         /// <summary>
-        /// If true, you MUST use indicate a value from the list of values otherwise it&#39;s a freetext
+        /// Gets or Sets Type
         /// </summary>
-        /// <value>If true, you MUST use indicate a value from the list of values otherwise it&#39;s a freetext</value>
+        [DataMember(Name="type", EmitDefaultValue=false)]
+        public BeezUPCommonParameterType Type { get; set; }
+        /// <summary>
+        /// Gets or Sets LovLink
+        /// </summary>
+        [DataMember(Name="lovLink", EmitDefaultValue=false)]
+        public BeezUPCommonLOVLink3 LovLink { get; set; }
+        /// <summary>
+        /// If true, you MUST indicate a value from the list of values otherwise it&#39;s a freetext
+        /// </summary>
+        /// <value>If true, you MUST indicate a value from the list of values otherwise it&#39;s a freetext</value>
         [DataMember(Name="lovRequired", EmitDefaultValue=false)]
         public bool? LovRequired { get; set; }
         /// <summary>
@@ -189,6 +119,12 @@ namespace IO.Swagger.Model
         /// <value>schema of the parameter</value>
         [DataMember(Name="schema", EmitDefaultValue=false)]
         public string Schema { get; set; }
+        /// <summary>
+        /// If the parameter is an object with flexible properties (additionProperties/dictionary), we will describe the properties of the object.
+        /// </summary>
+        /// <value>If the parameter is an object with flexible properties (additionProperties/dictionary), we will describe the properties of the object.</value>
+        [DataMember(Name="properties", EmitDefaultValue=false)]
+        public Dictionary<string, BeezUPCommonLinkParameterProperty3> Properties { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -205,6 +141,7 @@ namespace IO.Swagger.Model
             sb.Append("  LovRequired: ").Append(LovRequired).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Schema: ").Append(Schema).Append("\n");
+            sb.Append("  Properties: ").Append(Properties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -280,6 +217,11 @@ namespace IO.Swagger.Model
                     this.Schema == other.Schema ||
                     this.Schema != null &&
                     this.Schema.Equals(other.Schema)
+                ) && 
+                (
+                    this.Properties == other.Properties ||
+                    this.Properties != null &&
+                    this.Properties.SequenceEqual(other.Properties)
                 );
         }
 
@@ -310,6 +252,8 @@ namespace IO.Swagger.Model
                     hash = hash * 59 + this.Description.GetHashCode();
                 if (this.Schema != null)
                     hash = hash * 59 + this.Schema.GetHashCode();
+                if (this.Properties != null)
+                    hash = hash * 59 + this.Properties.GetHashCode();
                 return hash;
             }
         }

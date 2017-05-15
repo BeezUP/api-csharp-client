@@ -1,11 +1,11 @@
 # IO.Swagger.Api.ChannelCatalogsProductsOptimisationApi
 
-All URIs are relative to *https://api.beezup.comv2*
+All URIs are relative to *https://api.beezup.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DisableChannelCatalogProduct**](ChannelCatalogsProductsOptimisationApi.md#disablechannelcatalogproduct) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/disable | Disable channel catalog product
-[**ReenableChannelCatalogProduct**](ChannelCatalogsProductsOptimisationApi.md#reenablechannelcatalogproduct) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/reenable | Reenable channel catalog product
+[**DisableChannelCatalogProduct**](ChannelCatalogsProductsOptimisationApi.md#disablechannelcatalogproduct) | **POST** /user/channelCatalogs/{channelCatalogId}/products/{productId}/disable | Disable channel catalog product
+[**ReenableChannelCatalogProduct**](ChannelCatalogsProductsOptimisationApi.md#reenablechannelcatalogproduct) | **POST** /user/channelCatalogs/{channelCatalogId}/products/{productId}/reenable | Reenable channel catalog product
 
 
 <a name="disablechannelcatalogproduct"></a>

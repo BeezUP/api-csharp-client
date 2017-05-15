@@ -3,6 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Format** | [**ExportOrderListFormat**](ExportOrderListFormat.md) |  | [optional] 
 **StoreId** | [**BeezUPCommonStoreId**](BeezUPCommonStoreId.md) |  | 
 **OrderListRequest** | [**OrderListRequest**](OrderListRequest.md) |  | 
 

@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **ExclusionFilters** | [**ExclusionFilters**](ExclusionFilters.md) |  | [optional] 
 **ExportUrl** | [**BeezUPCommonHttpUrl**](BeezUPCommonHttpUrl.md) |  | [optional] 
 **State** | [**ChannelCatalogState**](ChannelCatalogState.md) |  | 
+**Types** | **List&lt;string&gt;** | The channel type list related to the channel | 
 **Links** | [**List&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md) | Indicates the actions you can do on a channel catalog | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

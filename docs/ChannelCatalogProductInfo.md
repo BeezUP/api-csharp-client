@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **ProductSku** | **string** | The product SKU | 
 **ProductTitle** | **string** | The product tile | 
 **ProductImageUrl** | **string** | The product image Url | 
-**ProductActive** | **bool?** | Indicates if the product still exists in your catalog | [optional] 
+**ProductActive** | **bool?** | Indicates if the product still exists in your catalog | 
 **Overrides** | [**ProductOverridesWithCatalogValues**](ProductOverridesWithCatalogValues.md) |  | 
 **Disabled** | **bool?** | Indicates if the product has been disabled or not | [default to false]
 **CategoryMapped** | **bool?** | Indicates if the product&#39;s category has been mapped to a channel category | 

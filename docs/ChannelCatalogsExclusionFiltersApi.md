@@ -1,11 +1,11 @@
 # IO.Swagger.Api.ChannelCatalogsExclusionFiltersApi
 
-All URIs are relative to *https://api.beezup.comv2*
+All URIs are relative to *https://api.beezup.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ConfigureChannelCatalogExclusionFilters**](ChannelCatalogsExclusionFiltersApi.md#configurechannelcatalogexclusionfilters) | **PUT** /v2/user/channelCatalogs/{channelCatalogId}/exclusionFilters | Configure channel catalog exclusion filters
-[**GetChannelCatalogExclusionFilterOperators**](ChannelCatalogsExclusionFiltersApi.md#getchannelcatalogexclusionfilteroperators) | **GET** /v2/user/channelCatalogs/exclusionFilterOperators | Get channel catalog exclusion filter operators
+[**ConfigureChannelCatalogExclusionFilters**](ChannelCatalogsExclusionFiltersApi.md#configurechannelcatalogexclusionfilters) | **PUT** /user/channelCatalogs/{channelCatalogId}/exclusionFilters | Configure channel catalog exclusion filters
+[**GetChannelCatalogExclusionFilterOperators**](ChannelCatalogsExclusionFiltersApi.md#getchannelcatalogexclusionfilteroperators) | **GET** /user/channelCatalogs/exclusionFilterOperators | Get channel catalog exclusion filter operators
 
 
 <a name="configurechannelcatalogexclusionfilters"></a>

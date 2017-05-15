@@ -1,12 +1,80 @@
 # IO.Swagger.Api.ChannelCatalogsProductsApi
 
-All URIs are relative to *https://api.beezup.comv2*
+All URIs are relative to *https://api.beezup.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetChannelCatalogProductInfo**](ChannelCatalogsProductsApi.md#getchannelcatalogproductinfo) | **GET** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId} | Get channel catalog product information
-[**GetChannelCatalogProductInfoList**](ChannelCatalogsProductsApi.md#getchannelcatalogproductinfolist) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/products | Get channel catalog product information list
+[**GetChannelCatalogProductByChannelCatalog**](ChannelCatalogsProductsApi.md#getchannelcatalogproductbychannelcatalog) | **POST** /user/channelCatalogs/products/{productId} | Get channel catalog products related to these channel catalogs
+[**GetChannelCatalogProductInfo**](ChannelCatalogsProductsApi.md#getchannelcatalogproductinfo) | **GET** /user/channelCatalogs/{channelCatalogId}/products/{productId} | Get channel catalog product information
+[**GetChannelCatalogProductInfoList**](ChannelCatalogsProductsApi.md#getchannelcatalogproductinfolist) | **POST** /user/channelCatalogs/{channelCatalogId}/products | Get channel catalog product information list
 
+
+<a name="getchannelcatalogproductbychannelcatalog"></a>
+# **GetChannelCatalogProductByChannelCatalog**
+> ChannelCatalogProductByChannelCatalogResponse GetChannelCatalogProductByChannelCatalog (string productId, ChannelCatalogProductByChannelCatalogRequest request = null)
+
+Get channel catalog products related to these channel catalogs
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class GetChannelCatalogProductByChannelCatalogExample
+    {
+        public void main()
+        {
+            
+            // Configure API key authorization: api_key
+            Configuration.Default.ApiKey.Add("Ocp-Apim-Subscription-Key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Ocp-Apim-Subscription-Key", "Bearer");
+
+            var apiInstance = new ChannelCatalogsProductsApi();
+            var productId = 578419df-1bbf-41a6-96fa-862e42182b67;  // string | The product identifier
+            var request = new ChannelCatalogProductByChannelCatalogRequest(); // ChannelCatalogProductByChannelCatalogRequest |  (optional) 
+
+            try
+            {
+                // Get channel catalog products related to these channel catalogs
+                ChannelCatalogProductByChannelCatalogResponse result = apiInstance.GetChannelCatalogProductByChannelCatalog(productId, request);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ChannelCatalogsProductsApi.GetChannelCatalogProductByChannelCatalog: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **string**| The product identifier | 
+ **request** | [**ChannelCatalogProductByChannelCatalogRequest**](ChannelCatalogProductByChannelCatalogRequest.md)|  | [optional] 
+
+### Return type
+
+[**ChannelCatalogProductByChannelCatalogResponse**](ChannelCatalogProductByChannelCatalogResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getchannelcatalogproductinfo"></a>
 # **GetChannelCatalogProductInfo**

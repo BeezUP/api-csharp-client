@@ -1,7 +1,7 @@
 /* 
  * BeezUP API
  *
- * This is the RESTful API of BeezUP which allows you to manage everything related to BeezUP
+ * # The REST API of BeezUP system ## Overview The REST APIs provide programmatic access to read and write BeezUP data.  Basically, with this API you will be able to do everything like you were with your browser on https://go.beezup.com !  The main features are: - Register and manage your account - Create and manage and share your stores with your friends/co-workers. - Import your product catalog and schedule the auto importation - Search the channels your want to use - Configure your channels for your catalogs to export your product information:     - cost and general settings     - category and columns mappings     - your will be able to create and manage your custom column     - put in place exlusion filters based on simple conditions on your product data     - override product values     - get product vision for a channel catalog scope - Analyze and optimize your performance of your catalogs on all yours channels with different type of reportings by day, channel, category and by product. - Automatize your optimisation by using rules! - And of course... Manage your orders harvested from all your marketplaces:     - Synchronize your orders in an uniformized way     - Get the available actions and update the order status - ...and more!  ## Authentication credentials The public API with the base path **_/v2/public** have been put in place to give you an entry point to our system for the user registration, login and lost password. The public API does not require any credentials. We give you the some public list of values and public channels for our public commercial web site [www.beezup.com](http://www.beezup.com).  The user API with the base path **_/v2/user** requires a token which is available on this page: https://go.beezup.com/Account/MyAccount  ## Things to keep in mind ### API Rate Limits - The BeezUP REST API is limited to 100 calls/minute.  ### Media type The default media type for requests and responses is application/json. Where noted, some operations support other content types. If no additional content type is mentioned for a specific operation, then the media type is application/json.  ### Required content type The required and default encoding for the request and responses is UTF8.  ### Required date time format All our date time are formatted in ISO 8601 format: 2014-06-24T16:25:00Z.  ### Base URL The Base URL of the BeezUP API Order Management REST API conforms to the following template.  https://api.beezup.com  All URLs returned by the BeezUP API are relative to this base URL, and all requests to the REST API must use this base URL template.  You can test our API on https://api-docs.beezup.com/swagger-ui\\ You can contact us on [gitter, #BeezUP/API](https://gitter.im/beezUP/API) 
  *
  * OpenAPI spec version: 2.0
  * Contact: support@beezup.com
@@ -37,91 +37,74 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ChannelInfo" /> class.
         /// </summary>
-        /// <param name="ChannelId">ChannelId (required).</param>
-        /// <param name="ChannelName">ChannelName (required).</param>
-        /// <param name="ChannelLogoUrl">ChannelLogoUrl.</param>
-        /// <param name="ChannelDescription">Indicae a description to the channel.</param>
-        /// <param name="BeezUPOffer">Indicate the BeezUP offer.</param>
-        /// <param name="SalesContact">SalesContact.</param>
-        /// <param name="Details">Details.</param>
-        /// <param name="KeyNumbers">KeyNumbers.</param>
-        /// <param name="TechnicalContact">TechnicalContact.</param>
-        public ChannelInfo(BeezUPCommonChannelId ChannelId = default(BeezUPCommonChannelId), BeezUPCommonChannelName ChannelName = default(BeezUPCommonChannelName), BeezUPCommonHttpUrl ChannelLogoUrl = default(BeezUPCommonHttpUrl), string ChannelDescription = default(string), string BeezUPOffer = default(string), ChannelInfoSalesContact SalesContact = default(ChannelInfoSalesContact), ChannelInfoDetails Details = default(ChannelInfoDetails), ChannelInfoKeyNumbers KeyNumbers = default(ChannelInfoKeyNumbers), ChannelInfoTechnicalContact TechnicalContact = default(ChannelInfoTechnicalContact))
+        /// <param name="Name">The channel name (required).</param>
+        /// <param name="HomeUrl">The channel home url (required).</param>
+        /// <param name="LogoUrl">The channel logo url (required).</param>
+        /// <param name="Types">The type list related to a channel (required).</param>
+        public ChannelInfo(string Name = default(string), string HomeUrl = default(string), string LogoUrl = default(string), List<string> Types = default(List<string>))
         {
-            // to ensure "ChannelId" is required (not null)
-            if (ChannelId == null)
+            // to ensure "Name" is required (not null)
+            if (Name == null)
             {
-                throw new InvalidDataException("ChannelId is a required property for ChannelInfo and cannot be null");
+                throw new InvalidDataException("Name is a required property for ChannelInfo and cannot be null");
             }
             else
             {
-                this.ChannelId = ChannelId;
+                this.Name = Name;
             }
-            // to ensure "ChannelName" is required (not null)
-            if (ChannelName == null)
+            // to ensure "HomeUrl" is required (not null)
+            if (HomeUrl == null)
             {
-                throw new InvalidDataException("ChannelName is a required property for ChannelInfo and cannot be null");
+                throw new InvalidDataException("HomeUrl is a required property for ChannelInfo and cannot be null");
             }
             else
             {
-                this.ChannelName = ChannelName;
+                this.HomeUrl = HomeUrl;
             }
-            this.ChannelLogoUrl = ChannelLogoUrl;
-            this.ChannelDescription = ChannelDescription;
-            this.BeezUPOffer = BeezUPOffer;
-            this.SalesContact = SalesContact;
-            this.Details = Details;
-            this.KeyNumbers = KeyNumbers;
-            this.TechnicalContact = TechnicalContact;
+            // to ensure "LogoUrl" is required (not null)
+            if (LogoUrl == null)
+            {
+                throw new InvalidDataException("LogoUrl is a required property for ChannelInfo and cannot be null");
+            }
+            else
+            {
+                this.LogoUrl = LogoUrl;
+            }
+            // to ensure "Types" is required (not null)
+            if (Types == null)
+            {
+                throw new InvalidDataException("Types is a required property for ChannelInfo and cannot be null");
+            }
+            else
+            {
+                this.Types = Types;
+            }
         }
         
         /// <summary>
-        /// Gets or Sets ChannelId
+        /// The channel name
         /// </summary>
-        [DataMember(Name="channelId", EmitDefaultValue=false)]
-        public BeezUPCommonChannelId ChannelId { get; set; }
+        /// <value>The channel name</value>
+        [DataMember(Name="name", EmitDefaultValue=false)]
+        public string Name { get; set; }
         /// <summary>
-        /// Gets or Sets ChannelName
+        /// The channel home url
         /// </summary>
-        [DataMember(Name="channelName", EmitDefaultValue=false)]
-        public BeezUPCommonChannelName ChannelName { get; set; }
+        /// <value>The channel home url</value>
+        [DataMember(Name="homeUrl", EmitDefaultValue=false)]
+        public string HomeUrl { get; set; }
         /// <summary>
-        /// Gets or Sets ChannelLogoUrl
+        /// The channel logo url
         /// </summary>
-        [DataMember(Name="channelLogoUrl", EmitDefaultValue=false)]
-        public BeezUPCommonHttpUrl ChannelLogoUrl { get; set; }
+        /// <value>The channel logo url</value>
+        [DataMember(Name="logoUrl", EmitDefaultValue=false)]
+        public string LogoUrl { get; set; }
         /// <summary>
-        /// Indicae a description to the channel
+        /// The type list related to a channel
         /// </summary>
-        /// <value>Indicae a description to the channel</value>
-        [DataMember(Name="channelDescription", EmitDefaultValue=false)]
-        public string ChannelDescription { get; set; }
-        /// <summary>
-        /// Indicate the BeezUP offer
-        /// </summary>
-        /// <value>Indicate the BeezUP offer</value>
-        [DataMember(Name="beezUPOffer", EmitDefaultValue=false)]
-        public string BeezUPOffer { get; set; }
-        /// <summary>
-        /// Gets or Sets SalesContact
-        /// </summary>
-        [DataMember(Name="salesContact", EmitDefaultValue=false)]
-        public ChannelInfoSalesContact SalesContact { get; set; }
-        /// <summary>
-        /// Gets or Sets Details
-        /// </summary>
-        [DataMember(Name="details", EmitDefaultValue=false)]
-        public ChannelInfoDetails Details { get; set; }
-        /// <summary>
-        /// Gets or Sets KeyNumbers
-        /// </summary>
-        [DataMember(Name="keyNumbers", EmitDefaultValue=false)]
-        public ChannelInfoKeyNumbers KeyNumbers { get; set; }
-        /// <summary>
-        /// Gets or Sets TechnicalContact
-        /// </summary>
-        [DataMember(Name="technicalContact", EmitDefaultValue=false)]
-        public ChannelInfoTechnicalContact TechnicalContact { get; set; }
+        /// <value>The type list related to a channel</value>
+        [DataMember(Name="types", EmitDefaultValue=false)]
+        public List<string> Types { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -130,15 +113,10 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ChannelInfo {\n");
-            sb.Append("  ChannelId: ").Append(ChannelId).Append("\n");
-            sb.Append("  ChannelName: ").Append(ChannelName).Append("\n");
-            sb.Append("  ChannelLogoUrl: ").Append(ChannelLogoUrl).Append("\n");
-            sb.Append("  ChannelDescription: ").Append(ChannelDescription).Append("\n");
-            sb.Append("  BeezUPOffer: ").Append(BeezUPOffer).Append("\n");
-            sb.Append("  SalesContact: ").Append(SalesContact).Append("\n");
-            sb.Append("  Details: ").Append(Details).Append("\n");
-            sb.Append("  KeyNumbers: ").Append(KeyNumbers).Append("\n");
-            sb.Append("  TechnicalContact: ").Append(TechnicalContact).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  HomeUrl: ").Append(HomeUrl).Append("\n");
+            sb.Append("  LogoUrl: ").Append(LogoUrl).Append("\n");
+            sb.Append("  Types: ").Append(Types).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -176,49 +154,24 @@ namespace IO.Swagger.Model
 
             return 
                 (
-                    this.ChannelId == other.ChannelId ||
-                    this.ChannelId != null &&
-                    this.ChannelId.Equals(other.ChannelId)
+                    this.Name == other.Name ||
+                    this.Name != null &&
+                    this.Name.Equals(other.Name)
                 ) && 
                 (
-                    this.ChannelName == other.ChannelName ||
-                    this.ChannelName != null &&
-                    this.ChannelName.Equals(other.ChannelName)
+                    this.HomeUrl == other.HomeUrl ||
+                    this.HomeUrl != null &&
+                    this.HomeUrl.Equals(other.HomeUrl)
                 ) && 
                 (
-                    this.ChannelLogoUrl == other.ChannelLogoUrl ||
-                    this.ChannelLogoUrl != null &&
-                    this.ChannelLogoUrl.Equals(other.ChannelLogoUrl)
+                    this.LogoUrl == other.LogoUrl ||
+                    this.LogoUrl != null &&
+                    this.LogoUrl.Equals(other.LogoUrl)
                 ) && 
                 (
-                    this.ChannelDescription == other.ChannelDescription ||
-                    this.ChannelDescription != null &&
-                    this.ChannelDescription.Equals(other.ChannelDescription)
-                ) && 
-                (
-                    this.BeezUPOffer == other.BeezUPOffer ||
-                    this.BeezUPOffer != null &&
-                    this.BeezUPOffer.Equals(other.BeezUPOffer)
-                ) && 
-                (
-                    this.SalesContact == other.SalesContact ||
-                    this.SalesContact != null &&
-                    this.SalesContact.Equals(other.SalesContact)
-                ) && 
-                (
-                    this.Details == other.Details ||
-                    this.Details != null &&
-                    this.Details.Equals(other.Details)
-                ) && 
-                (
-                    this.KeyNumbers == other.KeyNumbers ||
-                    this.KeyNumbers != null &&
-                    this.KeyNumbers.Equals(other.KeyNumbers)
-                ) && 
-                (
-                    this.TechnicalContact == other.TechnicalContact ||
-                    this.TechnicalContact != null &&
-                    this.TechnicalContact.Equals(other.TechnicalContact)
+                    this.Types == other.Types ||
+                    this.Types != null &&
+                    this.Types.SequenceEqual(other.Types)
                 );
         }
 
@@ -233,24 +186,14 @@ namespace IO.Swagger.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.ChannelId != null)
-                    hash = hash * 59 + this.ChannelId.GetHashCode();
-                if (this.ChannelName != null)
-                    hash = hash * 59 + this.ChannelName.GetHashCode();
-                if (this.ChannelLogoUrl != null)
-                    hash = hash * 59 + this.ChannelLogoUrl.GetHashCode();
-                if (this.ChannelDescription != null)
-                    hash = hash * 59 + this.ChannelDescription.GetHashCode();
-                if (this.BeezUPOffer != null)
-                    hash = hash * 59 + this.BeezUPOffer.GetHashCode();
-                if (this.SalesContact != null)
-                    hash = hash * 59 + this.SalesContact.GetHashCode();
-                if (this.Details != null)
-                    hash = hash * 59 + this.Details.GetHashCode();
-                if (this.KeyNumbers != null)
-                    hash = hash * 59 + this.KeyNumbers.GetHashCode();
-                if (this.TechnicalContact != null)
-                    hash = hash * 59 + this.TechnicalContact.GetHashCode();
+                if (this.Name != null)
+                    hash = hash * 59 + this.Name.GetHashCode();
+                if (this.HomeUrl != null)
+                    hash = hash * 59 + this.HomeUrl.GetHashCode();
+                if (this.LogoUrl != null)
+                    hash = hash * 59 + this.LogoUrl.GetHashCode();
+                if (this.Types != null)
+                    hash = hash * 59 + this.Types.GetHashCode();
                 return hash;
             }
         }

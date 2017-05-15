@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DocUrl** | [**BeezUPCommonDocUrl**](BeezUPCommonDocUrl.md) |  | [optional] 
 **Description** | **string** | The description of the link | [optional] 
-**Href** | [**BeezUPCommonHref**](BeezUPCommonHref.md) |  | [optional] 
+**Href** | [**BeezUPCommonHref**](BeezUPCommonHref.md) |  | 
 **OperationId** | [**BeezUPCommonOperationId**](BeezUPCommonOperationId.md) |  | [optional] 
 **Method** | [**BeezUPCommonHttpMethod**](BeezUPCommonHttpMethod.md) |  | [optional] 
 **Parameters** | [**Dictionary&lt;string, BeezUPCommonLinkParameter3&gt;**](BeezUPCommonLinkParameter3.md) |  | [optional] 

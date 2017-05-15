@@ -1,12 +1,12 @@
 # IO.Swagger.Api.MarketplacesChannelCatalogsSettingsApi
 
-All URIs are relative to *https://api.beezup.comv2*
+All URIs are relative to *https://api.beezup.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetChannelCatalogMarketplaceProperties**](MarketplacesChannelCatalogsSettingsApi.md#getchannelcatalogmarketplaceproperties) | **GET** /v2/user/marketplaces/channelcatalogs/{channelCatalogId}/properties | Get the marketplace properties for a channel catalog
-[**GetChannelCatalogMarketplaceSettings**](MarketplacesChannelCatalogsSettingsApi.md#getchannelcatalogmarketplacesettings) | **GET** /v2/user/marketplaces/channelcatalogs/{channelCatalogId}/settings | Get the marketplace settings for a channel catalog
-[**SetChannelCatalogMarketplaceSettings**](MarketplacesChannelCatalogsSettingsApi.md#setchannelcatalogmarketplacesettings) | **POST** /v2/user/marketplaces/channelcatalogs/{channelCatalogId}/settings | Save new marketplace settings for a channel catalog
+[**GetChannelCatalogMarketplaceProperties**](MarketplacesChannelCatalogsSettingsApi.md#getchannelcatalogmarketplaceproperties) | **GET** /user/marketplaces/channelcatalogs/{channelCatalogId}/properties | Get the marketplace properties for a channel catalog
+[**GetChannelCatalogMarketplaceSettings**](MarketplacesChannelCatalogsSettingsApi.md#getchannelcatalogmarketplacesettings) | **GET** /user/marketplaces/channelcatalogs/{channelCatalogId}/settings | Get the marketplace settings for a channel catalog
+[**SetChannelCatalogMarketplaceSettings**](MarketplacesChannelCatalogsSettingsApi.md#setchannelcatalogmarketplacesettings) | **POST** /user/marketplaces/channelcatalogs/{channelCatalogId}/settings | Save new marketplace settings for a channel catalog
 
 
 <a name="getchannelcatalogmarketplaceproperties"></a>

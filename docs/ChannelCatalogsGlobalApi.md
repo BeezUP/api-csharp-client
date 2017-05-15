@@ -1,13 +1,13 @@
 # IO.Swagger.Api.ChannelCatalogsGlobalApi
 
-All URIs are relative to *https://api.beezup.comv2*
+All URIs are relative to *https://api.beezup.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateChannelCatalog**](ChannelCatalogsGlobalApi.md#createchannelcatalog) | **POST** /v2/user/channelCatalogs/ | Create a new channel catalog
-[**DeleteChannelCatalog**](ChannelCatalogsGlobalApi.md#deletechannelcatalog) | **DELETE** /v2/user/channelCatalogs/{channelCatalogId} | Delete the channel catalog
-[**GetChannelCatalog**](ChannelCatalogsGlobalApi.md#getchannelcatalog) | **GET** /v2/user/channelCatalogs/{channelCatalogId} | Get the channel catalog information
-[**GetChannelCatalogs**](ChannelCatalogsGlobalApi.md#getchannelcatalogs) | **GET** /v2/user/channelCatalogs/ | List all your current channel catalogs
+[**CreateChannelCatalog**](ChannelCatalogsGlobalApi.md#createchannelcatalog) | **POST** /user/channelCatalogs/ | Create a new channel catalog
+[**DeleteChannelCatalog**](ChannelCatalogsGlobalApi.md#deletechannelcatalog) | **DELETE** /user/channelCatalogs/{channelCatalogId} | Delete the channel catalog
+[**GetChannelCatalog**](ChannelCatalogsGlobalApi.md#getchannelcatalog) | **GET** /user/channelCatalogs/{channelCatalogId} | Get the channel catalog information
+[**GetChannelCatalogs**](ChannelCatalogsGlobalApi.md#getchannelcatalogs) | **GET** /user/channelCatalogs/ | List all your current channel catalogs
 
 
 <a name="createchannelcatalog"></a>
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 <a name="deletechannelcatalog"></a>
 # **DeleteChannelCatalog**
-> void DeleteChannelCatalog ()
+> void DeleteChannelCatalog (string channelCatalogId)
 
 Delete the channel catalog
 
@@ -102,11 +102,12 @@ namespace Example
             // Configuration.Default.ApiKeyPrefix.Add("Ocp-Apim-Subscription-Key", "Bearer");
 
             var apiInstance = new ChannelCatalogsGlobalApi();
+            var channelCatalogId = 6d6b04de-406b-4539-8e7e-bf3e8da5dfb0;  // string | The channel catalog identifier
 
             try
             {
                 // Delete the channel catalog
-                apiInstance.DeleteChannelCatalog();
+                apiInstance.DeleteChannelCatalog(channelCatalogId);
             }
             catch (Exception e)
             {
@@ -118,7 +119,10 @@ namespace Example
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **channelCatalogId** | **string**| The channel catalog identifier | 
 
 ### Return type
 

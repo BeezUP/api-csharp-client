@@ -1,10 +1,10 @@
 # IO.Swagger.Api.ChannelCatalogsColumnMappingsApi
 
-All URIs are relative to *https://api.beezup.comv2*
+All URIs are relative to *https://api.beezup.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**MapChannelCatalogColumns**](ChannelCatalogsColumnMappingsApi.md#mapchannelcatalogcolumns) | **PUT** /v2/user/channelCatalogs/{channelCatalogId}/columnMappings | Configure channel catalog column mappings
+[**MapChannelCatalogColumns**](ChannelCatalogsColumnMappingsApi.md#mapchannelcatalogcolumns) | **PUT** /user/channelCatalogs/{channelCatalogId}/columnMappings | Configure channel catalog column mappings
 
 
 <a name="mapchannelcatalogcolumns"></a>

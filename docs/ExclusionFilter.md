@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **ChannelColumnId** | [**BeezUPCommonChannelColumnId**](BeezUPCommonChannelColumnId.md) |  | 
 **OperatorName** | [**ExclusionFilterOperatorName**](ExclusionFilterOperatorName.md) |  | 
 **Value** | **string** | The value indicate by the user when the filter operation requires it. | [optional] 
+**Enabled** | **bool?** | indicates if the filter is currently active. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

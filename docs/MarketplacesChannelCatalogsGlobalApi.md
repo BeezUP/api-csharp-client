@@ -1,10 +1,10 @@
 # IO.Swagger.Api.MarketplacesChannelCatalogsGlobalApi
 
-All URIs are relative to *https://api.beezup.comv2*
+All URIs are relative to *https://api.beezup.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetMarketplaceAccountStores**](MarketplacesChannelCatalogsGlobalApi.md#getmarketplaceaccountstores) | **GET** /v2/user/marketplaces/channelcatalogs/ | Get  you marketplace channel catalog list
+[**GetMarketplaceAccountStores**](MarketplacesChannelCatalogsGlobalApi.md#getmarketplaceaccountstores) | **GET** /user/marketplaces/channelcatalogs/ | Get  you marketplace channel catalog list
 
 
 <a name="getmarketplaceaccountstores"></a>
