@@ -1,7 +1,7 @@
 /* 
  * BeezUP API
  *
- * This is the RESTful API of BeezUP which allows you to manage everything related to BeezUP
+ * This API will allow you to create your account and to get your tokens. \\ If you lost your password, you have an operation to get it back. 
  *
  * OpenAPI spec version: 2.0
  * Contact: support@beezup.com
@@ -159,7 +159,7 @@ namespace IO.Swagger.Test
             // TODO uncomment below to test the method and replace null with proper value
             //string storeId = null;
             //var response = instance.AutoStartAutoImport(storeId);
-            //Assert.IsInstanceOf<List<BeezUPCommonLink2>> (response, "response is List<BeezUPCommonLink2>");
+            //Assert.IsInstanceOf<LinksImportationGetImportationMonitoringLink> (response, "response is LinksImportationGetImportationMonitoringLink");
         }
         
         /// <summary>
@@ -423,7 +423,7 @@ namespace IO.Swagger.Test
         public void ConfigureAutomaticTransitionsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //SaveAutomaticTransitionRequest request = null;
+            //ConfigureAutomaticTransitionRequest request = null;
             //instance.ConfigureAutomaticTransitions(request);
             
         }
@@ -523,7 +523,20 @@ namespace IO.Swagger.Test
         public void DeleteChannelCatalogTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //instance.DeleteChannelCatalog();
+            //string channelCatalogId = null;
+            //instance.DeleteChannelCatalog(channelCatalogId);
+            
+        }
+        
+        /// <summary>
+        /// Test DeleteChannelCatalogExportationCache
+        /// </summary>
+        [Test]
+        public void DeleteChannelCatalogExportationCacheTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string channelCatalogId = null;
+            //instance.DeleteChannelCatalogExportationCache(channelCatalogId);
             
         }
         
@@ -673,9 +686,8 @@ namespace IO.Swagger.Test
         public void ExportOrdersTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string format = null;
             //ExportOrderListRequest request = null;
-            //instance.ExportOrders(format, request);
+            //instance.ExportOrders(request);
             
         }
         
@@ -791,6 +803,32 @@ namespace IO.Swagger.Test
         }
         
         /// <summary>
+        /// Test GetChannelCatalogExportationCacheInfo
+        /// </summary>
+        [Test]
+        public void GetChannelCatalogExportationCacheInfoTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string channelCatalogId = null;
+            //var response = instance.GetChannelCatalogExportationCacheInfo(channelCatalogId);
+            //Assert.IsInstanceOf<ChannelCatalogExportCacheInfoResponse> (response, "response is ChannelCatalogExportCacheInfoResponse");
+        }
+        
+        /// <summary>
+        /// Test GetChannelCatalogExportationHistory
+        /// </summary>
+        [Test]
+        public void GetChannelCatalogExportationHistoryTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string channelCatalogId = null;
+            //int? pageNumber = null;
+            //int? pageSize = null;
+            //var response = instance.GetChannelCatalogExportationHistory(channelCatalogId, pageNumber, pageSize);
+            //Assert.IsInstanceOf<ChannelCatalogExportationHistory> (response, "response is ChannelCatalogExportationHistory");
+        }
+        
+        /// <summary>
         /// Test GetChannelCatalogMarketplaceProperties
         /// </summary>
         [Test]
@@ -812,6 +850,19 @@ namespace IO.Swagger.Test
             //string channelCatalogId = null;
             //var response = instance.GetChannelCatalogMarketplaceSettings(channelCatalogId);
             //Assert.IsInstanceOf<ChannelCatalogMarketplaceSettings> (response, "response is ChannelCatalogMarketplaceSettings");
+        }
+        
+        /// <summary>
+        /// Test GetChannelCatalogProductByChannelCatalog
+        /// </summary>
+        [Test]
+        public void GetChannelCatalogProductByChannelCatalogTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string productId = null;
+            //ChannelCatalogProductByChannelCatalogRequest request = null;
+            //var response = instance.GetChannelCatalogProductByChannelCatalog(productId, request);
+            //Assert.IsInstanceOf<ChannelCatalogProductByChannelCatalogResponse> (response, "response is ChannelCatalogProductByChannelCatalogResponse");
         }
         
         /// <summary>
@@ -889,6 +940,30 @@ namespace IO.Swagger.Test
             //string channelId = null;
             //var response = instance.GetChannelInfo(channelId);
             //Assert.IsInstanceOf<ChannelInfo> (response, "response is ChannelInfo");
+        }
+        
+        /// <summary>
+        /// Test GetChannels
+        /// </summary>
+        [Test]
+        public void GetChannelsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string countryIsoCode = null;
+            //List<string> acceptEncoding = null;
+            //var response = instance.GetChannels(countryIsoCode, acceptEncoding);
+            //Assert.IsInstanceOf<ChannelInfoList> (response, "response is ChannelInfoList");
+        }
+        
+        /// <summary>
+        /// Test GetChannelsIndex
+        /// </summary>
+        [Test]
+        public void GetChannelsIndexTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //var response = instance.GetChannelsIndex();
+            //Assert.IsInstanceOf<PublicChannelIndex> (response, "response is PublicChannelIndex");
         }
         
         /// <summary>
@@ -1014,6 +1089,17 @@ namespace IO.Swagger.Test
         }
         
         /// <summary>
+        /// Test GetOrderIndex
+        /// </summary>
+        [Test]
+        public void GetOrderIndexTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //var response = instance.GetOrderIndex();
+            //Assert.IsInstanceOf<OrderIndex> (response, "response is OrderIndex");
+        }
+        
+        /// <summary>
         /// Test GetOrderListFull
         /// </summary>
         [Test]
@@ -1047,6 +1133,32 @@ namespace IO.Swagger.Test
             // TODO uncomment below to test the method and replace null with proper value
             //var response = instance.GetProfilePictureInfo();
             //Assert.IsInstanceOf<ProfilePictureInfoResponse> (response, "response is ProfilePictureInfoResponse");
+        }
+        
+        /// <summary>
+        /// Test GetPublicListOfValues
+        /// </summary>
+        [Test]
+        public void GetPublicListOfValuesTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string listName = null;
+            //List<string> acceptLanguage = null;
+            //string ifNoneMatch = null;
+            //var response = instance.GetPublicListOfValues(listName, acceptLanguage, ifNoneMatch);
+            //Assert.IsInstanceOf<PublicListOfValuesResponse> (response, "response is PublicListOfValuesResponse");
+        }
+        
+        /// <summary>
+        /// Test GetPublicLovIndex
+        /// </summary>
+        [Test]
+        public void GetPublicLovIndexTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string ifNoneMatch = null;
+            //var response = instance.GetPublicLovIndex(ifNoneMatch);
+            //Assert.IsInstanceOf<PublicLovIndex> (response, "response is PublicLovIndex");
         }
         
         /// <summary>
@@ -1340,40 +1452,6 @@ namespace IO.Swagger.Test
         }
         
         /// <summary>
-        /// Test GetUserListGroup
-        /// </summary>
-        [Test]
-        public void GetUserListGroupTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string listGroupName = null;
-            //var response = instance.GetUserListGroup(listGroupName);
-            //Assert.IsInstanceOf<List<BeezUPCommonLOVLink2>> (response, "response is List<BeezUPCommonLOVLink2>");
-        }
-        
-        /// <summary>
-        /// Test GetUserListGroupNames
-        /// </summary>
-        [Test]
-        public void GetUserListGroupNamesTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.GetUserListGroupNames();
-            //Assert.IsInstanceOf<List<BeezUPCommonLOVLink2>> (response, "response is List<BeezUPCommonLOVLink2>");
-        }
-        
-        /// <summary>
-        /// Test GetUserListNames
-        /// </summary>
-        [Test]
-        public void GetUserListNamesTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.GetUserListNames();
-            //Assert.IsInstanceOf<List<BeezUPCommonLOVLink2>> (response, "response is List<BeezUPCommonLOVLink2>");
-        }
-        
-        /// <summary>
         /// Test GetUserListOfValues
         /// </summary>
         [Test]
@@ -1382,8 +1460,20 @@ namespace IO.Swagger.Test
             // TODO uncomment below to test the method and replace null with proper value
             //string listName = null;
             //List<string> acceptLanguage = null;
-            //var response = instance.GetUserListOfValues(listName, acceptLanguage);
-            //Assert.IsInstanceOf<List<BeezUPCommonListOfValueItem>> (response, "response is List<BeezUPCommonListOfValueItem>");
+            //string ifNoneMatch = null;
+            //var response = instance.GetUserListOfValues(listName, acceptLanguage, ifNoneMatch);
+            //Assert.IsInstanceOf<UserListOfValuesResponse> (response, "response is UserListOfValuesResponse");
+        }
+        
+        /// <summary>
+        /// Test GetUserLovIndex
+        /// </summary>
+        [Test]
+        public void GetUserLovIndexTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //var response = instance.GetUserLovIndex();
+            //Assert.IsInstanceOf<UserLovIndex> (response, "response is UserLovIndex");
         }
         
         /// <summary>
@@ -1693,7 +1783,7 @@ namespace IO.Swagger.Test
             //string storeId = null;
             //StartManualImportRequest request = null;
             //var response = instance.ImportationStartManualUpdate(storeId, request);
-            //Assert.IsInstanceOf<List<BeezUPCommonLink2>> (response, "response is List<BeezUPCommonLink2>");
+            //Assert.IsInstanceOf<LinksImportationGetImportationMonitoringLink> (response, "response is LinksImportationGetImportationMonitoringLink");
         }
         
         /// <summary>
@@ -1738,6 +1828,18 @@ namespace IO.Swagger.Test
         }
         
         /// <summary>
+        /// Test Login
+        /// </summary>
+        [Test]
+        public void LoginTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //LoginRequest request = null;
+            //var response = instance.Login(request);
+            //Assert.IsInstanceOf<ApiCredentials> (response, "response is ApiCredentials");
+        }
+        
+        /// <summary>
         /// Test Logout
         /// </summary>
         [Test]
@@ -1745,6 +1847,18 @@ namespace IO.Swagger.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //instance.Logout();
+            
+        }
+        
+        /// <summary>
+        /// Test LostPassword
+        /// </summary>
+        [Test]
+        public void LostPasswordTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //BeezUPCommonEmail email = null;
+            //instance.LostPassword(email);
             
         }
         
@@ -1893,6 +2007,18 @@ namespace IO.Swagger.Test
             //string channelCatalogId = null;
             //string productId = null;
             //instance.ReenableChannelCatalogProduct(channelCatalogId, productId);
+            
+        }
+        
+        /// <summary>
+        /// Test Register
+        /// </summary>
+        [Test]
+        public void RegisterTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //RegisterRequest request = null;
+            //instance.Register(request);
             
         }
         

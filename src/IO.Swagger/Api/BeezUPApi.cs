@@ -1,7 +1,7 @@
 /* 
  * BeezUP API
  *
- * This is the RESTful API of BeezUP which allows you to manage everything related to BeezUP
+ * This API will allow you to create your account and to get your tokens. \\ If you lost your password, you have an operation to get it back. 
  *
  * OpenAPI spec version: 2.0
  * Contact: support@beezup.com
@@ -183,8 +183,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="storeId">Your store identifier</param>
-        /// <returns>List&lt;BeezUPCommonLink2&gt;</returns>
-        List<BeezUPCommonLink2> AutoStartAutoImport (string storeId);
+        /// <returns>LinksImportationGetImportationMonitoringLink</returns>
+        LinksImportationGetImportationMonitoringLink AutoStartAutoImport (string storeId);
 
         /// <summary>
         /// Start Auto Import Manually
@@ -194,8 +194,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="storeId">Your store identifier</param>
-        /// <returns>ApiResponse of List&lt;BeezUPCommonLink2&gt;</returns>
-        ApiResponse<List<BeezUPCommonLink2>> AutoStartAutoImportWithHttpInfo (string storeId);
+        /// <returns>ApiResponse of LinksImportationGetImportationMonitoringLink</returns>
+        ApiResponse<LinksImportationGetImportationMonitoringLink> AutoStartAutoImportWithHttpInfo (string storeId);
         /// <summary>
         /// Change Catalog Column User Name
         /// </summary>
@@ -531,7 +531,7 @@ namespace IO.Swagger.Api
         /// <param name="changeOrderType">The Order change type</param>
         /// <param name="userName">Sometimes the user in the e-commerce application is not the same as user associated with the current subscription key. We recommend providing your application&#39;s user login.</param>
         /// <param name="request"></param>
-        /// <param name="ifMatch">ETag value to identify the last known version of requested Order, to ensure that you are making a change on the lastest version of the order.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
+        /// <param name="ifMatch">ETag value to identify the last known version of requested resource.\\ To ensure that you are making a change on the lastest version of the resource.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
         /// <param name="testMode">If true, the operation will be not be sent to marketplace. But the validation will be taken in account. (optional, default to false)</param>
         /// <returns></returns>
         void ChangeOrder (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null);
@@ -549,7 +549,7 @@ namespace IO.Swagger.Api
         /// <param name="changeOrderType">The Order change type</param>
         /// <param name="userName">Sometimes the user in the e-commerce application is not the same as user associated with the current subscription key. We recommend providing your application&#39;s user login.</param>
         /// <param name="request"></param>
-        /// <param name="ifMatch">ETag value to identify the last known version of requested Order, to ensure that you are making a change on the lastest version of the order.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
+        /// <param name="ifMatch">ETag value to identify the last known version of requested resource.\\ To ensure that you are making a change on the lastest version of the resource.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
         /// <param name="testMode">If true, the operation will be not be sent to marketplace. But the validation will be taken in account. (optional, default to false)</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ChangeOrderWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null);
@@ -656,7 +656,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
         /// <returns></returns>
-        void ConfigureAutomaticTransitions (SaveAutomaticTransitionRequest request);
+        void ConfigureAutomaticTransitions (ConfigureAutomaticTransitionRequest request);
 
         /// <summary>
         /// Configure new or existing automatic Order status transition
@@ -667,7 +667,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ConfigureAutomaticTransitionsWithHttpInfo (SaveAutomaticTransitionRequest request);
+        ApiResponse<Object> ConfigureAutomaticTransitionsWithHttpInfo (ConfigureAutomaticTransitionRequest request);
         /// <summary>
         /// Disable a channel catalog
         /// </summary>
@@ -830,8 +830,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
         /// <returns></returns>
-        void DeleteChannelCatalog ();
+        void DeleteChannelCatalog (string channelCatalogId);
 
         /// <summary>
         /// Delete the channel catalog
@@ -840,8 +841,30 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteChannelCatalogWithHttpInfo ();
+        ApiResponse<Object> DeleteChannelCatalogWithHttpInfo (string channelCatalogId);
+        /// <summary>
+        /// Delete the exportation cache
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
+        /// <returns></returns>
+        void DeleteChannelCatalogExportationCache (string channelCatalogId);
+
+        /// <summary>
+        /// Delete the exportation cache
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DeleteChannelCatalogExportationCacheWithHttpInfo (string channelCatalogId);
         /// <summary>
         /// Delete a specific channel catalog product value override
         /// </summary>
@@ -1094,10 +1117,9 @@ namespace IO.Swagger.Api
         /// A new file will be generated containing a summary of all the Orders matching the requested filter settings.
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="format">The type of the file to export</param>
         /// <param name="request"></param>
         /// <returns></returns>
-        void ExportOrders (string format, ExportOrderListRequest request);
+        void ExportOrders (ExportOrderListRequest request);
 
         /// <summary>
         /// Request a new Order report exportation to be generated
@@ -1106,10 +1128,9 @@ namespace IO.Swagger.Api
         /// A new file will be generated containing a summary of all the Orders matching the requested filter settings.
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="format">The type of the file to export</param>
         /// <param name="request"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ExportOrdersWithHttpInfo (string format, ExportOrderListRequest request);
+        ApiResponse<Object> ExportOrdersWithHttpInfo (ExportOrderListRequest request);
         /// <summary>
         /// Export the report by category
         /// </summary>
@@ -1306,6 +1327,52 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of List&lt;ExclusionFilterOperator&gt;</returns>
         ApiResponse<List<ExclusionFilterOperator>> GetChannelCatalogExclusionFilterOperatorsWithHttpInfo ();
         /// <summary>
+        /// Get the exportation cache information
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
+        /// <returns>ChannelCatalogExportCacheInfoResponse</returns>
+        ChannelCatalogExportCacheInfoResponse GetChannelCatalogExportationCacheInfo (string channelCatalogId);
+
+        /// <summary>
+        /// Get the exportation cache information
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
+        /// <returns>ApiResponse of ChannelCatalogExportCacheInfoResponse</returns>
+        ApiResponse<ChannelCatalogExportCacheInfoResponse> GetChannelCatalogExportationCacheInfoWithHttpInfo (string channelCatalogId);
+        /// <summary>
+        /// Get the exportation history
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
+        /// <param name="pageNumber">The page number you want to get</param>
+        /// <param name="pageSize">The entry count you want to get</param>
+        /// <returns>ChannelCatalogExportationHistory</returns>
+        ChannelCatalogExportationHistory GetChannelCatalogExportationHistory (string channelCatalogId, int? pageNumber, int? pageSize);
+
+        /// <summary>
+        /// Get the exportation history
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
+        /// <param name="pageNumber">The page number you want to get</param>
+        /// <param name="pageSize">The entry count you want to get</param>
+        /// <returns>ApiResponse of ChannelCatalogExportationHistory</returns>
+        ApiResponse<ChannelCatalogExportationHistory> GetChannelCatalogExportationHistoryWithHttpInfo (string channelCatalogId, int? pageNumber, int? pageSize);
+        /// <summary>
         /// Get the marketplace properties for a channel catalog
         /// </summary>
         /// <remarks>
@@ -1347,6 +1414,29 @@ namespace IO.Swagger.Api
         /// <param name="channelCatalogId">Channel Catalog Id to query (required)</param>
         /// <returns>ApiResponse of ChannelCatalogMarketplaceSettings</returns>
         ApiResponse<ChannelCatalogMarketplaceSettings> GetChannelCatalogMarketplaceSettingsWithHttpInfo (string channelCatalogId);
+        /// <summary>
+        /// Get channel catalog products related to these channel catalogs
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId">The product identifier</param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>ChannelCatalogProductByChannelCatalogResponse</returns>
+        ChannelCatalogProductByChannelCatalogResponse GetChannelCatalogProductByChannelCatalog (string productId, ChannelCatalogProductByChannelCatalogRequest request = null);
+
+        /// <summary>
+        /// Get channel catalog products related to these channel catalogs
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId">The product identifier</param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>ApiResponse of ChannelCatalogProductByChannelCatalogResponse</returns>
+        ApiResponse<ChannelCatalogProductByChannelCatalogResponse> GetChannelCatalogProductByChannelCatalogWithHttpInfo (string productId, ChannelCatalogProductByChannelCatalogRequest request = null);
         /// <summary>
         /// Get channel catalog product information
         /// </summary>
@@ -1483,6 +1573,48 @@ namespace IO.Swagger.Api
         /// <param name="channelId">The channel identifier</param>
         /// <returns>ApiResponse of ChannelInfo</returns>
         ApiResponse<ChannelInfo> GetChannelInfoWithHttpInfo (string channelId);
+        /// <summary>
+        /// The channel list for one country
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="countryIsoCode">The country iso code alpha 3 based on this: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3#Decoding_table \\ To know which country are available you have to use the operation: GetChannelsByCountry </param>
+        /// <param name="acceptEncoding">Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size.</param>
+        /// <returns>ChannelInfoList</returns>
+        ChannelInfoList GetChannels (string countryIsoCode, List<string> acceptEncoding);
+
+        /// <summary>
+        /// The channel list for one country
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="countryIsoCode">The country iso code alpha 3 based on this: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3#Decoding_table \\ To know which country are available you have to use the operation: GetChannelsByCountry </param>
+        /// <param name="acceptEncoding">Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size.</param>
+        /// <returns>ApiResponse of ChannelInfoList</returns>
+        ApiResponse<ChannelInfoList> GetChannelsWithHttpInfo (string countryIsoCode, List<string> acceptEncoding);
+        /// <summary>
+        /// Get public channel index
+        /// </summary>
+        /// <remarks>
+        /// Use this operation to get the correct link to the channels and to the list of values
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>PublicChannelIndex</returns>
+        PublicChannelIndex GetChannelsIndex ();
+
+        /// <summary>
+        /// Get public channel index
+        /// </summary>
+        /// <remarks>
+        /// Use this operation to get the correct link to the channels and to the list of values
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of PublicChannelIndex</returns>
+        ApiResponse<PublicChannelIndex> GetChannelsIndexWithHttpInfo ();
         /// <summary>
         /// Get contract list
         /// </summary>
@@ -1630,7 +1762,7 @@ namespace IO.Swagger.Api
         /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
-        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Order</returns>
         Order GetOrder (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null);
 
@@ -1644,7 +1776,7 @@ namespace IO.Swagger.Api
         /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
-        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>ApiResponse of Order</returns>
         ApiResponse<Order> GetOrderWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null);
         /// <summary>
@@ -1655,7 +1787,7 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNumber">The page number you want to get</param>
-        /// <param name="pageSize">The count of Order report exportations you want to get</param>
+        /// <param name="pageSize">The entry count you want to get</param>
         /// <param name="storeId">The store identifier to regroup the order exportations</param>
         /// <returns>OrderExportations</returns>
         OrderExportations GetOrderExportations (int? pageNumber, int? pageSize, string storeId);
@@ -1668,7 +1800,7 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNumber">The page number you want to get</param>
-        /// <param name="pageSize">The count of Order report exportations you want to get</param>
+        /// <param name="pageSize">The entry count you want to get</param>
         /// <param name="storeId">The store identifier to regroup the order exportations</param>
         /// <returns>ApiResponse of OrderExportations</returns>
         ApiResponse<OrderExportations> GetOrderExportationsWithHttpInfo (int? pageNumber, int? pageSize, string storeId);
@@ -1698,6 +1830,25 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of OrderHistory</returns>
         ApiResponse<OrderHistory> GetOrderHistoryWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId);
         /// <summary>
+        /// Get all actions you can do on the order API
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>OrderIndex</returns>
+        OrderIndex GetOrderIndex ();
+
+        /// <summary>
+        /// Get all actions you can do on the order API
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of OrderIndex</returns>
+        ApiResponse<OrderIndex> GetOrderIndexWithHttpInfo ();
+        /// <summary>
         /// Get a paginated list of all Orders with all Order and Order Item(s) properties
         /// </summary>
         /// <remarks>
@@ -1705,9 +1856,9 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptEncoding">Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size</param>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>OrderListFull</returns>
-        OrderListFull GetOrderListFull (List<string> acceptEncoding, OrderListRequest request = null);
+        OrderListFull GetOrderListFull (List<string> acceptEncoding, OrderListRequest request);
 
         /// <summary>
         /// Get a paginated list of all Orders with all Order and Order Item(s) properties
@@ -1717,9 +1868,9 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptEncoding">Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size</param>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>ApiResponse of OrderListFull</returns>
-        ApiResponse<OrderListFull> GetOrderListFullWithHttpInfo (List<string> acceptEncoding, OrderListRequest request = null);
+        ApiResponse<OrderListFull> GetOrderListFullWithHttpInfo (List<string> acceptEncoding, OrderListRequest request);
         /// <summary>
         /// Get a paginated list of all Orders without details
         /// </summary>
@@ -1727,9 +1878,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>OrderListLight</returns>
-        OrderListLight GetOrderListLight (OrderListRequest request = null);
+        OrderListLight GetOrderListLight (OrderListRequest request);
 
         /// <summary>
         /// Get a paginated list of all Orders without details
@@ -1738,9 +1889,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>ApiResponse of OrderListLight</returns>
-        ApiResponse<OrderListLight> GetOrderListLightWithHttpInfo (OrderListRequest request = null);
+        ApiResponse<OrderListLight> GetOrderListLightWithHttpInfo (OrderListRequest request);
         /// <summary>
         /// Get profile picture information
         /// </summary>
@@ -1760,6 +1911,52 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ProfilePictureInfoResponse</returns>
         ApiResponse<ProfilePictureInfoResponse> GetProfilePictureInfoWithHttpInfo ();
+        /// <summary>
+        /// Get the list of values related to this list name
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="listName">The list of value name your want to get</param>
+        /// <param name="acceptLanguage">Indicates that the client accepts the following languages. (optional)</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>PublicListOfValuesResponse</returns>
+        PublicListOfValuesResponse GetPublicListOfValues (string listName, List<string> acceptLanguage = null, string ifNoneMatch = null);
+
+        /// <summary>
+        /// Get the list of values related to this list name
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="listName">The list of value name your want to get</param>
+        /// <param name="acceptLanguage">Indicates that the client accepts the following languages. (optional)</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>ApiResponse of PublicListOfValuesResponse</returns>
+        ApiResponse<PublicListOfValuesResponse> GetPublicListOfValuesWithHttpInfo (string listName, List<string> acceptLanguage = null, string ifNoneMatch = null);
+        /// <summary>
+        /// Get all list names
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>PublicLovIndex</returns>
+        PublicLovIndex GetPublicLovIndex (string ifNoneMatch = null);
+
+        /// <summary>
+        /// Get all list names
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>ApiResponse of PublicLovIndex</returns>
+        ApiResponse<PublicLovIndex> GetPublicLovIndexWithHttpInfo (string ifNoneMatch = null);
         /// <summary>
         /// Fetch the publication history for an account, sorted by descending start date
         /// </summary>
@@ -2272,65 +2469,6 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of AccountInfo</returns>
         ApiResponse<AccountInfo> GetUserAccountInfoWithHttpInfo ();
         /// <summary>
-        /// Get list of values related to this group name
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="listGroupName">The list group name your want to get</param>
-        /// <returns>List&lt;BeezUPCommonLOVLink2&gt;</returns>
-        List<BeezUPCommonLOVLink2> GetUserListGroup (string listGroupName);
-
-        /// <summary>
-        /// Get list of values related to this group name
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="listGroupName">The list group name your want to get</param>
-        /// <returns>ApiResponse of List&lt;BeezUPCommonLOVLink2&gt;</returns>
-        ApiResponse<List<BeezUPCommonLOVLink2>> GetUserListGroupWithHttpInfo (string listGroupName);
-        /// <summary>
-        /// Get list of group of list name
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;BeezUPCommonLOVLink2&gt;</returns>
-        List<BeezUPCommonLOVLink2> GetUserListGroupNames ();
-
-        /// <summary>
-        /// Get list of group of list name
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;BeezUPCommonLOVLink2&gt;</returns>
-        ApiResponse<List<BeezUPCommonLOVLink2>> GetUserListGroupNamesWithHttpInfo ();
-        /// <summary>
-        /// Get all list names
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;BeezUPCommonLOVLink2&gt;</returns>
-        List<BeezUPCommonLOVLink2> GetUserListNames ();
-
-        /// <summary>
-        /// Get all list names
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;BeezUPCommonLOVLink2&gt;</returns>
-        ApiResponse<List<BeezUPCommonLOVLink2>> GetUserListNamesWithHttpInfo ();
-        /// <summary>
         /// Get the list of values related to this list name
         /// </summary>
         /// <remarks>
@@ -2339,8 +2477,9 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="listName">The list of value name your want to get</param>
         /// <param name="acceptLanguage">Indicates that the client accepts the following languages. (optional)</param>
-        /// <returns>List&lt;BeezUPCommonListOfValueItem&gt;</returns>
-        List<BeezUPCommonListOfValueItem> GetUserListOfValues (string listName, List<string> acceptLanguage = null);
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>UserListOfValuesResponse</returns>
+        UserListOfValuesResponse GetUserListOfValues (string listName, List<string> acceptLanguage = null, string ifNoneMatch = null);
 
         /// <summary>
         /// Get the list of values related to this list name
@@ -2351,8 +2490,28 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="listName">The list of value name your want to get</param>
         /// <param name="acceptLanguage">Indicates that the client accepts the following languages. (optional)</param>
-        /// <returns>ApiResponse of List&lt;BeezUPCommonListOfValueItem&gt;</returns>
-        ApiResponse<List<BeezUPCommonListOfValueItem>> GetUserListOfValuesWithHttpInfo (string listName, List<string> acceptLanguage = null);
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>ApiResponse of UserListOfValuesResponse</returns>
+        ApiResponse<UserListOfValuesResponse> GetUserListOfValuesWithHttpInfo (string listName, List<string> acceptLanguage = null, string ifNoneMatch = null);
+        /// <summary>
+        /// Get all list names
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>UserLovIndex</returns>
+        UserLovIndex GetUserLovIndex ();
+
+        /// <summary>
+        /// Get all list names
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of UserLovIndex</returns>
+        ApiResponse<UserLovIndex> GetUserLovIndexWithHttpInfo ();
         /// <summary>
         /// Send harvest request to all your marketplaces
         /// </summary>
@@ -2890,8 +3049,8 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="storeId">Your store identifier</param>
         /// <param name="request"></param>
-        /// <returns>List&lt;BeezUPCommonLink2&gt;</returns>
-        List<BeezUPCommonLink2> ImportationStartManualUpdate (string storeId, StartManualImportRequest request);
+        /// <returns>LinksImportationGetImportationMonitoringLink</returns>
+        LinksImportationGetImportationMonitoringLink ImportationStartManualUpdate (string storeId, StartManualImportRequest request);
 
         /// <summary>
         /// Start Manual Import
@@ -2902,8 +3061,8 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="storeId">Your store identifier</param>
         /// <param name="request"></param>
-        /// <returns>ApiResponse of List&lt;BeezUPCommonLink2&gt;</returns>
-        ApiResponse<List<BeezUPCommonLink2>> ImportationStartManualUpdateWithHttpInfo (string storeId, StartManualImportRequest request);
+        /// <returns>ApiResponse of LinksImportationGetImportationMonitoringLink</returns>
+        ApiResponse<LinksImportationGetImportationMonitoringLink> ImportationStartManualUpdateWithHttpInfo (string storeId, StartManualImportRequest request);
         /// <summary>
         /// Get technical progression
         /// </summary>
@@ -2978,6 +3137,27 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ImportationUnmapCustomColumnWithHttpInfo (string storeId, string executionId, string columnId);
         /// <summary>
+        /// Login
+        /// </summary>
+        /// <remarks>
+        /// User Login - The login will give your tokens
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>ApiCredentials</returns>
+        ApiCredentials Login (LoginRequest request);
+
+        /// <summary>
+        /// Login
+        /// </summary>
+        /// <remarks>
+        /// User Login - The login will give your tokens
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>ApiResponse of ApiCredentials</returns>
+        ApiResponse<ApiCredentials> LoginWithHttpInfo (LoginRequest request);
+        /// <summary>
         /// Log out the current user from go2
         /// </summary>
         /// <remarks>
@@ -2996,6 +3176,27 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> LogoutWithHttpInfo ();
+        /// <summary>
+        /// Lost password
+        /// </summary>
+        /// <remarks>
+        /// Lost password - Your password will be regenerated and sent to your email
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="email">Your email</param>
+        /// <returns></returns>
+        void LostPassword (BeezUPCommonEmail email);
+
+        /// <summary>
+        /// Lost password
+        /// </summary>
+        /// <remarks>
+        /// Lost password - Your password will be regenerated and sent to your email
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="email">Your email</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> LostPasswordWithHttpInfo (BeezUPCommonEmail email);
         /// <summary>
         /// Map channel catalog category
         /// </summary>
@@ -3259,6 +3460,27 @@ namespace IO.Swagger.Api
         /// <param name="productId">The product identifier</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ReenableChannelCatalogProductWithHttpInfo (string channelCatalogId, string productId);
+        /// <summary>
+        /// User Registration
+        /// </summary>
+        /// <remarks>
+        /// User Registration - Create a new user on BeezUP
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        void Register (RegisterRequest request);
+
+        /// <summary>
+        /// User Registration
+        /// </summary>
+        /// <remarks>
+        /// User Registration - Create a new user on BeezUP
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> RegisterWithHttpInfo (RegisterRequest request);
         /// <summary>
         /// Resend email activation
         /// </summary>
@@ -3803,8 +4025,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="storeId">Your store identifier</param>
-        /// <returns>Task of List&lt;BeezUPCommonLink2&gt;</returns>
-        System.Threading.Tasks.Task<List<BeezUPCommonLink2>> AutoStartAutoImportAsync (string storeId);
+        /// <returns>Task of LinksImportationGetImportationMonitoringLink</returns>
+        System.Threading.Tasks.Task<LinksImportationGetImportationMonitoringLink> AutoStartAutoImportAsync (string storeId);
 
         /// <summary>
         /// Start Auto Import Manually
@@ -3814,8 +4036,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="storeId">Your store identifier</param>
-        /// <returns>Task of ApiResponse (List&lt;BeezUPCommonLink2&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BeezUPCommonLink2>>> AutoStartAutoImportAsyncWithHttpInfo (string storeId);
+        /// <returns>Task of ApiResponse (LinksImportationGetImportationMonitoringLink)</returns>
+        System.Threading.Tasks.Task<ApiResponse<LinksImportationGetImportationMonitoringLink>> AutoStartAutoImportAsyncWithHttpInfo (string storeId);
         /// <summary>
         /// Change Catalog Column User Name
         /// </summary>
@@ -4151,7 +4373,7 @@ namespace IO.Swagger.Api
         /// <param name="changeOrderType">The Order change type</param>
         /// <param name="userName">Sometimes the user in the e-commerce application is not the same as user associated with the current subscription key. We recommend providing your application&#39;s user login.</param>
         /// <param name="request"></param>
-        /// <param name="ifMatch">ETag value to identify the last known version of requested Order, to ensure that you are making a change on the lastest version of the order.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
+        /// <param name="ifMatch">ETag value to identify the last known version of requested resource.\\ To ensure that you are making a change on the lastest version of the resource.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
         /// <param name="testMode">If true, the operation will be not be sent to marketplace. But the validation will be taken in account. (optional, default to false)</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task ChangeOrderAsync (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null);
@@ -4169,7 +4391,7 @@ namespace IO.Swagger.Api
         /// <param name="changeOrderType">The Order change type</param>
         /// <param name="userName">Sometimes the user in the e-commerce application is not the same as user associated with the current subscription key. We recommend providing your application&#39;s user login.</param>
         /// <param name="request"></param>
-        /// <param name="ifMatch">ETag value to identify the last known version of requested Order, to ensure that you are making a change on the lastest version of the order.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
+        /// <param name="ifMatch">ETag value to identify the last known version of requested resource.\\ To ensure that you are making a change on the lastest version of the resource.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
         /// <param name="testMode">If true, the operation will be not be sent to marketplace. But the validation will be taken in account. (optional, default to false)</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ChangeOrderAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null);
@@ -4276,7 +4498,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ConfigureAutomaticTransitionsAsync (SaveAutomaticTransitionRequest request);
+        System.Threading.Tasks.Task ConfigureAutomaticTransitionsAsync (ConfigureAutomaticTransitionRequest request);
 
         /// <summary>
         /// Configure new or existing automatic Order status transition
@@ -4287,7 +4509,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ConfigureAutomaticTransitionsAsyncWithHttpInfo (SaveAutomaticTransitionRequest request);
+        System.Threading.Tasks.Task<ApiResponse<Object>> ConfigureAutomaticTransitionsAsyncWithHttpInfo (ConfigureAutomaticTransitionRequest request);
         /// <summary>
         /// Disable a channel catalog
         /// </summary>
@@ -4450,8 +4672,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteChannelCatalogAsync ();
+        System.Threading.Tasks.Task DeleteChannelCatalogAsync (string channelCatalogId);
 
         /// <summary>
         /// Delete the channel catalog
@@ -4460,8 +4683,30 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteChannelCatalogAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteChannelCatalogAsyncWithHttpInfo (string channelCatalogId);
+        /// <summary>
+        /// Delete the exportation cache
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DeleteChannelCatalogExportationCacheAsync (string channelCatalogId);
+
+        /// <summary>
+        /// Delete the exportation cache
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteChannelCatalogExportationCacheAsyncWithHttpInfo (string channelCatalogId);
         /// <summary>
         /// Delete a specific channel catalog product value override
         /// </summary>
@@ -4714,10 +4959,9 @@ namespace IO.Swagger.Api
         /// A new file will be generated containing a summary of all the Orders matching the requested filter settings.
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="format">The type of the file to export</param>
         /// <param name="request"></param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ExportOrdersAsync (string format, ExportOrderListRequest request);
+        System.Threading.Tasks.Task ExportOrdersAsync (ExportOrderListRequest request);
 
         /// <summary>
         /// Request a new Order report exportation to be generated
@@ -4726,10 +4970,9 @@ namespace IO.Swagger.Api
         /// A new file will be generated containing a summary of all the Orders matching the requested filter settings.
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="format">The type of the file to export</param>
         /// <param name="request"></param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ExportOrdersAsyncWithHttpInfo (string format, ExportOrderListRequest request);
+        System.Threading.Tasks.Task<ApiResponse<Object>> ExportOrdersAsyncWithHttpInfo (ExportOrderListRequest request);
         /// <summary>
         /// Export the report by category
         /// </summary>
@@ -4926,6 +5169,52 @@ namespace IO.Swagger.Api
         /// <returns>Task of ApiResponse (List&lt;ExclusionFilterOperator&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<ExclusionFilterOperator>>> GetChannelCatalogExclusionFilterOperatorsAsyncWithHttpInfo ();
         /// <summary>
+        /// Get the exportation cache information
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
+        /// <returns>Task of ChannelCatalogExportCacheInfoResponse</returns>
+        System.Threading.Tasks.Task<ChannelCatalogExportCacheInfoResponse> GetChannelCatalogExportationCacheInfoAsync (string channelCatalogId);
+
+        /// <summary>
+        /// Get the exportation cache information
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
+        /// <returns>Task of ApiResponse (ChannelCatalogExportCacheInfoResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ChannelCatalogExportCacheInfoResponse>> GetChannelCatalogExportationCacheInfoAsyncWithHttpInfo (string channelCatalogId);
+        /// <summary>
+        /// Get the exportation history
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
+        /// <param name="pageNumber">The page number you want to get</param>
+        /// <param name="pageSize">The entry count you want to get</param>
+        /// <returns>Task of ChannelCatalogExportationHistory</returns>
+        System.Threading.Tasks.Task<ChannelCatalogExportationHistory> GetChannelCatalogExportationHistoryAsync (string channelCatalogId, int? pageNumber, int? pageSize);
+
+        /// <summary>
+        /// Get the exportation history
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
+        /// <param name="pageNumber">The page number you want to get</param>
+        /// <param name="pageSize">The entry count you want to get</param>
+        /// <returns>Task of ApiResponse (ChannelCatalogExportationHistory)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ChannelCatalogExportationHistory>> GetChannelCatalogExportationHistoryAsyncWithHttpInfo (string channelCatalogId, int? pageNumber, int? pageSize);
+        /// <summary>
         /// Get the marketplace properties for a channel catalog
         /// </summary>
         /// <remarks>
@@ -4967,6 +5256,29 @@ namespace IO.Swagger.Api
         /// <param name="channelCatalogId">Channel Catalog Id to query (required)</param>
         /// <returns>Task of ApiResponse (ChannelCatalogMarketplaceSettings)</returns>
         System.Threading.Tasks.Task<ApiResponse<ChannelCatalogMarketplaceSettings>> GetChannelCatalogMarketplaceSettingsAsyncWithHttpInfo (string channelCatalogId);
+        /// <summary>
+        /// Get channel catalog products related to these channel catalogs
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId">The product identifier</param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of ChannelCatalogProductByChannelCatalogResponse</returns>
+        System.Threading.Tasks.Task<ChannelCatalogProductByChannelCatalogResponse> GetChannelCatalogProductByChannelCatalogAsync (string productId, ChannelCatalogProductByChannelCatalogRequest request = null);
+
+        /// <summary>
+        /// Get channel catalog products related to these channel catalogs
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId">The product identifier</param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of ApiResponse (ChannelCatalogProductByChannelCatalogResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ChannelCatalogProductByChannelCatalogResponse>> GetChannelCatalogProductByChannelCatalogAsyncWithHttpInfo (string productId, ChannelCatalogProductByChannelCatalogRequest request = null);
         /// <summary>
         /// Get channel catalog product information
         /// </summary>
@@ -5103,6 +5415,48 @@ namespace IO.Swagger.Api
         /// <param name="channelId">The channel identifier</param>
         /// <returns>Task of ApiResponse (ChannelInfo)</returns>
         System.Threading.Tasks.Task<ApiResponse<ChannelInfo>> GetChannelInfoAsyncWithHttpInfo (string channelId);
+        /// <summary>
+        /// The channel list for one country
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="countryIsoCode">The country iso code alpha 3 based on this: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3#Decoding_table \\ To know which country are available you have to use the operation: GetChannelsByCountry </param>
+        /// <param name="acceptEncoding">Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size.</param>
+        /// <returns>Task of ChannelInfoList</returns>
+        System.Threading.Tasks.Task<ChannelInfoList> GetChannelsAsync (string countryIsoCode, List<string> acceptEncoding);
+
+        /// <summary>
+        /// The channel list for one country
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="countryIsoCode">The country iso code alpha 3 based on this: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3#Decoding_table \\ To know which country are available you have to use the operation: GetChannelsByCountry </param>
+        /// <param name="acceptEncoding">Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size.</param>
+        /// <returns>Task of ApiResponse (ChannelInfoList)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ChannelInfoList>> GetChannelsAsyncWithHttpInfo (string countryIsoCode, List<string> acceptEncoding);
+        /// <summary>
+        /// Get public channel index
+        /// </summary>
+        /// <remarks>
+        /// Use this operation to get the correct link to the channels and to the list of values
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of PublicChannelIndex</returns>
+        System.Threading.Tasks.Task<PublicChannelIndex> GetChannelsIndexAsync ();
+
+        /// <summary>
+        /// Get public channel index
+        /// </summary>
+        /// <remarks>
+        /// Use this operation to get the correct link to the channels and to the list of values
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (PublicChannelIndex)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PublicChannelIndex>> GetChannelsIndexAsyncWithHttpInfo ();
         /// <summary>
         /// Get contract list
         /// </summary>
@@ -5250,7 +5604,7 @@ namespace IO.Swagger.Api
         /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
-        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of Order</returns>
         System.Threading.Tasks.Task<Order> GetOrderAsync (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null);
 
@@ -5264,7 +5618,7 @@ namespace IO.Swagger.Api
         /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
-        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of ApiResponse (Order)</returns>
         System.Threading.Tasks.Task<ApiResponse<Order>> GetOrderAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null);
         /// <summary>
@@ -5275,7 +5629,7 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNumber">The page number you want to get</param>
-        /// <param name="pageSize">The count of Order report exportations you want to get</param>
+        /// <param name="pageSize">The entry count you want to get</param>
         /// <param name="storeId">The store identifier to regroup the order exportations</param>
         /// <returns>Task of OrderExportations</returns>
         System.Threading.Tasks.Task<OrderExportations> GetOrderExportationsAsync (int? pageNumber, int? pageSize, string storeId);
@@ -5288,7 +5642,7 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNumber">The page number you want to get</param>
-        /// <param name="pageSize">The count of Order report exportations you want to get</param>
+        /// <param name="pageSize">The entry count you want to get</param>
         /// <param name="storeId">The store identifier to regroup the order exportations</param>
         /// <returns>Task of ApiResponse (OrderExportations)</returns>
         System.Threading.Tasks.Task<ApiResponse<OrderExportations>> GetOrderExportationsAsyncWithHttpInfo (int? pageNumber, int? pageSize, string storeId);
@@ -5318,6 +5672,25 @@ namespace IO.Swagger.Api
         /// <returns>Task of ApiResponse (OrderHistory)</returns>
         System.Threading.Tasks.Task<ApiResponse<OrderHistory>> GetOrderHistoryAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId);
         /// <summary>
+        /// Get all actions you can do on the order API
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of OrderIndex</returns>
+        System.Threading.Tasks.Task<OrderIndex> GetOrderIndexAsync ();
+
+        /// <summary>
+        /// Get all actions you can do on the order API
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (OrderIndex)</returns>
+        System.Threading.Tasks.Task<ApiResponse<OrderIndex>> GetOrderIndexAsyncWithHttpInfo ();
+        /// <summary>
         /// Get a paginated list of all Orders with all Order and Order Item(s) properties
         /// </summary>
         /// <remarks>
@@ -5325,9 +5698,9 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptEncoding">Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size</param>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>Task of OrderListFull</returns>
-        System.Threading.Tasks.Task<OrderListFull> GetOrderListFullAsync (List<string> acceptEncoding, OrderListRequest request = null);
+        System.Threading.Tasks.Task<OrderListFull> GetOrderListFullAsync (List<string> acceptEncoding, OrderListRequest request);
 
         /// <summary>
         /// Get a paginated list of all Orders with all Order and Order Item(s) properties
@@ -5337,9 +5710,9 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptEncoding">Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size</param>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>Task of ApiResponse (OrderListFull)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OrderListFull>> GetOrderListFullAsyncWithHttpInfo (List<string> acceptEncoding, OrderListRequest request = null);
+        System.Threading.Tasks.Task<ApiResponse<OrderListFull>> GetOrderListFullAsyncWithHttpInfo (List<string> acceptEncoding, OrderListRequest request);
         /// <summary>
         /// Get a paginated list of all Orders without details
         /// </summary>
@@ -5347,9 +5720,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>Task of OrderListLight</returns>
-        System.Threading.Tasks.Task<OrderListLight> GetOrderListLightAsync (OrderListRequest request = null);
+        System.Threading.Tasks.Task<OrderListLight> GetOrderListLightAsync (OrderListRequest request);
 
         /// <summary>
         /// Get a paginated list of all Orders without details
@@ -5358,9 +5731,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>Task of ApiResponse (OrderListLight)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OrderListLight>> GetOrderListLightAsyncWithHttpInfo (OrderListRequest request = null);
+        System.Threading.Tasks.Task<ApiResponse<OrderListLight>> GetOrderListLightAsyncWithHttpInfo (OrderListRequest request);
         /// <summary>
         /// Get profile picture information
         /// </summary>
@@ -5380,6 +5753,52 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (ProfilePictureInfoResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<ProfilePictureInfoResponse>> GetProfilePictureInfoAsyncWithHttpInfo ();
+        /// <summary>
+        /// Get the list of values related to this list name
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="listName">The list of value name your want to get</param>
+        /// <param name="acceptLanguage">Indicates that the client accepts the following languages. (optional)</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>Task of PublicListOfValuesResponse</returns>
+        System.Threading.Tasks.Task<PublicListOfValuesResponse> GetPublicListOfValuesAsync (string listName, List<string> acceptLanguage = null, string ifNoneMatch = null);
+
+        /// <summary>
+        /// Get the list of values related to this list name
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="listName">The list of value name your want to get</param>
+        /// <param name="acceptLanguage">Indicates that the client accepts the following languages. (optional)</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>Task of ApiResponse (PublicListOfValuesResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PublicListOfValuesResponse>> GetPublicListOfValuesAsyncWithHttpInfo (string listName, List<string> acceptLanguage = null, string ifNoneMatch = null);
+        /// <summary>
+        /// Get all list names
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>Task of PublicLovIndex</returns>
+        System.Threading.Tasks.Task<PublicLovIndex> GetPublicLovIndexAsync (string ifNoneMatch = null);
+
+        /// <summary>
+        /// Get all list names
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>Task of ApiResponse (PublicLovIndex)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PublicLovIndex>> GetPublicLovIndexAsyncWithHttpInfo (string ifNoneMatch = null);
         /// <summary>
         /// Fetch the publication history for an account, sorted by descending start date
         /// </summary>
@@ -5892,65 +6311,6 @@ namespace IO.Swagger.Api
         /// <returns>Task of ApiResponse (AccountInfo)</returns>
         System.Threading.Tasks.Task<ApiResponse<AccountInfo>> GetUserAccountInfoAsyncWithHttpInfo ();
         /// <summary>
-        /// Get list of values related to this group name
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="listGroupName">The list group name your want to get</param>
-        /// <returns>Task of List&lt;BeezUPCommonLOVLink2&gt;</returns>
-        System.Threading.Tasks.Task<List<BeezUPCommonLOVLink2>> GetUserListGroupAsync (string listGroupName);
-
-        /// <summary>
-        /// Get list of values related to this group name
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="listGroupName">The list group name your want to get</param>
-        /// <returns>Task of ApiResponse (List&lt;BeezUPCommonLOVLink2&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BeezUPCommonLOVLink2>>> GetUserListGroupAsyncWithHttpInfo (string listGroupName);
-        /// <summary>
-        /// Get list of group of list name
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;BeezUPCommonLOVLink2&gt;</returns>
-        System.Threading.Tasks.Task<List<BeezUPCommonLOVLink2>> GetUserListGroupNamesAsync ();
-
-        /// <summary>
-        /// Get list of group of list name
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;BeezUPCommonLOVLink2&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BeezUPCommonLOVLink2>>> GetUserListGroupNamesAsyncWithHttpInfo ();
-        /// <summary>
-        /// Get all list names
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;BeezUPCommonLOVLink2&gt;</returns>
-        System.Threading.Tasks.Task<List<BeezUPCommonLOVLink2>> GetUserListNamesAsync ();
-
-        /// <summary>
-        /// Get all list names
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;BeezUPCommonLOVLink2&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BeezUPCommonLOVLink2>>> GetUserListNamesAsyncWithHttpInfo ();
-        /// <summary>
         /// Get the list of values related to this list name
         /// </summary>
         /// <remarks>
@@ -5959,8 +6319,9 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="listName">The list of value name your want to get</param>
         /// <param name="acceptLanguage">Indicates that the client accepts the following languages. (optional)</param>
-        /// <returns>Task of List&lt;BeezUPCommonListOfValueItem&gt;</returns>
-        System.Threading.Tasks.Task<List<BeezUPCommonListOfValueItem>> GetUserListOfValuesAsync (string listName, List<string> acceptLanguage = null);
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>Task of UserListOfValuesResponse</returns>
+        System.Threading.Tasks.Task<UserListOfValuesResponse> GetUserListOfValuesAsync (string listName, List<string> acceptLanguage = null, string ifNoneMatch = null);
 
         /// <summary>
         /// Get the list of values related to this list name
@@ -5971,8 +6332,28 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="listName">The list of value name your want to get</param>
         /// <param name="acceptLanguage">Indicates that the client accepts the following languages. (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;BeezUPCommonListOfValueItem&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BeezUPCommonListOfValueItem>>> GetUserListOfValuesAsyncWithHttpInfo (string listName, List<string> acceptLanguage = null);
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>Task of ApiResponse (UserListOfValuesResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UserListOfValuesResponse>> GetUserListOfValuesAsyncWithHttpInfo (string listName, List<string> acceptLanguage = null, string ifNoneMatch = null);
+        /// <summary>
+        /// Get all list names
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of UserLovIndex</returns>
+        System.Threading.Tasks.Task<UserLovIndex> GetUserLovIndexAsync ();
+
+        /// <summary>
+        /// Get all list names
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (UserLovIndex)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UserLovIndex>> GetUserLovIndexAsyncWithHttpInfo ();
         /// <summary>
         /// Send harvest request to all your marketplaces
         /// </summary>
@@ -6510,8 +6891,8 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="storeId">Your store identifier</param>
         /// <param name="request"></param>
-        /// <returns>Task of List&lt;BeezUPCommonLink2&gt;</returns>
-        System.Threading.Tasks.Task<List<BeezUPCommonLink2>> ImportationStartManualUpdateAsync (string storeId, StartManualImportRequest request);
+        /// <returns>Task of LinksImportationGetImportationMonitoringLink</returns>
+        System.Threading.Tasks.Task<LinksImportationGetImportationMonitoringLink> ImportationStartManualUpdateAsync (string storeId, StartManualImportRequest request);
 
         /// <summary>
         /// Start Manual Import
@@ -6522,8 +6903,8 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="storeId">Your store identifier</param>
         /// <param name="request"></param>
-        /// <returns>Task of ApiResponse (List&lt;BeezUPCommonLink2&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BeezUPCommonLink2>>> ImportationStartManualUpdateAsyncWithHttpInfo (string storeId, StartManualImportRequest request);
+        /// <returns>Task of ApiResponse (LinksImportationGetImportationMonitoringLink)</returns>
+        System.Threading.Tasks.Task<ApiResponse<LinksImportationGetImportationMonitoringLink>> ImportationStartManualUpdateAsyncWithHttpInfo (string storeId, StartManualImportRequest request);
         /// <summary>
         /// Get technical progression
         /// </summary>
@@ -6598,6 +6979,27 @@ namespace IO.Swagger.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ImportationUnmapCustomColumnAsyncWithHttpInfo (string storeId, string executionId, string columnId);
         /// <summary>
+        /// Login
+        /// </summary>
+        /// <remarks>
+        /// User Login - The login will give your tokens
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of ApiCredentials</returns>
+        System.Threading.Tasks.Task<ApiCredentials> LoginAsync (LoginRequest request);
+
+        /// <summary>
+        /// Login
+        /// </summary>
+        /// <remarks>
+        /// User Login - The login will give your tokens
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of ApiResponse (ApiCredentials)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ApiCredentials>> LoginAsyncWithHttpInfo (LoginRequest request);
+        /// <summary>
         /// Log out the current user from go2
         /// </summary>
         /// <remarks>
@@ -6616,6 +7018,27 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> LogoutAsyncWithHttpInfo ();
+        /// <summary>
+        /// Lost password
+        /// </summary>
+        /// <remarks>
+        /// Lost password - Your password will be regenerated and sent to your email
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="email">Your email</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task LostPasswordAsync (BeezUPCommonEmail email);
+
+        /// <summary>
+        /// Lost password
+        /// </summary>
+        /// <remarks>
+        /// Lost password - Your password will be regenerated and sent to your email
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="email">Your email</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> LostPasswordAsyncWithHttpInfo (BeezUPCommonEmail email);
         /// <summary>
         /// Map channel catalog category
         /// </summary>
@@ -6879,6 +7302,27 @@ namespace IO.Swagger.Api
         /// <param name="productId">The product identifier</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ReenableChannelCatalogProductAsyncWithHttpInfo (string channelCatalogId, string productId);
+        /// <summary>
+        /// User Registration
+        /// </summary>
+        /// <remarks>
+        /// User Registration - Create a new user on BeezUP
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task RegisterAsync (RegisterRequest request);
+
+        /// <summary>
+        /// User Registration
+        /// </summary>
+        /// <remarks>
+        /// User Registration - Create a new user on BeezUP
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> RegisterAsyncWithHttpInfo (RegisterRequest request);
         /// <summary>
         /// Resend email activation
         /// </summary>
@@ -7397,7 +7841,7 @@ namespace IO.Swagger.Api
             if (emailActivationId == null)
                 throw new ApiException(400, "Missing required parameter 'emailActivationId' when calling BeezUPApi->ActivateUserAccount");
 
-            var localVarPath = "/v2/user/customer/account/activate";
+            var localVarPath = "/user/customer/account/activate";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -7481,7 +7925,7 @@ namespace IO.Swagger.Api
             if (emailActivationId == null)
                 throw new ApiException(400, "Missing required parameter 'emailActivationId' when calling BeezUPApi->ActivateUserAccount");
 
-            var localVarPath = "/v2/user/customer/account/activate";
+            var localVarPath = "/user/customer/account/activate";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -7568,7 +8012,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->AutoConfigureAutoImportInterval");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/autoImport/scheduling/interval";
+            var localVarPath = "/user/catalogs/{storeId}/autoImport/scheduling/interval";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -7658,7 +8102,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->AutoConfigureAutoImportInterval");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/autoImport/scheduling/interval";
+            var localVarPath = "/user/catalogs/{storeId}/autoImport/scheduling/interval";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -7741,7 +8185,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->AutoDeleteAutoImport");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/autoImport";
+            var localVarPath = "/user/catalogs/{storeId}/autoImport";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -7818,7 +8262,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->AutoDeleteAutoImport");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/autoImport";
+            var localVarPath = "/user/catalogs/{storeId}/autoImport";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -7894,7 +8338,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->AutoGetAutoImportConfiguration");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/autoImport";
+            var localVarPath = "/user/catalogs/{storeId}/autoImport";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -7972,7 +8416,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->AutoGetAutoImportConfiguration");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/autoImport";
+            var localVarPath = "/user/catalogs/{storeId}/autoImport";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -8047,7 +8491,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->AutoPauseAutoImport");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/autoImport/pause";
+            var localVarPath = "/user/catalogs/{storeId}/autoImport/pause";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -8124,7 +8568,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->AutoPauseAutoImport");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/autoImport/pause";
+            var localVarPath = "/user/catalogs/{storeId}/autoImport/pause";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -8199,7 +8643,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->AutoResumeAutoImport");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/autoImport/resume";
+            var localVarPath = "/user/catalogs/{storeId}/autoImport/resume";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -8276,7 +8720,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->AutoResumeAutoImport");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/autoImport/resume";
+            var localVarPath = "/user/catalogs/{storeId}/autoImport/resume";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -8356,7 +8800,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->AutoScheduleAutoImport");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/autoImport/scheduling/schedules";
+            var localVarPath = "/user/catalogs/{storeId}/autoImport/scheduling/schedules";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -8446,7 +8890,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->AutoScheduleAutoImport");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/autoImport/scheduling/schedules";
+            var localVarPath = "/user/catalogs/{storeId}/autoImport/scheduling/schedules";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -8511,10 +8955,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="storeId">Your store identifier</param>
-        /// <returns>List&lt;BeezUPCommonLink2&gt;</returns>
-        public List<BeezUPCommonLink2> AutoStartAutoImport (string storeId)
+        /// <returns>LinksImportationGetImportationMonitoringLink</returns>
+        public LinksImportationGetImportationMonitoringLink AutoStartAutoImport (string storeId)
         {
-             ApiResponse<List<BeezUPCommonLink2>> localVarResponse = AutoStartAutoImportWithHttpInfo(storeId);
+             ApiResponse<LinksImportationGetImportationMonitoringLink> localVarResponse = AutoStartAutoImportWithHttpInfo(storeId);
              return localVarResponse.Data;
         }
 
@@ -8523,14 +8967,14 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="storeId">Your store identifier</param>
-        /// <returns>ApiResponse of List&lt;BeezUPCommonLink2&gt;</returns>
-        public ApiResponse< List<BeezUPCommonLink2> > AutoStartAutoImportWithHttpInfo (string storeId)
+        /// <returns>ApiResponse of LinksImportationGetImportationMonitoringLink</returns>
+        public ApiResponse< LinksImportationGetImportationMonitoringLink > AutoStartAutoImportWithHttpInfo (string storeId)
         {
             // verify the required parameter 'storeId' is set
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->AutoStartAutoImport");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/autoImport/start";
+            var localVarPath = "/user/catalogs/{storeId}/autoImport/start";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -8577,9 +9021,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<BeezUPCommonLink2>>(localVarStatusCode,
+            return new ApiResponse<LinksImportationGetImportationMonitoringLink>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<BeezUPCommonLink2>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BeezUPCommonLink2>)));
+                (LinksImportationGetImportationMonitoringLink) Configuration.ApiClient.Deserialize(localVarResponse, typeof(LinksImportationGetImportationMonitoringLink)));
             
         }
 
@@ -8588,10 +9032,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="storeId">Your store identifier</param>
-        /// <returns>Task of List&lt;BeezUPCommonLink2&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BeezUPCommonLink2>> AutoStartAutoImportAsync (string storeId)
+        /// <returns>Task of LinksImportationGetImportationMonitoringLink</returns>
+        public async System.Threading.Tasks.Task<LinksImportationGetImportationMonitoringLink> AutoStartAutoImportAsync (string storeId)
         {
-             ApiResponse<List<BeezUPCommonLink2>> localVarResponse = await AutoStartAutoImportAsyncWithHttpInfo(storeId);
+             ApiResponse<LinksImportationGetImportationMonitoringLink> localVarResponse = await AutoStartAutoImportAsyncWithHttpInfo(storeId);
              return localVarResponse.Data;
 
         }
@@ -8601,14 +9045,14 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="storeId">Your store identifier</param>
-        /// <returns>Task of ApiResponse (List&lt;BeezUPCommonLink2&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BeezUPCommonLink2>>> AutoStartAutoImportAsyncWithHttpInfo (string storeId)
+        /// <returns>Task of ApiResponse (LinksImportationGetImportationMonitoringLink)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<LinksImportationGetImportationMonitoringLink>> AutoStartAutoImportAsyncWithHttpInfo (string storeId)
         {
             // verify the required parameter 'storeId' is set
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->AutoStartAutoImport");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/autoImport/start";
+            var localVarPath = "/user/catalogs/{storeId}/autoImport/start";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -8654,9 +9098,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<BeezUPCommonLink2>>(localVarStatusCode,
+            return new ApiResponse<LinksImportationGetImportationMonitoringLink>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<BeezUPCommonLink2>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BeezUPCommonLink2>)));
+                (LinksImportationGetImportationMonitoringLink) Configuration.ApiClient.Deserialize(localVarResponse, typeof(LinksImportationGetImportationMonitoringLink)));
             
         }
 
@@ -8693,7 +9137,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->CatalogChangeCatalogColumnUserName");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/catalogColumns/{columnId}/rename";
+            var localVarPath = "/user/catalogs/{storeId}/catalogColumns/{columnId}/rename";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -8789,7 +9233,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->CatalogChangeCatalogColumnUserName");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/catalogColumns/{columnId}/rename";
+            var localVarPath = "/user/catalogs/{storeId}/catalogColumns/{columnId}/rename";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -8883,7 +9327,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->CatalogChangeCustomColumnExpression");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/customColumns/{columnId}/expression";
+            var localVarPath = "/user/catalogs/{storeId}/customColumns/{columnId}/expression";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -8979,7 +9423,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->CatalogChangeCustomColumnExpression");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/customColumns/{columnId}/expression";
+            var localVarPath = "/user/catalogs/{storeId}/customColumns/{columnId}/expression";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -9073,7 +9517,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->CatalogChangeCustomColumnUserName");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/customColumns/{columnId}/rename";
+            var localVarPath = "/user/catalogs/{storeId}/customColumns/{columnId}/rename";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -9169,7 +9613,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->CatalogChangeCustomColumnUserName");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/customColumns/{columnId}/rename";
+            var localVarPath = "/user/catalogs/{storeId}/customColumns/{columnId}/rename";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -9259,7 +9703,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->CatalogComputeExpression");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/customColumns/computeExpression";
+            var localVarPath = "/user/catalogs/{storeId}/customColumns/computeExpression";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -9350,7 +9794,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->CatalogComputeExpression");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/customColumns/computeExpression";
+            var localVarPath = "/user/catalogs/{storeId}/customColumns/computeExpression";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -9438,7 +9882,7 @@ namespace IO.Swagger.Api
             if (columnId == null)
                 throw new ApiException(400, "Missing required parameter 'columnId' when calling BeezUPApi->CatalogDeleteCustomColumn");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/customColumns/{columnId}";
+            var localVarPath = "/user/catalogs/{storeId}/customColumns/{columnId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -9521,7 +9965,7 @@ namespace IO.Swagger.Api
             if (columnId == null)
                 throw new ApiException(400, "Missing required parameter 'columnId' when calling BeezUPApi->CatalogDeleteCustomColumn");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/customColumns/{columnId}";
+            var localVarPath = "/user/catalogs/{storeId}/customColumns/{columnId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -9593,7 +10037,7 @@ namespace IO.Swagger.Api
         public ApiResponse< List<BeezUPColumnConfiguration> > CatalogGetBeezUPColumnsWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/catalogs/beezupColumns";
+            var localVarPath = "/user/catalogs/beezupColumns";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -9665,7 +10109,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<List<BeezUPColumnConfiguration>>> CatalogGetBeezUPColumnsAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/catalogs/beezupColumns";
+            var localVarPath = "/user/catalogs/beezupColumns";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -9740,7 +10184,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->CatalogGetCatalogColumns");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/catalogColumns";
+            var localVarPath = "/user/catalogs/{storeId}/catalogColumns";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -9818,7 +10262,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->CatalogGetCatalogColumns");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/catalogColumns";
+            var localVarPath = "/user/catalogs/{storeId}/catalogColumns";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -9899,7 +10343,7 @@ namespace IO.Swagger.Api
             if (acceptEncoding == null)
                 throw new ApiException(400, "Missing required parameter 'acceptEncoding' when calling BeezUPApi->CatalogGetCategories");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/categories";
+            var localVarPath = "/user/catalogs/{storeId}/categories";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -9983,7 +10427,7 @@ namespace IO.Swagger.Api
             if (acceptEncoding == null)
                 throw new ApiException(400, "Missing required parameter 'acceptEncoding' when calling BeezUPApi->CatalogGetCategories");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/categories";
+            var localVarPath = "/user/catalogs/{storeId}/categories";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -10065,7 +10509,7 @@ namespace IO.Swagger.Api
             if (columnId == null)
                 throw new ApiException(400, "Missing required parameter 'columnId' when calling BeezUPApi->CatalogGetCustomColumnExpression");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/customColumns/{columnId}/expression";
+            var localVarPath = "/user/catalogs/{storeId}/customColumns/{columnId}/expression";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -10149,7 +10593,7 @@ namespace IO.Swagger.Api
             if (columnId == null)
                 throw new ApiException(400, "Missing required parameter 'columnId' when calling BeezUPApi->CatalogGetCustomColumnExpression");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/customColumns/{columnId}/expression";
+            var localVarPath = "/user/catalogs/{storeId}/customColumns/{columnId}/expression";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -10226,7 +10670,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->CatalogGetCustomColumns");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/customColumns";
+            var localVarPath = "/user/catalogs/{storeId}/customColumns";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -10304,7 +10748,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->CatalogGetCustomColumns");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/customColumns";
+            var localVarPath = "/user/catalogs/{storeId}/customColumns";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -10385,7 +10829,7 @@ namespace IO.Swagger.Api
             if (productId == null)
                 throw new ApiException(400, "Missing required parameter 'productId' when calling BeezUPApi->CatalogGetProduct");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/products/{productId}";
+            var localVarPath = "/user/catalogs/{storeId}/products/{productId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -10469,7 +10913,7 @@ namespace IO.Swagger.Api
             if (productId == null)
                 throw new ApiException(400, "Missing required parameter 'productId' when calling BeezUPApi->CatalogGetProduct");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/products/{productId}";
+            var localVarPath = "/user/catalogs/{storeId}/products/{productId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -10548,7 +10992,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->CatalogGetProducts");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/products";
+            var localVarPath = "/user/catalogs/{storeId}/products";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -10636,7 +11080,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->CatalogGetProducts");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/products";
+            var localVarPath = "/user/catalogs/{storeId}/products";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -10722,7 +11166,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->CatalogGetRandomProducts");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/products/random";
+            var localVarPath = "/user/catalogs/{storeId}/products/random";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -10803,7 +11247,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->CatalogGetRandomProducts");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/products/random";
+            var localVarPath = "/user/catalogs/{storeId}/products/random";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -10889,7 +11333,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->CatalogSaveCustomColumn");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/customColumns/{columnId}";
+            var localVarPath = "/user/catalogs/{storeId}/customColumns/{columnId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -10985,7 +11429,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->CatalogSaveCustomColumn");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/customColumns/{columnId}";
+            var localVarPath = "/user/catalogs/{storeId}/customColumns/{columnId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -11056,7 +11500,7 @@ namespace IO.Swagger.Api
         /// <param name="changeOrderType">The Order change type</param>
         /// <param name="userName">Sometimes the user in the e-commerce application is not the same as user associated with the current subscription key. We recommend providing your application&#39;s user login.</param>
         /// <param name="request"></param>
-        /// <param name="ifMatch">ETag value to identify the last known version of requested Order, to ensure that you are making a change on the lastest version of the order.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
+        /// <param name="ifMatch">ETag value to identify the last known version of requested resource.\\ To ensure that you are making a change on the lastest version of the resource.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
         /// <param name="testMode">If true, the operation will be not be sent to marketplace. But the validation will be taken in account. (optional, default to false)</param>
         /// <returns></returns>
         public void ChangeOrder (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null)
@@ -11074,7 +11518,7 @@ namespace IO.Swagger.Api
         /// <param name="changeOrderType">The Order change type</param>
         /// <param name="userName">Sometimes the user in the e-commerce application is not the same as user associated with the current subscription key. We recommend providing your application&#39;s user login.</param>
         /// <param name="request"></param>
-        /// <param name="ifMatch">ETag value to identify the last known version of requested Order, to ensure that you are making a change on the lastest version of the order.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
+        /// <param name="ifMatch">ETag value to identify the last known version of requested resource.\\ To ensure that you are making a change on the lastest version of the resource.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
         /// <param name="testMode">If true, the operation will be not be sent to marketplace. But the validation will be taken in account. (optional, default to false)</param>
         /// <returns>ApiResponse of Object(void)</returns>
         public ApiResponse<Object> ChangeOrderWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null)
@@ -11101,7 +11545,7 @@ namespace IO.Swagger.Api
             if (ifMatch == null)
                 throw new ApiException(400, "Missing required parameter 'ifMatch' when calling BeezUPApi->ChangeOrder");
 
-            var localVarPath = "/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/{changeOrderType}";
+            var localVarPath = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/{changeOrderType}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -11178,7 +11622,7 @@ namespace IO.Swagger.Api
         /// <param name="changeOrderType">The Order change type</param>
         /// <param name="userName">Sometimes the user in the e-commerce application is not the same as user associated with the current subscription key. We recommend providing your application&#39;s user login.</param>
         /// <param name="request"></param>
-        /// <param name="ifMatch">ETag value to identify the last known version of requested Order, to ensure that you are making a change on the lastest version of the order.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
+        /// <param name="ifMatch">ETag value to identify the last known version of requested resource.\\ To ensure that you are making a change on the lastest version of the resource.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
         /// <param name="testMode">If true, the operation will be not be sent to marketplace. But the validation will be taken in account. (optional, default to false)</param>
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task ChangeOrderAsync (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null)
@@ -11197,7 +11641,7 @@ namespace IO.Swagger.Api
         /// <param name="changeOrderType">The Order change type</param>
         /// <param name="userName">Sometimes the user in the e-commerce application is not the same as user associated with the current subscription key. We recommend providing your application&#39;s user login.</param>
         /// <param name="request"></param>
-        /// <param name="ifMatch">ETag value to identify the last known version of requested Order, to ensure that you are making a change on the lastest version of the order.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
+        /// <param name="ifMatch">ETag value to identify the last known version of requested resource.\\ To ensure that you are making a change on the lastest version of the resource.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 </param>
         /// <param name="testMode">If true, the operation will be not be sent to marketplace. But the validation will be taken in account. (optional, default to false)</param>
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<ApiResponse<Object>> ChangeOrderAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string changeOrderType, string userName, ChangeOrderRequest request, string ifMatch, bool? testMode = null)
@@ -11224,7 +11668,7 @@ namespace IO.Swagger.Api
             if (ifMatch == null)
                 throw new ApiException(400, "Missing required parameter 'ifMatch' when calling BeezUPApi->ChangeOrder");
 
-            var localVarPath = "/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/{changeOrderType}";
+            var localVarPath = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/{changeOrderType}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -11326,7 +11770,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ChangeOrderList");
 
-            var localVarPath = "/v2/user/marketplaces/orders/batches/changeOrders/{changeOrderType}";
+            var localVarPath = "/user/marketplaces/orders/batches/changeOrders/{changeOrderType}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -11426,7 +11870,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ChangeOrderList");
 
-            var localVarPath = "/v2/user/marketplaces/orders/batches/changeOrders/{changeOrderType}";
+            var localVarPath = "/user/marketplaces/orders/batches/changeOrders/{changeOrderType}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -11511,7 +11955,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ChangePassword");
 
-            var localVarPath = "/v2/user/customer/account/changePassword";
+            var localVarPath = "/user/customer/account/changePassword";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -11595,7 +12039,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ChangePassword");
 
-            var localVarPath = "/v2/user/customer/account/changePassword";
+            var localVarPath = "/user/customer/account/changePassword";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -11687,7 +12131,7 @@ namespace IO.Swagger.Api
             if (beezUPOrderId == null)
                 throw new ApiException(400, "Missing required parameter 'beezUPOrderId' when calling BeezUPApi->ClearMerchantOrderInfo");
 
-            var localVarPath = "/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/clearMerchantOrderInfo";
+            var localVarPath = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/clearMerchantOrderInfo";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -11776,7 +12220,7 @@ namespace IO.Swagger.Api
             if (beezUPOrderId == null)
                 throw new ApiException(400, "Missing required parameter 'beezUPOrderId' when calling BeezUPApi->ClearMerchantOrderInfo");
 
-            var localVarPath = "/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/clearMerchantOrderInfo";
+            var localVarPath = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/clearMerchantOrderInfo";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -11854,7 +12298,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ClearMerchantOrderInfoList");
 
-            var localVarPath = "/v2/user/marketplaces/orders/batches/clearMerchantOrderInfos";
+            var localVarPath = "/user/marketplaces/orders/batches/clearMerchantOrderInfos";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -11939,7 +12383,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ClearMerchantOrderInfoList");
 
-            var localVarPath = "/v2/user/marketplaces/orders/batches/clearMerchantOrderInfos";
+            var localVarPath = "/user/marketplaces/orders/batches/clearMerchantOrderInfos";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -12004,7 +12448,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
         /// <returns></returns>
-        public void ConfigureAutomaticTransitions (SaveAutomaticTransitionRequest request)
+        public void ConfigureAutomaticTransitions (ConfigureAutomaticTransitionRequest request)
         {
              ConfigureAutomaticTransitionsWithHttpInfo(request);
         }
@@ -12015,13 +12459,13 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> ConfigureAutomaticTransitionsWithHttpInfo (SaveAutomaticTransitionRequest request)
+        public ApiResponse<Object> ConfigureAutomaticTransitionsWithHttpInfo (ConfigureAutomaticTransitionRequest request)
         {
             // verify the required parameter 'request' is set
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ConfigureAutomaticTransitions");
 
-            var localVarPath = "/v2/user/marketplaces/orders/automaticTransitions";
+            var localVarPath = "/user/marketplaces/orders/automaticTransitions";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -12087,7 +12531,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ConfigureAutomaticTransitionsAsync (SaveAutomaticTransitionRequest request)
+        public async System.Threading.Tasks.Task ConfigureAutomaticTransitionsAsync (ConfigureAutomaticTransitionRequest request)
         {
              await ConfigureAutomaticTransitionsAsyncWithHttpInfo(request);
 
@@ -12099,13 +12543,13 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> ConfigureAutomaticTransitionsAsyncWithHttpInfo (SaveAutomaticTransitionRequest request)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> ConfigureAutomaticTransitionsAsyncWithHttpInfo (ConfigureAutomaticTransitionRequest request)
         {
             // verify the required parameter 'request' is set
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ConfigureAutomaticTransitions");
 
-            var localVarPath = "/v2/user/marketplaces/orders/automaticTransitions";
+            var localVarPath = "/user/marketplaces/orders/automaticTransitions";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -12192,7 +12636,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ConfigureChannelCatalogCostSettings");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/settings/cost";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/settings/cost";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -12282,7 +12726,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ConfigureChannelCatalogCostSettings");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/settings/cost";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/settings/cost";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -12370,7 +12814,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ConfigureChannelCatalogExclusionFilters");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/exclusionFilters";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/exclusionFilters";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -12460,7 +12904,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ConfigureChannelCatalogExclusionFilters");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/exclusionFilters";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/exclusionFilters";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -12548,7 +12992,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ConfigureChannelCatalogGeneralSettings");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/settings/general";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/settings/general";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -12638,7 +13082,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ConfigureChannelCatalogGeneralSettings");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/settings/general";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/settings/general";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -12722,7 +13166,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->CreateChannelCatalog");
 
-            var localVarPath = "/v2/user/channelCatalogs/";
+            var localVarPath = "/user/channelCatalogs/";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -12807,7 +13251,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->CreateChannelCatalog");
 
-            var localVarPath = "/v2/user/channelCatalogs/";
+            var localVarPath = "/user/channelCatalogs/";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -12890,7 +13334,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->CreateContract");
 
-            var localVarPath = "/v2/user/customer/contracts";
+            var localVarPath = "/user/customer/contracts";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -12975,7 +13419,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->CreateContract");
 
-            var localVarPath = "/v2/user/customer/contracts";
+            var localVarPath = "/user/customer/contracts";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -13062,7 +13506,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->CreateRule");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/rules";
+            var localVarPath = "/user/analytics/{storeId}/rules";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -13151,7 +13595,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->CreateRule");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/rules";
+            var localVarPath = "/user/analytics/{storeId}/rules";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -13234,7 +13678,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->CreateStore");
 
-            var localVarPath = "/v2/user/customer/stores";
+            var localVarPath = "/user/customer/stores";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -13319,7 +13763,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->CreateStore");
 
-            var localVarPath = "/v2/user/customer/stores";
+            var localVarPath = "/user/customer/stores";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -13382,21 +13826,26 @@ namespace IO.Swagger.Api
         /// Delete the channel catalog 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
         /// <returns></returns>
-        public void DeleteChannelCatalog ()
+        public void DeleteChannelCatalog (string channelCatalogId)
         {
-             DeleteChannelCatalogWithHttpInfo();
+             DeleteChannelCatalogWithHttpInfo(channelCatalogId);
         }
 
         /// <summary>
         /// Delete the channel catalog 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteChannelCatalogWithHttpInfo ()
+        public ApiResponse<Object> DeleteChannelCatalogWithHttpInfo (string channelCatalogId)
         {
+            // verify the required parameter 'channelCatalogId' is set
+            if (channelCatalogId == null)
+                throw new ApiException(400, "Missing required parameter 'channelCatalogId' when calling BeezUPApi->DeleteChannelCatalog");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -13421,6 +13870,7 @@ namespace IO.Swagger.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
+            if (channelCatalogId != null) localVarPathParams.Add("channelCatalogId", Configuration.ApiClient.ParameterToString(channelCatalogId)); // path parameter
 
             // authentication (api_key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
@@ -13452,10 +13902,11 @@ namespace IO.Swagger.Api
         /// Delete the channel catalog 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteChannelCatalogAsync ()
+        public async System.Threading.Tasks.Task DeleteChannelCatalogAsync (string channelCatalogId)
         {
-             await DeleteChannelCatalogAsyncWithHttpInfo();
+             await DeleteChannelCatalogAsyncWithHttpInfo(channelCatalogId);
 
         }
 
@@ -13463,11 +13914,15 @@ namespace IO.Swagger.Api
         /// Delete the channel catalog 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteChannelCatalogAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteChannelCatalogAsyncWithHttpInfo (string channelCatalogId)
         {
+            // verify the required parameter 'channelCatalogId' is set
+            if (channelCatalogId == null)
+                throw new ApiException(400, "Missing required parameter 'channelCatalogId' when calling BeezUPApi->DeleteChannelCatalog");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -13492,6 +13947,7 @@ namespace IO.Swagger.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
+            if (channelCatalogId != null) localVarPathParams.Add("channelCatalogId", Configuration.ApiClient.ParameterToString(channelCatalogId)); // path parameter
 
             // authentication (api_key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
@@ -13509,6 +13965,158 @@ namespace IO.Swagger.Api
             if (ExceptionFactory != null)
             {
                 Exception exception = ExceptionFactory("DeleteChannelCatalog", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Delete the exportation cache 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
+        /// <returns></returns>
+        public void DeleteChannelCatalogExportationCache (string channelCatalogId)
+        {
+             DeleteChannelCatalogExportationCacheWithHttpInfo(channelCatalogId);
+        }
+
+        /// <summary>
+        /// Delete the exportation cache 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> DeleteChannelCatalogExportationCacheWithHttpInfo (string channelCatalogId)
+        {
+            // verify the required parameter 'channelCatalogId' is set
+            if (channelCatalogId == null)
+                throw new ApiException(400, "Missing required parameter 'channelCatalogId' when calling BeezUPApi->DeleteChannelCatalogExportationCache");
+
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/exportations/cache";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (channelCatalogId != null) localVarPathParams.Add("channelCatalogId", Configuration.ApiClient.ParameterToString(channelCatalogId)); // path parameter
+
+            // authentication (api_key) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
+            {
+                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DeleteChannelCatalogExportationCache", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Delete the exportation cache 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DeleteChannelCatalogExportationCacheAsync (string channelCatalogId)
+        {
+             await DeleteChannelCatalogExportationCacheAsyncWithHttpInfo(channelCatalogId);
+
+        }
+
+        /// <summary>
+        /// Delete the exportation cache 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteChannelCatalogExportationCacheAsyncWithHttpInfo (string channelCatalogId)
+        {
+            // verify the required parameter 'channelCatalogId' is set
+            if (channelCatalogId == null)
+                throw new ApiException(400, "Missing required parameter 'channelCatalogId' when calling BeezUPApi->DeleteChannelCatalogExportationCache");
+
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/exportations/cache";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (channelCatalogId != null) localVarPathParams.Add("channelCatalogId", Configuration.ApiClient.ParameterToString(channelCatalogId)); // path parameter
+
+            // authentication (api_key) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
+            {
+                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DeleteChannelCatalogExportationCache", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -13551,7 +14159,7 @@ namespace IO.Swagger.Api
             if (channelColumnId == null)
                 throw new ApiException(400, "Missing required parameter 'channelColumnId' when calling BeezUPApi->DeleteChannelCatalogProductValueOverride");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides/{channelColumnId}";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides/{channelColumnId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -13640,7 +14248,7 @@ namespace IO.Swagger.Api
             if (channelColumnId == null)
                 throw new ApiException(400, "Missing required parameter 'channelColumnId' when calling BeezUPApi->DeleteChannelCatalogProductValueOverride");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides/{channelColumnId}";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides/{channelColumnId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -13712,7 +14320,7 @@ namespace IO.Swagger.Api
         public ApiResponse<Object> DeleteNextContractWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/customer/contracts/next";
+            var localVarPath = "/user/customer/contracts/next";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -13783,7 +14391,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteNextContractAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/customer/contracts/next";
+            var localVarPath = "/user/customer/contracts/next";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -13862,7 +14470,7 @@ namespace IO.Swagger.Api
             if (reportFilterId == null)
                 throw new ApiException(400, "Missing required parameter 'reportFilterId' when calling BeezUPApi->DeleteReportFilter");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/reports/filters/{reportFilterId}";
+            var localVarPath = "/user/analytics/{storeId}/reports/filters/{reportFilterId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -13945,7 +14553,7 @@ namespace IO.Swagger.Api
             if (reportFilterId == null)
                 throw new ApiException(400, "Missing required parameter 'reportFilterId' when calling BeezUPApi->DeleteReportFilter");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/reports/filters/{reportFilterId}";
+            var localVarPath = "/user/analytics/{storeId}/reports/filters/{reportFilterId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -14026,7 +14634,7 @@ namespace IO.Swagger.Api
             if (ruleId == null)
                 throw new ApiException(400, "Missing required parameter 'ruleId' when calling BeezUPApi->DeleteRule");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/rules/{ruleId}";
+            var localVarPath = "/user/analytics/{storeId}/rules/{ruleId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -14109,7 +14717,7 @@ namespace IO.Swagger.Api
             if (ruleId == null)
                 throw new ApiException(400, "Missing required parameter 'ruleId' when calling BeezUPApi->DeleteRule");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/rules/{ruleId}";
+            var localVarPath = "/user/analytics/{storeId}/rules/{ruleId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -14190,7 +14798,7 @@ namespace IO.Swagger.Api
             if (userId == null)
                 throw new ApiException(400, "Missing required parameter 'userId' when calling BeezUPApi->DeleteShare");
 
-            var localVarPath = "/v2/user/customer/stores/{storeId}/shares/{userId}";
+            var localVarPath = "/user/customer/stores/{storeId}/shares/{userId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -14273,7 +14881,7 @@ namespace IO.Swagger.Api
             if (userId == null)
                 throw new ApiException(400, "Missing required parameter 'userId' when calling BeezUPApi->DeleteShare");
 
-            var localVarPath = "/v2/user/customer/stores/{storeId}/shares/{userId}";
+            var localVarPath = "/user/customer/stores/{storeId}/shares/{userId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -14349,7 +14957,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->DeleteStore");
 
-            var localVarPath = "/v2/user/customer/stores/{storeId}";
+            var localVarPath = "/user/customer/stores/{storeId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -14426,7 +15034,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->DeleteStore");
 
-            var localVarPath = "/v2/user/customer/stores/{storeId}";
+            var localVarPath = "/user/customer/stores/{storeId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -14501,7 +15109,7 @@ namespace IO.Swagger.Api
             if (channelCatalogId == null)
                 throw new ApiException(400, "Missing required parameter 'channelCatalogId' when calling BeezUPApi->DisableChannelCatalog");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/disable";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/disable";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -14578,7 +15186,7 @@ namespace IO.Swagger.Api
             if (channelCatalogId == null)
                 throw new ApiException(400, "Missing required parameter 'channelCatalogId' when calling BeezUPApi->DisableChannelCatalog");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/disable";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/disable";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -14658,7 +15266,7 @@ namespace IO.Swagger.Api
             if (productId == null)
                 throw new ApiException(400, "Missing required parameter 'productId' when calling BeezUPApi->DisableChannelCatalogProduct");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/disable";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/products/{productId}/disable";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -14741,7 +15349,7 @@ namespace IO.Swagger.Api
             if (productId == null)
                 throw new ApiException(400, "Missing required parameter 'productId' when calling BeezUPApi->DisableChannelCatalogProduct");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/disable";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/products/{productId}/disable";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -14822,7 +15430,7 @@ namespace IO.Swagger.Api
             if (ruleId == null)
                 throw new ApiException(400, "Missing required parameter 'ruleId' when calling BeezUPApi->DisableRule");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/rules/{ruleId}/disable";
+            var localVarPath = "/user/analytics/{storeId}/rules/{ruleId}/disable";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -14905,7 +15513,7 @@ namespace IO.Swagger.Api
             if (ruleId == null)
                 throw new ApiException(400, "Missing required parameter 'ruleId' when calling BeezUPApi->DisableRule");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/rules/{ruleId}/disable";
+            var localVarPath = "/user/analytics/{storeId}/rules/{ruleId}/disable";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -14981,7 +15589,7 @@ namespace IO.Swagger.Api
             if (channelCatalogId == null)
                 throw new ApiException(400, "Missing required parameter 'channelCatalogId' when calling BeezUPApi->EnableChannelCatalog");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/enable";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/enable";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -15058,7 +15666,7 @@ namespace IO.Swagger.Api
             if (channelCatalogId == null)
                 throw new ApiException(400, "Missing required parameter 'channelCatalogId' when calling BeezUPApi->EnableChannelCatalog");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/enable";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/enable";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -15138,7 +15746,7 @@ namespace IO.Swagger.Api
             if (ruleId == null)
                 throw new ApiException(400, "Missing required parameter 'ruleId' when calling BeezUPApi->EnableRule");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/rules/{ruleId}/enable";
+            var localVarPath = "/user/analytics/{storeId}/rules/{ruleId}/enable";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -15221,7 +15829,7 @@ namespace IO.Swagger.Api
             if (ruleId == null)
                 throw new ApiException(400, "Missing required parameter 'ruleId' when calling BeezUPApi->EnableRule");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/rules/{ruleId}/enable";
+            var localVarPath = "/user/analytics/{storeId}/rules/{ruleId}/enable";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -15278,31 +15886,26 @@ namespace IO.Swagger.Api
         /// Request a new Order report exportation to be generated A new file will be generated containing a summary of all the Orders matching the requested filter settings.
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="format">The type of the file to export</param>
         /// <param name="request"></param>
         /// <returns></returns>
-        public void ExportOrders (string format, ExportOrderListRequest request)
+        public void ExportOrders (ExportOrderListRequest request)
         {
-             ExportOrdersWithHttpInfo(format, request);
+             ExportOrdersWithHttpInfo(request);
         }
 
         /// <summary>
         /// Request a new Order report exportation to be generated A new file will be generated containing a summary of all the Orders matching the requested filter settings.
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="format">The type of the file to export</param>
         /// <param name="request"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> ExportOrdersWithHttpInfo (string format, ExportOrderListRequest request)
+        public ApiResponse<Object> ExportOrdersWithHttpInfo (ExportOrderListRequest request)
         {
-            // verify the required parameter 'format' is set
-            if (format == null)
-                throw new ApiException(400, "Missing required parameter 'format' when calling BeezUPApi->ExportOrders");
             // verify the required parameter 'request' is set
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ExportOrders");
 
-            var localVarPath = "/v2/user/marketplaces/orders/exportations";
+            var localVarPath = "/user/marketplaces/orders/exportations";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -15327,7 +15930,6 @@ namespace IO.Swagger.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (format != null) localVarQueryParams.Add("format", Configuration.ApiClient.ParameterToString(format)); // query parameter
             if (request != null && request.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
@@ -15367,12 +15969,11 @@ namespace IO.Swagger.Api
         /// Request a new Order report exportation to be generated A new file will be generated containing a summary of all the Orders matching the requested filter settings.
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="format">The type of the file to export</param>
         /// <param name="request"></param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ExportOrdersAsync (string format, ExportOrderListRequest request)
+        public async System.Threading.Tasks.Task ExportOrdersAsync (ExportOrderListRequest request)
         {
-             await ExportOrdersAsyncWithHttpInfo(format, request);
+             await ExportOrdersAsyncWithHttpInfo(request);
 
         }
 
@@ -15380,19 +15981,15 @@ namespace IO.Swagger.Api
         /// Request a new Order report exportation to be generated A new file will be generated containing a summary of all the Orders matching the requested filter settings.
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="format">The type of the file to export</param>
         /// <param name="request"></param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> ExportOrdersAsyncWithHttpInfo (string format, ExportOrderListRequest request)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> ExportOrdersAsyncWithHttpInfo (ExportOrderListRequest request)
         {
-            // verify the required parameter 'format' is set
-            if (format == null)
-                throw new ApiException(400, "Missing required parameter 'format' when calling BeezUPApi->ExportOrders");
             // verify the required parameter 'request' is set
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ExportOrders");
 
-            var localVarPath = "/v2/user/marketplaces/orders/exportations";
+            var localVarPath = "/user/marketplaces/orders/exportations";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -15417,7 +16014,6 @@ namespace IO.Swagger.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (format != null) localVarQueryParams.Add("format", Configuration.ApiClient.ParameterToString(format)); // query parameter
             if (request != null && request.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
@@ -15486,7 +16082,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ExportStoreReportByCategory");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/reports/bycategory/export";
+            var localVarPath = "/user/analytics/{storeId}/reports/bycategory/export";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -15583,7 +16179,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ExportStoreReportByCategory");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/reports/bycategory/export";
+            var localVarPath = "/user/analytics/{storeId}/reports/bycategory/export";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -15678,7 +16274,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ExportStoreReportByChannel");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/reports/bychannel/export";
+            var localVarPath = "/user/analytics/{storeId}/reports/bychannel/export";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -15775,7 +16371,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ExportStoreReportByChannel");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/reports/bychannel/export";
+            var localVarPath = "/user/analytics/{storeId}/reports/bychannel/export";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -15870,7 +16466,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ExportStoreReportByProduct");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/reports/byproduct/export";
+            var localVarPath = "/user/analytics/{storeId}/reports/byproduct/export";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -15967,7 +16563,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ExportStoreReportByProduct");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/reports/byproduct/export";
+            var localVarPath = "/user/analytics/{storeId}/reports/byproduct/export";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -16047,7 +16643,7 @@ namespace IO.Swagger.Api
         public ApiResponse< AutomaticTransitionInfos > GetAutomaticTransitionsWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/marketplaces/orders/automaticTransitions";
+            var localVarPath = "/user/marketplaces/orders/automaticTransitions";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -16119,7 +16715,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<AutomaticTransitionInfos>> GetAutomaticTransitionsAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/marketplaces/orders/automaticTransitions";
+            var localVarPath = "/user/marketplaces/orders/automaticTransitions";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -16194,7 +16790,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetAvailableChannels");
 
-            var localVarPath = "/v2/user/channels/";
+            var localVarPath = "/user/channels/";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -16272,7 +16868,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetAvailableChannels");
 
-            var localVarPath = "/v2/user/channels/";
+            var localVarPath = "/user/channels/";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -16343,7 +16939,7 @@ namespace IO.Swagger.Api
         public ApiResponse< BillingPeriods > GetBillingPeriodsWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/customer/billingPeriods";
+            var localVarPath = "/user/customer/billingPeriods";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -16415,7 +17011,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<BillingPeriods>> GetBillingPeriodsAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/customer/billingPeriods";
+            var localVarPath = "/user/customer/billingPeriods";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -16490,7 +17086,7 @@ namespace IO.Swagger.Api
             if (channelCatalogId == null)
                 throw new ApiException(400, "Missing required parameter 'channelCatalogId' when calling BeezUPApi->GetChannelCatalog");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -16568,7 +17164,7 @@ namespace IO.Swagger.Api
             if (channelCatalogId == null)
                 throw new ApiException(400, "Missing required parameter 'channelCatalogId' when calling BeezUPApi->GetChannelCatalog");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -16644,7 +17240,7 @@ namespace IO.Swagger.Api
             if (channelCatalogId == null)
                 throw new ApiException(400, "Missing required parameter 'channelCatalogId' when calling BeezUPApi->GetChannelCatalogCategories");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/categoryMappings";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/categoryMappings";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -16722,7 +17318,7 @@ namespace IO.Swagger.Api
             if (channelCatalogId == null)
                 throw new ApiException(400, "Missing required parameter 'channelCatalogId' when calling BeezUPApi->GetChannelCatalogCategories");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/categoryMappings";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/categoryMappings";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -16793,7 +17389,7 @@ namespace IO.Swagger.Api
         public ApiResponse< List<ExclusionFilterOperator> > GetChannelCatalogExclusionFilterOperatorsWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/channelCatalogs/exclusionFilterOperators";
+            var localVarPath = "/user/channelCatalogs/exclusionFilterOperators";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -16865,7 +17461,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<List<ExclusionFilterOperator>>> GetChannelCatalogExclusionFilterOperatorsAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/channelCatalogs/exclusionFilterOperators";
+            var localVarPath = "/user/channelCatalogs/exclusionFilterOperators";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -16917,6 +17513,338 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
+        /// Get the exportation cache information 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
+        /// <returns>ChannelCatalogExportCacheInfoResponse</returns>
+        public ChannelCatalogExportCacheInfoResponse GetChannelCatalogExportationCacheInfo (string channelCatalogId)
+        {
+             ApiResponse<ChannelCatalogExportCacheInfoResponse> localVarResponse = GetChannelCatalogExportationCacheInfoWithHttpInfo(channelCatalogId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get the exportation cache information 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
+        /// <returns>ApiResponse of ChannelCatalogExportCacheInfoResponse</returns>
+        public ApiResponse< ChannelCatalogExportCacheInfoResponse > GetChannelCatalogExportationCacheInfoWithHttpInfo (string channelCatalogId)
+        {
+            // verify the required parameter 'channelCatalogId' is set
+            if (channelCatalogId == null)
+                throw new ApiException(400, "Missing required parameter 'channelCatalogId' when calling BeezUPApi->GetChannelCatalogExportationCacheInfo");
+
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/exportations/cache";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (channelCatalogId != null) localVarPathParams.Add("channelCatalogId", Configuration.ApiClient.ParameterToString(channelCatalogId)); // path parameter
+
+            // authentication (api_key) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
+            {
+                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetChannelCatalogExportationCacheInfo", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ChannelCatalogExportCacheInfoResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ChannelCatalogExportCacheInfoResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChannelCatalogExportCacheInfoResponse)));
+            
+        }
+
+        /// <summary>
+        /// Get the exportation cache information 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
+        /// <returns>Task of ChannelCatalogExportCacheInfoResponse</returns>
+        public async System.Threading.Tasks.Task<ChannelCatalogExportCacheInfoResponse> GetChannelCatalogExportationCacheInfoAsync (string channelCatalogId)
+        {
+             ApiResponse<ChannelCatalogExportCacheInfoResponse> localVarResponse = await GetChannelCatalogExportationCacheInfoAsyncWithHttpInfo(channelCatalogId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get the exportation cache information 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
+        /// <returns>Task of ApiResponse (ChannelCatalogExportCacheInfoResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ChannelCatalogExportCacheInfoResponse>> GetChannelCatalogExportationCacheInfoAsyncWithHttpInfo (string channelCatalogId)
+        {
+            // verify the required parameter 'channelCatalogId' is set
+            if (channelCatalogId == null)
+                throw new ApiException(400, "Missing required parameter 'channelCatalogId' when calling BeezUPApi->GetChannelCatalogExportationCacheInfo");
+
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/exportations/cache";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (channelCatalogId != null) localVarPathParams.Add("channelCatalogId", Configuration.ApiClient.ParameterToString(channelCatalogId)); // path parameter
+
+            // authentication (api_key) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
+            {
+                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetChannelCatalogExportationCacheInfo", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ChannelCatalogExportCacheInfoResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ChannelCatalogExportCacheInfoResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChannelCatalogExportCacheInfoResponse)));
+            
+        }
+
+        /// <summary>
+        /// Get the exportation history 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
+        /// <param name="pageNumber">The page number you want to get</param>
+        /// <param name="pageSize">The entry count you want to get</param>
+        /// <returns>ChannelCatalogExportationHistory</returns>
+        public ChannelCatalogExportationHistory GetChannelCatalogExportationHistory (string channelCatalogId, int? pageNumber, int? pageSize)
+        {
+             ApiResponse<ChannelCatalogExportationHistory> localVarResponse = GetChannelCatalogExportationHistoryWithHttpInfo(channelCatalogId, pageNumber, pageSize);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get the exportation history 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
+        /// <param name="pageNumber">The page number you want to get</param>
+        /// <param name="pageSize">The entry count you want to get</param>
+        /// <returns>ApiResponse of ChannelCatalogExportationHistory</returns>
+        public ApiResponse< ChannelCatalogExportationHistory > GetChannelCatalogExportationHistoryWithHttpInfo (string channelCatalogId, int? pageNumber, int? pageSize)
+        {
+            // verify the required parameter 'channelCatalogId' is set
+            if (channelCatalogId == null)
+                throw new ApiException(400, "Missing required parameter 'channelCatalogId' when calling BeezUPApi->GetChannelCatalogExportationHistory");
+            // verify the required parameter 'pageNumber' is set
+            if (pageNumber == null)
+                throw new ApiException(400, "Missing required parameter 'pageNumber' when calling BeezUPApi->GetChannelCatalogExportationHistory");
+            // verify the required parameter 'pageSize' is set
+            if (pageSize == null)
+                throw new ApiException(400, "Missing required parameter 'pageSize' when calling BeezUPApi->GetChannelCatalogExportationHistory");
+
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/exportations/history";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (channelCatalogId != null) localVarPathParams.Add("channelCatalogId", Configuration.ApiClient.ParameterToString(channelCatalogId)); // path parameter
+            if (pageNumber != null) localVarQueryParams.Add("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)); // query parameter
+            if (pageSize != null) localVarQueryParams.Add("pageSize", Configuration.ApiClient.ParameterToString(pageSize)); // query parameter
+
+            // authentication (api_key) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
+            {
+                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetChannelCatalogExportationHistory", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ChannelCatalogExportationHistory>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ChannelCatalogExportationHistory) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChannelCatalogExportationHistory)));
+            
+        }
+
+        /// <summary>
+        /// Get the exportation history 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
+        /// <param name="pageNumber">The page number you want to get</param>
+        /// <param name="pageSize">The entry count you want to get</param>
+        /// <returns>Task of ChannelCatalogExportationHistory</returns>
+        public async System.Threading.Tasks.Task<ChannelCatalogExportationHistory> GetChannelCatalogExportationHistoryAsync (string channelCatalogId, int? pageNumber, int? pageSize)
+        {
+             ApiResponse<ChannelCatalogExportationHistory> localVarResponse = await GetChannelCatalogExportationHistoryAsyncWithHttpInfo(channelCatalogId, pageNumber, pageSize);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get the exportation history 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="channelCatalogId">The channel catalog identifier</param>
+        /// <param name="pageNumber">The page number you want to get</param>
+        /// <param name="pageSize">The entry count you want to get</param>
+        /// <returns>Task of ApiResponse (ChannelCatalogExportationHistory)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ChannelCatalogExportationHistory>> GetChannelCatalogExportationHistoryAsyncWithHttpInfo (string channelCatalogId, int? pageNumber, int? pageSize)
+        {
+            // verify the required parameter 'channelCatalogId' is set
+            if (channelCatalogId == null)
+                throw new ApiException(400, "Missing required parameter 'channelCatalogId' when calling BeezUPApi->GetChannelCatalogExportationHistory");
+            // verify the required parameter 'pageNumber' is set
+            if (pageNumber == null)
+                throw new ApiException(400, "Missing required parameter 'pageNumber' when calling BeezUPApi->GetChannelCatalogExportationHistory");
+            // verify the required parameter 'pageSize' is set
+            if (pageSize == null)
+                throw new ApiException(400, "Missing required parameter 'pageSize' when calling BeezUPApi->GetChannelCatalogExportationHistory");
+
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/exportations/history";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (channelCatalogId != null) localVarPathParams.Add("channelCatalogId", Configuration.ApiClient.ParameterToString(channelCatalogId)); // path parameter
+            if (pageNumber != null) localVarQueryParams.Add("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)); // query parameter
+            if (pageSize != null) localVarQueryParams.Add("pageSize", Configuration.ApiClient.ParameterToString(pageSize)); // query parameter
+
+            // authentication (api_key) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
+            {
+                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetChannelCatalogExportationHistory", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ChannelCatalogExportationHistory>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ChannelCatalogExportationHistory) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChannelCatalogExportationHistory)));
+            
+        }
+
+        /// <summary>
         /// Get the marketplace properties for a channel catalog 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
@@ -16940,7 +17868,7 @@ namespace IO.Swagger.Api
             if (channelCatalogId == null)
                 throw new ApiException(400, "Missing required parameter 'channelCatalogId' when calling BeezUPApi->GetChannelCatalogMarketplaceProperties");
 
-            var localVarPath = "/v2/user/marketplaces/channelcatalogs/{channelCatalogId}/properties";
+            var localVarPath = "/user/marketplaces/channelcatalogs/{channelCatalogId}/properties";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -17018,7 +17946,7 @@ namespace IO.Swagger.Api
             if (channelCatalogId == null)
                 throw new ApiException(400, "Missing required parameter 'channelCatalogId' when calling BeezUPApi->GetChannelCatalogMarketplaceProperties");
 
-            var localVarPath = "/v2/user/marketplaces/channelcatalogs/{channelCatalogId}/properties";
+            var localVarPath = "/user/marketplaces/channelcatalogs/{channelCatalogId}/properties";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -17094,7 +18022,7 @@ namespace IO.Swagger.Api
             if (channelCatalogId == null)
                 throw new ApiException(400, "Missing required parameter 'channelCatalogId' when calling BeezUPApi->GetChannelCatalogMarketplaceSettings");
 
-            var localVarPath = "/v2/user/marketplaces/channelcatalogs/{channelCatalogId}/settings";
+            var localVarPath = "/user/marketplaces/channelcatalogs/{channelCatalogId}/settings";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -17172,7 +18100,7 @@ namespace IO.Swagger.Api
             if (channelCatalogId == null)
                 throw new ApiException(400, "Missing required parameter 'channelCatalogId' when calling BeezUPApi->GetChannelCatalogMarketplaceSettings");
 
-            var localVarPath = "/v2/user/marketplaces/channelcatalogs/{channelCatalogId}/settings";
+            var localVarPath = "/user/marketplaces/channelcatalogs/{channelCatalogId}/settings";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -17225,6 +18153,180 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
+        /// Get channel catalog products related to these channel catalogs 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId">The product identifier</param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>ChannelCatalogProductByChannelCatalogResponse</returns>
+        public ChannelCatalogProductByChannelCatalogResponse GetChannelCatalogProductByChannelCatalog (string productId, ChannelCatalogProductByChannelCatalogRequest request = null)
+        {
+             ApiResponse<ChannelCatalogProductByChannelCatalogResponse> localVarResponse = GetChannelCatalogProductByChannelCatalogWithHttpInfo(productId, request);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get channel catalog products related to these channel catalogs 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId">The product identifier</param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>ApiResponse of ChannelCatalogProductByChannelCatalogResponse</returns>
+        public ApiResponse< ChannelCatalogProductByChannelCatalogResponse > GetChannelCatalogProductByChannelCatalogWithHttpInfo (string productId, ChannelCatalogProductByChannelCatalogRequest request = null)
+        {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling BeezUPApi->GetChannelCatalogProductByChannelCatalog");
+
+            var localVarPath = "/user/channelCatalogs/products/{productId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+            // authentication (api_key) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
+            {
+                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetChannelCatalogProductByChannelCatalog", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ChannelCatalogProductByChannelCatalogResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ChannelCatalogProductByChannelCatalogResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChannelCatalogProductByChannelCatalogResponse)));
+            
+        }
+
+        /// <summary>
+        /// Get channel catalog products related to these channel catalogs 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId">The product identifier</param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of ChannelCatalogProductByChannelCatalogResponse</returns>
+        public async System.Threading.Tasks.Task<ChannelCatalogProductByChannelCatalogResponse> GetChannelCatalogProductByChannelCatalogAsync (string productId, ChannelCatalogProductByChannelCatalogRequest request = null)
+        {
+             ApiResponse<ChannelCatalogProductByChannelCatalogResponse> localVarResponse = await GetChannelCatalogProductByChannelCatalogAsyncWithHttpInfo(productId, request);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get channel catalog products related to these channel catalogs 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId">The product identifier</param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of ApiResponse (ChannelCatalogProductByChannelCatalogResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ChannelCatalogProductByChannelCatalogResponse>> GetChannelCatalogProductByChannelCatalogAsyncWithHttpInfo (string productId, ChannelCatalogProductByChannelCatalogRequest request = null)
+        {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling BeezUPApi->GetChannelCatalogProductByChannelCatalog");
+
+            var localVarPath = "/user/channelCatalogs/products/{productId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+            // authentication (api_key) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
+            {
+                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetChannelCatalogProductByChannelCatalog", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ChannelCatalogProductByChannelCatalogResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ChannelCatalogProductByChannelCatalogResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChannelCatalogProductByChannelCatalogResponse)));
+            
+        }
+
+        /// <summary>
         /// Get channel catalog product information 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
@@ -17253,7 +18355,7 @@ namespace IO.Swagger.Api
             if (productId == null)
                 throw new ApiException(400, "Missing required parameter 'productId' when calling BeezUPApi->GetChannelCatalogProductInfo");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/products/{productId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -17337,7 +18439,7 @@ namespace IO.Swagger.Api
             if (productId == null)
                 throw new ApiException(400, "Missing required parameter 'productId' when calling BeezUPApi->GetChannelCatalogProductInfo");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/products/{productId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -17416,7 +18518,7 @@ namespace IO.Swagger.Api
             if (channelCatalogId == null)
                 throw new ApiException(400, "Missing required parameter 'channelCatalogId' when calling BeezUPApi->GetChannelCatalogProductInfoList");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/products";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/products";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -17504,7 +18606,7 @@ namespace IO.Swagger.Api
             if (channelCatalogId == null)
                 throw new ApiException(400, "Missing required parameter 'channelCatalogId' when calling BeezUPApi->GetChannelCatalogProductInfoList");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/products";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/products";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -17585,7 +18687,7 @@ namespace IO.Swagger.Api
         public ApiResponse< ChannelCatalogList > GetChannelCatalogsWithHttpInfo (string storeId = null)
         {
 
-            var localVarPath = "/v2/user/channelCatalogs/";
+            var localVarPath = "/user/channelCatalogs/";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -17660,7 +18762,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<ChannelCatalogList>> GetChannelCatalogsAsyncWithHttpInfo (string storeId = null)
         {
 
-            var localVarPath = "/v2/user/channelCatalogs/";
+            var localVarPath = "/user/channelCatalogs/";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -17741,7 +18843,7 @@ namespace IO.Swagger.Api
             if (acceptEncoding == null)
                 throw new ApiException(400, "Missing required parameter 'acceptEncoding' when calling BeezUPApi->GetChannelCategories");
 
-            var localVarPath = "/v2/user/channels/{channelId}/categories";
+            var localVarPath = "/user/channels/{channelId}/categories";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -17825,7 +18927,7 @@ namespace IO.Swagger.Api
             if (acceptEncoding == null)
                 throw new ApiException(400, "Missing required parameter 'acceptEncoding' when calling BeezUPApi->GetChannelCategories");
 
-            var localVarPath = "/v2/user/channels/{channelId}/categories";
+            var localVarPath = "/user/channels/{channelId}/categories";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -17909,7 +19011,7 @@ namespace IO.Swagger.Api
             if (acceptEncoding == null)
                 throw new ApiException(400, "Missing required parameter 'acceptEncoding' when calling BeezUPApi->GetChannelColumns");
 
-            var localVarPath = "/v2/user/channels/{channelId}/columns";
+            var localVarPath = "/user/channels/{channelId}/columns";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -18003,7 +19105,7 @@ namespace IO.Swagger.Api
             if (acceptEncoding == null)
                 throw new ApiException(400, "Missing required parameter 'acceptEncoding' when calling BeezUPApi->GetChannelColumns");
 
-            var localVarPath = "/v2/user/channels/{channelId}/columns";
+            var localVarPath = "/user/channels/{channelId}/columns";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -18088,7 +19190,7 @@ namespace IO.Swagger.Api
             if (channelId == null)
                 throw new ApiException(400, "Missing required parameter 'channelId' when calling BeezUPApi->GetChannelInfo");
 
-            var localVarPath = "/v2/user/channels/{channelId}";
+            var localVarPath = "/user/channels/{channelId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -18166,7 +19268,7 @@ namespace IO.Swagger.Api
             if (channelId == null)
                 throw new ApiException(400, "Missing required parameter 'channelId' when calling BeezUPApi->GetChannelInfo");
 
-            var localVarPath = "/v2/user/channels/{channelId}";
+            var localVarPath = "/user/channels/{channelId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -18219,6 +19321,292 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
+        /// The channel list for one country 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="countryIsoCode">The country iso code alpha 3 based on this: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3#Decoding_table \\ To know which country are available you have to use the operation: GetChannelsByCountry </param>
+        /// <param name="acceptEncoding">Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size.</param>
+        /// <returns>ChannelInfoList</returns>
+        public ChannelInfoList GetChannels (string countryIsoCode, List<string> acceptEncoding)
+        {
+             ApiResponse<ChannelInfoList> localVarResponse = GetChannelsWithHttpInfo(countryIsoCode, acceptEncoding);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// The channel list for one country 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="countryIsoCode">The country iso code alpha 3 based on this: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3#Decoding_table \\ To know which country are available you have to use the operation: GetChannelsByCountry </param>
+        /// <param name="acceptEncoding">Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size.</param>
+        /// <returns>ApiResponse of ChannelInfoList</returns>
+        public ApiResponse< ChannelInfoList > GetChannelsWithHttpInfo (string countryIsoCode, List<string> acceptEncoding)
+        {
+            // verify the required parameter 'countryIsoCode' is set
+            if (countryIsoCode == null)
+                throw new ApiException(400, "Missing required parameter 'countryIsoCode' when calling BeezUPApi->GetChannels");
+            // verify the required parameter 'acceptEncoding' is set
+            if (acceptEncoding == null)
+                throw new ApiException(400, "Missing required parameter 'acceptEncoding' when calling BeezUPApi->GetChannels");
+
+            var localVarPath = "/public/channels/{countryIsoCode}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (countryIsoCode != null) localVarPathParams.Add("countryIsoCode", Configuration.ApiClient.ParameterToString(countryIsoCode)); // path parameter
+            if (acceptEncoding != null) localVarHeaderParams.Add("Accept-Encoding", Configuration.ApiClient.ParameterToString(acceptEncoding)); // header parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetChannels", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ChannelInfoList>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ChannelInfoList) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChannelInfoList)));
+            
+        }
+
+        /// <summary>
+        /// The channel list for one country 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="countryIsoCode">The country iso code alpha 3 based on this: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3#Decoding_table \\ To know which country are available you have to use the operation: GetChannelsByCountry </param>
+        /// <param name="acceptEncoding">Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size.</param>
+        /// <returns>Task of ChannelInfoList</returns>
+        public async System.Threading.Tasks.Task<ChannelInfoList> GetChannelsAsync (string countryIsoCode, List<string> acceptEncoding)
+        {
+             ApiResponse<ChannelInfoList> localVarResponse = await GetChannelsAsyncWithHttpInfo(countryIsoCode, acceptEncoding);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// The channel list for one country 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="countryIsoCode">The country iso code alpha 3 based on this: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3#Decoding_table \\ To know which country are available you have to use the operation: GetChannelsByCountry </param>
+        /// <param name="acceptEncoding">Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size.</param>
+        /// <returns>Task of ApiResponse (ChannelInfoList)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ChannelInfoList>> GetChannelsAsyncWithHttpInfo (string countryIsoCode, List<string> acceptEncoding)
+        {
+            // verify the required parameter 'countryIsoCode' is set
+            if (countryIsoCode == null)
+                throw new ApiException(400, "Missing required parameter 'countryIsoCode' when calling BeezUPApi->GetChannels");
+            // verify the required parameter 'acceptEncoding' is set
+            if (acceptEncoding == null)
+                throw new ApiException(400, "Missing required parameter 'acceptEncoding' when calling BeezUPApi->GetChannels");
+
+            var localVarPath = "/public/channels/{countryIsoCode}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (countryIsoCode != null) localVarPathParams.Add("countryIsoCode", Configuration.ApiClient.ParameterToString(countryIsoCode)); // path parameter
+            if (acceptEncoding != null) localVarHeaderParams.Add("Accept-Encoding", Configuration.ApiClient.ParameterToString(acceptEncoding)); // header parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetChannels", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ChannelInfoList>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ChannelInfoList) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ChannelInfoList)));
+            
+        }
+
+        /// <summary>
+        /// Get public channel index Use this operation to get the correct link to the channels and to the list of values
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>PublicChannelIndex</returns>
+        public PublicChannelIndex GetChannelsIndex ()
+        {
+             ApiResponse<PublicChannelIndex> localVarResponse = GetChannelsIndexWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get public channel index Use this operation to get the correct link to the channels and to the list of values
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of PublicChannelIndex</returns>
+        public ApiResponse< PublicChannelIndex > GetChannelsIndexWithHttpInfo ()
+        {
+
+            var localVarPath = "/public/channels/";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetChannelsIndex", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PublicChannelIndex>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (PublicChannelIndex) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PublicChannelIndex)));
+            
+        }
+
+        /// <summary>
+        /// Get public channel index Use this operation to get the correct link to the channels and to the list of values
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of PublicChannelIndex</returns>
+        public async System.Threading.Tasks.Task<PublicChannelIndex> GetChannelsIndexAsync ()
+        {
+             ApiResponse<PublicChannelIndex> localVarResponse = await GetChannelsIndexAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get public channel index Use this operation to get the correct link to the channels and to the list of values
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (PublicChannelIndex)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<PublicChannelIndex>> GetChannelsIndexAsyncWithHttpInfo ()
+        {
+
+            var localVarPath = "/public/channels/";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetChannelsIndex", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PublicChannelIndex>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (PublicChannelIndex) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PublicChannelIndex)));
+            
+        }
+
+        /// <summary>
         /// Get contract list 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
@@ -18237,7 +19625,7 @@ namespace IO.Swagger.Api
         public ApiResponse< Contracts > GetContractsWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/customer/contracts";
+            var localVarPath = "/user/customer/contracts";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -18309,7 +19697,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<Contracts>> GetContractsAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/customer/contracts";
+            var localVarPath = "/user/customer/contracts";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -18379,7 +19767,7 @@ namespace IO.Swagger.Api
         public ApiResponse< CreditCardInfoResponse > GetCreditCardInfoWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/customer/account/creditCardInfo";
+            var localVarPath = "/user/customer/account/creditCardInfo";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -18451,7 +19839,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<CreditCardInfoResponse>> GetCreditCardInfoAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/customer/account/creditCardInfo";
+            var localVarPath = "/user/customer/account/creditCardInfo";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -18526,7 +19914,7 @@ namespace IO.Swagger.Api
             if (userId == null)
                 throw new ApiException(400, "Missing required parameter 'userId' when calling BeezUPApi->GetFriendInfo");
 
-            var localVarPath = "/v2/user/customer/friends/{userId}";
+            var localVarPath = "/user/customer/friends/{userId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -18604,7 +19992,7 @@ namespace IO.Swagger.Api
             if (userId == null)
                 throw new ApiException(400, "Missing required parameter 'userId' when calling BeezUPApi->GetFriendInfo");
 
-            var localVarPath = "/v2/user/customer/friends/{userId}";
+            var localVarPath = "/user/customer/friends/{userId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -18675,7 +20063,7 @@ namespace IO.Swagger.Api
         public ApiResponse< Invoices > GetInvoicesWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/customer/invoices";
+            var localVarPath = "/user/customer/invoices";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -18747,7 +20135,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<Invoices>> GetInvoicesAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/customer/invoices";
+            var localVarPath = "/user/customer/invoices";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -18817,7 +20205,7 @@ namespace IO.Swagger.Api
         public ApiResponse< MarketplaceChannelCatalogList > GetMarketplaceAccountStoresWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/marketplaces/channelcatalogs/";
+            var localVarPath = "/user/marketplaces/channelcatalogs/";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -18889,7 +20277,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<MarketplaceChannelCatalogList>> GetMarketplaceAccountStoresAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/marketplaces/channelcatalogs/";
+            var localVarPath = "/user/marketplaces/channelcatalogs/";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -18959,7 +20347,7 @@ namespace IO.Swagger.Api
         public ApiResponse< AccountSynchronizations > GetMarketplaceAccountsSynchronizationWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/marketplaces/orders/status";
+            var localVarPath = "/user/marketplaces/orders/status";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -19031,7 +20419,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<AccountSynchronizations>> GetMarketplaceAccountsSynchronizationAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/marketplaces/orders/status";
+            var localVarPath = "/user/marketplaces/orders/status";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -19106,7 +20494,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->GetOffer");
 
-            var localVarPath = "/v2/user/customer/offers";
+            var localVarPath = "/user/customer/offers";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -19191,7 +20579,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->GetOffer");
 
-            var localVarPath = "/v2/user/customer/offers";
+            var localVarPath = "/user/customer/offers";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -19257,7 +20645,7 @@ namespace IO.Swagger.Api
         /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
-        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Order</returns>
         public Order GetOrder (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null)
         {
@@ -19272,7 +20660,7 @@ namespace IO.Swagger.Api
         /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
-        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>ApiResponse of Order</returns>
         public ApiResponse< Order > GetOrderWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null)
         {
@@ -19286,7 +20674,7 @@ namespace IO.Swagger.Api
             if (beezUPOrderId == null)
                 throw new ApiException(400, "Missing required parameter 'beezUPOrderId' when calling BeezUPApi->GetOrder");
 
-            var localVarPath = "/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}";
+            var localVarPath = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -19349,7 +20737,7 @@ namespace IO.Swagger.Api
         /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
-        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of Order</returns>
         public async System.Threading.Tasks.Task<Order> GetOrderAsync (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null)
         {
@@ -19365,7 +20753,7 @@ namespace IO.Swagger.Api
         /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
-        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of ApiResponse (Order)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<Order>> GetOrderAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null)
         {
@@ -19379,7 +20767,7 @@ namespace IO.Swagger.Api
             if (beezUPOrderId == null)
                 throw new ApiException(400, "Missing required parameter 'beezUPOrderId' when calling BeezUPApi->GetOrder");
 
-            var localVarPath = "/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}";
+            var localVarPath = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -19439,7 +20827,7 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNumber">The page number you want to get</param>
-        /// <param name="pageSize">The count of Order report exportations you want to get</param>
+        /// <param name="pageSize">The entry count you want to get</param>
         /// <param name="storeId">The store identifier to regroup the order exportations</param>
         /// <returns>OrderExportations</returns>
         public OrderExportations GetOrderExportations (int? pageNumber, int? pageSize, string storeId)
@@ -19453,7 +20841,7 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNumber">The page number you want to get</param>
-        /// <param name="pageSize">The count of Order report exportations you want to get</param>
+        /// <param name="pageSize">The entry count you want to get</param>
         /// <param name="storeId">The store identifier to regroup the order exportations</param>
         /// <returns>ApiResponse of OrderExportations</returns>
         public ApiResponse< OrderExportations > GetOrderExportationsWithHttpInfo (int? pageNumber, int? pageSize, string storeId)
@@ -19468,7 +20856,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetOrderExportations");
 
-            var localVarPath = "/v2/user/marketplaces/orders/exportations";
+            var localVarPath = "/user/marketplaces/orders/exportations";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -19528,7 +20916,7 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNumber">The page number you want to get</param>
-        /// <param name="pageSize">The count of Order report exportations you want to get</param>
+        /// <param name="pageSize">The entry count you want to get</param>
         /// <param name="storeId">The store identifier to regroup the order exportations</param>
         /// <returns>Task of OrderExportations</returns>
         public async System.Threading.Tasks.Task<OrderExportations> GetOrderExportationsAsync (int? pageNumber, int? pageSize, string storeId)
@@ -19543,7 +20931,7 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageNumber">The page number you want to get</param>
-        /// <param name="pageSize">The count of Order report exportations you want to get</param>
+        /// <param name="pageSize">The entry count you want to get</param>
         /// <param name="storeId">The store identifier to regroup the order exportations</param>
         /// <returns>Task of ApiResponse (OrderExportations)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<OrderExportations>> GetOrderExportationsAsyncWithHttpInfo (int? pageNumber, int? pageSize, string storeId)
@@ -19558,7 +20946,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetOrderExportations");
 
-            var localVarPath = "/v2/user/marketplaces/orders/exportations";
+            var localVarPath = "/user/marketplaces/orders/exportations";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -19646,7 +21034,7 @@ namespace IO.Swagger.Api
             if (beezUPOrderId == null)
                 throw new ApiException(400, "Missing required parameter 'beezUPOrderId' when calling BeezUPApi->GetOrderHistory");
 
-            var localVarPath = "/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history";
+            var localVarPath = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -19736,7 +21124,7 @@ namespace IO.Swagger.Api
             if (beezUPOrderId == null)
                 throw new ApiException(400, "Missing required parameter 'beezUPOrderId' when calling BeezUPApi->GetOrderHistory");
 
-            var localVarPath = "/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history";
+            var localVarPath = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -19791,13 +21179,155 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
+        /// Get all actions you can do on the order API 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>OrderIndex</returns>
+        public OrderIndex GetOrderIndex ()
+        {
+             ApiResponse<OrderIndex> localVarResponse = GetOrderIndexWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get all actions you can do on the order API 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of OrderIndex</returns>
+        public ApiResponse< OrderIndex > GetOrderIndexWithHttpInfo ()
+        {
+
+            var localVarPath = "/user/marketplaces/orders/";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // authentication (api_key) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
+            {
+                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetOrderIndex", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<OrderIndex>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (OrderIndex) Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrderIndex)));
+            
+        }
+
+        /// <summary>
+        /// Get all actions you can do on the order API 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of OrderIndex</returns>
+        public async System.Threading.Tasks.Task<OrderIndex> GetOrderIndexAsync ()
+        {
+             ApiResponse<OrderIndex> localVarResponse = await GetOrderIndexAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get all actions you can do on the order API 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (OrderIndex)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<OrderIndex>> GetOrderIndexAsyncWithHttpInfo ()
+        {
+
+            var localVarPath = "/user/marketplaces/orders/";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // authentication (api_key) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
+            {
+                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetOrderIndex", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<OrderIndex>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (OrderIndex) Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrderIndex)));
+            
+        }
+
+        /// <summary>
         /// Get a paginated list of all Orders with all Order and Order Item(s) properties The purpose of this operation is to reduce the amount of request to the API.\\ \\ Previous implmentation of this feature only returned a partial (light) version of the Orders. The purpose of this API is to reduce the number of incoming requests by returning the complete (full) Order and Order Item(s) properties. 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptEncoding">Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size</param>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>OrderListFull</returns>
-        public OrderListFull GetOrderListFull (List<string> acceptEncoding, OrderListRequest request = null)
+        public OrderListFull GetOrderListFull (List<string> acceptEncoding, OrderListRequest request)
         {
              ApiResponse<OrderListFull> localVarResponse = GetOrderListFullWithHttpInfo(acceptEncoding, request);
              return localVarResponse.Data;
@@ -19808,15 +21338,18 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptEncoding">Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size</param>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>ApiResponse of OrderListFull</returns>
-        public ApiResponse< OrderListFull > GetOrderListFullWithHttpInfo (List<string> acceptEncoding, OrderListRequest request = null)
+        public ApiResponse< OrderListFull > GetOrderListFullWithHttpInfo (List<string> acceptEncoding, OrderListRequest request)
         {
             // verify the required parameter 'acceptEncoding' is set
             if (acceptEncoding == null)
                 throw new ApiException(400, "Missing required parameter 'acceptEncoding' when calling BeezUPApi->GetOrderListFull");
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->GetOrderListFull");
 
-            var localVarPath = "/v2/user/marketplaces/orders/list/full";
+            var localVarPath = "/user/marketplaces/orders/list/full";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -19882,9 +21415,9 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptEncoding">Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size</param>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>Task of OrderListFull</returns>
-        public async System.Threading.Tasks.Task<OrderListFull> GetOrderListFullAsync (List<string> acceptEncoding, OrderListRequest request = null)
+        public async System.Threading.Tasks.Task<OrderListFull> GetOrderListFullAsync (List<string> acceptEncoding, OrderListRequest request)
         {
              ApiResponse<OrderListFull> localVarResponse = await GetOrderListFullAsyncWithHttpInfo(acceptEncoding, request);
              return localVarResponse.Data;
@@ -19896,15 +21429,18 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="acceptEncoding">Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size</param>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>Task of ApiResponse (OrderListFull)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<OrderListFull>> GetOrderListFullAsyncWithHttpInfo (List<string> acceptEncoding, OrderListRequest request = null)
+        public async System.Threading.Tasks.Task<ApiResponse<OrderListFull>> GetOrderListFullAsyncWithHttpInfo (List<string> acceptEncoding, OrderListRequest request)
         {
             // verify the required parameter 'acceptEncoding' is set
             if (acceptEncoding == null)
                 throw new ApiException(400, "Missing required parameter 'acceptEncoding' when calling BeezUPApi->GetOrderListFull");
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->GetOrderListFull");
 
-            var localVarPath = "/v2/user/marketplaces/orders/list/full";
+            var localVarPath = "/user/marketplaces/orders/list/full";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -19968,9 +21504,9 @@ namespace IO.Swagger.Api
         /// Get a paginated list of all Orders without details 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>OrderListLight</returns>
-        public OrderListLight GetOrderListLight (OrderListRequest request = null)
+        public OrderListLight GetOrderListLight (OrderListRequest request)
         {
              ApiResponse<OrderListLight> localVarResponse = GetOrderListLightWithHttpInfo(request);
              return localVarResponse.Data;
@@ -19980,12 +21516,15 @@ namespace IO.Swagger.Api
         /// Get a paginated list of all Orders without details 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>ApiResponse of OrderListLight</returns>
-        public ApiResponse< OrderListLight > GetOrderListLightWithHttpInfo (OrderListRequest request = null)
+        public ApiResponse< OrderListLight > GetOrderListLightWithHttpInfo (OrderListRequest request)
         {
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->GetOrderListLight");
 
-            var localVarPath = "/v2/user/marketplaces/orders/list/light";
+            var localVarPath = "/user/marketplaces/orders/list/light";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -20049,9 +21588,9 @@ namespace IO.Swagger.Api
         /// Get a paginated list of all Orders without details 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>Task of OrderListLight</returns>
-        public async System.Threading.Tasks.Task<OrderListLight> GetOrderListLightAsync (OrderListRequest request = null)
+        public async System.Threading.Tasks.Task<OrderListLight> GetOrderListLightAsync (OrderListRequest request)
         {
              ApiResponse<OrderListLight> localVarResponse = await GetOrderListLightAsyncWithHttpInfo(request);
              return localVarResponse.Data;
@@ -20062,12 +21601,15 @@ namespace IO.Swagger.Api
         /// Get a paginated list of all Orders without details 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
+        /// <param name="request"></param>
         /// <returns>Task of ApiResponse (OrderListLight)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<OrderListLight>> GetOrderListLightAsyncWithHttpInfo (OrderListRequest request = null)
+        public async System.Threading.Tasks.Task<ApiResponse<OrderListLight>> GetOrderListLightAsyncWithHttpInfo (OrderListRequest request)
         {
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->GetOrderListLight");
 
-            var localVarPath = "/v2/user/marketplaces/orders/list/light";
+            var localVarPath = "/user/marketplaces/orders/list/light";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -20145,7 +21687,7 @@ namespace IO.Swagger.Api
         public ApiResponse< ProfilePictureInfoResponse > GetProfilePictureInfoWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/customer/account/profilePictureInfo";
+            var localVarPath = "/user/customer/account/profilePictureInfo";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -20217,7 +21759,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<ProfilePictureInfoResponse>> GetProfilePictureInfoAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/customer/account/profilePictureInfo";
+            var localVarPath = "/user/customer/account/profilePictureInfo";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -20269,6 +21811,298 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
+        /// Get the list of values related to this list name 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="listName">The list of value name your want to get</param>
+        /// <param name="acceptLanguage">Indicates that the client accepts the following languages. (optional)</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>PublicListOfValuesResponse</returns>
+        public PublicListOfValuesResponse GetPublicListOfValues (string listName, List<string> acceptLanguage = null, string ifNoneMatch = null)
+        {
+             ApiResponse<PublicListOfValuesResponse> localVarResponse = GetPublicListOfValuesWithHttpInfo(listName, acceptLanguage, ifNoneMatch);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get the list of values related to this list name 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="listName">The list of value name your want to get</param>
+        /// <param name="acceptLanguage">Indicates that the client accepts the following languages. (optional)</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>ApiResponse of PublicListOfValuesResponse</returns>
+        public ApiResponse< PublicListOfValuesResponse > GetPublicListOfValuesWithHttpInfo (string listName, List<string> acceptLanguage = null, string ifNoneMatch = null)
+        {
+            // verify the required parameter 'listName' is set
+            if (listName == null)
+                throw new ApiException(400, "Missing required parameter 'listName' when calling BeezUPApi->GetPublicListOfValues");
+
+            var localVarPath = "/public/lov/{listName}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (listName != null) localVarPathParams.Add("listName", Configuration.ApiClient.ParameterToString(listName)); // path parameter
+            if (acceptLanguage != null) localVarHeaderParams.Add("Accept-Language", Configuration.ApiClient.ParameterToString(acceptLanguage)); // header parameter
+            if (ifNoneMatch != null) localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetPublicListOfValues", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PublicListOfValuesResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (PublicListOfValuesResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PublicListOfValuesResponse)));
+            
+        }
+
+        /// <summary>
+        /// Get the list of values related to this list name 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="listName">The list of value name your want to get</param>
+        /// <param name="acceptLanguage">Indicates that the client accepts the following languages. (optional)</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>Task of PublicListOfValuesResponse</returns>
+        public async System.Threading.Tasks.Task<PublicListOfValuesResponse> GetPublicListOfValuesAsync (string listName, List<string> acceptLanguage = null, string ifNoneMatch = null)
+        {
+             ApiResponse<PublicListOfValuesResponse> localVarResponse = await GetPublicListOfValuesAsyncWithHttpInfo(listName, acceptLanguage, ifNoneMatch);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get the list of values related to this list name 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="listName">The list of value name your want to get</param>
+        /// <param name="acceptLanguage">Indicates that the client accepts the following languages. (optional)</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>Task of ApiResponse (PublicListOfValuesResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<PublicListOfValuesResponse>> GetPublicListOfValuesAsyncWithHttpInfo (string listName, List<string> acceptLanguage = null, string ifNoneMatch = null)
+        {
+            // verify the required parameter 'listName' is set
+            if (listName == null)
+                throw new ApiException(400, "Missing required parameter 'listName' when calling BeezUPApi->GetPublicListOfValues");
+
+            var localVarPath = "/public/lov/{listName}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (listName != null) localVarPathParams.Add("listName", Configuration.ApiClient.ParameterToString(listName)); // path parameter
+            if (acceptLanguage != null) localVarHeaderParams.Add("Accept-Language", Configuration.ApiClient.ParameterToString(acceptLanguage)); // header parameter
+            if (ifNoneMatch != null) localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetPublicListOfValues", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PublicListOfValuesResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (PublicListOfValuesResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PublicListOfValuesResponse)));
+            
+        }
+
+        /// <summary>
+        /// Get all list names 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>PublicLovIndex</returns>
+        public PublicLovIndex GetPublicLovIndex (string ifNoneMatch = null)
+        {
+             ApiResponse<PublicLovIndex> localVarResponse = GetPublicLovIndexWithHttpInfo(ifNoneMatch);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get all list names 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>ApiResponse of PublicLovIndex</returns>
+        public ApiResponse< PublicLovIndex > GetPublicLovIndexWithHttpInfo (string ifNoneMatch = null)
+        {
+
+            var localVarPath = "/public/lov/";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (ifNoneMatch != null) localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetPublicLovIndex", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PublicLovIndex>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (PublicLovIndex) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PublicLovIndex)));
+            
+        }
+
+        /// <summary>
+        /// Get all list names 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>Task of PublicLovIndex</returns>
+        public async System.Threading.Tasks.Task<PublicLovIndex> GetPublicLovIndexAsync (string ifNoneMatch = null)
+        {
+             ApiResponse<PublicLovIndex> localVarResponse = await GetPublicLovIndexAsyncWithHttpInfo(ifNoneMatch);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get all list names 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>Task of ApiResponse (PublicLovIndex)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<PublicLovIndex>> GetPublicLovIndexAsyncWithHttpInfo (string ifNoneMatch = null)
+        {
+
+            var localVarPath = "/public/lov/";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (ifNoneMatch != null) localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetPublicLovIndex", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PublicLovIndex>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (PublicLovIndex) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PublicLovIndex)));
+            
+        }
+
+        /// <summary>
         /// Fetch the publication history for an account, sorted by descending start date 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
@@ -20303,7 +22137,7 @@ namespace IO.Swagger.Api
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling BeezUPApi->GetPublications");
 
-            var localVarPath = "/v2/user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/history";
+            var localVarPath = "/user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/history";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -20396,7 +22230,7 @@ namespace IO.Swagger.Api
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling BeezUPApi->GetPublications");
 
-            var localVarPath = "/v2/user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/history";
+            var localVarPath = "/user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/history";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -20481,7 +22315,7 @@ namespace IO.Swagger.Api
             if (reportFilterId == null)
                 throw new ApiException(400, "Missing required parameter 'reportFilterId' when calling BeezUPApi->GetReportFilter");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/reports/filters/{reportFilterId}";
+            var localVarPath = "/user/analytics/{storeId}/reports/filters/{reportFilterId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -20565,7 +22399,7 @@ namespace IO.Swagger.Api
             if (reportFilterId == null)
                 throw new ApiException(400, "Missing required parameter 'reportFilterId' when calling BeezUPApi->GetReportFilter");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/reports/filters/{reportFilterId}";
+            var localVarPath = "/user/analytics/{storeId}/reports/filters/{reportFilterId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -20642,7 +22476,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetReportFilters");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/reports/filters";
+            var localVarPath = "/user/analytics/{storeId}/reports/filters";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -20720,7 +22554,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetReportFilters");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/reports/filters";
+            var localVarPath = "/user/analytics/{storeId}/reports/filters";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -20801,7 +22635,7 @@ namespace IO.Swagger.Api
             if (functionalityCodeList == null)
                 throw new ApiException(400, "Missing required parameter 'functionalityCodeList' when calling BeezUPApi->GetRights");
 
-            var localVarPath = "/v2/user/customer/stores/{storeId}/rights";
+            var localVarPath = "/user/customer/stores/{storeId}/rights";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -20892,7 +22726,7 @@ namespace IO.Swagger.Api
             if (functionalityCodeList == null)
                 throw new ApiException(400, "Missing required parameter 'functionalityCodeList' when calling BeezUPApi->GetRights");
 
-            var localVarPath = "/v2/user/customer/stores/{storeId}/rights";
+            var localVarPath = "/user/customer/stores/{storeId}/rights";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -20981,7 +22815,7 @@ namespace IO.Swagger.Api
             if (ruleId == null)
                 throw new ApiException(400, "Missing required parameter 'ruleId' when calling BeezUPApi->GetRule");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/rules/{ruleId}";
+            var localVarPath = "/user/analytics/{storeId}/rules/{ruleId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -21065,7 +22899,7 @@ namespace IO.Swagger.Api
             if (ruleId == null)
                 throw new ApiException(400, "Missing required parameter 'ruleId' when calling BeezUPApi->GetRule");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/rules/{ruleId}";
+            var localVarPath = "/user/analytics/{storeId}/rules/{ruleId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -21142,7 +22976,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetRules");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/rules";
+            var localVarPath = "/user/analytics/{storeId}/rules";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -21220,7 +23054,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetRules");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/rules";
+            var localVarPath = "/user/analytics/{storeId}/rules";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -21306,7 +23140,7 @@ namespace IO.Swagger.Api
             if (pageSize == null)
                 throw new ApiException(400, "Missing required parameter 'pageSize' when calling BeezUPApi->GetRulesExecutions");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/rules/executions";
+            var localVarPath = "/user/analytics/{storeId}/rules/executions";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -21396,7 +23230,7 @@ namespace IO.Swagger.Api
             if (pageSize == null)
                 throw new ApiException(400, "Missing required parameter 'pageSize' when calling BeezUPApi->GetRulesExecutions");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/rules/executions";
+            var localVarPath = "/user/analytics/{storeId}/rules/executions";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -21474,7 +23308,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetShares");
 
-            var localVarPath = "/v2/user/customer/stores/{storeId}/shares";
+            var localVarPath = "/user/customer/stores/{storeId}/shares";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -21552,7 +23386,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetShares");
 
-            var localVarPath = "/v2/user/customer/stores/{storeId}/shares";
+            var localVarPath = "/user/customer/stores/{storeId}/shares";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -21623,7 +23457,7 @@ namespace IO.Swagger.Api
         public ApiResponse< StandardOffers > GetStandardOffersWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/customer/offers";
+            var localVarPath = "/user/customer/offers";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -21695,7 +23529,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<StandardOffers>> GetStandardOffersAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/customer/offers";
+            var localVarPath = "/user/customer/offers";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -21770,7 +23604,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetStore");
 
-            var localVarPath = "/v2/user/customer/stores/{storeId}";
+            var localVarPath = "/user/customer/stores/{storeId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -21848,7 +23682,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetStore");
 
-            var localVarPath = "/v2/user/customer/stores/{storeId}";
+            var localVarPath = "/user/customer/stores/{storeId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -21924,7 +23758,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetStoreAlerts");
 
-            var localVarPath = "/v2/user/customer/stores/{storeId}/alerts";
+            var localVarPath = "/user/customer/stores/{storeId}/alerts";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -22002,7 +23836,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetStoreAlerts");
 
-            var localVarPath = "/v2/user/customer/stores/{storeId}/alerts";
+            var localVarPath = "/user/customer/stores/{storeId}/alerts";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -22083,7 +23917,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->GetStoreReportByCategory");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/reports/bycategory";
+            var localVarPath = "/user/analytics/{storeId}/reports/bycategory";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -22174,7 +24008,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->GetStoreReportByCategory");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/reports/bycategory";
+            var localVarPath = "/user/analytics/{storeId}/reports/bycategory";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -22263,7 +24097,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->GetStoreReportByChannel");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/reports/bychannel";
+            var localVarPath = "/user/analytics/{storeId}/reports/bychannel";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -22354,7 +24188,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->GetStoreReportByChannel");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/reports/bychannel";
+            var localVarPath = "/user/analytics/{storeId}/reports/bychannel";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -22443,7 +24277,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->GetStoreReportByDay");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/reports/byday";
+            var localVarPath = "/user/analytics/{storeId}/reports/byday";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -22534,7 +24368,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->GetStoreReportByDay");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/reports/byday";
+            var localVarPath = "/user/analytics/{storeId}/reports/byday";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -22628,7 +24462,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->GetStoreReportByDayExport");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/reports/byday/export";
+            var localVarPath = "/user/analytics/{storeId}/reports/byday/export";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -22725,7 +24559,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->GetStoreReportByDayExport");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/reports/byday/export";
+            var localVarPath = "/user/analytics/{storeId}/reports/byday/export";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -22815,7 +24649,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->GetStoreReportByProduct");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/reports/byproduct";
+            var localVarPath = "/user/analytics/{storeId}/reports/byproduct";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -22906,7 +24740,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->GetStoreReportByProduct");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/reports/byproduct";
+            var localVarPath = "/user/analytics/{storeId}/reports/byproduct";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -22992,7 +24826,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetStoreTrackedClicks");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/tracking/clicks";
+            var localVarPath = "/user/analytics/{storeId}/tracking/clicks";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -23073,7 +24907,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetStoreTrackedClicks");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/tracking/clicks";
+            var localVarPath = "/user/analytics/{storeId}/tracking/clicks";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -23152,7 +24986,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetStoreTrackedExternalOrders");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/tracking/externalorders";
+            var localVarPath = "/user/analytics/{storeId}/tracking/externalorders";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -23233,7 +25067,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetStoreTrackedExternalOrders");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/tracking/externalorders";
+            var localVarPath = "/user/analytics/{storeId}/tracking/externalorders";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -23312,7 +25146,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetStoreTrackedOrders");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/tracking/orders";
+            var localVarPath = "/user/analytics/{storeId}/tracking/orders";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -23393,7 +25227,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetStoreTrackedOrders");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/tracking/orders";
+            var localVarPath = "/user/analytics/{storeId}/tracking/orders";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -23470,7 +25304,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetStoreTrackingStatus");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/tracking/status";
+            var localVarPath = "/user/analytics/{storeId}/tracking/status";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -23548,7 +25382,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->GetStoreTrackingStatus");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/tracking/status";
+            var localVarPath = "/user/analytics/{storeId}/tracking/status";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -23619,7 +25453,7 @@ namespace IO.Swagger.Api
         public ApiResponse< Stores > GetStoresWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/customer/stores";
+            var localVarPath = "/user/customer/stores";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -23691,7 +25525,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<Stores>> GetStoresAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/customer/stores";
+            var localVarPath = "/user/customer/stores";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -23761,7 +25595,7 @@ namespace IO.Swagger.Api
         public ApiResponse< TrackingStatus > GetTrackingStatusWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/analytics/tracking/status";
+            var localVarPath = "/user/analytics/tracking/status";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -23833,7 +25667,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<TrackingStatus>> GetTrackingStatusAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/analytics/tracking/status";
+            var localVarPath = "/user/analytics/tracking/status";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -23903,7 +25737,7 @@ namespace IO.Swagger.Api
         public ApiResponse< AccountInfo > GetUserAccountInfoWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/customer/account";
+            var localVarPath = "/user/customer/account";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -23975,7 +25809,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<AccountInfo>> GetUserAccountInfoAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/customer/account";
+            var localVarPath = "/user/customer/account";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -24027,453 +25861,16 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get list of values related to this group name 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="listGroupName">The list group name your want to get</param>
-        /// <returns>List&lt;BeezUPCommonLOVLink2&gt;</returns>
-        public List<BeezUPCommonLOVLink2> GetUserListGroup (string listGroupName)
-        {
-             ApiResponse<List<BeezUPCommonLOVLink2>> localVarResponse = GetUserListGroupWithHttpInfo(listGroupName);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get list of values related to this group name 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="listGroupName">The list group name your want to get</param>
-        /// <returns>ApiResponse of List&lt;BeezUPCommonLOVLink2&gt;</returns>
-        public ApiResponse< List<BeezUPCommonLOVLink2> > GetUserListGroupWithHttpInfo (string listGroupName)
-        {
-            // verify the required parameter 'listGroupName' is set
-            if (listGroupName == null)
-                throw new ApiException(400, "Missing required parameter 'listGroupName' when calling BeezUPApi->GetUserListGroup");
-
-            var localVarPath = "/v2/user/lov/groups/{listGroupName}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (listGroupName != null) localVarPathParams.Add("listGroupName", Configuration.ApiClient.ParameterToString(listGroupName)); // path parameter
-
-            // authentication (api_key) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
-            {
-                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetUserListGroup", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<BeezUPCommonLOVLink2>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<BeezUPCommonLOVLink2>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BeezUPCommonLOVLink2>)));
-            
-        }
-
-        /// <summary>
-        /// Get list of values related to this group name 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="listGroupName">The list group name your want to get</param>
-        /// <returns>Task of List&lt;BeezUPCommonLOVLink2&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BeezUPCommonLOVLink2>> GetUserListGroupAsync (string listGroupName)
-        {
-             ApiResponse<List<BeezUPCommonLOVLink2>> localVarResponse = await GetUserListGroupAsyncWithHttpInfo(listGroupName);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get list of values related to this group name 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="listGroupName">The list group name your want to get</param>
-        /// <returns>Task of ApiResponse (List&lt;BeezUPCommonLOVLink2&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BeezUPCommonLOVLink2>>> GetUserListGroupAsyncWithHttpInfo (string listGroupName)
-        {
-            // verify the required parameter 'listGroupName' is set
-            if (listGroupName == null)
-                throw new ApiException(400, "Missing required parameter 'listGroupName' when calling BeezUPApi->GetUserListGroup");
-
-            var localVarPath = "/v2/user/lov/groups/{listGroupName}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (listGroupName != null) localVarPathParams.Add("listGroupName", Configuration.ApiClient.ParameterToString(listGroupName)); // path parameter
-
-            // authentication (api_key) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
-            {
-                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetUserListGroup", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<BeezUPCommonLOVLink2>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<BeezUPCommonLOVLink2>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BeezUPCommonLOVLink2>)));
-            
-        }
-
-        /// <summary>
-        /// Get list of group of list name 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;BeezUPCommonLOVLink2&gt;</returns>
-        public List<BeezUPCommonLOVLink2> GetUserListGroupNames ()
-        {
-             ApiResponse<List<BeezUPCommonLOVLink2>> localVarResponse = GetUserListGroupNamesWithHttpInfo();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get list of group of list name 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;BeezUPCommonLOVLink2&gt;</returns>
-        public ApiResponse< List<BeezUPCommonLOVLink2> > GetUserListGroupNamesWithHttpInfo ()
-        {
-
-            var localVarPath = "/v2/user/lov/groups";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // authentication (api_key) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
-            {
-                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetUserListGroupNames", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<BeezUPCommonLOVLink2>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<BeezUPCommonLOVLink2>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BeezUPCommonLOVLink2>)));
-            
-        }
-
-        /// <summary>
-        /// Get list of group of list name 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;BeezUPCommonLOVLink2&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BeezUPCommonLOVLink2>> GetUserListGroupNamesAsync ()
-        {
-             ApiResponse<List<BeezUPCommonLOVLink2>> localVarResponse = await GetUserListGroupNamesAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get list of group of list name 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;BeezUPCommonLOVLink2&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BeezUPCommonLOVLink2>>> GetUserListGroupNamesAsyncWithHttpInfo ()
-        {
-
-            var localVarPath = "/v2/user/lov/groups";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // authentication (api_key) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
-            {
-                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetUserListGroupNames", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<BeezUPCommonLOVLink2>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<BeezUPCommonLOVLink2>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BeezUPCommonLOVLink2>)));
-            
-        }
-
-        /// <summary>
-        /// Get all list names 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;BeezUPCommonLOVLink2&gt;</returns>
-        public List<BeezUPCommonLOVLink2> GetUserListNames ()
-        {
-             ApiResponse<List<BeezUPCommonLOVLink2>> localVarResponse = GetUserListNamesWithHttpInfo();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get all list names 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;BeezUPCommonLOVLink2&gt;</returns>
-        public ApiResponse< List<BeezUPCommonLOVLink2> > GetUserListNamesWithHttpInfo ()
-        {
-
-            var localVarPath = "/v2/user/lov/";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // authentication (api_key) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
-            {
-                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetUserListNames", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<BeezUPCommonLOVLink2>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<BeezUPCommonLOVLink2>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BeezUPCommonLOVLink2>)));
-            
-        }
-
-        /// <summary>
-        /// Get all list names 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;BeezUPCommonLOVLink2&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BeezUPCommonLOVLink2>> GetUserListNamesAsync ()
-        {
-             ApiResponse<List<BeezUPCommonLOVLink2>> localVarResponse = await GetUserListNamesAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get all list names 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;BeezUPCommonLOVLink2&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BeezUPCommonLOVLink2>>> GetUserListNamesAsyncWithHttpInfo ()
-        {
-
-            var localVarPath = "/v2/user/lov/";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // authentication (api_key) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
-            {
-                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetUserListNames", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<BeezUPCommonLOVLink2>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<BeezUPCommonLOVLink2>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BeezUPCommonLOVLink2>)));
-            
-        }
-
-        /// <summary>
         /// Get the list of values related to this list name 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="listName">The list of value name your want to get</param>
         /// <param name="acceptLanguage">Indicates that the client accepts the following languages. (optional)</param>
-        /// <returns>List&lt;BeezUPCommonListOfValueItem&gt;</returns>
-        public List<BeezUPCommonListOfValueItem> GetUserListOfValues (string listName, List<string> acceptLanguage = null)
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>UserListOfValuesResponse</returns>
+        public UserListOfValuesResponse GetUserListOfValues (string listName, List<string> acceptLanguage = null, string ifNoneMatch = null)
         {
-             ApiResponse<List<BeezUPCommonListOfValueItem>> localVarResponse = GetUserListOfValuesWithHttpInfo(listName, acceptLanguage);
+             ApiResponse<UserListOfValuesResponse> localVarResponse = GetUserListOfValuesWithHttpInfo(listName, acceptLanguage, ifNoneMatch);
              return localVarResponse.Data;
         }
 
@@ -24483,14 +25880,15 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="listName">The list of value name your want to get</param>
         /// <param name="acceptLanguage">Indicates that the client accepts the following languages. (optional)</param>
-        /// <returns>ApiResponse of List&lt;BeezUPCommonListOfValueItem&gt;</returns>
-        public ApiResponse< List<BeezUPCommonListOfValueItem> > GetUserListOfValuesWithHttpInfo (string listName, List<string> acceptLanguage = null)
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>ApiResponse of UserListOfValuesResponse</returns>
+        public ApiResponse< UserListOfValuesResponse > GetUserListOfValuesWithHttpInfo (string listName, List<string> acceptLanguage = null, string ifNoneMatch = null)
         {
             // verify the required parameter 'listName' is set
             if (listName == null)
                 throw new ApiException(400, "Missing required parameter 'listName' when calling BeezUPApi->GetUserListOfValues");
 
-            var localVarPath = "/v2/user/lov/{listName}";
+            var localVarPath = "/user/lov/{listName}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -24517,6 +25915,7 @@ namespace IO.Swagger.Api
             localVarPathParams.Add("format", "json");
             if (listName != null) localVarPathParams.Add("listName", Configuration.ApiClient.ParameterToString(listName)); // path parameter
             if (acceptLanguage != null) localVarHeaderParams.Add("Accept-Language", Configuration.ApiClient.ParameterToString(acceptLanguage)); // header parameter
+            if (ifNoneMatch != null) localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
 
             // authentication (api_key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
@@ -24538,9 +25937,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<BeezUPCommonListOfValueItem>>(localVarStatusCode,
+            return new ApiResponse<UserListOfValuesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<BeezUPCommonListOfValueItem>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BeezUPCommonListOfValueItem>)));
+                (UserListOfValuesResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserListOfValuesResponse)));
             
         }
 
@@ -24550,10 +25949,11 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="listName">The list of value name your want to get</param>
         /// <param name="acceptLanguage">Indicates that the client accepts the following languages. (optional)</param>
-        /// <returns>Task of List&lt;BeezUPCommonListOfValueItem&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BeezUPCommonListOfValueItem>> GetUserListOfValuesAsync (string listName, List<string> acceptLanguage = null)
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>Task of UserListOfValuesResponse</returns>
+        public async System.Threading.Tasks.Task<UserListOfValuesResponse> GetUserListOfValuesAsync (string listName, List<string> acceptLanguage = null, string ifNoneMatch = null)
         {
-             ApiResponse<List<BeezUPCommonListOfValueItem>> localVarResponse = await GetUserListOfValuesAsyncWithHttpInfo(listName, acceptLanguage);
+             ApiResponse<UserListOfValuesResponse> localVarResponse = await GetUserListOfValuesAsyncWithHttpInfo(listName, acceptLanguage, ifNoneMatch);
              return localVarResponse.Data;
 
         }
@@ -24564,14 +25964,15 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="listName">The list of value name your want to get</param>
         /// <param name="acceptLanguage">Indicates that the client accepts the following languages. (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;BeezUPCommonListOfValueItem&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BeezUPCommonListOfValueItem>>> GetUserListOfValuesAsyncWithHttpInfo (string listName, List<string> acceptLanguage = null)
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>Task of ApiResponse (UserListOfValuesResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<UserListOfValuesResponse>> GetUserListOfValuesAsyncWithHttpInfo (string listName, List<string> acceptLanguage = null, string ifNoneMatch = null)
         {
             // verify the required parameter 'listName' is set
             if (listName == null)
                 throw new ApiException(400, "Missing required parameter 'listName' when calling BeezUPApi->GetUserListOfValues");
 
-            var localVarPath = "/v2/user/lov/{listName}";
+            var localVarPath = "/user/lov/{listName}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -24598,6 +25999,7 @@ namespace IO.Swagger.Api
             localVarPathParams.Add("format", "json");
             if (listName != null) localVarPathParams.Add("listName", Configuration.ApiClient.ParameterToString(listName)); // path parameter
             if (acceptLanguage != null) localVarHeaderParams.Add("Accept-Language", Configuration.ApiClient.ParameterToString(acceptLanguage)); // header parameter
+            if (ifNoneMatch != null) localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
 
             // authentication (api_key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
@@ -24618,9 +26020,151 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<BeezUPCommonListOfValueItem>>(localVarStatusCode,
+            return new ApiResponse<UserListOfValuesResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<BeezUPCommonListOfValueItem>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BeezUPCommonListOfValueItem>)));
+                (UserListOfValuesResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserListOfValuesResponse)));
+            
+        }
+
+        /// <summary>
+        /// Get all list names 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>UserLovIndex</returns>
+        public UserLovIndex GetUserLovIndex ()
+        {
+             ApiResponse<UserLovIndex> localVarResponse = GetUserLovIndexWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get all list names 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of UserLovIndex</returns>
+        public ApiResponse< UserLovIndex > GetUserLovIndexWithHttpInfo ()
+        {
+
+            var localVarPath = "/user/lov/";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // authentication (api_key) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
+            {
+                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserLovIndex", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserLovIndex>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (UserLovIndex) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserLovIndex)));
+            
+        }
+
+        /// <summary>
+        /// Get all list names 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of UserLovIndex</returns>
+        public async System.Threading.Tasks.Task<UserLovIndex> GetUserLovIndexAsync ()
+        {
+             ApiResponse<UserLovIndex> localVarResponse = await GetUserLovIndexAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get all list names 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (UserLovIndex)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<UserLovIndex>> GetUserLovIndexAsyncWithHttpInfo ()
+        {
+
+            var localVarPath = "/user/lov/";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // authentication (api_key) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
+            {
+                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserLovIndex", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserLovIndex>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (UserLovIndex) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserLovIndex)));
             
         }
 
@@ -24642,7 +26186,7 @@ namespace IO.Swagger.Api
         public ApiResponse<Object> HarvestAllWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/marketplaces/orders/harvest";
+            var localVarPath = "/user/marketplaces/orders/harvest";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -24713,7 +26257,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<Object>> HarvestAllAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/marketplaces/orders/harvest";
+            var localVarPath = "/user/marketplaces/orders/harvest";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -24797,7 +26341,7 @@ namespace IO.Swagger.Api
             if (beezUPOrderId == null)
                 throw new ApiException(400, "Missing required parameter 'beezUPOrderId' when calling BeezUPApi->HarvestOrder");
 
-            var localVarPath = "/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/harvest";
+            var localVarPath = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/harvest";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -24886,7 +26430,7 @@ namespace IO.Swagger.Api
             if (beezUPOrderId == null)
                 throw new ApiException(400, "Missing required parameter 'beezUPOrderId' when calling BeezUPApi->HarvestOrder");
 
-            var localVarPath = "/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/harvest";
+            var localVarPath = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/harvest";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -24963,7 +26507,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->ImportationActivateAutoImport");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/autoImport";
+            var localVarPath = "/user/catalogs/{storeId}/autoImport";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -25040,7 +26584,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->ImportationActivateAutoImport");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/autoImport";
+            var localVarPath = "/user/catalogs/{storeId}/autoImport";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -25120,7 +26664,7 @@ namespace IO.Swagger.Api
             if (executionId == null)
                 throw new ApiException(400, "Missing required parameter 'executionId' when calling BeezUPApi->ImportationCancel");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -25203,7 +26747,7 @@ namespace IO.Swagger.Api
             if (executionId == null)
                 throw new ApiException(400, "Missing required parameter 'executionId' when calling BeezUPApi->ImportationCancel");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -25284,7 +26828,7 @@ namespace IO.Swagger.Api
             if (executionId == null)
                 throw new ApiException(400, "Missing required parameter 'executionId' when calling BeezUPApi->ImportationCommit");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/commit";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/commit";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -25367,7 +26911,7 @@ namespace IO.Swagger.Api
             if (executionId == null)
                 throw new ApiException(400, "Missing required parameter 'executionId' when calling BeezUPApi->ImportationCommit");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/commit";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/commit";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -25448,7 +26992,7 @@ namespace IO.Swagger.Api
             if (executionId == null)
                 throw new ApiException(400, "Missing required parameter 'executionId' when calling BeezUPApi->ImportationCommitColumns");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/commitColumns";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/commitColumns";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -25531,7 +27075,7 @@ namespace IO.Swagger.Api
             if (executionId == null)
                 throw new ApiException(400, "Missing required parameter 'executionId' when calling BeezUPApi->ImportationCommitColumns");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/commitColumns";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/commitColumns";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -25622,7 +27166,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ImportationConfigureCatalogColumn");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -25724,7 +27268,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ImportationConfigureCatalogColumn");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -25814,7 +27358,7 @@ namespace IO.Swagger.Api
             if (executionId == null)
                 throw new ApiException(400, "Missing required parameter 'executionId' when calling BeezUPApi->ImportationConfigureRemainingCatalogColumns");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/configureRemainingCatalogColumns";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/configureRemainingCatalogColumns";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -25897,7 +27441,7 @@ namespace IO.Swagger.Api
             if (executionId == null)
                 throw new ApiException(400, "Missing required parameter 'executionId' when calling BeezUPApi->ImportationConfigureRemainingCatalogColumns");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/configureRemainingCatalogColumns";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/configureRemainingCatalogColumns";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -25983,7 +27527,7 @@ namespace IO.Swagger.Api
             if (columnId == null)
                 throw new ApiException(400, "Missing required parameter 'columnId' when calling BeezUPApi->ImportationDeleteCustomColumn");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -26072,7 +27616,7 @@ namespace IO.Swagger.Api
             if (columnId == null)
                 throw new ApiException(400, "Missing required parameter 'columnId' when calling BeezUPApi->ImportationDeleteCustomColumn");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -26160,7 +27704,7 @@ namespace IO.Swagger.Api
             if (columnId == null)
                 throw new ApiException(400, "Missing required parameter 'columnId' when calling BeezUPApi->ImportationGetCustomColumnExpression");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/expression";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/expression";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -26250,7 +27794,7 @@ namespace IO.Swagger.Api
             if (columnId == null)
                 throw new ApiException(400, "Missing required parameter 'columnId' when calling BeezUPApi->ImportationGetCustomColumnExpression");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/expression";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/expression";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -26333,7 +27877,7 @@ namespace IO.Swagger.Api
             if (executionId == null)
                 throw new ApiException(400, "Missing required parameter 'executionId' when calling BeezUPApi->ImportationGetCustomColumns");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/customColumns";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -26417,7 +27961,7 @@ namespace IO.Swagger.Api
             if (executionId == null)
                 throw new ApiException(400, "Missing required parameter 'executionId' when calling BeezUPApi->ImportationGetCustomColumns");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/customColumns";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -26499,7 +28043,7 @@ namespace IO.Swagger.Api
             if (executionId == null)
                 throw new ApiException(400, "Missing required parameter 'executionId' when calling BeezUPApi->ImportationGetDetectedCatalogColumns");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/catalogColumns";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -26583,7 +28127,7 @@ namespace IO.Swagger.Api
             if (executionId == null)
                 throw new ApiException(400, "Missing required parameter 'executionId' when calling BeezUPApi->ImportationGetDetectedCatalogColumns");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/catalogColumns";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -26665,7 +28209,7 @@ namespace IO.Swagger.Api
             if (executionId == null)
                 throw new ApiException(400, "Missing required parameter 'executionId' when calling BeezUPApi->ImportationGetImportationMonitoring");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -26749,7 +28293,7 @@ namespace IO.Swagger.Api
             if (executionId == null)
                 throw new ApiException(400, "Missing required parameter 'executionId' when calling BeezUPApi->ImportationGetImportationMonitoring");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -26826,7 +28370,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->ImportationGetManualUpdateLastInputConfig");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/inputConfiguration";
+            var localVarPath = "/user/catalogs/{storeId}/inputConfiguration";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -26904,7 +28448,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->ImportationGetManualUpdateLastInputConfig");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/inputConfiguration";
+            var localVarPath = "/user/catalogs/{storeId}/inputConfiguration";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -26990,7 +28534,7 @@ namespace IO.Swagger.Api
             if (productSampleIndex == null)
                 throw new ApiException(400, "Missing required parameter 'productSampleIndex' when calling BeezUPApi->ImportationGetProductSample");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -27080,7 +28624,7 @@ namespace IO.Swagger.Api
             if (productSampleIndex == null)
                 throw new ApiException(400, "Missing required parameter 'productSampleIndex' when calling BeezUPApi->ImportationGetProductSample");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -27173,7 +28717,7 @@ namespace IO.Swagger.Api
             if (columnId == null)
                 throw new ApiException(400, "Missing required parameter 'columnId' when calling BeezUPApi->ImportationGetProductSampleCustomColumnValue");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}/customColumns/{columnId}";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}/customColumns/{columnId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -27269,7 +28813,7 @@ namespace IO.Swagger.Api
             if (columnId == null)
                 throw new ApiException(400, "Missing required parameter 'columnId' when calling BeezUPApi->ImportationGetProductSampleCustomColumnValue");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}/customColumns/{columnId}";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}/customColumns/{columnId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -27348,7 +28892,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->ImportationGetReportings");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations";
+            var localVarPath = "/user/catalogs/{storeId}/importations";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -27426,7 +28970,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->ImportationGetReportings");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations";
+            var localVarPath = "/user/catalogs/{storeId}/importations";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -27511,7 +29055,7 @@ namespace IO.Swagger.Api
             if (columnId == null)
                 throw new ApiException(400, "Missing required parameter 'columnId' when calling BeezUPApi->ImportationIgnoreColumn");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/ignore";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/ignore";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -27600,7 +29144,7 @@ namespace IO.Swagger.Api
             if (columnId == null)
                 throw new ApiException(400, "Missing required parameter 'columnId' when calling BeezUPApi->ImportationIgnoreColumn");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/ignore";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/ignore";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -27692,7 +29236,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ImportationMapCatalogColumn");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/map";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/map";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -27794,7 +29338,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ImportationMapCatalogColumn");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/map";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/map";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -27894,7 +29438,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ImportationMapCustomColumn");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/map";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/map";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -27996,7 +29540,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ImportationMapCustomColumn");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/map";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/map";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -28091,7 +29635,7 @@ namespace IO.Swagger.Api
             if (columnId == null)
                 throw new ApiException(400, "Missing required parameter 'columnId' when calling BeezUPApi->ImportationReattendColumn");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/reattend";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/reattend";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -28180,7 +29724,7 @@ namespace IO.Swagger.Api
             if (columnId == null)
                 throw new ApiException(400, "Missing required parameter 'columnId' when calling BeezUPApi->ImportationReattendColumn");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/reattend";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/reattend";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -28272,7 +29816,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ImportationSaveCustomColumn");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -28374,7 +29918,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ImportationSaveCustomColumn");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -28442,10 +29986,10 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="storeId">Your store identifier</param>
         /// <param name="request"></param>
-        /// <returns>List&lt;BeezUPCommonLink2&gt;</returns>
-        public List<BeezUPCommonLink2> ImportationStartManualUpdate (string storeId, StartManualImportRequest request)
+        /// <returns>LinksImportationGetImportationMonitoringLink</returns>
+        public LinksImportationGetImportationMonitoringLink ImportationStartManualUpdate (string storeId, StartManualImportRequest request)
         {
-             ApiResponse<List<BeezUPCommonLink2>> localVarResponse = ImportationStartManualUpdateWithHttpInfo(storeId, request);
+             ApiResponse<LinksImportationGetImportationMonitoringLink> localVarResponse = ImportationStartManualUpdateWithHttpInfo(storeId, request);
              return localVarResponse.Data;
         }
 
@@ -28455,8 +29999,8 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="storeId">Your store identifier</param>
         /// <param name="request"></param>
-        /// <returns>ApiResponse of List&lt;BeezUPCommonLink2&gt;</returns>
-        public ApiResponse< List<BeezUPCommonLink2> > ImportationStartManualUpdateWithHttpInfo (string storeId, StartManualImportRequest request)
+        /// <returns>ApiResponse of LinksImportationGetImportationMonitoringLink</returns>
+        public ApiResponse< LinksImportationGetImportationMonitoringLink > ImportationStartManualUpdateWithHttpInfo (string storeId, StartManualImportRequest request)
         {
             // verify the required parameter 'storeId' is set
             if (storeId == null)
@@ -28465,7 +30009,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ImportationStartManualUpdate");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations";
+            var localVarPath = "/user/catalogs/{storeId}/importations";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -28520,9 +30064,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<BeezUPCommonLink2>>(localVarStatusCode,
+            return new ApiResponse<LinksImportationGetImportationMonitoringLink>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<BeezUPCommonLink2>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BeezUPCommonLink2>)));
+                (LinksImportationGetImportationMonitoringLink) Configuration.ApiClient.Deserialize(localVarResponse, typeof(LinksImportationGetImportationMonitoringLink)));
             
         }
 
@@ -28532,10 +30076,10 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="storeId">Your store identifier</param>
         /// <param name="request"></param>
-        /// <returns>Task of List&lt;BeezUPCommonLink2&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BeezUPCommonLink2>> ImportationStartManualUpdateAsync (string storeId, StartManualImportRequest request)
+        /// <returns>Task of LinksImportationGetImportationMonitoringLink</returns>
+        public async System.Threading.Tasks.Task<LinksImportationGetImportationMonitoringLink> ImportationStartManualUpdateAsync (string storeId, StartManualImportRequest request)
         {
-             ApiResponse<List<BeezUPCommonLink2>> localVarResponse = await ImportationStartManualUpdateAsyncWithHttpInfo(storeId, request);
+             ApiResponse<LinksImportationGetImportationMonitoringLink> localVarResponse = await ImportationStartManualUpdateAsyncWithHttpInfo(storeId, request);
              return localVarResponse.Data;
 
         }
@@ -28546,8 +30090,8 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="storeId">Your store identifier</param>
         /// <param name="request"></param>
-        /// <returns>Task of ApiResponse (List&lt;BeezUPCommonLink2&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<BeezUPCommonLink2>>> ImportationStartManualUpdateAsyncWithHttpInfo (string storeId, StartManualImportRequest request)
+        /// <returns>Task of ApiResponse (LinksImportationGetImportationMonitoringLink)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<LinksImportationGetImportationMonitoringLink>> ImportationStartManualUpdateAsyncWithHttpInfo (string storeId, StartManualImportRequest request)
         {
             // verify the required parameter 'storeId' is set
             if (storeId == null)
@@ -28556,7 +30100,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->ImportationStartManualUpdate");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations";
+            var localVarPath = "/user/catalogs/{storeId}/importations";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -28610,9 +30154,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<BeezUPCommonLink2>>(localVarStatusCode,
+            return new ApiResponse<LinksImportationGetImportationMonitoringLink>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<BeezUPCommonLink2>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BeezUPCommonLink2>)));
+                (LinksImportationGetImportationMonitoringLink) Configuration.ApiClient.Deserialize(localVarResponse, typeof(LinksImportationGetImportationMonitoringLink)));
             
         }
 
@@ -28645,7 +30189,7 @@ namespace IO.Swagger.Api
             if (executionId == null)
                 throw new ApiException(400, "Missing required parameter 'executionId' when calling BeezUPApi->ImportationTechnicalProgression");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/technicalProgression";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/technicalProgression";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -28729,7 +30273,7 @@ namespace IO.Swagger.Api
             if (executionId == null)
                 throw new ApiException(400, "Missing required parameter 'executionId' when calling BeezUPApi->ImportationTechnicalProgression");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/technicalProgression";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/technicalProgression";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -28815,7 +30359,7 @@ namespace IO.Swagger.Api
             if (columnId == null)
                 throw new ApiException(400, "Missing required parameter 'columnId' when calling BeezUPApi->ImportationUnmapCatalogColumn");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/unmap";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/unmap";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -28904,7 +30448,7 @@ namespace IO.Swagger.Api
             if (columnId == null)
                 throw new ApiException(400, "Missing required parameter 'columnId' when calling BeezUPApi->ImportationUnmapCatalogColumn");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/unmap";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/unmap";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -28991,7 +30535,7 @@ namespace IO.Swagger.Api
             if (columnId == null)
                 throw new ApiException(400, "Missing required parameter 'columnId' when calling BeezUPApi->ImportationUnmapCustomColumn");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/unmap";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/unmap";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -29080,7 +30624,7 @@ namespace IO.Swagger.Api
             if (columnId == null)
                 throw new ApiException(400, "Missing required parameter 'columnId' when calling BeezUPApi->ImportationUnmapCustomColumn");
 
-            var localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/unmap";
+            var localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/unmap";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -29135,6 +30679,163 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
+        /// Login User Login - The login will give your tokens
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>ApiCredentials</returns>
+        public ApiCredentials Login (LoginRequest request)
+        {
+             ApiResponse<ApiCredentials> localVarResponse = LoginWithHttpInfo(request);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Login User Login - The login will give your tokens
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>ApiResponse of ApiCredentials</returns>
+        public ApiResponse< ApiCredentials > LoginWithHttpInfo (LoginRequest request)
+        {
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->Login");
+
+            var localVarPath = "/public/security/login";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("Login", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ApiCredentials>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ApiCredentials) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApiCredentials)));
+            
+        }
+
+        /// <summary>
+        /// Login User Login - The login will give your tokens
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of ApiCredentials</returns>
+        public async System.Threading.Tasks.Task<ApiCredentials> LoginAsync (LoginRequest request)
+        {
+             ApiResponse<ApiCredentials> localVarResponse = await LoginAsyncWithHttpInfo(request);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Login User Login - The login will give your tokens
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of ApiResponse (ApiCredentials)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ApiCredentials>> LoginAsyncWithHttpInfo (LoginRequest request)
+        {
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->Login");
+
+            var localVarPath = "/public/security/login";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("Login", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ApiCredentials>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ApiCredentials) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApiCredentials)));
+            
+        }
+
+        /// <summary>
         /// Log out the current user from go2 Log out the current user from go2
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
@@ -29152,7 +30853,7 @@ namespace IO.Swagger.Api
         public ApiResponse<Object> LogoutWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/customer/security/logout";
+            var localVarPath = "/user/customer/security/logout";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -29223,7 +30924,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<Object>> LogoutAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/customer/security/logout";
+            var localVarPath = "/user/customer/security/logout";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -29275,6 +30976,161 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
+        /// Lost password Lost password - Your password will be regenerated and sent to your email
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="email">Your email</param>
+        /// <returns></returns>
+        public void LostPassword (BeezUPCommonEmail email)
+        {
+             LostPasswordWithHttpInfo(email);
+        }
+
+        /// <summary>
+        /// Lost password Lost password - Your password will be regenerated and sent to your email
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="email">Your email</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> LostPasswordWithHttpInfo (BeezUPCommonEmail email)
+        {
+            // verify the required parameter 'email' is set
+            if (email == null)
+                throw new ApiException(400, "Missing required parameter 'email' when calling BeezUPApi->LostPassword");
+
+            var localVarPath = "/public/security/lostpassword";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (email != null && email.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(email); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = email; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("LostPassword", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Lost password Lost password - Your password will be regenerated and sent to your email
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="email">Your email</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task LostPasswordAsync (BeezUPCommonEmail email)
+        {
+             await LostPasswordAsyncWithHttpInfo(email);
+
+        }
+
+        /// <summary>
+        /// Lost password Lost password - Your password will be regenerated and sent to your email
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="email">Your email</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> LostPasswordAsyncWithHttpInfo (BeezUPCommonEmail email)
+        {
+            // verify the required parameter 'email' is set
+            if (email == null)
+                throw new ApiException(400, "Missing required parameter 'email' when calling BeezUPApi->LostPassword");
+
+            var localVarPath = "/public/security/lostpassword";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (email != null && email.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(email); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = email; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("LostPassword", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
         /// Map channel catalog category 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
@@ -29302,7 +31158,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->MapChannelCatalogCategory");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/categoryMappings/map";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/categoryMappings/map";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -29392,7 +31248,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->MapChannelCatalogCategory");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/categoryMappings/map";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/categoryMappings/map";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -29480,7 +31336,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->MapChannelCatalogColumns");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/columnMappings";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/columnMappings";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -29570,7 +31426,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->MapChannelCatalogColumns");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/columnMappings";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/columnMappings";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -29658,7 +31514,7 @@ namespace IO.Swagger.Api
             if (ruleId == null)
                 throw new ApiException(400, "Missing required parameter 'ruleId' when calling BeezUPApi->MoveDownRule");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/rules/{ruleId}/movedown";
+            var localVarPath = "/user/analytics/{storeId}/rules/{ruleId}/movedown";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -29741,7 +31597,7 @@ namespace IO.Swagger.Api
             if (ruleId == null)
                 throw new ApiException(400, "Missing required parameter 'ruleId' when calling BeezUPApi->MoveDownRule");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/rules/{ruleId}/movedown";
+            var localVarPath = "/user/analytics/{storeId}/rules/{ruleId}/movedown";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -29822,7 +31678,7 @@ namespace IO.Swagger.Api
             if (ruleId == null)
                 throw new ApiException(400, "Missing required parameter 'ruleId' when calling BeezUPApi->MoveUpRule");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/rules/{ruleId}/moveup";
+            var localVarPath = "/user/analytics/{storeId}/rules/{ruleId}/moveup";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -29905,7 +31761,7 @@ namespace IO.Swagger.Api
             if (ruleId == null)
                 throw new ApiException(400, "Missing required parameter 'ruleId' when calling BeezUPApi->MoveUpRule");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/rules/{ruleId}/moveup";
+            var localVarPath = "/user/analytics/{storeId}/rules/{ruleId}/moveup";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -29991,7 +31847,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->Optimise");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/optimisations/{actionName}";
+            var localVarPath = "/user/analytics/{storeId}/optimisations/{actionName}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -30087,7 +31943,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->Optimise");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/optimisations/{actionName}";
+            var localVarPath = "/user/analytics/{storeId}/optimisations/{actionName}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -30183,7 +32039,7 @@ namespace IO.Swagger.Api
             if (actionName == null)
                 throw new ApiException(400, "Missing required parameter 'actionName' when calling BeezUPApi->OptimiseByCategory");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/optimisations/bycategory/{catalogCategoryId}/{actionName}";
+            var localVarPath = "/user/analytics/{storeId}/optimisations/bycategory/{catalogCategoryId}/{actionName}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -30282,7 +32138,7 @@ namespace IO.Swagger.Api
             if (actionName == null)
                 throw new ApiException(400, "Missing required parameter 'actionName' when calling BeezUPApi->OptimiseByCategory");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/optimisations/bycategory/{catalogCategoryId}/{actionName}";
+            var localVarPath = "/user/analytics/{storeId}/optimisations/bycategory/{catalogCategoryId}/{actionName}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -30377,7 +32233,7 @@ namespace IO.Swagger.Api
             if (actionName == null)
                 throw new ApiException(400, "Missing required parameter 'actionName' when calling BeezUPApi->OptimiseByChannel");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/optimisations/bychannel/{channelId}/{actionName}";
+            var localVarPath = "/user/analytics/{storeId}/optimisations/bychannel/{channelId}/{actionName}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -30466,7 +32322,7 @@ namespace IO.Swagger.Api
             if (actionName == null)
                 throw new ApiException(400, "Missing required parameter 'actionName' when calling BeezUPApi->OptimiseByChannel");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/optimisations/bychannel/{channelId}/{actionName}";
+            var localVarPath = "/user/analytics/{storeId}/optimisations/bychannel/{channelId}/{actionName}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -30555,7 +32411,7 @@ namespace IO.Swagger.Api
             if (actionName == null)
                 throw new ApiException(400, "Missing required parameter 'actionName' when calling BeezUPApi->OptimiseByProduct");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/optimisations/byproduct/{productId}/{actionName}";
+            var localVarPath = "/user/analytics/{storeId}/optimisations/byproduct/{productId}/{actionName}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -30654,7 +32510,7 @@ namespace IO.Swagger.Api
             if (actionName == null)
                 throw new ApiException(400, "Missing required parameter 'actionName' when calling BeezUPApi->OptimiseByProduct");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/optimisations/byproduct/{productId}/{actionName}";
+            var localVarPath = "/user/analytics/{storeId}/optimisations/byproduct/{productId}/{actionName}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -30749,7 +32605,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->OverrideChannelCatalogProductOverrides");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -30845,7 +32701,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->OverrideChannelCatalogProductOverrides");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -30924,7 +32780,7 @@ namespace IO.Swagger.Api
         public ApiResponse<Object> ReactivateCurrentContractWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/customer/contracts/current/reenableAutoRenewal";
+            var localVarPath = "/user/customer/contracts/current/reenableAutoRenewal";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -30995,7 +32851,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<Object>> ReactivateCurrentContractAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/customer/contracts/current/reenableAutoRenewal";
+            var localVarPath = "/user/customer/contracts/current/reenableAutoRenewal";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -31074,7 +32930,7 @@ namespace IO.Swagger.Api
             if (productId == null)
                 throw new ApiException(400, "Missing required parameter 'productId' when calling BeezUPApi->ReenableChannelCatalogProduct");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/reenable";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/products/{productId}/reenable";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -31157,7 +33013,7 @@ namespace IO.Swagger.Api
             if (productId == null)
                 throw new ApiException(400, "Missing required parameter 'productId' when calling BeezUPApi->ReenableChannelCatalogProduct");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/reenable";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/products/{productId}/reenable";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -31211,6 +33067,161 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
+        /// User Registration User Registration - Create a new user on BeezUP
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public void Register (RegisterRequest request)
+        {
+             RegisterWithHttpInfo(request);
+        }
+
+        /// <summary>
+        /// User Registration User Registration - Create a new user on BeezUP
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> RegisterWithHttpInfo (RegisterRequest request)
+        {
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->Register");
+
+            var localVarPath = "/public/security/register";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("Register", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// User Registration User Registration - Create a new user on BeezUP
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task RegisterAsync (RegisterRequest request)
+        {
+             await RegisterAsyncWithHttpInfo(request);
+
+        }
+
+        /// <summary>
+        /// User Registration User Registration - Create a new user on BeezUP
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> RegisterAsyncWithHttpInfo (RegisterRequest request)
+        {
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->Register");
+
+            var localVarPath = "/public/security/register";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("Register", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
         /// Resend email activation 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
@@ -31228,7 +33239,7 @@ namespace IO.Swagger.Api
         public ApiResponse<Object> ResendEmailActivationWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/customer/account/resendEmailActivation";
+            var localVarPath = "/user/customer/account/resendEmailActivation";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -31299,7 +33310,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<Object>> ResendEmailActivationAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "/v2/user/customer/account/resendEmailActivation";
+            var localVarPath = "/user/customer/account/resendEmailActivation";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -31378,7 +33389,7 @@ namespace IO.Swagger.Api
             if (ruleId == null)
                 throw new ApiException(400, "Missing required parameter 'ruleId' when calling BeezUPApi->RunRule");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/rules/{ruleId}/run";
+            var localVarPath = "/user/analytics/{storeId}/rules/{ruleId}/run";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -31461,7 +33472,7 @@ namespace IO.Swagger.Api
             if (ruleId == null)
                 throw new ApiException(400, "Missing required parameter 'ruleId' when calling BeezUPApi->RunRule");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/rules/{ruleId}/run";
+            var localVarPath = "/user/analytics/{storeId}/rules/{ruleId}/run";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -31537,7 +33548,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->RunRules");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/rules/run";
+            var localVarPath = "/user/analytics/{storeId}/rules/run";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -31614,7 +33625,7 @@ namespace IO.Swagger.Api
             if (storeId == null)
                 throw new ApiException(400, "Missing required parameter 'storeId' when calling BeezUPApi->RunRules");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/rules/run";
+            var localVarPath = "/user/analytics/{storeId}/rules/run";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -31689,7 +33700,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->SaveCompanyInfo");
 
-            var localVarPath = "/v2/user/customer/account/companyInfo";
+            var localVarPath = "/user/customer/account/companyInfo";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -31773,7 +33784,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->SaveCompanyInfo");
 
-            var localVarPath = "/v2/user/customer/account/companyInfo";
+            var localVarPath = "/user/customer/account/companyInfo";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -31855,7 +33866,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->SaveCreditCardInfo");
 
-            var localVarPath = "/v2/user/customer/account/creditCardInfo";
+            var localVarPath = "/user/customer/account/creditCardInfo";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -31939,7 +33950,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->SaveCreditCardInfo");
 
-            var localVarPath = "/v2/user/customer/account/creditCardInfo";
+            var localVarPath = "/user/customer/account/creditCardInfo";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -32021,7 +34032,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->SavePersonalInfo");
 
-            var localVarPath = "/v2/user/customer/account/personalInfo";
+            var localVarPath = "/user/customer/account/personalInfo";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -32105,7 +34116,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->SavePersonalInfo");
 
-            var localVarPath = "/v2/user/customer/account/personalInfo";
+            var localVarPath = "/user/customer/account/personalInfo";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -32187,7 +34198,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->SaveProfilePictureInfo");
 
-            var localVarPath = "/v2/user/customer/account/profilePictureInfo";
+            var localVarPath = "/user/customer/account/profilePictureInfo";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -32271,7 +34282,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->SaveProfilePictureInfo");
 
-            var localVarPath = "/v2/user/customer/account/profilePictureInfo";
+            var localVarPath = "/user/customer/account/profilePictureInfo";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -32363,7 +34374,7 @@ namespace IO.Swagger.Api
             if (reportFilter == null)
                 throw new ApiException(400, "Missing required parameter 'reportFilter' when calling BeezUPApi->SaveReportFilter");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/reports/filters/{reportFilterId}";
+            var localVarPath = "/user/analytics/{storeId}/reports/filters/{reportFilterId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -32459,7 +34470,7 @@ namespace IO.Swagger.Api
             if (reportFilter == null)
                 throw new ApiException(400, "Missing required parameter 'reportFilter' when calling BeezUPApi->SaveReportFilter");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/reports/filters/{reportFilterId}";
+            var localVarPath = "/user/analytics/{storeId}/reports/filters/{reportFilterId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -32553,7 +34564,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->SaveStoreAlert");
 
-            var localVarPath = "/v2/user/customer/stores/{storeId}/alerts/{alertId}";
+            var localVarPath = "/user/customer/stores/{storeId}/alerts/{alertId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -32649,7 +34660,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->SaveStoreAlert");
 
-            var localVarPath = "/v2/user/customer/stores/{storeId}/alerts/{alertId}";
+            var localVarPath = "/user/customer/stores/{storeId}/alerts/{alertId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -32738,7 +34749,7 @@ namespace IO.Swagger.Api
             if (model == null)
                 throw new ApiException(400, "Missing required parameter 'model' when calling BeezUPApi->SetChannelCatalogMarketplaceSettings");
 
-            var localVarPath = "/v2/user/marketplaces/channelcatalogs/{channelCatalogId}/settings";
+            var localVarPath = "/user/marketplaces/channelcatalogs/{channelCatalogId}/settings";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -32828,7 +34839,7 @@ namespace IO.Swagger.Api
             if (model == null)
                 throw new ApiException(400, "Missing required parameter 'model' when calling BeezUPApi->SetChannelCatalogMarketplaceSettings");
 
-            var localVarPath = "/v2/user/marketplaces/channelcatalogs/{channelCatalogId}/settings";
+            var localVarPath = "/user/marketplaces/channelcatalogs/{channelCatalogId}/settings";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -32926,7 +34937,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->SetMerchantOrderInfo");
 
-            var localVarPath = "/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/setMerchantOrderInfo";
+            var localVarPath = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/setMerchantOrderInfo";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -33028,7 +35039,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->SetMerchantOrderInfo");
 
-            var localVarPath = "/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/setMerchantOrderInfo";
+            var localVarPath = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/setMerchantOrderInfo";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -33114,7 +35125,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->SetMerchantOrderInfoList");
 
-            var localVarPath = "/v2/user/marketplaces/orders/batches/setMerchantOrderInfos";
+            var localVarPath = "/user/marketplaces/orders/batches/setMerchantOrderInfos";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -33199,7 +35210,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->SetMerchantOrderInfoList");
 
-            var localVarPath = "/v2/user/marketplaces/orders/batches/setMerchantOrderInfos";
+            var localVarPath = "/user/marketplaces/orders/batches/setMerchantOrderInfos";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -33286,7 +35297,7 @@ namespace IO.Swagger.Api
             if (email == null)
                 throw new ApiException(400, "Missing required parameter 'email' when calling BeezUPApi->Share");
 
-            var localVarPath = "/v2/user/customer/stores/{storeId}/shares";
+            var localVarPath = "/user/customer/stores/{storeId}/shares";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -33376,7 +35387,7 @@ namespace IO.Swagger.Api
             if (email == null)
                 throw new ApiException(400, "Missing required parameter 'email' when calling BeezUPApi->Share");
 
-            var localVarPath = "/v2/user/customer/stores/{storeId}/shares";
+            var localVarPath = "/user/customer/stores/{storeId}/shares";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -33459,7 +35470,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->TerminateCurrentContract");
 
-            var localVarPath = "/v2/user/customer/contracts/current/disableAutoRenewal";
+            var localVarPath = "/user/customer/contracts/current/disableAutoRenewal";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -33543,7 +35554,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->TerminateCurrentContract");
 
-            var localVarPath = "/v2/user/customer/contracts/current/disableAutoRenewal";
+            var localVarPath = "/user/customer/contracts/current/disableAutoRenewal";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -33630,7 +35641,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->UnmapChannelCatalogCategory");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/categoryMappings/unmap";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/categoryMappings/unmap";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -33720,7 +35731,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->UnmapChannelCatalogCategory");
 
-            var localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/categoryMappings/unmap";
+            var localVarPath = "/user/channelCatalogs/{channelCatalogId}/categoryMappings/unmap";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -33813,7 +35824,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->UpdateRule");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/rules/{ruleId}";
+            var localVarPath = "/user/analytics/{storeId}/rules/{ruleId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -33909,7 +35920,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->UpdateRule");
 
-            var localVarPath = "/v2/user/analytics/{storeId}/rules/{ruleId}";
+            var localVarPath = "/user/analytics/{storeId}/rules/{ruleId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -33998,7 +36009,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->UpdateStore");
 
-            var localVarPath = "/v2/user/customer/stores/{storeId}";
+            var localVarPath = "/user/customer/stores/{storeId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -34088,7 +36099,7 @@ namespace IO.Swagger.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling BeezUPApi->UpdateStore");
 
-            var localVarPath = "/v2/user/customer/stores/{storeId}";
+            var localVarPath = "/user/customer/stores/{storeId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
