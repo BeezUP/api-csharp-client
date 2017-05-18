@@ -88,14 +88,6 @@ namespace IO.Swagger.Test
         {
             // TODO unit test for the property 'LastModificationUtcDate'
         }
-        /// <summary>
-        /// Test the property 'Info'
-        /// </summary>
-        [Test]
-        public void InfoTest()
-        {
-            // TODO unit test for the property 'Info'
-        }
 
     }
 

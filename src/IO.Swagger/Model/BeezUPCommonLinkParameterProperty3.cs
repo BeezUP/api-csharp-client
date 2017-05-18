@@ -32,24 +32,45 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BeezUPCommonLinkParameterProperty3" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected BeezUPCommonLinkParameterProperty3() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BeezUPCommonLinkParameterProperty3" /> class.
+        /// </summary>
+        /// <param name="Label">The label corresponding to the link parameter property. This label is automatically translated based on the Accept-Language http header..</param>
         /// <param name="Value">The value of the parameter. It can be an integer a string or an object..</param>
         /// <param name="Required">Required.</param>
-        /// <param name="Type">Type.</param>
+        /// <param name="Type">Type (required).</param>
         /// <param name="LovLink">LovLink.</param>
         /// <param name="LovRequired">If true, you MUST use indicate a value from the list of values otherwise it&#39;s a freetext.</param>
         /// <param name="Description">description of the parameter.</param>
         /// <param name="Schema">schema of the parameter.</param>
-        public BeezUPCommonLinkParameterProperty3(Object Value = default(Object), bool? Required = default(bool?), BeezUPCommonParameterType Type = default(BeezUPCommonParameterType), BeezUPCommonLOVLink3 LovLink = default(BeezUPCommonLOVLink3), bool? LovRequired = default(bool?), string Description = default(string), string Schema = default(string))
+        public BeezUPCommonLinkParameterProperty3(string Label = default(string), Object Value = default(Object), bool? Required = default(bool?), BeezUPCommonParameterType Type = default(BeezUPCommonParameterType), BeezUPCommonLOVLink3 LovLink = default(BeezUPCommonLOVLink3), bool? LovRequired = default(bool?), string Description = default(string), string Schema = default(string))
         {
+            // to ensure "Type" is required (not null)
+            if (Type == null)
+            {
+                throw new InvalidDataException("Type is a required property for BeezUPCommonLinkParameterProperty3 and cannot be null");
+            }
+            else
+            {
+                this.Type = Type;
+            }
+            this.Label = Label;
             this.Value = Value;
             this.Required = Required;
-            this.Type = Type;
             this.LovLink = LovLink;
             this.LovRequired = LovRequired;
             this.Description = Description;
             this.Schema = Schema;
         }
         
+        /// <summary>
+        /// The label corresponding to the link parameter property. This label is automatically translated based on the Accept-Language http header.
+        /// </summary>
+        /// <value>The label corresponding to the link parameter property. This label is automatically translated based on the Accept-Language http header.</value>
+        [DataMember(Name="label", EmitDefaultValue=false)]
+        public string Label { get; set; }
         /// <summary>
         /// The value of the parameter. It can be an integer a string or an object.
         /// </summary>
@@ -97,6 +118,7 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class BeezUPCommonLinkParameterProperty3 {\n");
+            sb.Append("  Label: ").Append(Label).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("  Required: ").Append(Required).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
@@ -140,6 +162,11 @@ namespace IO.Swagger.Model
                 return false;
 
             return 
+                (
+                    this.Label == other.Label ||
+                    this.Label != null &&
+                    this.Label.Equals(other.Label)
+                ) && 
                 (
                     this.Value == other.Value ||
                     this.Value != null &&
@@ -188,6 +215,8 @@ namespace IO.Swagger.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.Label != null)
+                    hash = hash * 59 + this.Label.GetHashCode();
                 if (this.Value != null)
                     hash = hash * 59 + this.Value.GetHashCode();
                 if (this.Required != null)

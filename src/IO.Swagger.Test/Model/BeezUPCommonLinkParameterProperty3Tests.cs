@@ -65,6 +65,14 @@ namespace IO.Swagger.Test
         }
 
         /// <summary>
+        /// Test the property 'Label'
+        /// </summary>
+        [Test]
+        public void LabelTest()
+        {
+            // TODO unit test for the property 'Label'
+        }
+        /// <summary>
         /// Test the property 'Value'
         /// </summary>
         [Test]

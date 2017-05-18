@@ -65,6 +65,14 @@ namespace IO.Swagger.Test
         }
 
         /// <summary>
+        /// Test the property 'Label'
+        /// </summary>
+        [Test]
+        public void LabelTest()
+        {
+            // TODO unit test for the property 'Label'
+        }
+        /// <summary>
         /// Test the property 'DocUrl'
         /// </summary>
         [Test]
@@ -113,12 +121,28 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'Parameters'
         }
         /// <summary>
-        /// Test the property 'Templated'
+        /// Test the property 'UrlTemplated'
         /// </summary>
         [Test]
-        public void TemplatedTest()
+        public void UrlTemplatedTest()
         {
-            // TODO unit test for the property 'Templated'
+            // TODO unit test for the property 'UrlTemplated'
+        }
+        /// <summary>
+        /// Test the property 'AllRequiredParamsProvided'
+        /// </summary>
+        [Test]
+        public void AllRequiredParamsProvidedTest()
+        {
+            // TODO unit test for the property 'AllRequiredParamsProvided'
+        }
+        /// <summary>
+        /// Test the property 'AllOptionalParamsProvided'
+        /// </summary>
+        [Test]
+        public void AllOptionalParamsProvidedTest()
+        {
+            // TODO unit test for the property 'AllOptionalParamsProvided'
         }
         /// <summary>
         /// Test the property 'Info'

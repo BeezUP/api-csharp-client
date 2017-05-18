@@ -37,15 +37,18 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="LinksOptimiseByChannelLink" /> class.
         /// </summary>
+        /// <param name="Label">The label corresponding to the link. This label is automatically translated based on the Accept-Language http header..</param>
         /// <param name="DocUrl">DocUrl.</param>
         /// <param name="Description">The description of the link.</param>
         /// <param name="Href">Href (required).</param>
         /// <param name="OperationId">OperationId.</param>
         /// <param name="Method">Method.</param>
         /// <param name="Parameters">Parameters.</param>
-        /// <param name="Templated">indicates whether the href is templated or not.</param>
+        /// <param name="UrlTemplated">indicates whether the href is templated or not.</param>
+        /// <param name="AllRequiredParamsProvided">indicates whether all required params have been provided.</param>
+        /// <param name="AllOptionalParamsProvided">indicates whether all optionals params have been provided.</param>
         /// <param name="Info">Info.</param>
-        public LinksOptimiseByChannelLink(BeezUPCommonDocUrl DocUrl = default(BeezUPCommonDocUrl), string Description = default(string), BeezUPCommonHref Href = default(BeezUPCommonHref), BeezUPCommonOperationId OperationId = default(BeezUPCommonOperationId), BeezUPCommonHttpMethod Method = default(BeezUPCommonHttpMethod), Dictionary<string, BeezUPCommonLinkParameter3> Parameters = default(Dictionary<string, BeezUPCommonLinkParameter3>), bool? Templated = default(bool?), BeezUPCommonInfoSummaries Info = default(BeezUPCommonInfoSummaries))
+        public LinksOptimiseByChannelLink(string Label = default(string), BeezUPCommonDocUrl DocUrl = default(BeezUPCommonDocUrl), string Description = default(string), BeezUPCommonHref Href = default(BeezUPCommonHref), BeezUPCommonOperationId OperationId = default(BeezUPCommonOperationId), BeezUPCommonHttpMethod Method = default(BeezUPCommonHttpMethod), Dictionary<string, BeezUPCommonLinkParameter3> Parameters = default(Dictionary<string, BeezUPCommonLinkParameter3>), bool? UrlTemplated = default(bool?), bool? AllRequiredParamsProvided = default(bool?), bool? AllOptionalParamsProvided = default(bool?), BeezUPCommonInfoSummaries Info = default(BeezUPCommonInfoSummaries))
         {
             // to ensure "Href" is required (not null)
             if (Href == null)
@@ -56,15 +59,24 @@ namespace IO.Swagger.Model
             {
                 this.Href = Href;
             }
+            this.Label = Label;
             this.DocUrl = DocUrl;
             this.Description = Description;
             this.OperationId = OperationId;
             this.Method = Method;
             this.Parameters = Parameters;
-            this.Templated = Templated;
+            this.UrlTemplated = UrlTemplated;
+            this.AllRequiredParamsProvided = AllRequiredParamsProvided;
+            this.AllOptionalParamsProvided = AllOptionalParamsProvided;
             this.Info = Info;
         }
         
+        /// <summary>
+        /// The label corresponding to the link. This label is automatically translated based on the Accept-Language http header.
+        /// </summary>
+        /// <value>The label corresponding to the link. This label is automatically translated based on the Accept-Language http header.</value>
+        [DataMember(Name="label", EmitDefaultValue=false)]
+        public string Label { get; set; }
         /// <summary>
         /// Gets or Sets DocUrl
         /// </summary>
@@ -100,8 +112,20 @@ namespace IO.Swagger.Model
         /// indicates whether the href is templated or not
         /// </summary>
         /// <value>indicates whether the href is templated or not</value>
-        [DataMember(Name="templated", EmitDefaultValue=false)]
-        public bool? Templated { get; set; }
+        [DataMember(Name="urlTemplated", EmitDefaultValue=false)]
+        public bool? UrlTemplated { get; set; }
+        /// <summary>
+        /// indicates whether all required params have been provided
+        /// </summary>
+        /// <value>indicates whether all required params have been provided</value>
+        [DataMember(Name="allRequiredParamsProvided", EmitDefaultValue=false)]
+        public bool? AllRequiredParamsProvided { get; set; }
+        /// <summary>
+        /// indicates whether all optionals params have been provided
+        /// </summary>
+        /// <value>indicates whether all optionals params have been provided</value>
+        [DataMember(Name="allOptionalParamsProvided", EmitDefaultValue=false)]
+        public bool? AllOptionalParamsProvided { get; set; }
         /// <summary>
         /// Gets or Sets Info
         /// </summary>
@@ -115,13 +139,16 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class LinksOptimiseByChannelLink {\n");
+            sb.Append("  Label: ").Append(Label).Append("\n");
             sb.Append("  DocUrl: ").Append(DocUrl).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Href: ").Append(Href).Append("\n");
             sb.Append("  OperationId: ").Append(OperationId).Append("\n");
             sb.Append("  Method: ").Append(Method).Append("\n");
             sb.Append("  Parameters: ").Append(Parameters).Append("\n");
-            sb.Append("  Templated: ").Append(Templated).Append("\n");
+            sb.Append("  UrlTemplated: ").Append(UrlTemplated).Append("\n");
+            sb.Append("  AllRequiredParamsProvided: ").Append(AllRequiredParamsProvided).Append("\n");
+            sb.Append("  AllOptionalParamsProvided: ").Append(AllOptionalParamsProvided).Append("\n");
             sb.Append("  Info: ").Append(Info).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -160,6 +187,11 @@ namespace IO.Swagger.Model
 
             return 
                 (
+                    this.Label == other.Label ||
+                    this.Label != null &&
+                    this.Label.Equals(other.Label)
+                ) && 
+                (
                     this.DocUrl == other.DocUrl ||
                     this.DocUrl != null &&
                     this.DocUrl.Equals(other.DocUrl)
@@ -190,9 +222,19 @@ namespace IO.Swagger.Model
                     this.Parameters.SequenceEqual(other.Parameters)
                 ) && 
                 (
-                    this.Templated == other.Templated ||
-                    this.Templated != null &&
-                    this.Templated.Equals(other.Templated)
+                    this.UrlTemplated == other.UrlTemplated ||
+                    this.UrlTemplated != null &&
+                    this.UrlTemplated.Equals(other.UrlTemplated)
+                ) && 
+                (
+                    this.AllRequiredParamsProvided == other.AllRequiredParamsProvided ||
+                    this.AllRequiredParamsProvided != null &&
+                    this.AllRequiredParamsProvided.Equals(other.AllRequiredParamsProvided)
+                ) && 
+                (
+                    this.AllOptionalParamsProvided == other.AllOptionalParamsProvided ||
+                    this.AllOptionalParamsProvided != null &&
+                    this.AllOptionalParamsProvided.Equals(other.AllOptionalParamsProvided)
                 ) && 
                 (
                     this.Info == other.Info ||
@@ -212,6 +254,8 @@ namespace IO.Swagger.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.Label != null)
+                    hash = hash * 59 + this.Label.GetHashCode();
                 if (this.DocUrl != null)
                     hash = hash * 59 + this.DocUrl.GetHashCode();
                 if (this.Description != null)
@@ -224,8 +268,12 @@ namespace IO.Swagger.Model
                     hash = hash * 59 + this.Method.GetHashCode();
                 if (this.Parameters != null)
                     hash = hash * 59 + this.Parameters.GetHashCode();
-                if (this.Templated != null)
-                    hash = hash * 59 + this.Templated.GetHashCode();
+                if (this.UrlTemplated != null)
+                    hash = hash * 59 + this.UrlTemplated.GetHashCode();
+                if (this.AllRequiredParamsProvided != null)
+                    hash = hash * 59 + this.AllRequiredParamsProvided.GetHashCode();
+                if (this.AllOptionalParamsProvided != null)
+                    hash = hash * 59 + this.AllOptionalParamsProvided.GetHashCode();
                 if (this.Info != null)
                     hash = hash * 59 + this.Info.GetHashCode();
                 return hash;

@@ -41,7 +41,8 @@ namespace IO.Swagger.Model
         /// <param name="LastUpdateUtcDate">The last update UTC date of the cache.</param>
         /// <param name="LastContentChangeUtcDate">The last content change UTC date.</param>
         /// <param name="ExpirationUtcDate">The expiration UTC date of the cache.</param>
-        public ChannelCatalogExportCacheInfo(string CacheStatus = default(string), DateTime? LastUpdateUtcDate = default(DateTime?), DateTime? LastContentChangeUtcDate = default(DateTime?), DateTime? ExpirationUtcDate = default(DateTime?))
+        /// <param name="FeedUrl">The feed url.</param>
+        public ChannelCatalogExportCacheInfo(string CacheStatus = default(string), DateTime? LastUpdateUtcDate = default(DateTime?), DateTime? LastContentChangeUtcDate = default(DateTime?), DateTime? ExpirationUtcDate = default(DateTime?), string FeedUrl = default(string))
         {
             // to ensure "CacheStatus" is required (not null)
             if (CacheStatus == null)
@@ -55,6 +56,7 @@ namespace IO.Swagger.Model
             this.LastUpdateUtcDate = LastUpdateUtcDate;
             this.LastContentChangeUtcDate = LastContentChangeUtcDate;
             this.ExpirationUtcDate = ExpirationUtcDate;
+            this.FeedUrl = FeedUrl;
         }
         
         /// <summary>
@@ -82,6 +84,12 @@ namespace IO.Swagger.Model
         [DataMember(Name="expirationUtcDate", EmitDefaultValue=false)]
         public DateTime? ExpirationUtcDate { get; set; }
         /// <summary>
+        /// The feed url
+        /// </summary>
+        /// <value>The feed url</value>
+        [DataMember(Name="feedUrl", EmitDefaultValue=false)]
+        public string FeedUrl { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -93,6 +101,7 @@ namespace IO.Swagger.Model
             sb.Append("  LastUpdateUtcDate: ").Append(LastUpdateUtcDate).Append("\n");
             sb.Append("  LastContentChangeUtcDate: ").Append(LastContentChangeUtcDate).Append("\n");
             sb.Append("  ExpirationUtcDate: ").Append(ExpirationUtcDate).Append("\n");
+            sb.Append("  FeedUrl: ").Append(FeedUrl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -148,6 +157,11 @@ namespace IO.Swagger.Model
                     this.ExpirationUtcDate == other.ExpirationUtcDate ||
                     this.ExpirationUtcDate != null &&
                     this.ExpirationUtcDate.Equals(other.ExpirationUtcDate)
+                ) && 
+                (
+                    this.FeedUrl == other.FeedUrl ||
+                    this.FeedUrl != null &&
+                    this.FeedUrl.Equals(other.FeedUrl)
                 );
         }
 
@@ -170,6 +184,8 @@ namespace IO.Swagger.Model
                     hash = hash * 59 + this.LastContentChangeUtcDate.GetHashCode();
                 if (this.ExpirationUtcDate != null)
                     hash = hash * 59 + this.ExpirationUtcDate.GetHashCode();
+                if (this.FeedUrl != null)
+                    hash = hash * 59 + this.FeedUrl.GetHashCode();
                 return hash;
             }
         }

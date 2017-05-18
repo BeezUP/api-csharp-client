@@ -32,27 +32,14 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreditCardInfoResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected CreditCardInfoResponse() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CreditCardInfoResponse" /> class.
-        /// </summary>
         /// <param name="Links">Links.</param>
-        /// <param name="CurrentPaymentMethod">CurrentPaymentMethod (required).</param>
+        /// <param name="CurrentPaymentMethod">CurrentPaymentMethod.</param>
         /// <param name="CreditCardInfo">CreditCardInfo.</param>
         /// <param name="Info">Info.</param>
         public CreditCardInfoResponse(CreditCardInfoResponseLinks Links = default(CreditCardInfoResponseLinks), PaymentMethod CurrentPaymentMethod = default(PaymentMethod), CreditCardInfoWithCardType CreditCardInfo = default(CreditCardInfoWithCardType), BeezUPCommonInfoSummaries Info = default(BeezUPCommonInfoSummaries))
         {
-            // to ensure "CurrentPaymentMethod" is required (not null)
-            if (CurrentPaymentMethod == null)
-            {
-                throw new InvalidDataException("CurrentPaymentMethod is a required property for CreditCardInfoResponse and cannot be null");
-            }
-            else
-            {
-                this.CurrentPaymentMethod = CurrentPaymentMethod;
-            }
             this.Links = Links;
+            this.CurrentPaymentMethod = CurrentPaymentMethod;
             this.CreditCardInfo = CreditCardInfo;
             this.Info = Info;
         }

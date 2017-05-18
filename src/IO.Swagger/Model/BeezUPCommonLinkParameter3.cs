@@ -37,6 +37,7 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BeezUPCommonLinkParameter3" /> class.
         /// </summary>
+        /// <param name="Label">The label corresponding to the link parameter. This label is automatically translated based on the Accept-Language http header..</param>
         /// <param name="Value">The value of the parameter. It can be an integer a string or an object..</param>
         /// <param name="Required">Required (default to false).</param>
         /// <param name="_In">_In (required).</param>
@@ -46,7 +47,7 @@ namespace IO.Swagger.Model
         /// <param name="Description">description of the parameter.</param>
         /// <param name="Schema">schema of the parameter.</param>
         /// <param name="Properties">If the parameter is an object with flexible properties (additionProperties/dictionary), we will describe the properties of the object..</param>
-        public BeezUPCommonLinkParameter3(Object Value = default(Object), bool? Required = false, BeezUPCommonParameterIn _In = default(BeezUPCommonParameterIn), BeezUPCommonParameterType Type = default(BeezUPCommonParameterType), BeezUPCommonLOVLink3 LovLink = default(BeezUPCommonLOVLink3), bool? LovRequired = default(bool?), string Description = default(string), string Schema = default(string), Dictionary<string, BeezUPCommonLinkParameterProperty3> Properties = default(Dictionary<string, BeezUPCommonLinkParameterProperty3>))
+        public BeezUPCommonLinkParameter3(string Label = default(string), Object Value = default(Object), bool? Required = false, BeezUPCommonParameterIn _In = default(BeezUPCommonParameterIn), BeezUPCommonParameterType Type = default(BeezUPCommonParameterType), BeezUPCommonLOVLink3 LovLink = default(BeezUPCommonLOVLink3), bool? LovRequired = default(bool?), string Description = default(string), string Schema = default(string), Dictionary<string, BeezUPCommonLinkParameterProperty3> Properties = default(Dictionary<string, BeezUPCommonLinkParameterProperty3>))
         {
             // to ensure "_In" is required (not null)
             if (_In == null)
@@ -57,6 +58,7 @@ namespace IO.Swagger.Model
             {
                 this._In = _In;
             }
+            this.Label = Label;
             this.Value = Value;
             // use default value if no "Required" provided
             if (Required == null)
@@ -75,6 +77,12 @@ namespace IO.Swagger.Model
             this.Properties = Properties;
         }
         
+        /// <summary>
+        /// The label corresponding to the link parameter. This label is automatically translated based on the Accept-Language http header.
+        /// </summary>
+        /// <value>The label corresponding to the link parameter. This label is automatically translated based on the Accept-Language http header.</value>
+        [DataMember(Name="label", EmitDefaultValue=false)]
+        public string Label { get; set; }
         /// <summary>
         /// The value of the parameter. It can be an integer a string or an object.
         /// </summary>
@@ -133,6 +141,7 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class BeezUPCommonLinkParameter3 {\n");
+            sb.Append("  Label: ").Append(Label).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("  Required: ").Append(Required).Append("\n");
             sb.Append("  _In: ").Append(_In).Append("\n");
@@ -178,6 +187,11 @@ namespace IO.Swagger.Model
                 return false;
 
             return 
+                (
+                    this.Label == other.Label ||
+                    this.Label != null &&
+                    this.Label.Equals(other.Label)
+                ) && 
                 (
                     this.Value == other.Value ||
                     this.Value != null &&
@@ -236,6 +250,8 @@ namespace IO.Swagger.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
+                if (this.Label != null)
+                    hash = hash * 59 + this.Label.GetHashCode();
                 if (this.Value != null)
                     hash = hash * 59 + this.Value.GetHashCode();
                 if (this.Required != null)

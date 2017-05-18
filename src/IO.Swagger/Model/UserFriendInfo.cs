@@ -44,7 +44,7 @@ namespace IO.Swagger.Model
         /// <param name="ProfilePictureUrl">ProfilePictureUrl.</param>
         /// <param name="CountryIsoCodeAlpha3">CountryIsoCodeAlpha3 (required).</param>
         /// <param name="Company">Your friend&#39;s user company name (required).</param>
-        /// <param name="WhatIDo">Your friend&#39;s user occupation in his company (required).</param>
+        /// <param name="WhatIDo">Your friend&#39;s user occupation in his company.</param>
         public UserFriendInfo(string UserId = default(string), string LastName = default(string), string FirstName = default(string), FriendEmail Email = default(FriendEmail), FriendProfilePictureUrl ProfilePictureUrl = default(FriendProfilePictureUrl), FriendCountryIsoCodeAlpha3 CountryIsoCodeAlpha3 = default(FriendCountryIsoCodeAlpha3), string Company = default(string), string WhatIDo = default(string))
         {
             // to ensure "UserId" is required (not null)
@@ -101,16 +101,8 @@ namespace IO.Swagger.Model
             {
                 this.Company = Company;
             }
-            // to ensure "WhatIDo" is required (not null)
-            if (WhatIDo == null)
-            {
-                throw new InvalidDataException("WhatIDo is a required property for UserFriendInfo and cannot be null");
-            }
-            else
-            {
-                this.WhatIDo = WhatIDo;
-            }
             this.ProfilePictureUrl = ProfilePictureUrl;
+            this.WhatIDo = WhatIDo;
         }
         
         /// <summary>

@@ -118,6 +118,7 @@ Method | HTTP request | Description
 [**GetUserLovIndex**](BeezUPApi.md#getuserlovindex) | **GET** /user/lov/ | Get all list names
 [**HarvestAll**](BeezUPApi.md#harvestall) | **POST** /user/marketplaces/orders/harvest | Send harvest request to all your marketplaces
 [**HarvestOrder**](BeezUPApi.md#harvestorder) | **POST** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/harvest | Send harvest request for a single Order
+[**HeadOrder**](BeezUPApi.md#headorder) | **HEAD** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId} | Get the meta information about the order (ETag, Last-Modified)
 [**ImportationActivateAutoImport**](BeezUPApi.md#importationactivateautoimport) | **POST** /user/catalogs/{storeId}/autoImport | Activate the auto importation of the last successful manual catalog importation.
 [**ImportationCancel**](BeezUPApi.md#importationcancel) | **DELETE** /user/catalogs/{storeId}/importations/{executionId} | Cancel importation
 [**ImportationCommit**](BeezUPApi.md#importationcommit) | **POST** /user/catalogs/{storeId}/importations/{executionId}/commit | Commit Importation
@@ -174,6 +175,7 @@ Method | HTTP request | Description
 [**UnmapChannelCatalogCategory**](BeezUPApi.md#unmapchannelcatalogcategory) | **POST** /user/channelCatalogs/{channelCatalogId}/categoryMappings/unmap | Unmap channel catalog category
 [**UpdateRule**](BeezUPApi.md#updaterule) | **PATCH** /user/analytics/{storeId}/rules/{ruleId} | Update Rule
 [**UpdateStore**](BeezUPApi.md#updatestore) | **PATCH** /user/customer/stores/{storeId} | Update some store&#39;s information.
+[**UserCustomerGet**](BeezUPApi.md#usercustomerget) | **GET** /user/customer/ | The index of all operations and LOV
 
 
 <a name="activateuseraccount"></a>
@@ -3629,7 +3631,7 @@ Name | Type | Description  | Notes
 
 <a name="getautomatictransitions"></a>
 # **GetAutomaticTransitions**
-> AutomaticTransitionInfos GetAutomaticTransitions ()
+> AutomaticTransitionInfos GetAutomaticTransitions (string ifNoneMatch = null)
 
 Get list of configured automatic Order status transitions
 
@@ -3654,11 +3656,12 @@ namespace Example
             // Configuration.Default.ApiKeyPrefix.Add("Ocp-Apim-Subscription-Key", "Bearer");
 
             var apiInstance = new BeezUPApi();
+            var ifNoneMatch = ifNoneMatch_example;  // string | ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional) 
 
             try
             {
                 // Get list of configured automatic Order status transitions
-                AutomaticTransitionInfos result = apiInstance.GetAutomaticTransitions();
+                AutomaticTransitionInfos result = apiInstance.GetAutomaticTransitions(ifNoneMatch);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -3671,7 +3674,10 @@ namespace Example
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ifNoneMatch** | **string**| ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional] 
 
 ### Return type
 
@@ -5167,7 +5173,7 @@ This endpoint does not need any parameter.
 
 <a name="getmarketplaceaccountssynchronization"></a>
 # **GetMarketplaceAccountsSynchronization**
-> AccountSynchronizations GetMarketplaceAccountsSynchronization ()
+> AccountSynchronizations GetMarketplaceAccountsSynchronization (string ifNoneMatch = null)
 
 Get current synchronization status between your marketplaces and BeezUP accounts
 
@@ -5192,11 +5198,12 @@ namespace Example
             // Configuration.Default.ApiKeyPrefix.Add("Ocp-Apim-Subscription-Key", "Bearer");
 
             var apiInstance = new BeezUPApi();
+            var ifNoneMatch = ifNoneMatch_example;  // string | ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional) 
 
             try
             {
                 // Get current synchronization status between your marketplaces and BeezUP accounts
-                AccountSynchronizations result = apiInstance.GetMarketplaceAccountsSynchronization();
+                AccountSynchronizations result = apiInstance.GetMarketplaceAccountsSynchronization(ifNoneMatch);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -5209,7 +5216,10 @@ namespace Example
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ifNoneMatch** | **string**| ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional] 
 
 ### Return type
 
@@ -5366,7 +5376,7 @@ Name | Type | Description  | Notes
 
 <a name="getorderexportations"></a>
 # **GetOrderExportations**
-> OrderExportations GetOrderExportations (int? pageNumber, int? pageSize, string storeId)
+> OrderExportations GetOrderExportations (int? pageNumber, int? pageSize, string storeId, string ifNoneMatch = null)
 
 Get a paginated list of Order report exportations
 
@@ -5394,11 +5404,12 @@ namespace Example
             var pageNumber = 1;  // int? | The page number you want to get
             var pageSize = 25;  // int? | The entry count you want to get
             var storeId = storeId_example;  // string | The store identifier to regroup the order exportations
+            var ifNoneMatch = ifNoneMatch_example;  // string | ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional) 
 
             try
             {
                 // Get a paginated list of Order report exportations
-                OrderExportations result = apiInstance.GetOrderExportations(pageNumber, pageSize, storeId);
+                OrderExportations result = apiInstance.GetOrderExportations(pageNumber, pageSize, storeId, ifNoneMatch);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -5417,6 +5428,7 @@ Name | Type | Description  | Notes
  **pageNumber** | **int?**| The page number you want to get | 
  **pageSize** | **int?**| The entry count you want to get | 
  **storeId** | **string**| The store identifier to regroup the order exportations | 
+ **ifNoneMatch** | **string**| ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional] 
 
 ### Return type
 
@@ -5435,7 +5447,7 @@ Name | Type | Description  | Notes
 
 <a name="getorderhistory"></a>
 # **GetOrderHistory**
-> OrderHistory GetOrderHistory (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId)
+> OrderHistory GetOrderHistory (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null)
 
 Get an Order's harvest and change history
 
@@ -5463,11 +5475,12 @@ namespace Example
             var marketplaceTechnicalCode = Amazon;  // string | The marketplace technical code
             var accountId = 1001;  // int? | The account identifier
             var beezUPOrderId = 00000000000000000000000000000000000000000000000;  // Guid? | The BeezUP Order identifier
+            var ifNoneMatch = ifNoneMatch_example;  // string | ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional) 
 
             try
             {
                 // Get an Order's harvest and change history
-                OrderHistory result = apiInstance.GetOrderHistory(marketplaceTechnicalCode, accountId, beezUPOrderId);
+                OrderHistory result = apiInstance.GetOrderHistory(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -5486,6 +5499,7 @@ Name | Type | Description  | Notes
  **marketplaceTechnicalCode** | **string**| The marketplace technical code | 
  **accountId** | **int?**| The account identifier | 
  **beezUPOrderId** | **Guid?**| The BeezUP Order identifier | 
+ **ifNoneMatch** | **string**| ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional] 
 
 ### Return type
 
@@ -5504,7 +5518,7 @@ Name | Type | Description  | Notes
 
 <a name="getorderindex"></a>
 # **GetOrderIndex**
-> OrderIndex GetOrderIndex ()
+> OrderIndex GetOrderIndex (string ifNoneMatch = null)
 
 Get all actions you can do on the order API
 
@@ -5529,11 +5543,12 @@ namespace Example
             // Configuration.Default.ApiKeyPrefix.Add("Ocp-Apim-Subscription-Key", "Bearer");
 
             var apiInstance = new BeezUPApi();
+            var ifNoneMatch = ifNoneMatch_example;  // string | ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional) 
 
             try
             {
                 // Get all actions you can do on the order API
-                OrderIndex result = apiInstance.GetOrderIndex();
+                OrderIndex result = apiInstance.GetOrderIndex(ifNoneMatch);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -5546,7 +5561,10 @@ namespace Example
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ifNoneMatch** | **string**| ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional] 
 
 ### Return type
 
@@ -7653,6 +7671,78 @@ Name | Type | Description  | Notes
  **marketplaceTechnicalCode** | **string**| The marketplace technical code | 
  **accountId** | **int?**| The account identifier | 
  **beezUPOrderId** | **Guid?**| The BeezUP Order identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="headorder"></a>
+# **HeadOrder**
+> void HeadOrder (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null)
+
+Get the meta information about the order (ETag, Last-Modified)
+
+The purpose of this operation is to reduce the bandwith usage by getting just the meta information about the order (ETag, Last-Modified) with the body. This could be useful  
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class HeadOrderExample
+    {
+        public void main()
+        {
+            
+            // Configure API key authorization: api_key
+            Configuration.Default.ApiKey.Add("Ocp-Apim-Subscription-Key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Ocp-Apim-Subscription-Key", "Bearer");
+
+            var apiInstance = new BeezUPApi();
+            var marketplaceTechnicalCode = Amazon;  // string | The marketplace technical code
+            var accountId = 1001;  // int? | The account identifier
+            var beezUPOrderId = 00000000000000000000000000000000000000000000000;  // Guid? | The BeezUP Order identifier
+            var ifNoneMatch = ifNoneMatch_example;  // string | ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional) 
+
+            try
+            {
+                // Get the meta information about the order (ETag, Last-Modified)
+                apiInstance.HeadOrder(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling BeezUPApi.HeadOrder: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **marketplaceTechnicalCode** | **string**| The marketplace technical code | 
+ **accountId** | **int?**| The account identifier | 
+ **beezUPOrderId** | **Guid?**| The BeezUP Order identifier | 
+ **ifNoneMatch** | **string**| ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional] 
 
 ### Return type
 
@@ -11398,6 +11488,67 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="usercustomerget"></a>
+# **UserCustomerGet**
+> CustomerIndex UserCustomerGet ()
+
+The index of all operations and LOV
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class UserCustomerGetExample
+    {
+        public void main()
+        {
+            
+            // Configure API key authorization: api_key
+            Configuration.Default.ApiKey.Add("Ocp-Apim-Subscription-Key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Ocp-Apim-Subscription-Key", "Bearer");
+
+            var apiInstance = new BeezUPApi();
+
+            try
+            {
+                // The index of all operations and LOV
+                CustomerIndex result = apiInstance.UserCustomerGet();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling BeezUPApi.UserCustomerGet: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**CustomerIndex**](CustomerIndex.md)
 
 ### Authorization
 

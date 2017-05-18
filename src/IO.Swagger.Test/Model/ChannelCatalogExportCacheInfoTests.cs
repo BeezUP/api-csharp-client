@@ -96,6 +96,14 @@ namespace IO.Swagger.Test
         {
             // TODO unit test for the property 'ExpirationUtcDate'
         }
+        /// <summary>
+        /// Test the property 'FeedUrl'
+        /// </summary>
+        [Test]
+        public void FeedUrlTest()
+        {
+            // TODO unit test for the property 'FeedUrl'
+        }
 
     }
 

@@ -35,13 +35,11 @@ namespace IO.Swagger.Model
         /// <param name="ChangeOrderReportings">The list of change order operation.</param>
         /// <param name="HarvestOrderReportings">HarvestOrderReportings.</param>
         /// <param name="LastModificationUtcDate">LastModificationUtcDate.</param>
-        /// <param name="Info">Info.</param>
-        public OrderHistory(List<ChangeOrderReporting> ChangeOrderReportings = default(List<ChangeOrderReporting>), List<HarvestOrderReporting> HarvestOrderReportings = default(List<HarvestOrderReporting>), DateTime? LastModificationUtcDate = default(DateTime?), BeezUPCommonInfoSummaries Info = default(BeezUPCommonInfoSummaries))
+        public OrderHistory(List<ChangeOrderReporting> ChangeOrderReportings = default(List<ChangeOrderReporting>), List<HarvestOrderReporting> HarvestOrderReportings = default(List<HarvestOrderReporting>), DateTime? LastModificationUtcDate = default(DateTime?))
         {
             this.ChangeOrderReportings = ChangeOrderReportings;
             this.HarvestOrderReportings = HarvestOrderReportings;
             this.LastModificationUtcDate = LastModificationUtcDate;
-            this.Info = Info;
         }
         
         /// <summary>
@@ -61,11 +59,6 @@ namespace IO.Swagger.Model
         [DataMember(Name="lastModificationUtcDate", EmitDefaultValue=false)]
         public DateTime? LastModificationUtcDate { get; set; }
         /// <summary>
-        /// Gets or Sets Info
-        /// </summary>
-        [DataMember(Name="info", EmitDefaultValue=false)]
-        public BeezUPCommonInfoSummaries Info { get; set; }
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -76,7 +69,6 @@ namespace IO.Swagger.Model
             sb.Append("  ChangeOrderReportings: ").Append(ChangeOrderReportings).Append("\n");
             sb.Append("  HarvestOrderReportings: ").Append(HarvestOrderReportings).Append("\n");
             sb.Append("  LastModificationUtcDate: ").Append(LastModificationUtcDate).Append("\n");
-            sb.Append("  Info: ").Append(Info).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -127,11 +119,6 @@ namespace IO.Swagger.Model
                     this.LastModificationUtcDate == other.LastModificationUtcDate ||
                     this.LastModificationUtcDate != null &&
                     this.LastModificationUtcDate.Equals(other.LastModificationUtcDate)
-                ) && 
-                (
-                    this.Info == other.Info ||
-                    this.Info != null &&
-                    this.Info.Equals(other.Info)
                 );
         }
 
@@ -152,8 +139,6 @@ namespace IO.Swagger.Model
                     hash = hash * 59 + this.HarvestOrderReportings.GetHashCode();
                 if (this.LastModificationUtcDate != null)
                     hash = hash * 59 + this.LastModificationUtcDate.GetHashCode();
-                if (this.Info != null)
-                    hash = hash * 59 + this.Info.GetHashCode();
                 return hash;
             }
         }

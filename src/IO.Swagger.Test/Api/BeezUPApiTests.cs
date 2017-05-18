@@ -740,7 +740,8 @@ namespace IO.Swagger.Test
         public void GetAutomaticTransitionsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.GetAutomaticTransitions();
+            //string ifNoneMatch = null;
+            //var response = instance.GetAutomaticTransitions(ifNoneMatch);
             //Assert.IsInstanceOf<AutomaticTransitionInfos> (response, "response is AutomaticTransitionInfos");
         }
         
@@ -1029,7 +1030,8 @@ namespace IO.Swagger.Test
         public void GetMarketplaceAccountsSynchronizationTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.GetMarketplaceAccountsSynchronization();
+            //string ifNoneMatch = null;
+            //var response = instance.GetMarketplaceAccountsSynchronization(ifNoneMatch);
             //Assert.IsInstanceOf<AccountSynchronizations> (response, "response is AccountSynchronizations");
         }
         
@@ -1070,7 +1072,8 @@ namespace IO.Swagger.Test
             //int? pageNumber = null;
             //int? pageSize = null;
             //string storeId = null;
-            //var response = instance.GetOrderExportations(pageNumber, pageSize, storeId);
+            //string ifNoneMatch = null;
+            //var response = instance.GetOrderExportations(pageNumber, pageSize, storeId, ifNoneMatch);
             //Assert.IsInstanceOf<OrderExportations> (response, "response is OrderExportations");
         }
         
@@ -1084,7 +1087,8 @@ namespace IO.Swagger.Test
             //string marketplaceTechnicalCode = null;
             //int? accountId = null;
             //Guid? beezUPOrderId = null;
-            //var response = instance.GetOrderHistory(marketplaceTechnicalCode, accountId, beezUPOrderId);
+            //string ifNoneMatch = null;
+            //var response = instance.GetOrderHistory(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
             //Assert.IsInstanceOf<OrderHistory> (response, "response is OrderHistory");
         }
         
@@ -1095,7 +1099,8 @@ namespace IO.Swagger.Test
         public void GetOrderIndexTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.GetOrderIndex();
+            //string ifNoneMatch = null;
+            //var response = instance.GetOrderIndex(ifNoneMatch);
             //Assert.IsInstanceOf<OrderIndex> (response, "response is OrderIndex");
         }
         
@@ -1498,6 +1503,21 @@ namespace IO.Swagger.Test
             //int? accountId = null;
             //Guid? beezUPOrderId = null;
             //instance.HarvestOrder(marketplaceTechnicalCode, accountId, beezUPOrderId);
+            
+        }
+        
+        /// <summary>
+        /// Test HeadOrder
+        /// </summary>
+        [Test]
+        public void HeadOrderTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string marketplaceTechnicalCode = null;
+            //int? accountId = null;
+            //Guid? beezUPOrderId = null;
+            //string ifNoneMatch = null;
+            //instance.HeadOrder(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
             
         }
         
@@ -2237,6 +2257,17 @@ namespace IO.Swagger.Test
             //UpdateStoreRequest request = null;
             //instance.UpdateStore(storeId, request);
             
+        }
+        
+        /// <summary>
+        /// Test UserCustomerGet
+        /// </summary>
+        [Test]
+        public void UserCustomerGetTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //var response = instance.UserCustomerGet();
+            //Assert.IsInstanceOf<CustomerIndex> (response, "response is CustomerIndex");
         }
         
     }

@@ -1213,8 +1213,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>AutomaticTransitionInfos</returns>
-        AutomaticTransitionInfos GetAutomaticTransitions ();
+        AutomaticTransitionInfos GetAutomaticTransitions (string ifNoneMatch = null);
 
         /// <summary>
         /// Get list of configured automatic Order status transitions
@@ -1223,8 +1224,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>ApiResponse of AutomaticTransitionInfos</returns>
-        ApiResponse<AutomaticTransitionInfos> GetAutomaticTransitionsWithHttpInfo ();
+        ApiResponse<AutomaticTransitionInfos> GetAutomaticTransitionsWithHttpInfo (string ifNoneMatch = null);
         /// <summary>
         /// List all available channel for this store
         /// </summary>
@@ -1719,8 +1721,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>AccountSynchronizations</returns>
-        AccountSynchronizations GetMarketplaceAccountsSynchronization ();
+        AccountSynchronizations GetMarketplaceAccountsSynchronization (string ifNoneMatch = null);
 
         /// <summary>
         /// Get current synchronization status between your marketplaces and BeezUP accounts
@@ -1729,8 +1732,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>ApiResponse of AccountSynchronizations</returns>
-        ApiResponse<AccountSynchronizations> GetMarketplaceAccountsSynchronizationWithHttpInfo ();
+        ApiResponse<AccountSynchronizations> GetMarketplaceAccountsSynchronizationWithHttpInfo (string ifNoneMatch = null);
         /// <summary>
         /// Get offer pricing
         /// </summary>
@@ -1789,8 +1793,9 @@ namespace IO.Swagger.Api
         /// <param name="pageNumber">The page number you want to get</param>
         /// <param name="pageSize">The entry count you want to get</param>
         /// <param name="storeId">The store identifier to regroup the order exportations</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>OrderExportations</returns>
-        OrderExportations GetOrderExportations (int? pageNumber, int? pageSize, string storeId);
+        OrderExportations GetOrderExportations (int? pageNumber, int? pageSize, string storeId, string ifNoneMatch = null);
 
         /// <summary>
         /// Get a paginated list of Order report exportations
@@ -1802,8 +1807,9 @@ namespace IO.Swagger.Api
         /// <param name="pageNumber">The page number you want to get</param>
         /// <param name="pageSize">The entry count you want to get</param>
         /// <param name="storeId">The store identifier to regroup the order exportations</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>ApiResponse of OrderExportations</returns>
-        ApiResponse<OrderExportations> GetOrderExportationsWithHttpInfo (int? pageNumber, int? pageSize, string storeId);
+        ApiResponse<OrderExportations> GetOrderExportationsWithHttpInfo (int? pageNumber, int? pageSize, string storeId, string ifNoneMatch = null);
         /// <summary>
         /// Get an Order&#39;s harvest and change history
         /// </summary>
@@ -1814,8 +1820,9 @@ namespace IO.Swagger.Api
         /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>OrderHistory</returns>
-        OrderHistory GetOrderHistory (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId);
+        OrderHistory GetOrderHistory (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null);
 
         /// <summary>
         /// Get an Order&#39;s harvest and change history
@@ -1827,8 +1834,9 @@ namespace IO.Swagger.Api
         /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>ApiResponse of OrderHistory</returns>
-        ApiResponse<OrderHistory> GetOrderHistoryWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId);
+        ApiResponse<OrderHistory> GetOrderHistoryWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null);
         /// <summary>
         /// Get all actions you can do on the order API
         /// </summary>
@@ -1836,8 +1844,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>OrderIndex</returns>
-        OrderIndex GetOrderIndex ();
+        OrderIndex GetOrderIndex (string ifNoneMatch = null);
 
         /// <summary>
         /// Get all actions you can do on the order API
@@ -1846,8 +1855,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>ApiResponse of OrderIndex</returns>
-        ApiResponse<OrderIndex> GetOrderIndexWithHttpInfo ();
+        ApiResponse<OrderIndex> GetOrderIndexWithHttpInfo (string ifNoneMatch = null);
         /// <summary>
         /// Get a paginated list of all Orders with all Order and Order Item(s) properties
         /// </summary>
@@ -2556,6 +2566,33 @@ namespace IO.Swagger.Api
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> HarvestOrderWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId);
+        /// <summary>
+        /// Get the meta information about the order (ETag, Last-Modified)
+        /// </summary>
+        /// <remarks>
+        /// The purpose of this operation is to reduce the bandwith usage by getting just the meta information about the order (ETag, Last-Modified) with the body. This could be useful  
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
+        /// <param name="accountId">The account identifier</param>
+        /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns></returns>
+        void HeadOrder (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null);
+
+        /// <summary>
+        /// Get the meta information about the order (ETag, Last-Modified)
+        /// </summary>
+        /// <remarks>
+        /// The purpose of this operation is to reduce the bandwith usage by getting just the meta information about the order (ETag, Last-Modified) with the body. This could be useful  
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
+        /// <param name="accountId">The account identifier</param>
+        /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> HeadOrderWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null);
         /// <summary>
         /// Activate the auto importation of the last successful manual catalog importation.
         /// </summary>
@@ -3864,6 +3901,25 @@ namespace IO.Swagger.Api
         /// <param name="request"></param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> UpdateStoreWithHttpInfo (string storeId, UpdateStoreRequest request);
+        /// <summary>
+        /// The index of all operations and LOV
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>CustomerIndex</returns>
+        CustomerIndex UserCustomerGet ();
+
+        /// <summary>
+        /// The index of all operations and LOV
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of CustomerIndex</returns>
+        ApiResponse<CustomerIndex> UserCustomerGetWithHttpInfo ();
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -5055,8 +5111,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of AutomaticTransitionInfos</returns>
-        System.Threading.Tasks.Task<AutomaticTransitionInfos> GetAutomaticTransitionsAsync ();
+        System.Threading.Tasks.Task<AutomaticTransitionInfos> GetAutomaticTransitionsAsync (string ifNoneMatch = null);
 
         /// <summary>
         /// Get list of configured automatic Order status transitions
@@ -5065,8 +5122,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of ApiResponse (AutomaticTransitionInfos)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AutomaticTransitionInfos>> GetAutomaticTransitionsAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<AutomaticTransitionInfos>> GetAutomaticTransitionsAsyncWithHttpInfo (string ifNoneMatch = null);
         /// <summary>
         /// List all available channel for this store
         /// </summary>
@@ -5561,8 +5619,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of AccountSynchronizations</returns>
-        System.Threading.Tasks.Task<AccountSynchronizations> GetMarketplaceAccountsSynchronizationAsync ();
+        System.Threading.Tasks.Task<AccountSynchronizations> GetMarketplaceAccountsSynchronizationAsync (string ifNoneMatch = null);
 
         /// <summary>
         /// Get current synchronization status between your marketplaces and BeezUP accounts
@@ -5571,8 +5630,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of ApiResponse (AccountSynchronizations)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AccountSynchronizations>> GetMarketplaceAccountsSynchronizationAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<AccountSynchronizations>> GetMarketplaceAccountsSynchronizationAsyncWithHttpInfo (string ifNoneMatch = null);
         /// <summary>
         /// Get offer pricing
         /// </summary>
@@ -5631,8 +5691,9 @@ namespace IO.Swagger.Api
         /// <param name="pageNumber">The page number you want to get</param>
         /// <param name="pageSize">The entry count you want to get</param>
         /// <param name="storeId">The store identifier to regroup the order exportations</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of OrderExportations</returns>
-        System.Threading.Tasks.Task<OrderExportations> GetOrderExportationsAsync (int? pageNumber, int? pageSize, string storeId);
+        System.Threading.Tasks.Task<OrderExportations> GetOrderExportationsAsync (int? pageNumber, int? pageSize, string storeId, string ifNoneMatch = null);
 
         /// <summary>
         /// Get a paginated list of Order report exportations
@@ -5644,8 +5705,9 @@ namespace IO.Swagger.Api
         /// <param name="pageNumber">The page number you want to get</param>
         /// <param name="pageSize">The entry count you want to get</param>
         /// <param name="storeId">The store identifier to regroup the order exportations</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of ApiResponse (OrderExportations)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OrderExportations>> GetOrderExportationsAsyncWithHttpInfo (int? pageNumber, int? pageSize, string storeId);
+        System.Threading.Tasks.Task<ApiResponse<OrderExportations>> GetOrderExportationsAsyncWithHttpInfo (int? pageNumber, int? pageSize, string storeId, string ifNoneMatch = null);
         /// <summary>
         /// Get an Order&#39;s harvest and change history
         /// </summary>
@@ -5656,8 +5718,9 @@ namespace IO.Swagger.Api
         /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of OrderHistory</returns>
-        System.Threading.Tasks.Task<OrderHistory> GetOrderHistoryAsync (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId);
+        System.Threading.Tasks.Task<OrderHistory> GetOrderHistoryAsync (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null);
 
         /// <summary>
         /// Get an Order&#39;s harvest and change history
@@ -5669,8 +5732,9 @@ namespace IO.Swagger.Api
         /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of ApiResponse (OrderHistory)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OrderHistory>> GetOrderHistoryAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId);
+        System.Threading.Tasks.Task<ApiResponse<OrderHistory>> GetOrderHistoryAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null);
         /// <summary>
         /// Get all actions you can do on the order API
         /// </summary>
@@ -5678,8 +5742,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of OrderIndex</returns>
-        System.Threading.Tasks.Task<OrderIndex> GetOrderIndexAsync ();
+        System.Threading.Tasks.Task<OrderIndex> GetOrderIndexAsync (string ifNoneMatch = null);
 
         /// <summary>
         /// Get all actions you can do on the order API
@@ -5688,8 +5753,9 @@ namespace IO.Swagger.Api
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of ApiResponse (OrderIndex)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OrderIndex>> GetOrderIndexAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<OrderIndex>> GetOrderIndexAsyncWithHttpInfo (string ifNoneMatch = null);
         /// <summary>
         /// Get a paginated list of all Orders with all Order and Order Item(s) properties
         /// </summary>
@@ -6398,6 +6464,33 @@ namespace IO.Swagger.Api
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> HarvestOrderAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId);
+        /// <summary>
+        /// Get the meta information about the order (ETag, Last-Modified)
+        /// </summary>
+        /// <remarks>
+        /// The purpose of this operation is to reduce the bandwith usage by getting just the meta information about the order (ETag, Last-Modified) with the body. This could be useful  
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
+        /// <param name="accountId">The account identifier</param>
+        /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task HeadOrderAsync (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null);
+
+        /// <summary>
+        /// Get the meta information about the order (ETag, Last-Modified)
+        /// </summary>
+        /// <remarks>
+        /// The purpose of this operation is to reduce the bandwith usage by getting just the meta information about the order (ETag, Last-Modified) with the body. This could be useful  
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
+        /// <param name="accountId">The account identifier</param>
+        /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> HeadOrderAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null);
         /// <summary>
         /// Activate the auto importation of the last successful manual catalog importation.
         /// </summary>
@@ -7706,6 +7799,25 @@ namespace IO.Swagger.Api
         /// <param name="request"></param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> UpdateStoreAsyncWithHttpInfo (string storeId, UpdateStoreRequest request);
+        /// <summary>
+        /// The index of all operations and LOV
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of CustomerIndex</returns>
+        System.Threading.Tasks.Task<CustomerIndex> UserCustomerGetAsync ();
+
+        /// <summary>
+        /// The index of all operations and LOV
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (CustomerIndex)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CustomerIndex>> UserCustomerGetAsyncWithHttpInfo ();
         #endregion Asynchronous Operations
     }
 
@@ -16628,10 +16740,11 @@ namespace IO.Swagger.Api
         /// Get list of configured automatic Order status transitions 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>AutomaticTransitionInfos</returns>
-        public AutomaticTransitionInfos GetAutomaticTransitions ()
+        public AutomaticTransitionInfos GetAutomaticTransitions (string ifNoneMatch = null)
         {
-             ApiResponse<AutomaticTransitionInfos> localVarResponse = GetAutomaticTransitionsWithHttpInfo();
+             ApiResponse<AutomaticTransitionInfos> localVarResponse = GetAutomaticTransitionsWithHttpInfo(ifNoneMatch);
              return localVarResponse.Data;
         }
 
@@ -16639,8 +16752,9 @@ namespace IO.Swagger.Api
         /// Get list of configured automatic Order status transitions 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>ApiResponse of AutomaticTransitionInfos</returns>
-        public ApiResponse< AutomaticTransitionInfos > GetAutomaticTransitionsWithHttpInfo ()
+        public ApiResponse< AutomaticTransitionInfos > GetAutomaticTransitionsWithHttpInfo (string ifNoneMatch = null)
         {
 
             var localVarPath = "/user/marketplaces/orders/automaticTransitions";
@@ -16668,6 +16782,7 @@ namespace IO.Swagger.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
+            if (ifNoneMatch != null) localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
 
             // authentication (api_key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
@@ -16699,10 +16814,11 @@ namespace IO.Swagger.Api
         /// Get list of configured automatic Order status transitions 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of AutomaticTransitionInfos</returns>
-        public async System.Threading.Tasks.Task<AutomaticTransitionInfos> GetAutomaticTransitionsAsync ()
+        public async System.Threading.Tasks.Task<AutomaticTransitionInfos> GetAutomaticTransitionsAsync (string ifNoneMatch = null)
         {
-             ApiResponse<AutomaticTransitionInfos> localVarResponse = await GetAutomaticTransitionsAsyncWithHttpInfo();
+             ApiResponse<AutomaticTransitionInfos> localVarResponse = await GetAutomaticTransitionsAsyncWithHttpInfo(ifNoneMatch);
              return localVarResponse.Data;
 
         }
@@ -16711,8 +16827,9 @@ namespace IO.Swagger.Api
         /// Get list of configured automatic Order status transitions 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of ApiResponse (AutomaticTransitionInfos)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<AutomaticTransitionInfos>> GetAutomaticTransitionsAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<AutomaticTransitionInfos>> GetAutomaticTransitionsAsyncWithHttpInfo (string ifNoneMatch = null)
         {
 
             var localVarPath = "/user/marketplaces/orders/automaticTransitions";
@@ -16740,6 +16857,7 @@ namespace IO.Swagger.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
+            if (ifNoneMatch != null) localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
 
             // authentication (api_key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
@@ -20332,10 +20450,11 @@ namespace IO.Swagger.Api
         /// Get current synchronization status between your marketplaces and BeezUP accounts 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>AccountSynchronizations</returns>
-        public AccountSynchronizations GetMarketplaceAccountsSynchronization ()
+        public AccountSynchronizations GetMarketplaceAccountsSynchronization (string ifNoneMatch = null)
         {
-             ApiResponse<AccountSynchronizations> localVarResponse = GetMarketplaceAccountsSynchronizationWithHttpInfo();
+             ApiResponse<AccountSynchronizations> localVarResponse = GetMarketplaceAccountsSynchronizationWithHttpInfo(ifNoneMatch);
              return localVarResponse.Data;
         }
 
@@ -20343,8 +20462,9 @@ namespace IO.Swagger.Api
         /// Get current synchronization status between your marketplaces and BeezUP accounts 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>ApiResponse of AccountSynchronizations</returns>
-        public ApiResponse< AccountSynchronizations > GetMarketplaceAccountsSynchronizationWithHttpInfo ()
+        public ApiResponse< AccountSynchronizations > GetMarketplaceAccountsSynchronizationWithHttpInfo (string ifNoneMatch = null)
         {
 
             var localVarPath = "/user/marketplaces/orders/status";
@@ -20372,6 +20492,7 @@ namespace IO.Swagger.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
+            if (ifNoneMatch != null) localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
 
             // authentication (api_key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
@@ -20403,10 +20524,11 @@ namespace IO.Swagger.Api
         /// Get current synchronization status between your marketplaces and BeezUP accounts 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of AccountSynchronizations</returns>
-        public async System.Threading.Tasks.Task<AccountSynchronizations> GetMarketplaceAccountsSynchronizationAsync ()
+        public async System.Threading.Tasks.Task<AccountSynchronizations> GetMarketplaceAccountsSynchronizationAsync (string ifNoneMatch = null)
         {
-             ApiResponse<AccountSynchronizations> localVarResponse = await GetMarketplaceAccountsSynchronizationAsyncWithHttpInfo();
+             ApiResponse<AccountSynchronizations> localVarResponse = await GetMarketplaceAccountsSynchronizationAsyncWithHttpInfo(ifNoneMatch);
              return localVarResponse.Data;
 
         }
@@ -20415,8 +20537,9 @@ namespace IO.Swagger.Api
         /// Get current synchronization status between your marketplaces and BeezUP accounts 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of ApiResponse (AccountSynchronizations)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<AccountSynchronizations>> GetMarketplaceAccountsSynchronizationAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<AccountSynchronizations>> GetMarketplaceAccountsSynchronizationAsyncWithHttpInfo (string ifNoneMatch = null)
         {
 
             var localVarPath = "/user/marketplaces/orders/status";
@@ -20444,6 +20567,7 @@ namespace IO.Swagger.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
+            if (ifNoneMatch != null) localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
 
             // authentication (api_key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
@@ -20829,10 +20953,11 @@ namespace IO.Swagger.Api
         /// <param name="pageNumber">The page number you want to get</param>
         /// <param name="pageSize">The entry count you want to get</param>
         /// <param name="storeId">The store identifier to regroup the order exportations</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>OrderExportations</returns>
-        public OrderExportations GetOrderExportations (int? pageNumber, int? pageSize, string storeId)
+        public OrderExportations GetOrderExportations (int? pageNumber, int? pageSize, string storeId, string ifNoneMatch = null)
         {
-             ApiResponse<OrderExportations> localVarResponse = GetOrderExportationsWithHttpInfo(pageNumber, pageSize, storeId);
+             ApiResponse<OrderExportations> localVarResponse = GetOrderExportationsWithHttpInfo(pageNumber, pageSize, storeId, ifNoneMatch);
              return localVarResponse.Data;
         }
 
@@ -20843,8 +20968,9 @@ namespace IO.Swagger.Api
         /// <param name="pageNumber">The page number you want to get</param>
         /// <param name="pageSize">The entry count you want to get</param>
         /// <param name="storeId">The store identifier to regroup the order exportations</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>ApiResponse of OrderExportations</returns>
-        public ApiResponse< OrderExportations > GetOrderExportationsWithHttpInfo (int? pageNumber, int? pageSize, string storeId)
+        public ApiResponse< OrderExportations > GetOrderExportationsWithHttpInfo (int? pageNumber, int? pageSize, string storeId, string ifNoneMatch = null)
         {
             // verify the required parameter 'pageNumber' is set
             if (pageNumber == null)
@@ -20884,6 +21010,7 @@ namespace IO.Swagger.Api
             if (pageNumber != null) localVarQueryParams.Add("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)); // query parameter
             if (pageSize != null) localVarQueryParams.Add("pageSize", Configuration.ApiClient.ParameterToString(pageSize)); // query parameter
             if (storeId != null) localVarQueryParams.Add("storeId", Configuration.ApiClient.ParameterToString(storeId)); // query parameter
+            if (ifNoneMatch != null) localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
 
             // authentication (api_key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
@@ -20918,10 +21045,11 @@ namespace IO.Swagger.Api
         /// <param name="pageNumber">The page number you want to get</param>
         /// <param name="pageSize">The entry count you want to get</param>
         /// <param name="storeId">The store identifier to regroup the order exportations</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of OrderExportations</returns>
-        public async System.Threading.Tasks.Task<OrderExportations> GetOrderExportationsAsync (int? pageNumber, int? pageSize, string storeId)
+        public async System.Threading.Tasks.Task<OrderExportations> GetOrderExportationsAsync (int? pageNumber, int? pageSize, string storeId, string ifNoneMatch = null)
         {
-             ApiResponse<OrderExportations> localVarResponse = await GetOrderExportationsAsyncWithHttpInfo(pageNumber, pageSize, storeId);
+             ApiResponse<OrderExportations> localVarResponse = await GetOrderExportationsAsyncWithHttpInfo(pageNumber, pageSize, storeId, ifNoneMatch);
              return localVarResponse.Data;
 
         }
@@ -20933,8 +21061,9 @@ namespace IO.Swagger.Api
         /// <param name="pageNumber">The page number you want to get</param>
         /// <param name="pageSize">The entry count you want to get</param>
         /// <param name="storeId">The store identifier to regroup the order exportations</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of ApiResponse (OrderExportations)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<OrderExportations>> GetOrderExportationsAsyncWithHttpInfo (int? pageNumber, int? pageSize, string storeId)
+        public async System.Threading.Tasks.Task<ApiResponse<OrderExportations>> GetOrderExportationsAsyncWithHttpInfo (int? pageNumber, int? pageSize, string storeId, string ifNoneMatch = null)
         {
             // verify the required parameter 'pageNumber' is set
             if (pageNumber == null)
@@ -20974,6 +21103,7 @@ namespace IO.Swagger.Api
             if (pageNumber != null) localVarQueryParams.Add("pageNumber", Configuration.ApiClient.ParameterToString(pageNumber)); // query parameter
             if (pageSize != null) localVarQueryParams.Add("pageSize", Configuration.ApiClient.ParameterToString(pageSize)); // query parameter
             if (storeId != null) localVarQueryParams.Add("storeId", Configuration.ApiClient.ParameterToString(storeId)); // query parameter
+            if (ifNoneMatch != null) localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
 
             // authentication (api_key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
@@ -21007,10 +21137,11 @@ namespace IO.Swagger.Api
         /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>OrderHistory</returns>
-        public OrderHistory GetOrderHistory (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId)
+        public OrderHistory GetOrderHistory (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null)
         {
-             ApiResponse<OrderHistory> localVarResponse = GetOrderHistoryWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId);
+             ApiResponse<OrderHistory> localVarResponse = GetOrderHistoryWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
              return localVarResponse.Data;
         }
 
@@ -21021,8 +21152,9 @@ namespace IO.Swagger.Api
         /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>ApiResponse of OrderHistory</returns>
-        public ApiResponse< OrderHistory > GetOrderHistoryWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId)
+        public ApiResponse< OrderHistory > GetOrderHistoryWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null)
         {
             // verify the required parameter 'marketplaceTechnicalCode' is set
             if (marketplaceTechnicalCode == null)
@@ -21062,6 +21194,7 @@ namespace IO.Swagger.Api
             if (marketplaceTechnicalCode != null) localVarPathParams.Add("marketplaceTechnicalCode", Configuration.ApiClient.ParameterToString(marketplaceTechnicalCode)); // path parameter
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
             if (beezUPOrderId != null) localVarPathParams.Add("beezUPOrderId", Configuration.ApiClient.ParameterToString(beezUPOrderId)); // path parameter
+            if (ifNoneMatch != null) localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
 
             // authentication (api_key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
@@ -21096,10 +21229,11 @@ namespace IO.Swagger.Api
         /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of OrderHistory</returns>
-        public async System.Threading.Tasks.Task<OrderHistory> GetOrderHistoryAsync (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId)
+        public async System.Threading.Tasks.Task<OrderHistory> GetOrderHistoryAsync (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null)
         {
-             ApiResponse<OrderHistory> localVarResponse = await GetOrderHistoryAsyncWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId);
+             ApiResponse<OrderHistory> localVarResponse = await GetOrderHistoryAsyncWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
              return localVarResponse.Data;
 
         }
@@ -21111,8 +21245,9 @@ namespace IO.Swagger.Api
         /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
         /// <param name="accountId">The account identifier</param>
         /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of ApiResponse (OrderHistory)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<OrderHistory>> GetOrderHistoryAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId)
+        public async System.Threading.Tasks.Task<ApiResponse<OrderHistory>> GetOrderHistoryAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null)
         {
             // verify the required parameter 'marketplaceTechnicalCode' is set
             if (marketplaceTechnicalCode == null)
@@ -21152,6 +21287,7 @@ namespace IO.Swagger.Api
             if (marketplaceTechnicalCode != null) localVarPathParams.Add("marketplaceTechnicalCode", Configuration.ApiClient.ParameterToString(marketplaceTechnicalCode)); // path parameter
             if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
             if (beezUPOrderId != null) localVarPathParams.Add("beezUPOrderId", Configuration.ApiClient.ParameterToString(beezUPOrderId)); // path parameter
+            if (ifNoneMatch != null) localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
 
             // authentication (api_key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
@@ -21182,10 +21318,11 @@ namespace IO.Swagger.Api
         /// Get all actions you can do on the order API 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>OrderIndex</returns>
-        public OrderIndex GetOrderIndex ()
+        public OrderIndex GetOrderIndex (string ifNoneMatch = null)
         {
-             ApiResponse<OrderIndex> localVarResponse = GetOrderIndexWithHttpInfo();
+             ApiResponse<OrderIndex> localVarResponse = GetOrderIndexWithHttpInfo(ifNoneMatch);
              return localVarResponse.Data;
         }
 
@@ -21193,8 +21330,9 @@ namespace IO.Swagger.Api
         /// Get all actions you can do on the order API 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>ApiResponse of OrderIndex</returns>
-        public ApiResponse< OrderIndex > GetOrderIndexWithHttpInfo ()
+        public ApiResponse< OrderIndex > GetOrderIndexWithHttpInfo (string ifNoneMatch = null)
         {
 
             var localVarPath = "/user/marketplaces/orders/";
@@ -21222,6 +21360,7 @@ namespace IO.Swagger.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
+            if (ifNoneMatch != null) localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
 
             // authentication (api_key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
@@ -21253,10 +21392,11 @@ namespace IO.Swagger.Api
         /// Get all actions you can do on the order API 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of OrderIndex</returns>
-        public async System.Threading.Tasks.Task<OrderIndex> GetOrderIndexAsync ()
+        public async System.Threading.Tasks.Task<OrderIndex> GetOrderIndexAsync (string ifNoneMatch = null)
         {
-             ApiResponse<OrderIndex> localVarResponse = await GetOrderIndexAsyncWithHttpInfo();
+             ApiResponse<OrderIndex> localVarResponse = await GetOrderIndexAsyncWithHttpInfo(ifNoneMatch);
              return localVarResponse.Data;
 
         }
@@ -21265,8 +21405,9 @@ namespace IO.Swagger.Api
         /// Get all actions you can do on the order API 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
         /// <returns>Task of ApiResponse (OrderIndex)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<OrderIndex>> GetOrderIndexAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<OrderIndex>> GetOrderIndexAsyncWithHttpInfo (string ifNoneMatch = null)
         {
 
             var localVarPath = "/user/marketplaces/orders/";
@@ -21294,6 +21435,7 @@ namespace IO.Swagger.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
+            if (ifNoneMatch != null) localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
 
             // authentication (api_key) required
             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
@@ -26475,6 +26617,188 @@ namespace IO.Swagger.Api
             if (ExceptionFactory != null)
             {
                 Exception exception = ExceptionFactory("HarvestOrder", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Get the meta information about the order (ETag, Last-Modified) The purpose of this operation is to reduce the bandwith usage by getting just the meta information about the order (ETag, Last-Modified) with the body. This could be useful  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
+        /// <param name="accountId">The account identifier</param>
+        /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns></returns>
+        public void HeadOrder (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null)
+        {
+             HeadOrderWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
+        }
+
+        /// <summary>
+        /// Get the meta information about the order (ETag, Last-Modified) The purpose of this operation is to reduce the bandwith usage by getting just the meta information about the order (ETag, Last-Modified) with the body. This could be useful  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
+        /// <param name="accountId">The account identifier</param>
+        /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> HeadOrderWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null)
+        {
+            // verify the required parameter 'marketplaceTechnicalCode' is set
+            if (marketplaceTechnicalCode == null)
+                throw new ApiException(400, "Missing required parameter 'marketplaceTechnicalCode' when calling BeezUPApi->HeadOrder");
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling BeezUPApi->HeadOrder");
+            // verify the required parameter 'beezUPOrderId' is set
+            if (beezUPOrderId == null)
+                throw new ApiException(400, "Missing required parameter 'beezUPOrderId' when calling BeezUPApi->HeadOrder");
+
+            var localVarPath = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (marketplaceTechnicalCode != null) localVarPathParams.Add("marketplaceTechnicalCode", Configuration.ApiClient.ParameterToString(marketplaceTechnicalCode)); // path parameter
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+            if (beezUPOrderId != null) localVarPathParams.Add("beezUPOrderId", Configuration.ApiClient.ParameterToString(beezUPOrderId)); // path parameter
+            if (ifNoneMatch != null) localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
+
+            // authentication (api_key) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
+            {
+                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.HEAD, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("HeadOrder", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Get the meta information about the order (ETag, Last-Modified) The purpose of this operation is to reduce the bandwith usage by getting just the meta information about the order (ETag, Last-Modified) with the body. This could be useful  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
+        /// <param name="accountId">The account identifier</param>
+        /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task HeadOrderAsync (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null)
+        {
+             await HeadOrderAsyncWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
+
+        }
+
+        /// <summary>
+        /// Get the meta information about the order (ETag, Last-Modified) The purpose of this operation is to reduce the bandwith usage by getting just the meta information about the order (ETag, Last-Modified) with the body. This could be useful  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="marketplaceTechnicalCode">The marketplace technical code</param>
+        /// <param name="accountId">The account identifier</param>
+        /// <param name="beezUPOrderId">The BeezUP Order identifier</param>
+        /// <param name="ifNoneMatch">ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> HeadOrderAsyncWithHttpInfo (string marketplaceTechnicalCode, int? accountId, Guid? beezUPOrderId, string ifNoneMatch = null)
+        {
+            // verify the required parameter 'marketplaceTechnicalCode' is set
+            if (marketplaceTechnicalCode == null)
+                throw new ApiException(400, "Missing required parameter 'marketplaceTechnicalCode' when calling BeezUPApi->HeadOrder");
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling BeezUPApi->HeadOrder");
+            // verify the required parameter 'beezUPOrderId' is set
+            if (beezUPOrderId == null)
+                throw new ApiException(400, "Missing required parameter 'beezUPOrderId' when calling BeezUPApi->HeadOrder");
+
+            var localVarPath = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (marketplaceTechnicalCode != null) localVarPathParams.Add("marketplaceTechnicalCode", Configuration.ApiClient.ParameterToString(marketplaceTechnicalCode)); // path parameter
+            if (accountId != null) localVarPathParams.Add("accountId", Configuration.ApiClient.ParameterToString(accountId)); // path parameter
+            if (beezUPOrderId != null) localVarPathParams.Add("beezUPOrderId", Configuration.ApiClient.ParameterToString(beezUPOrderId)); // path parameter
+            if (ifNoneMatch != null) localVarHeaderParams.Add("If-None-Match", Configuration.ApiClient.ParameterToString(ifNoneMatch)); // header parameter
+
+            // authentication (api_key) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
+            {
+                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.HEAD, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("HeadOrder", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -36157,6 +36481,148 @@ namespace IO.Swagger.Api
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
+        }
+
+        /// <summary>
+        /// The index of all operations and LOV 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>CustomerIndex</returns>
+        public CustomerIndex UserCustomerGet ()
+        {
+             ApiResponse<CustomerIndex> localVarResponse = UserCustomerGetWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// The index of all operations and LOV 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of CustomerIndex</returns>
+        public ApiResponse< CustomerIndex > UserCustomerGetWithHttpInfo ()
+        {
+
+            var localVarPath = "/user/customer/";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // authentication (api_key) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
+            {
+                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UserCustomerGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<CustomerIndex>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (CustomerIndex) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CustomerIndex)));
+            
+        }
+
+        /// <summary>
+        /// The index of all operations and LOV 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of CustomerIndex</returns>
+        public async System.Threading.Tasks.Task<CustomerIndex> UserCustomerGetAsync ()
+        {
+             ApiResponse<CustomerIndex> localVarResponse = await UserCustomerGetAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// The index of all operations and LOV 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (CustomerIndex)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<CustomerIndex>> UserCustomerGetAsyncWithHttpInfo ()
+        {
+
+            var localVarPath = "/user/customer/";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+
+            // authentication (api_key) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key")))
+            {
+                localVarHeaderParams["Ocp-Apim-Subscription-Key"] = Configuration.GetApiKeyWithPrefix("Ocp-Apim-Subscription-Key");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UserCustomerGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<CustomerIndex>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (CustomerIndex) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CustomerIndex)));
+            
         }
 
     }
